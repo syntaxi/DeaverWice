@@ -4,6 +4,7 @@ exports.registerBot = (bot) => {
             msg.reply('Don\'t you mean\.\.\. Mother?');
         } else if (msg.content.toLowerCase().includes('unhook')) {
             msg.reply('JAR OF LIPS');
+            msg.reply('JAR OF DIPS');
         } else if (msg.content.toLowerCase().includes('nice')) {
             msg.reply('Join');
         } else if (msg.content.toLowerCase() === 'wd>help') {

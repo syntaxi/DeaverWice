@@ -5,7 +5,6 @@ exports.registerBot = (bot) => {
     bot.on("message", msg => {
         if (msg.content.toLowerCase() === 'wd>helpme') {
             msg.reply('some shit');
-        
         }
     })
 }

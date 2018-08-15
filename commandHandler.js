@@ -4,7 +4,7 @@ const fs = require('fs');
 class CommandHandler {
 
     constructor() {
-        const coreLoc = "./core/";
+        const coreLoc = __dirname + "/core/";
         this.messages = [];
         console.log("Scanning for files");
         let files = fs.readdirSync(coreLoc);

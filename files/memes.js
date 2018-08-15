@@ -6,7 +6,6 @@ exports.registerBot = (bot) => {
         } else if (msg.content.toLowerCase().includes('unhook')) {
             msg.reply('JAR OF LIPS');
             msg.reply('JAR OF LIPS');
-            msg.reply('JAR OF LIPS');
             msg.reply('TEST IGNORE');
         } else if (msg.content.toLowerCase().includes('nice')) {
             msg.reply('Join');

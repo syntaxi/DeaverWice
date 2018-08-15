@@ -1,6 +1,5 @@
-exports.registerBot = (bot) => {
-    /**Kicking people or whatever */
-    bot.on('message', message => {
+class commands {
+    message(message) {
         // Ignore messages that aren't from a guild
         if (!message.guild) {
             return;
@@ -43,24 +42,16 @@ exports.registerBot = (bot) => {
                 message.reply('Please @ the person you with to kick!');
             }
         }
-    })
-    ;
-
-
-    /**banning people or some shit like that */
-
-    bot.on('message', message => {
-        // Ignore messages that aren't from a guild
-        if (
-            !message.guild
-        )
+        if (!message.guild)
             return;
 
-// if the message content starts with "!ban"
+        // if the message content starts with "!ban"
         if (message.content.startsWith('wd>ban')) {
             // Assuming we mention someone in the message, this will return the user
             // Read more about mentions over at https://discord.js.org/#/docs/main/stable/class/MessageMentions
-            const user = message.mentions.users.first();
+            const
+                user = message.mentions.users.first();
+
             // If we have a user mentioned
             if (user) {
                 // Now we get the member from the user
@@ -89,10 +80,14 @@ exports.registerBot = (bot) => {
                     // The mentioned user isn't in this guild
                     message.reply('That user isn\'t in this guild!');
                 }
-            } else {
+            }
+
+            else {
                 // Otherwise, if no user was mentioned
                 message.reply('Please @ the person you wish to ban');
             }
         }
-    });
+    }
 }
+
+module.exports = commands;

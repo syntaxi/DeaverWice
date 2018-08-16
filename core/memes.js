@@ -27,6 +27,7 @@ class commands extends MessageHandler {
             " But I, Vor, will cleanse this place of their impurity.");
         
         this.registerIncludes("to pay respects", "F");
+        this.registerIncludes("^([iI]'?m ).*", commands.dadJoke);
         this.registerIncludes("captain vor", "Look at them, they come to this place when they know they are not pure. Tenno use the keys, but they are mere trespassers." +
             " Only I, Vor, know the true power of the Void. I was cut in half, destroyed, but through it's Janus Key, the Void called to me." +
             " It brought me here and here I was reborn. We cannot blame these creatures, they are being led by a false prophet, an impostor who knows not the secrets of the Void." +
@@ -146,6 +147,11 @@ class commands extends MessageHandler {
             let choice = Math.floor(Math.random() * options.length);
             commands.sendOutput(options[choice], msg);
         }
+    }
+
+    static dadJoke(msg){
+        const size = msg.toString().toLowerCase().match("^([iI]'?m ).*")[1].length;
+        commands.sendOutput(`Hi ${msg.toString().substr(size)}, I'm dad!`, msg);
     }
 }
 

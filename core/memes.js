@@ -14,9 +14,27 @@ class commands {
         this.registerEquals("what is my avatar", (msg) => commands.sendOutput(msg.author.avatarURL, msg));
         this.registerEquals("wd>gender", commands.chooseGender);
         this.registerEquals("wd>sex", commands.chooseSex);
-
-        this.registerIncludes("nice", "join");
-        this.registerIncludes("unhook", "JAR OF LIPS\nJAR OF LIPS");
+        this.registerEquals("nice", "join");
+        this.registerEquals("Look at them,", " they come to this place when they know they are not pure. Tenno use the keys, but they are mere trespassers." +
+            " Only I, Vor, know the true power of the Void. I was cut in half, destroyed, but through it's Janus Key, the Void called to me." +
+            " It brought me here and here I was reborn. We cannot blame these creatures, they are being led by a false prophet, an impostor who knows not the secrets of the Void." +
+            " Behold the Tenno, come to scavenge and desecrate this sacred realm. My brothers, did I not tell of this day? Did I not prophesize this moment?" +
+            " Now, I will stop them. Now I am changed, reborn through the energy of the Janus Key. Forever bound to the Void." +
+            " Let it be known, if the Tenno want true salvation, they will lay down their arms, and wait for the baptism of my Janus key. It is time." +
+            " I will teach these trespassers the redemptive power of my Janus key. They will learn it's simple truth. The Tenno are lost, and they will resist." +
+            " But I, Vor, will cleanse this place of their impurity.")
+        
+        
+        this.registerIncludes("vor", " they come to this place when they know they are not pure. Tenno use the keys, but they are mere trespassers." +
+            " Only I, Vor, know the true power of the Void. I was cut in half, destroyed, but through it's Janus Key, the Void called to me." +
+            " It brought me here and here I was reborn. We cannot blame these creatures, they are being led by a false prophet, an impostor who knows not the secrets of the Void." +
+            " Behold the Tenno, come to scavenge and desecrate this sacred realm. My brothers, did I not tell of this day? Did I not prophesize this moment?" +
+            " Now, I will stop them. Now I am changed, reborn through the energy of the Janus Key. Forever bound to the Void." +
+            " Let it be known, if the Tenno want true salvation, they will lay down their arms, and wait for the baptism of my Janus key. It is time." +
+            " I will teach these trespassers the redemptive power of my Janus key. They will learn it's simple truth. The Tenno are lost, and they will resist." +
+            " But I, Vor, will cleanse this place of their impurity.")
+        this.registerIncludes("did you really believe it would be this easy", "https://www.youtube.com/watch?v=wOygJJ7Zudk")
+        this.registerIncludes("unhook", "JAR OF LIPS\nJAR OF LIPS\nJAR OF LIPS");
         this.registerIncludes("sonya", "ello cute boy! My name is Sonya I'm a very beautiful" +
             " girl, most recently I was left alone. Five months ago a guy threw me, and I did" +
             " not have a man all this time. I'm young and young girl I need constant sex. Friends" +
@@ -96,8 +114,8 @@ class commands {
      * @param msg The message received.
      */
     static chooseSex(msg) {
-        if (Math.random() < 0.4) {
-            let options = ["Straight", "Gay", "Bi", "A", "*Clang! Clang!* you are Pansexual!", "Demi", "Poly", "Furry", "THE BIG GAY"];
+        if (Math.random() < 0.3) {
+            let options = ["Straight", "Gay", "Bi", "A", "*Clang! Clang!* you are Pansexual!", "Demi", "Poly", "Furry", "THE BIG GAY", "Homieflexual"];
             let choice = Math.floor(Math.random() * options.length);
             commands.sendOutput(options[choice], msg);
         } else {

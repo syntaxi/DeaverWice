@@ -113,7 +113,7 @@ class commands extends MessageHandler {
                 }
             }
             for (let key in this.includes) {
-                if (msg.content.toLowerCase().includes(key)) {
+                if (msg.content.toLowerCase().match(key)) {
                     this.includes[key](msg);
                 }
             }

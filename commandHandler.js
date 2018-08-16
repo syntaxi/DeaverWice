@@ -12,7 +12,7 @@ class CommandHandler extends MessageHandler {
      */
     constructor(bot) {
         console.log("Loading 'commandHandler.js'");
-        super(bot, __dirname + "\\core\\");
+        super(bot, __dirname + "/core/");
         this.bot = bot;
         console.log();
 

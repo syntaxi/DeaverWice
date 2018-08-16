@@ -35,7 +35,7 @@ class commands extends MessageHandler {
             " Let it be known, if the Tenno want true salvation, they will lay down their arms, and wait for the baptism of my Janus key. It is time." +
             " I will teach these trespassers the redemptive power of my Janus key. They will learn it's simple truth. The Tenno are lost, and they will resist." +
             " But I, Vor, will cleanse this place of their impurity.");
-        this.registerIncludes("did you really believe it would be this easy", "https://www.youtube.com/watch?v=wOygJJ7Zudk")
+        this.registerIncludes("did you really believe it would be this easy", "https://youtu.be/wOygJJ7Zudk?t=20s")
         this.registerIncludes("unhook", "JAR OF LIPS\nJAR OF LIPS\nJAR OF LIPS");
         this.registerIncludes("sonya", "ello cute boy! My name is Sonya I'm a very beautiful" +
             " girl, most recently I was left alone. Five months ago a guy threw me, and I did" +

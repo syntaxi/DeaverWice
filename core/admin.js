@@ -1,6 +1,6 @@
 "use strict";
 
-class commands {
+class Admin {
     constructor(bot) {
         this.prefix = "wd>";
     }
@@ -96,4 +96,4 @@ class commands {
     }
 }
 
-module.exports = commands;
+module.exports = Admin;

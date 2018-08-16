@@ -4,7 +4,7 @@ const MessageHandler = require("../messageHandler.js");
 /**
  * Contains memes and other joke commands
  */
-class commands extends MessageHandler {
+class Memes extends MessageHandler {
     constructor(bot) {
         super(bot, __filename.slice(0, -3) + '/');
         this.bot = bot;
@@ -13,9 +13,9 @@ class commands extends MessageHandler {
 
         this.registerEquals("friskyfoxx", "Don't you mean... Mother?");
         this.registerEquals("wd>help", "No.");
-        this.registerEquals("what is my avatar", (msg) => commands.sendOutput(msg.author.avatarURL, msg));
-        this.registerEquals("wd>gender", commands.chooseGender);
-        this.registerEquals("wd>sex", commands.chooseSex);
+        this.registerEquals("what is my avatar", (msg) => Memes.sendOutput(msg, msg.author.avatarURL));
+        this.registerEquals("wd>gender", Memes.chooseGender);
+        this.registerEquals("wd>sex", Memes.chooseSex);
         this.registerEquals("nice", "join");
         this.registerEquals("Look at them,", "they come to this place when they know they are not pure. Tenno use the keys, but they are mere trespassers." +
             " Only I, Vor, know the true power of the Void. I was cut in half, destroyed, but through it's Janus Key, the Void called to me." +
@@ -25,9 +25,9 @@ class commands extends MessageHandler {
             " Let it be known, if the Tenno want true salvation, they will lay down their arms, and wait for the baptism of my Janus key. It is time." +
             " I will teach these trespassers the redemptive power of my Janus key. They will learn it's simple truth. The Tenno are lost, and they will resist." +
             " But I, Vor, will cleanse this place of their impurity.");
-        
+
         this.registerIncludes("to pay respects", "F");
-        this.registerIncludes("^([iI]'?m ).*", commands.dadJoke);
+        this.registerIncludes("^([iI]'?m ).*", Memes.dadJoke);
         this.registerIncludes("captain vor", "Look at them, they come to this place when they know they are not pure. Tenno use the keys, but they are mere trespassers." +
             " Only I, Vor, know the true power of the Void. I was cut in half, destroyed, but through it's Janus Key, the Void called to me." +
             " It brought me here and here I was reborn. We cannot blame these creatures, they are being led by a false prophet, an impostor who knows not the secrets of the Void." +
@@ -78,9 +78,14 @@ class commands extends MessageHandler {
         if (typeof output === "function") {
             this.includes[key] = output;
         } else {
-            this.includes[key] = commands.sendOutput.bind(this, output);
+            this.includes[key] = Memes.switchedSend.bind(this, output);
         }
     }
+
+    static switchedSend(output, msg) {
+        Memes.sendOutput(msg, output)
+    }
+
 
     /**
      * Register an output to be sent if the message equals the key.
@@ -96,7 +101,7 @@ class commands extends MessageHandler {
         if (typeof output === "function") {
             this.equals[key] = output;
         } else {
-            this.equals[key] = commands.sendOutput.bind(this, output);
+            this.equals[key] = Memes.sendOutput.bind(this, output);
         }
     }
 
@@ -129,7 +134,7 @@ class commands extends MessageHandler {
     static chooseGender(msg) {
         let options = ["Male", "Female", "Trap"];
         let choice = Math.floor(Math.random() * options.length);
-        commands.sendOutput(options[choice], msg)
+        Memes.sendOutput(msg, options[choice])
     }
 
     /**
@@ -141,19 +146,19 @@ class commands extends MessageHandler {
         if (Math.random() < 0.3) {
             let options = ["Straight", "Gay", "Bi", "A", "*Clang! Clang!* you are Pansexual!", "Demi", "Poly", "Furry", "THE BIG GAY", "Homieflexual"];
             let choice = Math.floor(Math.random() * options.length);
-            commands.sendOutput(options[choice], msg);
+            Memes.sendOutput(msg, options[choice]);
         } else {
             let options = ["Straight", "Trisexual"];
             let choice = Math.floor(Math.random() * options.length);
-            commands.sendOutput(options[choice], msg);
+            Memes.sendOutput(msg, options[choice]);
         }
     }
 
-    static dadJoke(msg){
+    static dadJoke(msg) {
         const size = msg.toString().toLowerCase().match("^([iI]'?m ).*")[1].length;
-        commands.sendOutput(`Hi ${msg.toString().substr(size)}, I'm dad!`, msg);
+        Memes.sendOutput(msg, `Hi ${msg.toString().substr(size)}, I'm Dad!`);
     }
 }
 
-module.exports = commands;
+module.exports = Memes;
 

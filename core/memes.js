@@ -1,10 +1,12 @@
 "use strict";
+const MessageHandler = require("../messageHandler.js");
 
 /**
  * Contains memes and other joke commands
  */
-class commands {
+class commands extends MessageHandler {
     constructor(bot) {
+        super(bot, __filename.slice(0, -3) + '/');
         this.bot = bot;
         this.includes = {};
         this.equals = {};
@@ -80,6 +82,27 @@ class commands {
     }
 
     /**
+     * Check through all the bound values to see if any match.
+     * If a match is found, calls the corresponding function.
+     *
+     * @param msg The message received
+     */
+    message(msg) {
+        if (!msg.author.bot) {
+            for (let key in this.equals) {
+                if (msg.content.toLowerCase() === key) {
+                    this.equals[key](msg);
+                }
+            }
+            for (let key in this.includes) {
+                if (msg.content.toLowerCase().includes(key)) {
+                    this.includes[key](msg);
+                }
+            }
+        }
+    }
+
+    /**
      * Called when a message equal to `wd>gender` is received
      *
      * @param msg
@@ -104,27 +127,6 @@ class commands {
             let options = ["Straight", "Trisexual"];
             let choice = Math.floor(Math.random() * options.length);
             commands.sendOutput(options[choice], msg);
-        }
-    }
-
-    /**
-     * Check through all the bound values to see if any match.
-     * If a match is found, calls the corresponding function.
-     *
-     * @param msg The message received
-     */
-    message(msg) {
-        if (!msg.author.bot) {
-            for (let key in this.equals) {
-                if (msg.content.toLowerCase() === key) {
-                    this.equals[key](msg);
-                }
-            }
-            for (let key in this.includes) {
-                if (msg.content.toLowerCase().includes(key)) {
-                    this.includes[key](msg);
-                }
-            }
         }
     }
 }

@@ -3,30 +3,44 @@ const fs = require('fs');
 
 class CommandHandler {
 
-    constructor() {
+    /**
+     * Scans for files in the 'core' directory.
+     * If found, it will require the file.
+     *
+     * The require should provide a class,
+     * which will be constructed with `bot` as the sole parameter
+     */
+    constructor(bot) {
         const coreLoc = __dirname + "/core/";
         this.messages = [];
+        this.bot = bot;
+
         console.log("Scanning for files");
         let files = fs.readdirSync(coreLoc);
         for (let i = 0; i < files.length; i++) {
             try {
                 if (fs.lstatSync(coreLoc + files[i]).isFile()) {
-                    this.messages[files[i]] = require(coreLoc + files[i]);
+                    this.messages[files[i]] = new (require(coreLoc + files[i]))(bot);
                 }
             } catch (e) {
                 console.log(`Failed loading of ${files[i]}, skipping...`)
             }
         }
+
+        this.registerBot()
     }
 
-    registerBot(bot) {
+    /**
+     * Registers the message handlers on the core files.
+     */
+    registerBot() {
         for (let file in this.messages) {
             console.log(`Registering ${file}`);
-            this.messages[file] = new this.messages[file]();
+
             for (let i = 0; i < CommandHandler.eventList.length; i++) {
                 const eventName = CommandHandler.eventList[i];
                 if (eventName in this.messages[file]) {
-                    bot.on(eventName, this.messages[file][eventName])
+                    this.bot.on(eventName, this.messages[file][eventName].bind(this.messages[file]));
                 }
             }
         }

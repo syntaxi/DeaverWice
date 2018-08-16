@@ -1,4 +1,10 @@
+"use strict";
+
 class commands {
+    constructor(bot) {
+        this.prefix = "wd>";
+    }
+
     message(message) {
         // Ignore messages that aren't from a guild
         if (!message.guild) {

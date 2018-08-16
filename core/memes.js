@@ -1,4 +1,8 @@
-/**Memes and like, whatever */
+"use strict";
+
+/**
+ * Contains memes and other joke commands
+ */
 class commands {
     constructor(bot) {
         this.bot = bot;

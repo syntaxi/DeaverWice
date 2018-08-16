@@ -1,7 +1,7 @@
 "use strict";
-const fs = require('fs');
+const MessageHandler = require("./messageHandler.js");
 
-class CommandHandler {
+class CommandHandler extends MessageHandler {
 
     /**
      * Scans for files in the 'core' directory.
@@ -11,21 +11,10 @@ class CommandHandler {
      * which will be constructed with `bot` as the sole parameter
      */
     constructor(bot) {
-        const coreLoc = __dirname + "/core/";
-        this.messages = [];
+        console.log("Loading 'commandHandler.js'");
+        super(bot, __dirname + "\\core\\");
         this.bot = bot;
-
-        console.log("Scanning for files");
-        let files = fs.readdirSync(coreLoc);
-        for (let i = 0; i < files.length; i++) {
-            try {
-                if (fs.lstatSync(coreLoc + files[i]).isFile()) {
-                    this.messages[files[i]] = new (require(coreLoc + files[i]))(bot);
-                }
-            } catch (e) {
-                console.log(`Failed loading of ${files[i]}, skipping...`)
-            }
-        }
+        console.log();
 
         this.registerBot()
     }
@@ -34,13 +23,13 @@ class CommandHandler {
      * Registers the message handlers on the core files.
      */
     registerBot() {
-        for (let file in this.messages) {
+        for (let file in this.handlers) {
             console.log(`Registering ${file}`);
 
             for (let i = 0; i < CommandHandler.eventList.length; i++) {
                 const eventName = CommandHandler.eventList[i];
-                if (eventName in this.messages[file]) {
-                    this.bot.on(eventName, this.messages[file][eventName].bind(this.messages[file]));
+                if (eventName in this.handlers[file]) {
+                    this.bot.on(eventName, this.handlers[file][eventName].bind(this.handlers[file]));
                 }
             }
         }

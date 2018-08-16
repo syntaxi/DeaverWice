@@ -8,7 +8,7 @@ const MessageHandler = require('../messageHandler.js');
 class commands extends MessageHandler {
     constructor(bot) {
         /* Scan for child files */
-        super(bot, __filename.slice(0, -3));
+        super(bot, __filename.slice(0, -3) + '/');
 
         this.bot = bot;
         this.prefix = "wd>";

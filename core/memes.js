@@ -82,10 +82,6 @@ class Memes extends MessageHandler {
         }
     }
 
-    static switchedSend(output, msg) {
-        Memes.sendOutput(msg, output)
-    }
-
 
     /**
      * Register an output to be sent if the message equals the key.
@@ -101,8 +97,12 @@ class Memes extends MessageHandler {
         if (typeof output === "function") {
             this.equals[key] = output;
         } else {
-            this.equals[key] = Memes.sendOutput.bind(this, output);
+            this.equals[key] = Memes.switchedSend.bind(this, output);
         }
+    }
+
+    static switchedSend(output, msg) {
+        Memes.sendOutput(msg, output)
     }
 
     /**

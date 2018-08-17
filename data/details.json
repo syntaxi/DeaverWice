@@ -1,0 +1,1230 @@
+{
+  "ace of wands": {
+    "description": "**Upright**: Inspiration, power, creation\n**Reversed**: Delays, lack of motivation, burdens.",
+    "life": {
+      "flaw": {
+        "title": "Hedonist",
+        "content": "The character is interested in self-pleasure above all else.  This tends to impact their priorities and their physical condition.  May include regular imbibing of drugs (though not addiction, covered elsewhere), frequent, reckless and ill-advised sexual liasons, or overindulgence in other things, such as food.  They typically have multiple vices rather than one major one, favoring a breadth of riskier experiences over an obsessive attachment to one, their body likely bears the scars or effects of past indulgences, and/or they regularly prioritize pleasure over responsibility, with the fallout that follows (typically two of the above)."
+      }
+    }
+  },
+  "two of wands": {
+    "description": "**Upright**: Progress, decisions, discovery.\n**Reversed**: Fear of unknown, lack of planning.",
+    "power": {
+      "perk": {
+        "title": "Evolution",
+        "content": "The shard has not yet clarified the particulars of the power, and the character has some ability to influence what the end result will be, by deciding the type of conflict and how they fight.  The power adjusts parameters and particulars depending on how it is used (ie. close or long range, surprise attacks or face to face conflicts) and the type of conflicts the parahuman encounters.  The power remains what it is and won't jump classifications that it didn't previously touch on; the outline of it simply changes. The power adjusts at the close of every conclusion, until the halfway point in the campaign or after the parahuman finds a 'groove' where the shard has no cause to adjust.  At this point, it locks in, and the parahuman rolls a power perk."
+      }
+    }
+  },
+  "three of wands": {
+    "description": "**Upright**: Enterprise, expansion, foresight.\n**Reversed**:  Delays, obstacles to long-term plans.",
+    "life": {
+      "perk": {
+        "title": "Geared up",
+        "content": "This character joins the fray with pretty much all the gear someone could want, and can even supply underlings or team members, though doing so will eventually lose this advantage.  Have access to all common guns, melee weapons, one or two exotic guns (flamethrower, rocket launcher), and costume gear to put a good tier 2 costume together or an ugly (obviously used) tier 3 costume.  Might include having a contact with access to gear, knowing where a 'in case of Endbringer apocalypse' storehouse of weapons and arms is, or have access to legacy gear from a now-dead cape.  Gear is often older, worn, and/or illegitimate, and sale of the gear will turn out little profit.\n\nAlternately, or if not suited to the game/if the character would have this advantage regardless, start off with 3 points of expertise in a ranged skill (Accuracy, Barrage, or Gunfighting.  Natural talent or growing up practicing with guns mean the skill points never degrade and are free, not counting against maximum."
+      }
+    }
+  },
+  "four of wands": {
+    "description": "**Upright**: Celebration, home, community.\n**Reversed**:  Breakdown in communication, transitions.",
+    "life": {
+      "perk": {
+        "title": "Celebrated",
+        "content": "Through reputation or luck, old contacts or natural charisma, the character has a larger-than-usual collection of fans or followers.  As resources, these individuals are typically 'useless mooks', with little in the way of practical skills, but they offer numbers and a form of organizational backbone, and are fanatically loyal.\nTypically 1-3 of these useless mooks will enter the scene every time the character spends 3 or more rep to acquire something more permanent, and will make themselves known by various channels (online, fashion sense, hanging around certain areas they're likely to find the character).  Unless recruited (always successful) they'll carry out actions they think will support the character."
+      },
+      "flaw": {
+        "title": "Illiteracy",
+        "content": "The character is illiterate, either in terms of reading and writing, or in the colloquial 'tech illiterate' sense.  Handicap, born or gained after brain injury, lifestyle, or powers factor into matters, and the character just can't wrap their heads around it.  If the character can't read and write, then they may struggle to read signs (knowledge or wits rolls to intepret via. contextual clues), and learn non-physical skills slower in classes.  If unable to use technology, then cell phones, computers, and the character's choice of cars or guns are barred to them.  The character can choose a middle-ground, where they can stumble along and find their way with time, but both tech and literacy are handicapped.  Can be cause for negative rep if this comes up in an encounter."
+      }
+    }
+  },
+  "five of wands": {
+    "description": "**Upright**: Disagreement, competition, strife, tension and conflict.\n**Reversed**:  Conflict avoidance, diversity, unhappy compromise.",
+    "life": {
+      "perk": {
+        "title": "Berserker",
+        "content": "This character doesn't go down without a fight.  They've got a stubborn streak in them, and when they're down and hurting, failing a roll for succumbing to their injuries, they can take another shot at the other guy with a +1 to rolls, delaying consequences (death among them) for one round before they finally collapse.  If they succeed, they can take another shot at rolling vs. their wounds."
+      },
+      "flaw": {
+        "title": "Coward",
+        "content": "This character is a coward, though they might prefer the term 'risk averse'.  -2 to all rolls (offensive or defensive) until their second round of combat; if they successfully avoid attacking and being attacked, continue as normal without penalty.  If they were forced to act, the penalty becomes a -1 for the next round, then goes away."
+      }
+    }
+  },
+  "six of wands": {
+    "description": "**Upright**:  Public recognition, victory, self-confidence.\n**Reversed**:  Egotism, disrepute, lack of confidence, fall from grace.",
+    "life": {
+      "perk": {
+        "title": "Victor",
+        "content": "Choose one:\n\t●  The character gains a macro-scale advantage while beating down enemies.  Opposing factions might find that each loss to this character causes them to suffer in reputation, that underlings get frustrated/unhappy, that they lose their grip over territories, or that the character's victories cause the atmosphere of associated areas to turn directly against the group.\n\t●  On a micro level, the character knows how to deliver a beatdown, twist the knife, or they're sadists and are good at inflicting pain and breaking people.  When the character beats someone down, that someone takes longer to get back on their feet.  Wounds might take longer to patch up and heal, and someone that succumbs to wounds this character inflicts might find they have a harder time pulling themselves together for a second round."
+      }
+    }
+  },
+  "seven of wands": {
+    "description": "**Upright**:  Challenge, competition.\n**Reversed**: Giving up, overwhelmed, overly protective."
+  },
+  "eight of wands": {
+    "description": "**Upright**:  Speed, action, air travel, movement, swift change.\n**Reversed**:  Delays, frustration, procrastination.",
+    "life": {
+      "perk": {
+        "title": "Stubborn",
+        "content": "The character doesn't get tired or suffer for long periods without rest.  Maintain two free points in the endurance skill, and have double the effective stamina.  Further, when taking a second try at an action that isn't directed at a hostile party (that is, not an attack), can temporarily give up the doubled stamina to get a free reroll.  This reroll only applies if the second try takes place on a separate turn from the first.  Recoup the doubled stamina after 6 hours."
+      }
+    },
+    "power": {
+      "perk": {
+        "title": "Wing",
+        "content": "The power has an aspect that lends itself to mobility - the cape might be able to use blasts to push themselves, the shard might facilitate the cape's movement inside their shaker effect, tinkers can add jet boosters to worn pieces of gear.  The movement isn't necessarily a lot, but it's low effort to utilize and doesn't have a real drawback.  If the group can't figure out a good approach for this perk, it is possible that the character has a secondary mover power, typically very minor (slow flight, wall climbing at half walking speed), or with a drawback (ie. draws on same power supply that fuels primary power, except at a high cost, use of one precludes the other)."
+      }
+    }
+  },
+  "nine of wands": {
+    "description": "**Upright**: Courage, persistence, test of faith, resilience.\n**Reversed**:  On edge, defensive, hesitant, paranoia",
+    "power": {
+      "flaw": {
+        "title": "Chink in the Armor",
+        "content": "Character has a weakness to one damage type, possibly due to physiological changes.  If it is a common damage type (Bash, Pierce, Slash), they roll an additional wound effect the first time they take damage of that type in a round, but still suffer only one actual wound.  If it is a more uncommon damage type (burn, shock, rend), they do suffer an extra wound.\n\nAlternate options include the cape's defenses (Brute powers, Forcefields) being penetrated by the specific damage type, again depending on how common the damage type is.  The individual might be staggered and lose their powers for a turn after taking damage of the right type (ie. heat disrupting electromagnetic flight), with uncommon damage types having this effect on a hit, regardless of armor or successful blocks."
+      }
+    }
+  },
+  "ten of wands": {
+    "description": "**Upright**: Burden, responsibility, hard work and stress.\n**Reversed**: taking on too much, avoiding responsibility.",
+    "life": {
+      "perk": {
+        "title": "Famous Deed",
+        "content": "The character achieved something or was involved in an event in the past, and they're recognized for it.  They might have been involved in a fight with/the ultimate defeat of a notable villain before coming to the city and their reputation precedes them, or they were a musician before finding their current career and people recognize them for their work.  This manifests as recognition and cachet with the low-level rabble.  Rather than belong to a singular organization they can call in favors with, they get a bonus to dealings with the nameless mooks and faces in a crowd.  Bonus three rep that can be used once per session, but only with nameless, unimportant characters (mooks, civilians)."
+      }
+    }
+  },
+  "page of wands": {
+    "description": "**Upright**: Enthusiasm, exploration, discovery, free spirit.\n**Reversed**:  Setbacks to new ideas, pessimism, lack of direction",
+    "power": {
+      "perk": {
+        "title": "Versatile power",
+        "content": "The power as described can do more, possibly branching out into another classification, or serving as a toolbox of multiple options the character can draw on.  Blasters have another option for a way or a thing they can blast, masters have more minions, breakers have more things they do while in their alternate form.\n\nVersatility comes at a cost.  Roll a d6: On a 1-5, power, efficiency, accuracy, scope, or quality of life suffer by one step, respective to die results.  On a six, the character suffers a minor mutation to one body part."
+      },
+      "flaw": {
+        "title": "Versatility suffers",
+        "content": "The power is narrower, with less tools in the toolbox, or the choices made in a confrontation are reduced because the power isn't so reliable.  Movers might be less flexible in how they can maneuver in the air, shakers forced to use effects while closer because they're more unreliable at range, while tinkers are more focused on their speciality. The power diminishes by two steps, in the abstract.\n\nThere is a small benefit.  Roll a d6: on a 1-5, power, efficiency, awareness/accuracy, scope, or quality of life are improved by one step, respective to die results.  On a 6, roll a power advantage, that advantage is only half as good as described, give or take."
+      }
+    }
+  },
+  "knight of wands": {
+    "description": "**Upright**: Energy, passion, lust, action, adventure, impulsiveness.\n**Reversed**: Haste, scattered energy, frustration",
+    "life": {
+      "perk": {
+        "title": "Jack of Trades",
+        "content": "Get +2 skill points.  Can learn twice as fast and for half the cost when taking classes, can move skill points at a rate of 1/day, into valid skills."
+      }
+    }
+  },
+  "queen of wands": {
+    "description": "**Upright**: Exuberance, warmth, vibrancy, determination\n**Reversed**: Shrinking violet, aggressive, demanding",
+    "life": {
+      "perk": {
+        "title": "Tough Motherfucker",
+        "content": "Until the character is missing half their life in terms of wounds (rounding up), they either suffer the wound with no consequences, or they suffer the consequences with no wound.  Depends on the effect, and GM discretion (blades, guns, etc, would likely wound, while a taser would be more apt to inflict the effect)."
+      }
+    },
+    "power": {
+      "perk": {
+        "title": "Shattered chains",
+        "content": "The character noticed almost from the outset that they could push their power, and there were hints of something happening to their body as they did.  Veins glowing, cracks appearing, thematic changes.  The shard included a breaker form, but it's not for regular use.  The first option is a breaker state they shift  into when their power is in use (typically over several rounds, or higher chance over time), an alternate, whole-body change that they enter into as a course of using their primary power, with minor, complimentary benefits.\nThe second option is that they have a discrete, second power that they can force themselves into, with something of a cost or a prerequisite; on entering the form, their mentality becomes more alien, the idea being that they would enter the form when they -really- need to defeat an enemy or -really- need to complete an objective.  They name their objective as they enter the form, something simple that they might not be able to achieve without their breaker form.  They get an added breaker power, but suffer consequences if they cannot meet the named objective, possibly within a time limit."
+      }
+    }
+  },
+  "king of wands": {
+    "description": "**Upright**: Natural born leader, vision, entrepreneur, honor\n**Reversed**: Impulsiveness, high expectations"
+  },
+  "ace of pentacles": {
+    "description": "**Upright**: Manifestation, new financial opportunity\n**Reversed**:  Lost opportunity, lack of planning/foresight.",
+    "life": {
+      "perk": {
+        "title": "Wealthy",
+        "content": "By luck or birth, the character has no shortage of funding or assets.  They start with a large sum of cash - about fifty thousand dollars; assets bought from this pool are half the cost and top quality.  This sum can be depleted, but not all at once or all for one thing."
+      },
+      "flaw": {
+        "title": "Destitute",
+        "content": "Character starts with no funds and half the assets.  Conversely, they might be in debt, with the threat of losing their assets hanging over their heads if they aren't careful.  (Too much time away from home = repo men come)."
+      }
+    },
+    "power": {
+      "flaw": {
+        "title": "Dead shard",
+        "content": "The character acquired a dead or leftover shard.  The power wasn't given many resources to draw on; the GM should roll a dice in secret, gauging the length of the campaign, noting a point 10-90% of the way through the campaign.  The power is a step stronger at the outset, but the power will run out of juice, reconfiguring and adjusting to conserve energy.  The later in the campaign this happens, the more severe the effects.  This will result in the GM's choice of: needing an appropriate power source nearby (ie. open flame, or defeating parahumans as a power source vampire), having a longer cooldown, or having reduced effects/power."
+      }
+    }
+  },
+  "two of pentacles": {
+    "description": "**Upright**:  Balance, adaptability, time management.\n**Reversed**:  Disorganization, financial disarray.",
+    "life": {
+      "perk": {
+        "title": "Job Security",
+        "content": "Whether by legitimate (fantastic track record), illegitimate (blackmailing boss), or questionable (nepotism) means, the character has secured themselves in a high quality job that doesnt stress them out, gives good pay (x2 usual), and is flexible on the hours (very possibly flexible enough that they'd be able to maintian a cape life on the side).  May include non-job situations like someone pulling in money from a lawsuit.  Even if the job is already decided and the prior isn't entirely possible, the character is tenured, for all intents and purposes - they can get away with more, call in more favors, and/or generally expect more help or good relations with their coworkers, and the job offers additional resources or tools that may help the character in the long run."
+      },
+      "flaw": {
+        "title": "Homeless/Slumming It",
+        "content": "Due to bad habits in maintaining their place, life issues (ie. divorce, shitty landlords) or bad luck (chronic bedbug infestation) the character is either homeless or their home isn't the sort of place they could bring someone to.  Their headquarters/office sucks in much the same vein, or is simply an extension of the first problem.  Conversely, their life situation may well be such that they just can't seem to set down roots, and are constantly on the move, to the point that they can only reliably keep what they can carry with them.\n\nIf that can't/doesn't work, the character is simply very tired and hungry on a regular basis/throughout the session.  The effects weigh down on them and keep them depressed and struggling; to get to a better headspace they must turn to vices."
+      }
+    },
+    "power": {
+      "perk": {
+        "title": "One-two",
+        "content": "The primary power either sets up the enemy for follow-up hits, or it is split into two aspects, with one aspect priming the other for added effect (and possibly vice-versa).  Fireballs or a mover's takeoff might stagger nearby enemies, destructive powers might be good at shredding armor and leaving enemies vulnerable, or, for the latter case, a projectile might create clouds of flammable gas that a thrown fireball could detonate.  Tinkers might find that building gear is easier/cheaper/faster if they build two complementary pieces of gear (in a buy one, get one half price manner) and movers might see more teamwork between minions or their minions and themselves."
+      },
+      "flaw": {
+        "title": "Clunky Power",
+        "content": "The power takes a full-round action to use, and/or is easily interrupted, provoking attacks of opportunity from those nearby.  It may come with increased power, but use of the ability is a strategic decision.  If and when the use of the power is interrupted, it tends to go haywire."
+      }
+    }
+  },
+  "three of pentacles": {
+    "description": "**Upright**:  Teamwork, initial fulfillment, collaboration\n**Reversed**:  Lack of teamwork, disregard for skills.",
+    "power": {
+      "perk": {
+        "title": "Teamwork",
+        "content": "The power lends itself better to working with teammates.  Offensive powers might actively discriminate between friend and foe, eliminating the possibility of friendly fire and lending a bonus when shooting at enemies that are using allies as a shield, while passive or non-offensive powers might offer secondary powers or benefits, such as an acute awareness of where allies are on the battlefield, tinker equipment that keeps better when in others' possession or the ability to share a portion of one's own resistance to their power with allies they've been around a while.  Conversely, may ameliorate the effects of a power flaw when with allies who've gotten to know the cape."
+      },
+      "flaw": {
+        "title": "Teamwork is nonexistent",
+        "content": "Either the power is hazardous or inconvenient to teammates, or the shard has some degree of control over the power, and in a combat situation is liable to nudge, bump, or manipulate perceptions to sabotage teamwork, causing the parahuman to have a 50% chance of targeting or accidentally hitting an ally within 15'."
+      }
+    }
+  },
+  "four of pentacles": {
+    "description": "**Upright**: Control, stability, security, possession.\n**Reversed**:  Greed, materialism, self-protection.",
+    "life": {
+      "perk": {
+        "title": "Maintenance",
+        "content": "The character may be the type to habitually clean their guns, they might have an eye for the best quality goods, or they might simply be more on the lookout to threats to their equipment, but either way, their gear doesn't break or get lost.  If attended gear would break, or if the character would be disarmed, pickpocketed or otherwise have something snatched, roll a 1d4 - the item is only lost or damaged on a 1.  The chance increases by +1 per time the roll is used (lost/damaged on a 1 or 2, for second attempt), and resets if the character sits down and takes time to maintain their stuff.  Items meant to be consumed or used up are easily salvaged or replaced, as well.  For every four items of a general type that are used up (first aid kits, grenades, ammunition), the character can get a fifth for free (going by lowest quality of the four that were used up), scrounging up pieces or by maintaining good relationships with suppliers (gun nut with weapons dealer, for example)."
+      }
+    }
+  },
+  "five of pentacles": {
+    "description": "**Upright**:  Isolation, insecurity, worry, financial loss.\n**Reversed**:  Recovery, spiritual poverty.",
+    "life": {
+      "perk": {
+        "title": "Efficient Operator",
+        "content": "The character can do more with less.  Choose one:\n\n●  The character is very familiar with their gear.  Their gun is custom ordered with a specifically calibrated trigger pull and weight, or they're a parahuman but have grown used to using their power with a specific gauntlet or lens in their mask.  Pick an item, maybe give it a name: while using the item, the character can reroll one associated roll per encounter.  On a maximum possible result, roll another die and add it to the total.  (A 6 on a d6 Brawn roll would mean rolling another d6, getting a result of a 7-12).\n\n●  The character operates best alone, without the distraction of others.  When no allies are within 50', the parahuman gains a free reroll.  When the target has no allies within 50', the parahuman gains a free reroll (to a maxium of two per encounter)."
+      }
+    }
+  },
+  "six of pentacles": {
+    "description": "**Upright**: Generosity, charity, prosperity, sharing.\n**Reversed**:  Debt, selfishness, one-sided charity.",
+    "life": {
+      "perk": {
+        "title": "Master of the 'system'",
+        "content": "The character gives the impression that they know and follow the rules by which the game is played.  They either start with two instances of 'trusted' reputation that naturally replenish themselves after 2-4 encounters.   or negative reputation doesn't stick, and they can, on taking up any negative reputation, immediately roll social to try to shuck it off.  If they took any measures at all to hide the deed or set someone else up as the scapegoat, they can choose to get a +1 to the roll or have the negative reputation stick to someone else."
+      }
+    },
+    "power": {
+      "perk": {
+        "title": "Sweep",
+        "content": "The shard includes a secondary benefit or power that gives the parahuman an added ability that covers a lot of area.  The first possibility is an addendum to the original power; a wave of heat or an EMP pulse that disrupts electronics and interrupts others, a brute can telekinetically magnify damage to create ripples of destroyed ground, or a mover creates a rippling wave around them on takeoff/landing.  Should the primary power not lend itself to this, the parahuman might gain a secondary shaker power with the same environmental effect; minor telekinesis, an aura with the same general effects as their primary power, or a pulse of energy that radiates out in every direction.  These powers are strictly secondary, weaker than the primary, and are related to the primary power somehow, but they tend to be easy to use and low cost"
+      },
+      "flaw": {
+        "title": "Drained by Power",
+        "content": "Period after active use of power involves a kind of hibernation or recuperation period; the individual is left reeling or exhausted, falls asleep for a prolonged period, or requires a period of calm and stillness to undo progressive changes from power (exiting breaker state, making it so hands aren't constantly on fire).  Extends after prolonged periods of power use, up to a limit, and if the cape is knocked out or otherwise disabled, prolongs period they are unavailable.  May hamper real life or lead to period of vulnerability if taken out in combat."
+      }
+    }
+  },
+  "seven of pentacles": {
+    "description": "**Upright**:  Vision, perseverence, profit, reward.\n**Reversed**:  Lack of vision, limited success or reward",
+    "life": {
+      "perk": {
+        "title": "Investment",
+        "content": "The character has positioned themselves well to reap later returns.  Favors are owed, money invested, inheritances due.  Over the course of the campaign, they get a steady stream of income or assets, increasing over time, with a leaning toward things they need or use often - guns for a criminal who collects such, cash for others, properties for a magnate, etc.  For single session games, the character might receive found or scavenged items in the mid-to-late game, a nice gun, needed supplies, or a costume upgrade.  Further, when the character collects loot or scavenges for gear, they find 20% more (or have a 20% chance to find an additional item)."
+      }
+    },
+    "power": {
+      "perk": {
+        "title": "More scope",
+        "content": "The scope of the power is increased, extending the range, the area covered, or the number of targets affected.  Blasts travel further, shaker effects cover more area, masters control more minions.  Represents an increase of two steps, in an abstract sense.\n\nIncreased scope comes at a cost.  Roll a d6: On a 1-5, power, efficiency, awareness/accuracy, control or quality of life suffer by one step, respective to die result.  On a six, the character suffers a minor mutation to one body part."
+      },
+      "flaw": {
+        "title": "Scope suffers",
+        "content": "The reach, area coverage, number of targets or the duration/durability for the power are reduced, depending on classification and power.  Changers might have less reach, breakers less duration, tinkers devices might degrade faster, brutes might move slower.  The power diminishes by two steps, in the abstract.\n\nThere is a small benefit.  Roll a d6: on a 1-5, power, efficiency, awareness/accuracy, versatility or quality of life are improved by one step, respective to die results.  On a 6, roll a power advantage, that advantage is only half as good as described, give or take."
+      }
+    }
+  },
+  "eight of pentacles": {
+    "description": "**Upright**: Apprenticeship, education, quality.\n**Reversed**:  Perfectionism, lacking ambition or focus.",
+    "life": {
+      "perk": {
+        "title": "Background with capes",
+        "content": "The character knew an individual in the hero scene while growing up or for a major part of their life, and instinctively know what's what.  They automatically pass rolls relating to the unwritten rules or cape politics, get a +2 on other knowledge (parahuman) rolls, and can call in a favor.  This allows them to get a cape to help them for the duration of a single mission, they can get costume or equipment resources, smooth something over in terms of cape politics, or try to recruit a cape.  After the favor is called in, there is a 100% chance that future attempts to call in favors will fail, with this chance decreasing by 12% per session concluded thereafter."
+      },
+      "flaw": {
+        "title": "Draconian",
+        "content": "The shard saw the opportunity to drive the character toward conflict: a belief, ideology, or set of expectations that the individual held prior to triggering, which the shard could latch onto and exacerbate.  That belief is now worked into the character's rewired psychological makeup, and they either can't understand why others won't follow the rules, or experience extreme dsyphoria should others break the rules.  Violence, revenge, extermination of the offenders or disproportionate retribution are generally the only ways to handle this dysphoria, with consequences if ignored (morale dropping, restlessness & slower recovery from injuries, other flaws get worse).  Can include religious adherence, gender roles, rules of heirarchy or anarchism, among other beliefs."
+      }
+    }
+  },
+  "nine of pentacles": {
+    "description": "**Upright**:  Gratitude, luxury, self-sufficiency.\n**Reversed**:  Over-investment in work, financial setbacks."
+  },
+  "ten of pentacles": {
+    "description": "**Upright**: Wealth, inheritance, family, establishment\n**Reversed**:  Financial failure, lonliness, loss.",
+    "power": {
+      "perk": {
+        "title": "More quality of life",
+        "content": "The power lends itself well to real life exploits and activity.  It can be used to generate wealth, it might alter the immediate environment in a way that helps the cape and hampers any potential enemies for the future, they might not need to eat or sleep.  Generally physical benefits come with physical powers and mental for mental.\n\nThese general benefits come at a cost.  Roll a d6: On a 1-5, power, efficiency, accuracy, scope, or versatility suffer by one step, respective to die results.  On a six, the character suffers a minor mutation to one body part."
+      },
+      "flaw": {
+        "title": "Quality of life suffers",
+        "content": "The power hampers everyday life.  It's obvious, it destroys property, it mandates certain environmental conditions for the cape to be comfortable, or affects relationships.  The Q.o.L. diminishes by two steps, in the abstract.\n\nThere is a small benefit.  Roll a d6: on a 1-5, power, efficiency, awareness/accuracy, scope, or versatility are improved by one step, respective to die results.  On a 6, roll a power advantage, that advantage is only half as good as described, give or take."
+      }
+    }
+  },
+  "page of pentacles": {
+    "description": "**Upright**: Manifestation, financial opportunity, new role\n**Reversed**:  Lack of progress, short-term focus.",
+    "life": {
+      "flaw": {
+        "title": "Wastrel",
+        "content": "Accumulated assets and reputation are quickly gained, quickly spent.  The character might be a partier, or not a savvy saver.  At the end of each week, the character loses half of their cash or $250, whichever is more, and they roll Social for all of their rep as if they'd spent it.  Assets bought but not carried and used have a chance of disappearing, with cheaper or common items and assets disappearing first.  Handguns will fall between a cupboard and the wall before the rocket launcher does, but even a rocket launcher can get stuck in a cupboard and nearly forgotten.  Items assigned to underlings do not fall under this flaw.  Spending time to rummage or do accounting can attempt to recoup costs or find items, but it is inefficient and may take time.\n\nThe upside is that the character is good at utilizing cash and rep.  They get a 5-15% discount on cash purchases made outside of character creation and rep used to acquire things or recruits is spent more efficiently (+1 effective rep per 3 spent)."
+      }
+    },
+    "power": {
+      "flaw": {
+        "title": "Hard ceiling",
+        "content": "The character is 'locked in' by the shard, which has taken over aspects of the brain and body.  They start with +1 stat point to allocate and +1 skill point, but cannot learn, train to improve statistics, nor can they adjust or rearrange skills, or gain advantages for hitting milestones.  Use of weapons they do not have skills allocated for is penalized, as is use of computers, driving, and more.  Finally, pick one, appropriate to the power, representing how their mind and body are stagnant: they always lose initiative in combat, they're penalized on the round they are surprised, anything involving a Dex roll or action takes one turn longer, or scars never heal."
+      }
+    }
+  },
+  "knight of pentacles": {
+    "description": "**Upright**:  Efficiency, routine, conservatism.\n**Reversed**:  Laziness, boredom, feeling 'stuck'.",
+    "power": {
+      "perk": {
+        "title": "More efficiency",
+        "content": "The costs of the power are reduced, in terms of time or resources the power draws on.  Could include being able to fire blasts while moving, or feeling less tired/headachey after using the power.  Represents an increase of two steps, in an abstract sense.\n\nEfficiency comes at a cost.  Roll a d6: On a 1-5, power, scope, awareness/accuracy versatility or quality of life suffer by one step, respective to die results.  On a six, the character suffers a minor mutation to one body part."
+      },
+      "flaw": {
+        "title": "Efficiency suffers",
+        "content": "The power costs something, or it costs more.  Tinkers might need more materials, breakers suffer a cost for maintaining their form, paid after the fact, fliers get tired going from A to B, or the cape is forced to stand still and brace themselves while using a shaker power.  Either way, the power diminishes by two steps, in an abstract way.\n\nThere is a small benefit.  Roll a d6: on a 1-5, power, awareness/accuracy, scope, versatility, or quality of life are improved by one step, respective to die results.  On a 6, roll a power advantage, that advantage is only half as good as described, give or take."
+      }
+    }
+  },
+  "queen of pentacles": {
+    "description": "**Upright**: Practicality, motherly, down to earth.\n**Reversed**:  Imbalance in work & family commitments"
+  },
+  "king of pentacles": {
+    "description": "**Upright**: Security, power, control, discipline, abundance.\n**Reversed**: Authoritative, controlling, domineering.",
+    "life": {
+      "perk": {
+        "title": "Safe Zone",
+        "content": "The character has a place they can go back to where they are effectively untouchable.  If not a villain, they might be situated near an area that the PRT deploys from (or a barracks with PRT soldiers), a case 53 might know the storm sewers inside and out, to the point that they can't be chased down or tracked once they reach the space, a character could have massive amounts of defenses or standing guards (a gang HQ with reams of soldiers at hand), or they have an acquaintance who can and will outfit their headquarters into a bunker with inch-thick walls and electrified doors.  Whatever the case, the parahuman always has a place to retreat to where they're safe, enemies are stupid/punished if they try to push it regardless, and their headquarters are more secure in general."
+      },
+      "flaw": {
+        "title": "Ambitious",
+        "content": "Think Starscream.  The character has an intrinsic need to be at the top.  While working under someone, they take a perpetual, severe hit to morale.  Taking the guy at the top down a notch, overtly or subtly, or taking a meaningful step toward gaining status and prestige will cancel out this flaw for the next confrontation.  This often starts at insults or insubordination, but to keep gaining relief from their itch of ambition, they must continually top prior insults or insubordination - oft leading to outright backstabbing.  Achieving a higher position will buy freedom from the flaw for one full session, four sessions if they finally achieve the top position in a given organization.\n\nSolo individuals and group leaders will find themselves dissatisfied.  After two sessions the flaw will return, aimed at city-wide dominance rather than dominance within a single group."
+      }
+    },
+    "power": {
+      "perk": {
+        "title": "Shell",
+        "content": "The power offers some defensive benefit.  This may be a very broad/omnipresent but exceedingly minor defensive application or a secondary power, such as a personal forcefield that can only prevent minor wounds now and again, a variant use of the power that lets the parahuman shoot down projectiles or stagger charging enemies with a blaster power, the ability to create low-level forcefields in the area, or a breaker form that reacts to harm by exploding out in a burst of breaker-related energy, pushing away attackers and making it harder for them to make more than one attack in a turn.  Tinkers might have more facility with creating power suits or body armor.  Whatever the case, it's a minor augmentation, but it's low effort and low cost to utilize."
+      }
+    }
+  },
+  "ace of cups": {
+    "description": "**Upright**:  Love, compassion, creativity, overwhelming emotion\n**Reversed**:  Blocked or repressed emotions",
+    "life": {
+      "perk": {
+        "title": "Natural flair",
+        "content": "Pick one:\n\n●  Crafting items naturally makes for better looking stuff.  Can append an appearance or reputation-focused quality to an item at no cost, above and beyond standard costume qualities for that tier.\n\n●  Naturally stylish.  Two free pips in Presentation.  This is natural ability and can't be unlearned."
+      },
+      "flaw": {
+        "title": "Emotional sensitivity",
+        "content": "Pick a negative emotion (fear/anxiety, anger, depression); resistance to this emotion is hair-trigger, largely negative, and is either exaggerated or prone to running away to another extreme (irrational when angered, paranoid, obsessive)"
+      }
+    },
+    "power": {
+      "perk": {
+        "title": "Opening hand",
+        "content": "Power is more versatile, with more options at outset of confrontation/scene, but once option is selected, may be hard/slow to switch to others."
+      },
+      "flaw": {
+        "title": "Emotional Skew",
+        "content": "Use of powers deadens or wildly heightens emotions for a duration after the fact.  May apply to one area of emotional spectrum or all emotions; tends to be balanced in duration/scale/degree of accumulation so that character has to weigh cost vs. merit of using power."
+      }
+    }
+  },
+  "two of cups": {
+    "description": "**Upright**:Unified love, partnership, attraction, relationships\n**Reversed**: Break-up, imbalance in a relationship, lack of harmony",
+    "life": {
+      "perk": {
+        "title": "The Watson",
+        "content": "Maintains close romantic or familial (or both) ties to unpowered individual; individual supports one's strengths from the background, whether by offering skills or keeping the rest of the character's life running smoothly."
+      },
+      "flaw": {
+        "title": "Broke Hearts",
+        "content": "Jilted ex-partner (business, family, romantic) has it in for the character, sabotaging or harassing them on a real-life level."
+      }
+    },
+    "power": {
+      "perk": {
+        "title": "Sweet Moves",
+        "content": "Power has a flourish to it, style, produced materials/visual effects are artistic or interesting.  Every [12 - Social, minimum 4] encounters, gain one general reputation point.  Max of one held 'Sweet Moves' rep at a time. Applies to power, only in instances where two or more people witnessed the power's results.   In instances where the power isn't sufficiently witnessed, the reputation is garnered with the shard instead.  Shard rep can be spent when hitting a milestone (A better chance of a power augment or power perk), attempting to suppress a power flaw, or fighting off thinker headaches.\n\nStart out with two rep in either (or split across both) categories."
+      },
+      "flaw": {
+        "title": "Combative Shard",
+        "content": "Passenger's relationship to the cape is out of tune.  Manifests as a lack of awareness on passenger's part as to what constitutes combat or confrontation - power may activate or trigger in day-to-day situations, or, conversely, may be inaccurate or resistant/unwieldy at the opening of a serious confrontation."
+      }
+    }
+  },
+  "three of cups": {
+    "description": "**Upright**:Celebration, friendship, creativity, community\n**Reversed**: An affair, “three’s a crowd”, stifled creativity",
+    "life": {
+      "perk": {
+        "title": "Contact Network",
+        "content": "Belongs to a moderate-sized group that offers resources or contacts, or such a group naturally and gradually forms with character at the center.  Reputation can be levied to bring additional assets on board, after which point the individual can choose to either wait 1d3+1 sessions to have that reputation be available again, or test it (social rolls) to see if that reputation is spent.  One reputation point is worth roughly $2.5k in items (delivered after a delay) or can be used to cover wages of ~$8k a year.  24k would be minimum wage, sufficient for only a useless fuckhead, while more skilled mooks, hires, or contacts would require $40k total in leveraged rep."
+      },
+      "flaw": {
+        "title": "Thing for bad boys/girls",
+        "content": "This character has a thing for capes on the other side of the hero/villain line.  The relationships are unhealthy or outright disastrous if they do happen, and the advances are awkward when they aren't reciprocated, but he/she is compelled and suffers from critically low morale if they don't at least /try/ to make it happen, or if they cut it off before it goes too far."
+      }
+    },
+    "power": {
+      "perk": {
+        "title": "Shard magnet",
+        "content": "Possess a kind of draw for shards.  Social +1 for first meeting with any cape, with any cape that would be 'neutral' in disposition being 'slightly favorable' instead.  Longer-term benefit is that capes are drawn to the character and are more content in character's vicinity, possibly with their flaws to powers being reduced in intensity by a step, or some other tangential benefit.  In practice, recruitment is easier (+1 to rolls to recruit) and retention is far easier; if a powered NPC would leave the group or organization, then there is a 75% chance they don't.  Powered PCs who place themselves under or alongside the cape have flaws exacerbating after parting ways and after the cape's demise."
+      },
+      "flaw": {
+        "title": "Outnumbered",
+        "content": "Power reacts unpredictably to larger numbers of capes in the area, as passenger attempts to scale up power to deal with potential greater threat, but tends to lower accuracy, reliability, or consistency (or increase collateral damage) by three steps for every step it increases power by.  May experience power incontinence.  May not be able to keep the company of a team or attend gatherings without extra measures."
+      }
+    }
+  },
+  "four of cups": {
+    "description": "**Upright**:Meditation, contemplation, apathy, re-evaluation\n**Reversed**: Boredom, missed opportunity, being aloof",
+    "life": {
+      "perk": {
+        "title": "Emotionally stable",
+        "content": "Character resists initial unpowered attempts at affecting their emotions.  Powered attempts are more easily resisted, or effect is delayed in taking hold/effect."
+      },
+      "flaw": {
+        "title": "Emotionally unstable",
+        "content": "Veers wildly from one extreme to another, either because of emotional problems or an addiction.  Mania/depression, obsessive love/obsessive hate, high/crash.  May offer minor bonuses during high points and moderate penalties during lows.  Effort may be required to hide the affliction if one doesn't want their reputation to suffer with those close to them."
+      }
+    },
+    "power": {
+      "perk": {
+        "title": "Eye",
+        "content": "The power offers a thinker benefit.  This can be a broad, minor thinker power, or a secondary power.  Options might include clairvoyance tied to the power's effect, a lingering clairvoyant awareness of struck targets, a minor boost to awareness of foes in combat, or a boost to a skill related to the ability.  Whatever the case, it's a minor augmentation, but it's low effort and low cost to utilize."
+      },
+      "flaw": {
+        "title": "Always on",
+        "content": "'Pilot light' is always burning, power running at a low but noticeable level.  Pick two of the following: rest and entertainment are 33% less effective at helping recuperation and character starts session tired, character has tics or idiosyncracies that must be met for them to be comfortable in day-to-day, power has 'tell' or obvious elements that make it harder to maintain a secret identity with anyone that spends more than 5 minutes in the character's company."
+      }
+    }
+  },
+  "five of cups": {
+    "description": "**Upright**:Loss, regret, disappointment, despair, bereavement\n**Reversed**: Moving on, acceptance, forgiveness",
+    "life": {
+      "perk": {
+        "title": "Following footsteps",
+        "content": "A mentor, patron, or someone close to the character is now gone, but they left the door open, or a resemblance to someone more powerful garnered more respect and opportunity.  Start off with choice of two of the following:  One asset (home, computer, vehicle) is updated to be top notch; they have a collection of allies (3 crummy unpowered, or 1 ally with no drawbacks but no special skills either), or a chit of reputation.  Can use prior's name to make opportunities or build reputation faster... every 10 encounters, they can take one of the lesser milestone options (skill point, cash, recruits, rep, asset)."
+      },
+      "flaw": {
+        "title": "Bereavement",
+        "content": "Character is trapped in the past.  A regret or loss haunts them and they can't move on.  Either this manifests as a code or pattern where the character acts in specific and less beneficial ways when dealing with specific people (can't interact with children without getting seriously upset, can't bring himself to harm women), or has a side mission that may conflict with the main one, related to making amends for something or helping someone else."
+      }
+    },
+    "power": {
+      "perk": {
+        "title": "Guardian Angel",
+        "content": "Survivor mechanism in power kicks in when on the brink of death or when disabled but still functioning (one or the other).  Not a get out of jail free card, but is a typically defensive measure that provides a chance, and can kick in with some regularity."
+      },
+      "flaw": {
+        "title": "Haunting Memories",
+        "content": "Use of powers causes memories to drift to the surface, complete with hallucinations, typically of one's trigger event or major, negative events in passenger's recall.  Tends to be balanced in duration, scale, and/or degree of accumulation so that character has to weigh cost vs. merit of using power.  If hallucinations build up to a certain degree and are ignored and not acted on or actively fought, character may black out and 'lose time' while they go on autopilot and relive their trigger event."
+      }
+    }
+  },
+  "six of cups": {
+    "description": "**Upright**:Reunion, nostalgia, childhood memories, innocence\n**Reversed**: Stuck in the past, naivety, unrealistic",
+    "life": {
+      "perk": {
+        "title": "Unfailing optimist",
+        "content": "The character has had good days, whether because they were raised well or they had time after their trigger event to get their feet and meet good people.  Perseveres when critically wounded (all wounds spent, has already rolled guts to try to stay in the fight and succeeded), or when morale is spent, gaining a +1 bonus to all rolls."
+      },
+      "flaw": {
+        "title": "Impossible goals",
+        "content": "Shoots for the stars and misses.  The character either has one impossible dream or regularly sets their sights higher than they're reasonably able to obtain.  May be delusions of grandeur or the character is addicted to that rare, one-in-a-million success, despite the 999,999 failures that preceded it.  Successes in one's goals spur them onward to set higher and less probable goals, and failures have usual consequences; manifests as recklessness and a general frustration from peers/underlings, to the point where only the similarly deluded or crazed will stand by them."
+      }
+    },
+    "power": {
+      "perk": {
+        "title": "Swelling power",
+        "content": "Power starts off weak in terms of raw power, but gradually gains strength.  In shorter sessions or campaigns, the power might start off weak, but build up more swiftly, getting stronger by the conclusion."
+      },
+      "flaw": {
+        "title": "Shot in the dark",
+        "content": "Largely blind to the effects or the consequences of one's own power, or power occludes one major sense (hearing or sight).  The former tends to manifest as a manton-effect limit/protection that is far more inconvenient than helpful, such as making it hard for a pyrokinetic to see the scope/spread of fire in their surroundings, if they don't take a round to do nothing but focus.  The second is losing a sense in the brain-power overload, while power is in use and for a short duration after."
+      }
+    }
+  },
+  "seven of cups": {
+    "description": "**Upright**:Fantasy, illusion, wishful thinking, choices, imagination\n**Reversed**: Temptation, illusion, diversionary tactics",
+    "life": {
+      "perk": {
+        "title": "Driven",
+        "content": "Possessed of a goal, the character thrives off the back of great successes, gaining the ability to apply a small bonus to any three rolls.  On successive victories, the bonus increases and the number of rolls is refreshed, up to a moderate (+3) bonus.  In an encounter following a major penalty, the character gains a small penalty to their first three rolls.  This penalty does not stack or scale in size."
+      },
+      "flaw": {
+        "title": "Slimy",
+        "content": "The character comes across as slippery, and not in a good way.  Whether because they're weasely in appearance, they talk like a car salesman, rumors got out about who they are and how they operate, or a nebulous enemy is working to undermine their reputation.  They don't get the benefit of a doubt.  Reputation trends toward 'dishonest' and convincing others when it counts can be an uphill battle.  If another player trusts this character and the slippery character uses it to screw the other guy over, this trait is lost and the other player gains a negative character trait.  In a short-form game, can't count the game as a 'win' without screwing over a teammate or potential ally before the conclusion.  GM discretion."
+      }
+    },
+    "power": {
+      "perk": {
+        "title": "Champion",
+        "content": "Power scales up with successive victories.  Effect is minor but noticeable, and stacks up to three times.  On a distinct failure, power is penalized in the same fashion, but multiple failures do not stack in terms of consequences."
+      },
+      "flaw": {
+        "title": "Ardeur",
+        "content": "The character can't help but fall in love with the subject of their power.  They develop a perverse interest in people under sway of their power, should their power go that way, or are overly fond/attentive of their minions/work.  Capes who can't do this are obsessive about the focus of their power and even in a civilian identity will dress and alter their lifestyle in a way that pays homage to the subject of their power (tattooing, always wearing red gemstones, hissing speech, etc), the 'obsessive love' being narcissistic rather than directed at others."
+      }
+    }
+  },
+  "eight of cups": {
+    "description": "**Upright**:Escapism, disappointment, abandonment, withdrawal\n**Reversed**: Hopelessness, aimless drifting, walking away",
+    "life": {
+      "perk": {
+        "title": "Aescetic",
+        "content": "The character is especially disciplined in managing their approach to life.  Their background (and secret identity, if any) is secure unless they actively let something leak.  Further, given their commitment to the future, they can seek their true calling: They mark a skill.  After one month of time or four sessions (should not be any less than two sessions or two in-game weeks) they may roll a die to determine if they master the skill.  Chance is 1 in X, where X is the number of skills in that stat category (Aim is Dex, so 1 in 9).  On a success, they master that skill and will allocate two points at the start of each subsequent session, ignoring caps, until they have five points and one specialty point in it.  On a failure, they may mark another skill in that stat category, repeating the process and eliminating possibilities until a success."
+      },
+      "flaw": {
+        "title": "Bad limb",
+        "content": "The character is disabled and one limb doesn't work as it should, either an arm (effective use of weapon or objects in that hand is limited, dexterity checks are penalized) or a leg (running is hampered, failing dodges can cause one to fall and successful dodges still stagger).  Another physical disability of similar consequence could be implemented, by group decision or as a given background demands."
+      }
+    },
+    "power": {
+      "perk": {
+        "title": "Guarded mind",
+        "content": "Power provides a defense mechanism against mental or emotional stressors.  May be a flat bonus, or power provides a 'switch' that the individual can flick, focusing on the power or letting the passenger take the reins.  The switch may block or resist attempts at tampering, but involves a level of autopilot or partially automatic actions (such as being obligated to 'attack')."
+      },
+      "flaw": {
+        "title": "Tearing Reality",
+        "content": "Any power taps into another reality for energy, and the seal between realities here is imperfect.  Physical powers frequently cause tears or rips that exacerbate collateral damage while being drawn on, and it's rare that it's helpful while doing so.  Mental powers involve feedback, causing electronic devices to malfunction, lighting to flicker, animals to take an innate dislike, or people to get headaches in the cape's presence.  In any event, the former makes activities as a cape more hazardous, while the latter complicates real life."
+      }
+    }
+  },
+  "nine of cups": {
+    "description": "**Upright**:  Wishes fulfilled, comfort, happiness.\n**Reversed**:  Greed, dissatisfaction, materialism.",
+    "life": {
+      "perk": {
+        "title": "Fulfillment",
+        "content": "The character can name a secondary track of more abstract or general goals (become rich, be the scariest motherfucker alive, gather underlings). At the game's outset and at the start of every major story arc, they get a 'softball' encounter with notable rewards in the realm of their goals.  This reduces overall difficulty (even if it's one encounter once in a while) and allows them to get their foot in the door for their individual goals."
+      },
+      "flaw": {
+        "title": "Greed",
+        "content": "The character is a materialist in the worst way.  Whether because they are used to it or because it's their means of filling a hole in their heart, the character is compelled to continually have /more/.  Greed is their vice, and this can be expressed in several ways, but the character craves more than their means; they might be despondent if they can't upgrade/update their assets on the regular, might fritter away income they shouldn't (or money that isn't theirs), or be that much more inclined to betray their team for money.  Money spent in this way is typically spent on luxuries or appearances."
+      }
+    },
+    "power": {
+      "perk": {
+        "title": "We have an understanding",
+        "content": "Over time, as the passenger reacts to crises, the character gains an understanding of how the power operates on a fundamental level.  The core power isn't much affected, a blaster's fireball remains the blaster's fireball, but the character expands the same ideas and shard abilities to other executions, or develops required secondary powers in other directions.  Doesn't apply to training or non-threatening encounters.  In short, versatility is steadily gained for facing down life or death situations."
+      },
+      "flaw": {
+        "title": "Totem",
+        "content": "The character requires an object to use their power; this is typically something breakable or inconvenient that is used to channel the ability.  May be related to the trigger (stuffed animal of slain sibling) or simply a vehicle to control the basic output of the power (1 foot diameter metal pipe to channel blaster power).  Without the object, power suffers a major penalty, typically a steep decline in reliability/accuracy.  Typically there is a sliding scale of severity of penalty and the fragility/replaceability of the object."
+      }
+    }
+  },
+  "ten of cups": {
+    "description": "**Upright**:  Harmony, marriage, happiness, alignment\n**Reversed**:  Misalignment, broken home.",
+    "life": {
+      "perk": {
+        "title": "Crusade",
+        "content": "This character stands for something.  Not necessarily something good or right, but something, and the character gains an edge when dealing with those who stand against them in that department; typically they can reroll morale and emotional penalties, and gain a degree of 'determinator' status, rerolling failed attempts vs. falling unconscious/dying.  Further, success against these enemies has a Fisher King effect; the character is a symbol to an extent, and where they're successful, they cause change in the world that reflects that.  Good causes might include something as abstract as a tone (A hitman might promote an undertone of fear and be effective against those who seek to protect the weak, a hero fights for what is right and gains an edge against utter monsters), it could be an ideology (Religion, nihilism, socialism) or concept (war, nature)."
+      },
+      "flaw": {
+        "title": "Family drama",
+        "content": "The character's family is a problem.  They're troublemakers and the character gets involved by association, they're rich and powerful and interfere in the character's doings, or they're doing battle on the same arenas the character is and they want very different things."
+      }
+    },
+    "power": {
+      "perk": {
+        "title": "Harmonic balance",
+        "content": "Secondary power kicks up a notch in effectiveness as primary power is used well/for conflict, and very possibly vice versa.  Thus, use of the breadth of the powers at one's disposal enhances those powers.  May unlock additional capabilities as goals are met in an ongoing confrontation; a cryokinetic with a resistance to cold might start generating cold from their skin or even progress to developing a crust of ice armor on their skin, as they successfully blast enemies with their ice power.  Very likely to have a cap to effectiveness, but the lower/more immediate the cap, the faster the power rises to meet it.  Effect is short lived and swiftly fades as confrontation concludes."
+      },
+      "flaw": {
+        "title": "Uncoordinated Power",
+        "content": "Cape has more than one power/tool at their disposal, but use of one power locks out or diminishes the other.  May apply to multiple minor powers (ie. lightning blast, short teleport and personal electromagnetic shield), or multiple uses of the same power (lightning blast, lightning touch, lightning spray).  Varying what they use may let the character delay the diminishing effect, but either way, regular use of one of the powers/options will 'tunnel vision' in.  Diminishing effect might include less power or 'oomph', lowered accuracy, or misfire chances, and recovery from this diminished point may require time or fighting past the consequences."
+      }
+    }
+  },
+  "page of cups": {
+    "description": "**Upright**: A messenger, creative beginnings.\n**Reversed**: Emotional immaturity, creative block.",
+    "life": {
+      "perk": {
+        "title": "Contact",
+        "content": "This character has their thumb on the pulse of some pipeline of information or another.  A villain might have a family member that works for the PRT office, a hero might have a family member that works as a career henchman.  Save for the most secret information, the character knows what's up.  If they already do know most of what's going on, the source might provide details on surprise attacks, ambushes, or general activities of the other side."
+      },
+      "flaw": {
+        "title": "Nascent",
+        "content": "Character is young enough that it's inconvenient.  Physical stats are lowered to 2, tends to be underestimated with lower reputation as a whole.  If using milestones, then they start with one more goal to accomplish, with more room to accomplish more milestones in a shorter period of time and thus progress faster.\n\nAlternately, the character has regressed as a consequence of trauma or concerns.  This can be partial amnesia or something else.  They start with only one skill point to allocate and allocate a fresh one after every session, up to their maximum.  When they reach the cap, they get a minor mental issue, the GM reveals a (problematic) lost memory, or the character rolls two life flaws, picks one, and the resulting pick is reduced a great deal in severity."
+      }
+    },
+    "power": {
+      "perk": {
+        "title": "Raiment",
+        "content": "The power has lent itself to the creation of a costume.  Pick one:  the parahuman maintains a limited tinker awareness that allows them to build something that augments, directs, or changes the parameters of a power (or holds back an ongoing power flaw), their power directly applies to making a costume on some level and the parahuman can make something superior for free, or they gain an abstract intuition of what might work for them in garbing themselves and effectively either lessen drawbacks (pyrokinetic can see better through smoke with certain lenses) or gain an advantage in combat on any round they actively used their power (ribbons, aerokinesis & +dodge)."
+      },
+      "flaw": {
+        "title": "Senseless power",
+        "content": "Senses are limited in a way that corresponds with the uses of the power; power might flow from the eyes, but leave the parahuman blind while it does so, making enemy dodges more effective, a brute power might grow armor that narrows field of vision or a forcefield that isn't entirely transparent.  A thinker power could involve toggled senses, switching between vision modes, or whisper information in the parahuman's ear, limiting their ability to hear or be aware of their surroundings.  This tends to impact Wits rolls or leaves the parahuman vulnerable to surprise attacks while using their power."
+      }
+    }
+  },
+  "knight of cups": {
+    "description": "**Upright**: Romance, charm, knight in shining armor, imagination.\n**Reversed**: Unrealistic, jealousy, moodiness.",
+    "life": {
+      "perk": {
+        "title": "Attractive",
+        "content": "The character is exceedingly good looking or very stylish.  The benefits are minor but apply across the board; they make better first impressions.  They make better first impressions with capes of the appropriate sexuality (+1 social on first encounter), and spending rep with the appropriate people is far more efficient.  Gain an additional +1 bonus per 3 rep put into play; 2 rep staked is +1, get a total +2 bonus at 3 rep, +3 at 4 rep, and +4 at 6 rep."
+      },
+      "flaw": {
+        "title": "Envy",
+        "content": "Character burns with resentment for someone else.  They live in a shadow, and events conspire to keep them there while another individual thrives.  As a member of a group, they're relegated to second in command at best, their superior(s) getting the lion's share of rewards, credit or reputation.  Alone, they may find making headway difficult as another group overshadows or counters what they do.  Removing the other guy is the only solution, and it isn't easy (they're powerful or untouchable).  If successful in removing them, character gains a reprieve from the disadvantage for a time (2 sessions, 1 month), then rolls a dice: 1-2 is rolling up three disadvantages, character/GM picks one that's appropriate/deemed least severe.  3-4 is losing disadvantage, no other changes, and a 5-6 is rolling up a life advantage instead."
+      }
+    },
+    "power": {
+      "perk": {
+        "title": "Shardsense",
+        "content": "The parahuman has the ability to sense other parahumans.  Pick one:\n\n●  The parahuman knows when another parahuman is close, but not direction or who.  The sense is vague, but they can tell when a parahuman draws closer, by 50 foot increments (within 50 feet, between 50-100 feet, between 100-150 feet).\n\n●  While actively using their powers in a demonstrable way, they gain a general sense of which cardinal direction another parahuman is in.\n\n●  Phantom images appear when interacting with parahumans and powers are being used by one party.  Easier to locate other parahumans when senses are hampered, gain free, vague information about them when interacting, often consistent (ie. about personality, or power, or hints about trigger event).\n\nSenses can differentiate between a standard and strong (ie. second trigger) power."
+      },
+      "flaw": {
+        "title": "Emotional Shift",
+        "content": "The power is stronger, with added power, range, versatility or higher quality special effect, but any use of the power shifts the parahuman's personality in one direction.  Possible conclusions include rage, sadism, greed, arrogance, paranoia, masochism, destructiveness, recklessness or sociopathic tendencies.  If the character does not execute the appropriate shift, then they are liable to hit a breaking point, snap, and lose control of themselves for a short duration, effectively blacking out without blacking out (GM takes control), carrying out the personality shift in full, often in a highly self-destructive way."
+      }
+    }
+  },
+  "queen of cups": {
+    "description": "**Upright**: Emotional security, calm, intuitive, compassionate.\n**Reversed**:  Emotional insecurity, co-dependency.",
+    "life": {
+      "perk": {
+        "title": "Empathetic",
+        "content": "Start with two free points distributed among Investigation or Rapport and gain a +1 to rolls that involve detecting someone's emotional state or issues (ie. emotional or mental flaws).  Can, once per six hours, perform an Empathy reading on someone to assess them.  To do so, roll Wits, (applying one of the aforementioned skills), opposed by opponent's Social (apply deception).  If successful, choose one of the following to reveal: their degree of confidence as it pertains to their perception of their reputation, the danger they pose in terms of imminent surprise attacks or latent hostility, their ability scores for Social, Knowledge, and Wits, or the nature of any mental/emotional/social perks or flaws they have.  On a failure, cooldown is reduced to one hour."
+      },
+      "flaw": {
+        "title": "Cultural Gap",
+        "content": "Whether a legitimate gap (immigrant from CUI, Africa, case 53 from another world), a simulated one (homeschooled, was in a cult, social justice warrior, veteran soldier), or something like a head injury, power issue, or mild mental illness, the character is different, they don't necessarily 'get' normal people, and this makes for some friction.  This is a 'code' flaw, where the character maintains a set code, but the code involves day to day things; at least three minor points of friction and one hot-button major 'dealbreaker' that can start arguments or fights.  Issues might touch on eating, gender, sex, religion, politics, business, or attitudes to war and violence.  May impact potential circle of allies, pushing some away while attracting like-minded individuals, the gathering of similar individuals serving to only make a larger crisis point when hot button issues are touched on."
+      }
+    },
+    "power": {
+      "perk": {
+        "title": "Alter ego",
+        "content": "The parahuman's power altered their head and personality in a way, and the parahuman now has multiple personalities, in a strictly positive manner.  The parahuman becomes a different individual on donning their costume, and can thus maintain a slightly different balance of stats (moving two pips) and skills (up to half of existing pips) between the two personalities, while small cues in posture, demeanor, bearing, voice and personality effectively disrupt attempts to link any secret identity to their real one.  In a situation where the character is costumed but needs real skills or vice versa, they can deliberately tap into their other ego, taking a full round to do so, but lose the secret identity protection for the remainder of the encounter by doing so.  Memories are shared."
+      },
+      "flaw": {
+        "title": "Altered Volition",
+        "content": "The cape's independence, free will, or ability to make effective choices are impacted.  May be passive, ongoing, and mild but noticeable, it may be something that comes and goes, linked to the effectiveness of the power itself, or may be something that takes effect to a more serious degree when the cape actively uses their powers.  Pick one:\n\n●  Cape is very suggestible, easily swayed, struggles to make macro-scale decisions (life decisions) or micro-scale decisions (when to eat, etc).\n\n●  Conversely, cape may be possessed of a peculiar sort of individuality, they're quirky to an extreme when it comes to battle plans or tactics, or they put an odd sort of emphasis on choices or plans.  They may be terminally rigid in holding to plans or confused when teammates change tactics mid-fight."
+      }
+    }
+  },
+  "king of cups": {
+    "description": "**Upright**: Emotional balance and control, generosity.\n**Reversed**: Emotional manipulation, volatility.",
+    "life": {
+      "perk": {
+        "title": "Natural leader",
+        "content": "Start with three free points in the Command skill.  These points do not count against total(s).  Choose one of the following:\n\n●  When underlings join the characer, character gains a wider selection to choose from.  This character can effectively reach out to contacts or knows how to look for possible recruits.  Gives 150% of the unpowered recruits or +1 powered recruit per batch, with character choosing who to discard (the end result in terms of numbers does not change).\n\n●  Character starts with an assistant.  Loyal, but likely a rookie, or niche in competence (very focused set of skills).  A PRT squad might have a trainee along for the ride, a cape might have an unpowered individual in regular contact by phone.  Assistant only has 3 skill points and 18 stat points total."
+      },
+      "flaw": {
+        "title": "Fight prone",
+        "content": "The character is reckless, aggressive, more inclined to pick fights, less inclined to run or walk away.  Stepping away from a fight, holding back while being provoked, or being patient while waiting for an opportune moment to strike may require a Guts roll (willpower centered) to do.  May have a harder time building relationships with those who aren't of similar mindset or a villainous or fearsome disposition.  As a subordinate, may be able to be managed via. Social rolls.  As a leader, aggressive tendencies may be expressed to eager to please underlings."
+      }
+    },
+    "power": {
+      "perk": {
+        "title": "Supportive",
+        "content": "The power has healing applications, use of the power to harm others heals the cape, the power can be lent or grants an effect to unpowered allies nearby, or the power has a secondary use which is strictly beneficial or supportive for allies.  Whatever the case, the cape gains a secondary, support-oriented role."
+      },
+      "flaw": {
+        "title": "Reckless",
+        "content": "The character is perpetually restless and driven.  They might be unable to sleep well, or left agitated, as the shard drives them to constant activity, goading them on.  The character gets little to no benefit from rest, and instead is sated only by constant action and activity.  When sick and injured, they might not be able to recover by taking some time in bed, but instead hurl themselves into the next fight, finding a measure of peace and relaxation in doing so.  Character's health and morale don't recover over time, but they do recover automatically at the end of a day where they were actively fighting, to a percentage (one third the amount to the full amount of a day's rest) depending on how full their day was"
+      }
+    }
+  },
+  "ace of swords": {
+    "description": "**Upright**: Raw power, victory, break-throughs, mental clarity.\n**Reversed**:  Confusion, chaos, lack of clarity.",
+    "life": {
+      "perk": {
+        "title": "Stand Tall",
+        "content": "The character is very large or very small, and uses it well.  Background, perks or flaws may force this choice.  Large individuals maintain the 'heavy' quality when it would be beneficial.  25% resistance to headshots and other instant kills, they're harder to push around, and they ignore encumbrance.  This can be notable height (6'5\"), weight, or stocky build.\n\nSmall individuals have the 'lightweight' quality when it would be beneficial.  They ignore the first 5' to be leaped or climbed, 10' they fall, they may choose to move further when an effect or individual moves them, and treat a matched dodge roll as a success.  Small individuals draw less attention, reducing the effective range they are spotted and frequency they are targeted by 25%, but their first roll of each batch to see if reputation is spent suffers a -2.  This can take the form of particularly short stature, underweight, or taller than average but very slender."
+      }
+    },
+    "power": {
+      "perk": {
+        "title": "Counter",
+        "content": "The power lends itself well to fighting a particular classification or type of parahuman, by virtue of some secondary quality.  Offensive powers might penetrate brute defenses, deleterious effects might hamper mover powers, effectively locking them down by way of dimensional shenanigans.  Another power might dampen breaker states or force someone out of a breaker state, while a thinker power could help figure out how to disable or break tinker devices."
+      },
+      "flaw": {
+        "title": "Power Incontinence",
+        "content": "The power is tied to an appropriate stat, which is lowered by 1.  The character must roll whenever taking an action respective to that statistic, even if it would not normally mandate a roll.  When failing, the power kicks into effect, in a surprising, often unpleasant and interfering manner.\n\nIf the stat is lowered to 1, the individual may roll a power advantage, gaining that advantage at reduced effect."
+      }
+    }
+  },
+  "two of swords": {
+    "description": "**Upright**: Indecision, choices, truce, stalemates, blocked emotion.\n**Reversed**: Indecision, confusion, information overload.",
+    "life": {
+      "perk": {
+        "title": "Bent in the head",
+        "content": "They're complicated, mentally.  On being affected by a mental, emotional, or control-based effect/power, positive or negative, they may choose to instead go berserk.  They have to go full aggro at a target, but get a +1 to their highest stat and demoralize their target, forcing a reroll each round they sustain the attack.  Max of one use per six hours, refreshed if they do something unnerving between encounters.  As a second option...\n\nThey're a force for chaos.  When taking actions between sessions, they get +25% actions.  However, in choosing to do so they bother the wrong people, push certain things too far, and things go sour, and escalate their threatened reputation/earn the ire of a particular group.  Player needs to loosely justify how this might be the case to get the action."
+      },
+      "flaw": {
+        "title": "Apprehensive",
+        "content": "The character lacks when it comes to greater social situations.  When outnumbered in a social setting or dealing with a group, the character suffers a penalty; they must roll social before speaking, and a failure tends to lead to awkwardness; they suffer a -1 when rolling to speak in a group setting -2 vs. a crowd/media/public speaking.  Having staunch allies at their back helps against feeling outnumbered, and may reduce the penalties vs. a crowd, and people they have spent a great deal of time with effectively don't count in terms of feeling 'outnumbered'.  This character cannot put points into the Presentation skill."
+      }
+    },
+    "power": {
+      "perk": {
+        "title": "Charge",
+        "content": "The power can be charged up, enhancing it in one major respect, whether it be range, breadth, versatility (ie. can pick from options while charging), quality of special effects, or raw power.  Charging means the power takes a round longer or twice as long to activate, whichever is longer, but the charged use is an additional use that is in the cape's repertoire."
+      }
+    }
+  },
+  "three of swords": {
+    "description": "**Upright**: Painful separation, sorrow, grief.\n**Reversed**:  Releasing pain, forgiveness, optimism.",
+    "power": {
+      "flaw": {
+        "title": "Need to Vent",
+        "content": "The power demands attention.  Without active use, the power will strain at the seams, and given that it's contained within the parahuman's body, the effects can be unpleasant.  The power needs to be used daily; if the game uses out-of-game mechanics, half of the player's declared actions will be ones with risk of confrontation.\n\nIf the power isn't such that it is particularly inconvenient to go out and use on a regular basis, the time intervals are short enough that the parahuman can anticipate sudden, visceral needs to use the power in the midst of casual conversation or interaction.  Capes who don't bother to maintain a civilian identity have it worst of all, with the power wrestling with them during any noncombat action.  It's a slippery slope and giving up this fight outright leads to disaster."
+      }
+    }
+  },
+  "four of swords": {
+    "description": "**Upright**: Contemplation, recuperation, passivity, relaxation.\n**Reversed**:  Restlessness, burn-out, lack of progress.",
+    "life": {
+      "perk": {
+        "title": "Headquarters",
+        "content": "The character has a superior headquarters, bought, found, or inherited.  The headquarters has two of the following: residential facilities or barracks for underlings to stay, workshop, front business, civilian entertainment, laboratory, warehouse, training area, medical facilities, computer lab, or reputation boosting appeal/theatric touches.  Also includes space for the character to live comfortably, boosting satisfaction and morale.  Characters that would have a headquarters anyway give that faction a free upgrade as described above.\n\nIf this would not apply, given the nature of the game, pick two: the character can opt to set a 3-session cooldown instead of risking having their rep be spent, they start with better assets for communicating (computer and phone are top notch), they have an 'in' with the group they want to join and get a leg up with easier access to the inner circle (often a family connection)."
+      },
+      "flaw": {
+        "title": "No respect",
+        "content": "The big guys don't give this character a seat at the table.  They mock and undermine, and people don't flock to the character's banner unless they're mercenaries, individuals working for other regular incentives, or they're threatened.  Pick two of the three:  Reputation spent to gain respect, recruits, or other concrete gains is less efficient, giving only +1 per 3 rep spent; when enemies call the character's negative rep into play they can -also- (as part of the same expense) exert pressure on the cape's territory, hires, or assets, causing them to dwindle; or the character can't put points into leadership-based Social skills (Command, Politics)."
+      }
+    },
+    "power": {
+      "perk": {
+        "title": "Absorption",
+        "content": "The power allows the parahuman to take in physical or psychic energies of a specific type, depending on what the parahuman's power is and what it focuse son.  This manifests in a set of charges, accumulating no more than one per round, typically to a maximum of one, two, or three charges; more charges may be harder to acquire.  Physical energies can be absorbed by taking damage of a particular type (reducing it in severity by one step) or contact with a particular type of material or substance, such as holding and disintegrating high quality metals or wood, or holding one's hand to a fire.  Mental energies typically involve being around pain or heightened emotion.  Charges can be spent to enhance the parahuman's primary power for one use."
+      }
+    }
+  },
+  "five of swords": {
+    "description": "**Upright**: Conflict, tension, loss, defeat, victory at all costs.\n**Reversed**:  Open to change, past resentment.",
+    "power": {
+      "perk": {
+        "title": "More oomph",
+        "content": "Raw power is increased, offensive powers do more damage, other powers have more raw effectiveness, increasing by two steps.\n\nPower comes at a cost.  Roll a d6: On a 1-5, efficiency, scope, awareness/accuracy, versatility or quality of life suffer by one step, respective to die results.  On a six, the character suffers a minor mutation to one body part."
+      },
+      "flaw": {
+        "title": "Power suffers",
+        "content": "Raw power is decreased.  The power does less damage or has less raw effectiveness, a two-step decrease.\n\nThere is a small benefit.  Roll a d6: on a 1-5, efficiency, scope, awareness/accuracy, versatility or quality of life are improved by one step, respective to die results.  On a 6, roll a power advantage, that advantage is only half as good as described, give or take."
+      }
+    }
+  },
+  "six of swords": {
+    "description": "**Upright**: Regretful but necessary transition, rite of passage.\n**Reversed**:  Cannot move on, carrying baggage"
+  },
+  "seven of swords": {
+    "description": "**Upright**: Betrayal, deception, getting away with something, stealth.\n**Reversed**:  Mental challenges, breaking free.",
+    "life": {
+      "flaw": {
+        "title": "Back-stabbing and paranoia",
+        "content": "A sword of damocles hangs over the character's head, or they think it does.  There's a likelihood that the character will be betrayed by a friend or friends, anywhere between the beginning and end of the campaign/arc, and the betrayal will be -bad-.  Short of preparing, keeping allies at arms length, giving them false information, or taking serious countermeasures, the betrayal may end the character, by virtue of the timing, the power of the allies (possibly banding together with other foes) or the abstract nature of the attack (giving critical information to an enemy, etc).  Characters that distance themselves and don't maintain friendships effectively give themselves a flaw and may not be betrayed, or may be betrayed in a lesser or more subtle manner."
+      }
+    },
+    "power": {
+      "perk": {
+        "title": "Shroud",
+        "content": "The character picked up an augmentation to their power that aids in concealment, infiltration, or subterfuge, or they gained a minor secondary power.  The former can include plumes of smoke following a fireball to block vision, a changer power offering camouflage, or master minions being silent while moving, with ranks in the sneak skill.  In the case of the latter, an added secondary power, the cape gains a minor ability to complement their primary one, usually tied to it in a thematic way.  This might include the ability to become translucent or transparency while standing still (both visible with Wits checks), creating projected images, or a changer power that allows for easier movement and passage through confined spaces.  In any case, the power is minor but easy to use."
+      }
+    }
+  },
+  "eight of swords": {
+    "description": "**Upright**:  Isolation, self-imposed restriction.\n**Reversed**: Open to new perspectives, release.",
+    "life": {
+      "flaw": {
+        "title": "Fettered",
+        "content": "The character is bound by a code or ideology that they have a hard time straying from.  This can include the inability to hurt _____, being forced to attack ____ (even if verbally) and treat them as a hated enemy, extremist religious adherence, extremist views in other respects, or something more esoteric, like being unwilling and unable to attack someone who they haven't formally challenged.  Each time the character fails to keep to the terms means rolling three life flaws, with the GM picking the easiest one to introduce to the character.  Should the rules be accidentally broken or broken by an ally without the Fettered character reacting with appropriate hostility, roll a d6 and add a +1 for each prior 'accident' or action by an astray ally - the Fettered character gets the flaw on a 5-6."
+      }
+    }
+  },
+  "nine of swords": {
+    "description": "**Upright**: Depression, nightmares, anxiety.\n**Reversed**: Hopelessness, depression, torment.",
+    "life": {
+      "flaw": {
+        "title": "Depressant addiction",
+        "content": "The character begins play addicted to downers of some sort.  Heroin, Ketamine, or Alcohol are common choices.  Choosing a less addictive drug means the character counts as if they've already been addicted for one month of regular doses.  If the character chooses a highly addictive drug (Heroin), then they start fresh.  Long term use comes with added die to determine consequences, while heavy addiction means the character has to roll or buy/take another dose of the highly addictive drug; essentially this is a choice between risking greater consequences or gambling against overdoses."
+      }
+    },
+    "power": {
+      "perk": {
+        "title": "Butcher",
+        "content": "The shard equipped the character to leave opponents hurt in the worst ways possible.  Pick an applicable option: the power effectively twists the knife with offensive applications (inc. wounds delivered in melee while in breaker state, etc) leaving opponents scarred and/or taking far longer to recover; the shard gave the character a degree of proficiency alongside the aforementioned scarring effect while using a particular weapon,often thematically aligned with the power, violent, and less than conventional (chainsaw, scythe, sledgehammer); or the character has a violent death rage once a day, wherein they get one last round after being defeated (unconsciousness or death) to try and take down enemies, ignoring moderate and minor wound side effects for the duration and extending their rage for a round each round they take enemies down (two weaker enemies, or one of equal strength).  Defeating a stronger enemy or defeating the last enemy standing ends the rage and counts as a successful Guts check to survive, leaving them alive but at death's door.  Failing any of the above, the character might have a brutal, savage augmentation to the power."
+      },
+      "flaw": {
+        "title": "Powers ruined everything",
+        "content": "Roll on the life disadvantage chart twice.  Such was the fallout of the character's trigger event, the aftermath of their powers, their early cape career, or changes that were provoked by their power."
+      }
+    }
+  },
+  "ten of swords": {
+    "description": "**Upright**: Back-stabbed, defeat, crisis, betrayal, endings.\n**Reversed**: Recovery, regeneration, fear of ruin, inevitable end.",
+    "life": {
+      "perk": {
+        "title": "Good instincts",
+        "content": "The character excels when it comes to making plans and taking precautions.  They get three 'chits' they can call in with the GM.  They can call in a chit outside of combat to get a general idea from the GM about the likely success of a plan, during combat to get a sense of whether there's a factor they haven't accounted for, or call in two chits at once to get an abstract 'feeling' about why a plan might not work.  They get one chit back every three encounters, whether they succeed or fail."
+      }
+    },
+    "power": {
+      "flaw": {
+        "title": "Self-Sabotage",
+        "content": "The passenger drives the cape to rub in victories and add a touch of flourish, at the expense of efficiency.  This is the individual who must detail their plan and mock their foe, who drags out a fight to humiliate and grind the foe into the dirt rather than finish off the enemy.  In terms of game rules, a 'soft win' (one where enemy would walk away anyway) should be preceded by one softball maneuver or giving an opponent a single second chance, while a 'hard' win (injuring, killing, destroying something substantial) should have 2-3 softballs lobbed at the enemy."
+      }
+    }
+  },
+  "page of swords": {
+    "description": "**Upright**: Talkative, curious, mentally restless.\n**Reversed**: Bark without bite, haste making waste, undelivered promises.",
+    "life": {
+      "flaw": {
+        "title": "Obvious target",
+        "content": "The character is an attention-getter, but not in a good way.  They might be loud and/or obnoxious, their style of dress or body language might send subtle signals, but the long and short of it is that they're hard to ignore, and it tends to be the enemy that notices them.  The first option is that the character is clumsy and/or noisy, and they broadcast their location when rolling a natural or derivative 1 or less for Brawn, Athletic, Dex, or Guts (vs. Physical), sneak forbidden to them as a skill and sneak attempts penalized by 2.\n\nThe second option is that there's bonus reputation for whoever takes this character out, and using the character's negative rep (if any) against them also plays the 'More low-level mooks join next encounter against the ill-reputed character' option for free."
+      }
+    },
+    "power": {
+      "flaw": {
+        "title": "Pandemonium",
+        "content": "The character's power is flashy, bright, loud, and generates a degree of chaos.  Use of their power will inform others where they are, from a considerable distance.  Further, the chaos the power generates tends to disadvantage the cape as much or more as the cape's enemies, often with a paradigm shift or change to the environment.  Unattended objects might be scattered, area effects might litter the battlefield, or the power might only work on select targets, with those targets changing round by round.  If and where enemies are also affected, they at least have a moment to assess the situation and work around it, while the parahuman using the power has to get their wits about them mid-action, adjusting plans on the spur of the moment."
+      }
+    }
+  },
+  "knight of swords": {
+    "description": "**Upright**:  Opinionated, hasty, action-oriented, communicative.\n**Reversed**:  Scattered thought, disregard for consequences.",
+    "life": {
+      "perk": {
+        "title": "Strider",
+        "content": "The character covers ground when it counts.  Pick one of the following for every two pips they have in Athletic after stat distribution is decided: the character's movement range and range for jumps and effective climbs is increased by 17% (typically to 35'/round movement, 70'/round running), the character ignores the first 5' of difficult terrain that would hamper their movement (ice, rubble, bushes) in a given round's movement (extended to 10' if running), and/or the character gains a free pip in Endurance."
+      },
+      "flaw": {
+        "title": "Stimulant addiction",
+        "content": "The character begins play addicted to uppers of some sort.  Khat, speed, meth, cocaine, adderal, or PCP.  Choosing a less addictive drug means the character counts as if they've already been addicted for one month of regular doses.  If the character chooses a highly addictive drug (Meth or Coke), then they start fresh.  Long term use comes with added die to determine consequences, while heavy addiction means the character has to roll or buy/take another dose of the highly addictive drug; essentially this is a choice between risking greater consequences or gambling against overdoses."
+      }
+    }
+  },
+  "queen of swords": {
+    "description": "**Upright**: Quick thinking, organized, perceptive, independent.\n**Reversed**:  Overly emotional, bitchy, cold-hearted.",
+    "life": {
+      "flaw": {
+        "title": "Toxic personality",
+        "content": "There are some who are calming to be around, this character is the opposite.  Whether because they're abrasive or unpleasant, incapable of normal socialization or something in that vein, others would require the patience of a saint to put up with them.  They automatically fail the first social roll of a noncombat encounter that would require several, and go downhill from there.  Each subsequent interaction with individuals leaves them more upset until they take action to their detriment (teammates might put some distance between themselves and the character, enemies might slap them down).  Being around the character causes general life issues to be exaggerated or become worse.  This character pushes alcoholics to drink, among other things."
+      }
+    },
+    "power": {
+      "perk": {
+        "title": "Accurate power",
+        "content": "The character's accuracy increases.  It's considerably easier for the character to get the power to generate the results they want, whether that's focusing a thinker power, more easily generating custom minions, or aiming blasts.  Represents an increase of two steps, in an abstract sense.\n\nEfficiency comes at a cost.  Roll a d6: On a 1-5, power, efficiency, scope, versatility or quality of life suffer by one step, respective to die results.  On a six, the character suffers a minor mutation to one body part"
+      },
+      "flaw": {
+        "title": "Accuracy suffers",
+        "content": "The power is less accurate or harder to control.  There's a risk of collateral damage, changers get random parts, movers can't quite stop on a dime or land where they want to.  The power diminishes by two steps, in the abstract.\n\nThere is a small benefit.  Roll a d6: on a 1-5, power, efficiency, scope, versatility, or quality of life are improved by one step, respective to die results.  On a 6, roll a power advantage, that advantage is only half as good as described, give or take."
+      }
+    }
+  },
+  "king of swords": {
+    "description": "**Upright**: Clear thought, intellectual power, authority, truth.\n**Reversed**:  Manipulative, tyrannical, abusive.",
+    "life": {
+      "flaw": {
+        "title": "House of cards",
+        "content": "This character draws people to them one way or another, by association or magnetism or natural charisma, but it's not a good thing.  Groups form around them and reach a tipping point before becoming poisonous, volatile, or mutinous.  They might have a way of only attracting the most inconvenient type of individual, or they tend to accrue 'starscream' type underlings who are naturally inclined to stab them in the back.  In a game where the player can't naturally accrue underlings or adopt a leadership position, the character instead has a way of making all social interactions with allies go sour, and lowers allied morale simply by being around them.  Attempting to circumvent this flaw by not gathering/pushing away prospective allies will see the larger population carrying out the same role."
+      }
+    },
+    "power": {
+      "perk": {
+        "title": "True Use",
+        "content": "The power has a surface level use that may seem weak or uninspired, but there's a card up the character's sleeve, and in the right circumstance, or as an emergency measure, they can unleash a true use, often with a considerable span of time before it can be used again, a hefty cost, conditions that must be met, or it is exceedingly easily interrupted."
+      }
+    }
+  },
+  "the fool": {
+    "description": "**Upright**: Innocence, spontaneity, free spirit, potential.\n**Reversed**: Naivety, foolishness, risk-taking.",
+    "life": {
+      "perk": {
+        "title": "Vir Fortis",
+        "content": "The character had potential and capitalized on it.  The player may pick a life perk that isn't a face card (thus picking from 1-57 on this list).  The perk must match their background in some respect; they gain that perk at half power.  If they pick a fitting life perk that hasn't been rolled by the group (or hasn't been rolled in recent enough memory for someone to name the character it applied to), or pick a perk that is deemed 'weak' by group consensus, they get the perk at full strength.  This full strength option only applies if the character takes less than ten minutes to pick.  [The time limit exists only to keep the process running in a timely manner; make allowances for new players, other character creation participants should feel free to make suggestions]"
+      },
+      "flaw": {
+        "title": "Scelesta",
+        "content": "The character went from bad to worse, and the blame lies with them and their choices.  The player may pick a life flaw that isn't a face card (picking from 1-57 on this list).  The flaw must match their background in some respect; they gain that flaw at double the intensity.  If they pick something fitting that hasn't been rolled in recent memory (that is, recently enough for someone to name the character that got it) or pick a life flaw that is deemed particularly bad, they gain the flaw at the normal strength instead of double intensity.  Only applies if they take less than ten minutes to pick.  [The time limit exists only to keep the process running in a timely manner; make allowances for new players, other character creation participants should feel free to make suggestions]"
+      }
+    },
+    "power": {
+      "perk": {
+        "title": "Assertor",
+        "content": "When the shards were distributed, the entity turned its eye on the character, giving them a power very fitting to them.  The player may pick a power perk that isn't a face card (picking from 1-57 on this list).  The perk must match their background or power in some respect; they gain that perk at half power.  If they pick a fitting power perk that hasn't been rolled by the group (or hasn't been rolled recently enough for someone to name the character that got it) or pick a perk that is deemed 'weak' by group consensus, they get the perk at full strength.  This option only applies if they take no more than ten minutes to pick.  [The time limit exists only to keep the process running in a timely manner; make allowances for new players, other character creation participants should feel free to make suggestions]"
+      },
+      "flaw": {
+        "title": "Cantenatus",
+        "content": "The entity looked at the individual and it decided to cripple them with power.  The player may pick a power flaw that isn't a face card (picking from 1-57 on this list).  The flaw should fit to their background or power in some respect; they gain that flaw at double the intensity.  If they pick something fitting that hasn't been rolled in recent memory (that is, recently enough for someone to name the character that got it) or pick a power flaw that is deemed particularly bad, they gain the flaw at the normal strength instead of double intensity.  Only applies if they take less than ten minutes to pick.  [The time limit exists only to keep the process running in a timely manner; make allowances for new players, other character creation participants should feel free to make suggestions]"
+      }
+    }
+  },
+  "the magician": {
+    "description": "**Upright**: Power, skill, concentration, action\n**Reversed**:  Manipulation, poor planning, latent talents",
+    "life": {
+      "perk": {
+        "title": "Deep Thought",
+        "content": "The character starts with one additional skill point per two points of knowledge, rounding down.  This comes at a small cost- it's twice as expensive in money and time for them to learn and develop new skills, or to retrain their existing skills.  They're just that set in their ways.  They may also be prone to going on at length about their fields of interest."
+      },
+      "flaw": {
+        "title": "Mental problems",
+        "content": "The character has a mental affliction of some sort, and it's bad.  They're one of the one percent of the population with schizophrenia, or obsessive compulsive disorder, they have a cognitive impairment that gives them an especially low IQ, or they suffered from a bad event once and it's left them unable to speak or recognize faces.  Whatever it is, it makes a lot of things very very hard for the character, or it makes one thing nigh impossible (such as setting the social stat to zero)."
+      }
+    },
+    "power": {
+      "flaw": {
+        "title": "Blind",
+        "content": "The character's senses are badly hampered, to the point that it impacts any and all encounters.  The character may be partially hampered by the consequences of trigger event (damaged eyes) or the effects of powers, unable to see at all beyond a set distance, or they're entirely blind but their power provides a niche or limited means of sensing surroundings (a pyrokinetic might sense heat, suffering in situations when surroundings are cold or temperatures fluctuate, unable to sense details)."
+      }
+    }
+  },
+  "the high priestess": {
+    "description": "**Upright**: Intuition, higher powers, mystery, subconscious\n**Reversed**:  Hidden agendas, need help to listen to inner voice",
+    "power": {
+      "perk": {
+        "title": "Communio",
+        "content": "The character has a dialogue going with the thing in their head.  An intuitive understanding of the thing that's giving them their powers.  Others may well be in the dark when it comes to figuring out whattheir passenger wants, or even if it wants anything at all.  This character, however, understands.  It has requirements, things it would like the character to do.  The passenger will find an abstract means of communicating what it would like the character to do (sometimes a Pavlovian boost for starting on the path), aiming for exercise of the power for/in conflict, violence and stress, typically things that push limits or tax the character, and on completion of these achievements or 'quests', rewards the individual with small but permanent boosts to the raw strength of the primary power."
+      },
+      "flaw": {
+        "title": "Odium",
+        "content": "The power has a mind of its own, and that mind doesn't particularly like the parahuman.  The power is weaker, and only operates at full power when certain conditions are met.  Hallucinations might point out targets the shard wants the parahuman to assault or kill, a smoke-generating shaker might feel a growing headache that alleviates only when they choke or suffocate a certain number of people for a set duration, at which point their power operates that the normal strength.  Should the parahuman try to settle into a role or a life, the power is liable to shake things up.  The power's weakness can include misfiring chances, lower range, lower accuracy, lower power or lower effectiveness of secondary powers or defenses.  It's a choice between going off rails to suit the passenger or being weaker."
+      }
+    }
+  },
+  "the empress": {
+    "description": "**Upright**: Fertility, femininity, beauty, nature\n**Reversed**: Creative block, dependence on others",
+    "life": {
+      "perk": {
+        "title": "Necessitudines",
+        "content": "The character maintains three favors they can call in with low level (local government, teams) organizations or one favor with a high level (international, Cauldron, PRT) organization.  The former allows them to call in minor favors, for equipment, assets, hiring, short term hires, or recruiting a minor ally of an appropriate disposition.  The more powerful organization allows a major favor; serious funding, access to rare items (tinker tech, items not available on the black market), calling in a strike team for a big problem or recruiting a cape or powerful figure for the long-term.  Can earn the ability to call in more favors by doing favors for the other groups, often two favors in exchange for one.  Smaller organizations tend to ask for side tasks in things the character would do anyway, while the large one asks them to go out of their way and face major risks."
+      },
+      "flaw": {
+        "title": "Silentium",
+        "content": "The character's ability to speak or communicate is hampered.  May be unable to talk altogether, but expressive with body language or writing, might need assistance via. devices, have a language barrier, or simply struggle on a consistent basis due to speech/writing difficulties across the board."
+      }
+    },
+    "power": {
+      "flaw": {
+        "title": "Rejecto",
+        "content": "Where characters would ordinarily be able to roll a d100 and test for a second trigger in pivotal moments that also align with their trigger event, this character cannot second trigger naturally, and faces serious issues if they second trigger by other means (rolling on the power flaws list, potentially multiple times, depending on the nature of things).  Further, things are further skewed against the character - in circumstances where their enemies could trigger or second trigger, the chance is higher - 50% higher (multiplicative with existing trigger chance) or 3% higher, whichever is more.  1 month/4 session cooldown (whichever is more) between instances."
+      }
+    }
+  },
+  "the emperor": {
+    "description": "**Upright**: Authority, father-figure, structure, foundation.\n**Reversed**: Domination, excessive control, rigidity, inflexibility",
+    "life": {
+      "flaw": {
+        "title": "Victus",
+        "content": "The character, by dint of having the wrong mental wiring, personal hangups or issues, or some old injury/handicap, is not an effective fighter.  Pick one: they suffer a -2 in melee rolls and can't put points into Brawl, Finesse, Grapple, or Martial Arts, or they suffer a -2 in rolls to use ranged or thrown weapons and can't put points into Accuracy, Barrage, or Gunfighting.  If the character chooses the weakness for melee, then a rolled 1 on a defensive roll in melee means they suffer the wound effects (but not the wound itself) of a minor bash in addition to the wound's effects.  If the character chooses the penalty for ranged, then a rolled 1 on an attack roll means the weapon jams, the safety is off, is dropped, or so ill-timed it hits something else off to the side instead."
+      }
+    }
+  },
+  "the hierophant": {
+    "description": "**Upright**: Religion, group identification, tradition, beliefs\n**Reversed**: Restriction, challenging the status quo",
+    "power": {
+      "flaw": {
+        "title": "Ugly Implications",
+        "content": "The power has an element at play, either aesthetic or concrete, that easily upsets.  It might scare people, be gross, hamper the ability of others to trust the cape, or all three.  This colors perception of the cape as the power is used, pushing it toward a negative extreme.  If the perception is for a legitimate reason, the power may accentuate the negatives over the positive, while strictly superficial horrifying, gross, or concerning elements will offer the benefits and the drawbacks in equal measure, only for the benefits to drop away as others realize it's all an illusion."
+      }
+    }
+  },
+  "the lovers": {
+    "description": "**Upright**: Union, love, relationships, values alignment, choices\n**Reversed**: Disharmony, imbalance, misalignment of values"
+  },
+  "the chariot": {
+    "description": "**Upright**:  Control, willpower, victory, assertion, determination\n**Reversed**:  Lack of control and direction, aggression",
+    "power": {
+      "perk": {
+        "title": "Conquest",
+        "content": "The character's power swells as they wage a war.  This is strictly when the character is fighting, typically from the time initiative rolls are made, the character attacks or is attacked, or steadily progressing in tune with the number of attacks/wounds they deliver or the times they are attacked/damaged.  Power might increase in strength, breadth, versatility, range, and/or accuracy, and the cape themselves might get steady increases to stats, to fighting prowess, evasive ability, foot speed, awareness, or more.  Secondary powers are usually tied into the cape's strength; either minor, complementary powers, or the cape hits a hard ceiling at a point, at which time they have a second power that is significant, but might be limited use or costly.  The change is typically minor at first, and when multiple stats are affected, the individual might only improve the lowest each round.  In large scale and prolonged conflicts, the individual could be a nightmare to deal with."
+      }
+    }
+  },
+  "strength": {
+    "description": "**Upright**: Strength, courage, patience, control, compassion\n**Reversed**: Weakness, self-doubt, lack of discipline",
+    "life": {
+      "flaw": {
+        "title": "Adflictus",
+        "content": "The character is damaged.  Past events or traumas have hollowed them out or left them depressed and vulnerable.  Any morale loss, detrimental emotional effects, and detrimental sanity effects will affect the character without them rolling to avoid it, and the most severe effect stays with the character, either twice as long (if manufactured or provoked via. power or drug) or until the effect is removed.  The character may suppress an ongoing effect with drugs (with normal effects for long-term use), lose that effect with a milestone or storyline accomplishment, or attempt to transfer that effect to a vulnerable enemy by twisting the knife, going a step further, and then succeeding in a Social vs. Guts roll against that enemy.  Transferred effects last for a minimum of one day (but end normally) and, if not something that can truly be transferred, translates to anger against the Adflictus character or a drop in morale, depending.  The flaw remains and further deleterious effects are retained and either suppressed or transferred in the same manner."
+      }
+    }
+  },
+  "the hermit": {
+    "description": "**Upright**:  Soul searching, introspection, being alone, inner guidance\n**Reversed**:  Isolation, loneliness, withdrawal",
+    "life": {
+      "flaw": {
+        "title": "Finem Mane",
+        "content": "Life is short, and this character proves it.  Two possibilities: The first is that their lifeline is very short, and they face a risk of dying prematurely from natural causes; they roll a d6 every three sessions, and die on a 1-2.  Reset the clock if they meet a milestone.\n\nThe second option is that the people around them die early.  Every time a named ally or loved one rolls Guts to stay alive after suffering severe wounds, they pass on a cumulative -1 penalty to the next such person to roll, until someone fails and the count resets.  Every session no such ally rolls, there is a cumulative 5% chance (growing each time it comes up) that disaster will unfold, dozens or hundreds will die, and the character will be at the center of it (and very possibly be blamed for it).  May be powers gone wrong or events spiraling out of control.  Count resets on disaster."
+      }
+    }
+  },
+  "wheel of fortune": {
+    "description": "**Upright**: Good luck, karma, life cycles, destiny, a turning point\n**Reversed**:  Bad luck, negative external forces, out of control",
+    "life": {
+      "perk": {
+        "title": "Icarus' Rise",
+        "content": "Like Icarus with his wings, rising too high too fast comes at a cost.  Roll again for life advantage.  Double down on the strength of that advantage.  Roll three times for a life disadvantage. GM/group vetoes one and player vetoes one.  Take remaining pick."
+      },
+      "flaw": {
+        "title": "Rock Bottom",
+        "content": "An issue consumes the individual, but it's not all bad...  Roll again for life disadvantage.  Double down on the strength of the resulting disadvantage.  Roll three times for a life advantage.  GM/group vetoes one and player vetoes one.  Take remaining pick."
+      }
+    },
+    "power": {
+      "perk": {
+        "title": "Wild Success",
+        "content": "Roll again for power advantage.  Double down on the strength of that advantage.  Roll three times for a power disadvantage, GM/group vetoes one and player vetoes one.  Take remaining pick."
+      },
+      "flaw": {
+        "title": "Light in the darkness",
+        "content": "A small light glows, but it's surrounded by a whole lot of dark.  Something went terribly wrong.  Roll again for a power disadvantage.  Double down on the strength of the resulting disadvantage.  Roll three times for a power advantage.  GM/group vetoes one and player vetoes one.  Take remaining pick."
+      }
+    }
+  },
+  "justice": {
+    "description": "**Upright**: Justice, fairness, truth, cause-and-effect, law\n**Reversed**:  Unfairness, lack of accountability, dishonesty",
+    "life": {
+      "flaw": {
+        "title": "Past crimes",
+        "content": "This character did something bad, or someone thinks they did.  Right from the outset, they have the reputation of someone exceedingly dangerous, repulsive, or both.  The character has an instance of particularly bad reputation that is impossible to 100% shake.  Only shaken on a social roll of 12+ on a d12, but the character can elect not to try to shed it.  Will come back into play after 2d3 sessions, often with a (vengeful) individual or story event tied to the crime."
+      }
+    },
+    "power": {
+      "perk": {
+        "title": "Carnificina",
+        "content": "The power is especially effective in dispatching the unpowered.  Possibilities include vastly increased effectiveness, one-shot knockouts regardless of remaining wounds, ignoring manton limitations and treating them as inorganic, effects spreading from one affected unpowered to others, or a 'cleave' effect where one takedown of an unpowered individual allows a free use of the (single-target) power.  Capes without a ranged power or who have to go to effort/meet conditions to use their power may get a defensive benefit as well, making their attacks less useful or cohesive through some subtle mental effect, or the like.  Whichever is the case, a group of police officers or gang members isn't nearly as concerning as it would be to others."
+      },
+      "flaw": {
+        "title": "Subruo",
+        "content": "The power cannot be trusted. The power behind the character's power is insidious and vicious, sadistic even.  It seeks to surround them with conflict and push them to the edge, and in order to do that, it undermines them.  A pyrokinetic might discover, too late, that their power leaves 'seeds' of pyrokinetic energy that engulf an area in flame long after they've left it, a brute might find their power increases when they're trying to hold back, or a thinker might realize their power fed them the wrong information, leading them to attack and kill a young family member who followed them.  Even after the hidden facet is discovered, it may be hard to keep at bay, or it may change tacks.  The power doesn't want the cape to fail, exactly, it just wants them to face more conflict, and dismantling their civilian life, assets, removing allies and damaging their reputation.  A desperate parahuman is a more interesting parahuman, as far as the shard is concerned."
+      }
+    }
+  },
+  "the hanged man": {
+    "description": "**Upright**: suspension, restriction, letting go, sacrifice\n**Reversed**: Martyrdom, indecision, delay",
+    "life": {
+      "perk": {
+        "title": "Circumsedeo",
+        "content": "The character has an intuitive sense of give and take, cost and gain.  They're a keen strategist or a fighter who knows how to take a punch so they can deliver a better one, metaphorically speaking.  The character can expend or forego money, reputation, power, or held assets as part of a strategy, scheme, or plan of attack.  After 2-3 encounters or 2-3 time periods (respective to length of the campaign), whichever the GM prefers, the character gains 50-250% of the expended resources back.  The regained resources may not be of the same type that was expended, but remain equivalent, and should be negotiated with the GM, and the percentage regained should directly correlate with the character's failures or successes in the interim period."
+      }
+    },
+    "power": {
+      "perk": {
+        "title": "Excessus",
+        "content": " The power has a unique relation to death and dying; the character's death is not to be a small thing.  Two options stand out:  The character can transcend death, either in an abstract but reliable way, or literally if specific conditions are met.\n\nThe second possibility is that their power gets a massive boost if and when others die.  Enhanced power while in the presence of the recent dead, ability to use corpses as a vector for the power, or the ability to gain a power boost (permanent and cumulative but small, or temporary but notable) by killing another.  If this option is chosen, the character's death is still momentous, though permanent; their power dials up to 50 on the 1-10 scale and will generally tear apart the one who killed them.  Enemy's shards may instinctively sense the instability/looming danger."
+      },
+      "flaw": {
+        "title": "Impendium",
+        "content": "The character's power is enhanced but it remains costly to use.  The power might receive a small, one-step boost (in power, scope, efficiency, etc), but involve a temporary cost in the form of health, stamina, headaches, loss of sanity, or accruing stat penalties.  Conversely, can use the prior option but strip away immunity to own power, if applicable, while replacing the enhancement with a rolled power perk at reduced effect, or the loss could involve permanent changes - lost skill points, memories, damage to personality, scarring, or lost humanity, with a rolled power perk at reduced effect."
+      }
+    }
+  },
+  "death": {
+    "description": "**Upright**:  Endings, beginnings, change, transformation, transition\n**Reversed**:  Resistance to change, unable to move on.",
+    "life": {
+      "perk": {
+        "title": "Transgressio",
+        "content": "The character had, is undergoing, or is due to undergo a transition in life, leaving behind their old life to start another anew.  They worked in another job before abandoning it, or they were raised by a family with assets and/or a degree of education/training and left it behind.  Pick one: They left their old life behind already (roll 4d6), they're undergoing a change (pick one as a reward after each victory/milestone, to a maximum of two times) or they will undergo a transformation later, rolling 1d6 times and adding 1-3 depending on how late in the campaign it is.  They gain benefits that linger from their old life, freeing them to do more in the new one.  Decide prior career/history prior to rolling/picking.  Flavor of result below must be justifiable.\n\nOptions are: (1) Items worth ~$400 or less total; (2) loyal underling/contact from the past with 3 in every stat, 3 skill points, unpowered; (3) choice of asset upgrade or $1k; (4) free skill point; (5) contact or +2 to knowledge rolls in field; (6) Reroll or flip coin for either +1 stat or rolling 3 life flaws and picking one.  For last result, die size increases by 1 each time it is gained (ie. d3, stat up on a 1, life flaws on 2-3)"
+      },
+      "flaw": {
+        "title": "Nex",
+        "content": "The first real encounter the character faces sees them alone and extraordinarily outclassed and outgunned; it is a challenge of penultimate difficulty (shy of a proper class-S threat) with harsh consequences for losing and/or little chance of escape.  If the character surpasses the challenge, they roll for two flaws, and pick one; they gain that flaw at reduced severity.\n\nAs an alternate option, the character's first encounter with the most dangerous and/or the most prominent individual in the city goes sour.  They suffer -2 to Social in such a case and the other individual's disposition tilts toward hostile by default.  If that character is an NPC, they'll form a vendetta or find reason to justify going after the character.  If a PC, they're rewarded with a milestone for taking out the character."
+      }
+    },
+    "power": {
+      "perk": {
+        "title": "Astrictum",
+        "content": "Character can, in a life-or-death situation, unleash hidden reserves of their ability, though they do so at a cost.  This is a get-out-of-death-free card, a way to escape certain death, dying, or horrible fates, freeing the character from their predicament while giving them a distinct power boost (akin to a second-trigger) that only lasts until the close of the encounter.  Depending on the nature of the power boost, the character may choose to hold on to one of the following elements at the cost of one of the others, or hold on to a new aspect of the power while suffering in one of the following: power, efficiency, scope, versatility, or quality of life, severity of penalty is at GM discretion, but should balance out any power increase.\n\nUse of this perk is one time only, and after its use, the character should roll a 1d3.  On a 1, the character rolls for a power flaw.  On a 2, they roll for three power flaws and pick the one they find least detrimental.  On a 3, they gain a power perk."
+      },
+      "flaw": {
+        "title": "Monstrum",
+        "content": "The character changed physically as they got powers.  Roll 1d3 for the number of body parts, 1d12 for the body part(s), and then 1d6 for severity - 1-3 is a minor set of changes, 4-5 is a moderate set, and 6 is a severe change that has an influence on nearby parts.  Use the cauldron mutations charts and tables for guidance."
+      }
+    }
+  },
+  "temperance": {
+    "description": "**Upright**: Balance, moderation, patience, purpose\n**Reversed**: Imbalance, excess, lack of long-term vision",
+    "life": {
+      "perk": {
+        "title": "Salutaris",
+        "content": "The character has a grasp of the troubles that plague people, and something of a handle on their own issues.  The foremost benefit is that the character can work off their own life flaws, provided they are striving toward their goals and achieving some victories.  They pick a flaw to focus on, and that flaw is reduced in severity by 50%.  Consecutive victories and achieved goals reduce severity by a further 25% each (multiplicative).  Keeping the flaw suppressed by 90% or more for an extended period (2 encounters or 1 month) effectively removes it.  So long as the character has no life flaws, they get their choice of the following three options: +2 medical ability, they can grant a close companion the same benefit described above, mending flaws, or they can manipulate any flaws they're aware of in other individuals who trust them, bending those individuals (typically NPCs) to their will; a process that lets them make a single social check to exacerbate (150-200% depending on die result) the flaw or reduce it."
+      },
+      "flaw": {
+        "title": "Calamitas",
+        "content": "The character is a train wreck.  They have problems, yes, but they have a way of making their problems into other people's problems.  This is the individual with drama surrounding them, or the wrecking ball of an individual who leaves people ruined in their wake.  Roll another life flaw.  That flaw (and any other life flaws) is manageable.  The individual diverts the negative energies or hold back the issues by essentially making others around them miserable.  When around others with life flaws, the character steadily exacerbates the issues, driving up stress, suppressing coping mechanisms, and effectively making the issues scale up in intensity, up to 200% effectiveness if in their company for an extended time.  While this occurs, the Calamitas character's own flaws drop in severity to a minimum of 25%.  This -can- be directed to enemies or used in a weaponized fashion, if the Calamitas character knows their target's issues and makes a conscious effort to twist the knife or drive the point home, but is not controlled and will target allies if not regularly given targets to abuse."
+      }
+    },
+    "power": {
+      "perk": {
+        "title": "Alumnor",
+        "content": " More with others than with themselves, the character has a capability when it comes to nurturing powers.  Two options.  The first is that powered individuals will gain power perks after roughly 1.5 months of the character's company, with the time until the next perk doubling for each perk they already have - the Alumnor cape gets the ability to gain a teamwork-related bonus tying into the cape's power (such as minor fire resistance for a pyrokinetic) OR they can have the ability to revoke the perk and instead apply a penalty that inverts that perk (if not possible, roll a flaw; they can cancel the perk and apply the flaw at will).  In short sessions, one ally gets a power perk at reduced effect, can still have pick of two aforementioned possibilities.\n\nThe second option is that unpowered individuals who spend a prolonged period with the cape have five times the chance to trigger (typically 5%, in a grave situation).  Said characters aren't necessarily loyal, are always weaker than the Alumnor cape, and often are related to the character's theme, style, ideology, powerset or other traits on an abstract level."
+      },
+      "flaw": {
+        "title": "Disparitas",
+        "content": "Something went wrong, the power is out of balance, and it runs the risk of going out of control, a top perpetually spinning and threatening to topple.  The character has a kind of abstract control over how this is managed - they might have to use primary and secondary powers in balance, not use the same power in the same area or on the same people, minions might be close to going berserk and need to be reined in, or they might be beholden to abstract rules or compulsions.  Other options are possible.  The GM decides and the character has to discover the exact requirements on their own.  Failure to adhere to the rules means a chance of disaster, with successive failures meaning higher chances.  Should things go wrong, the power misfires, with devastating collateral damage, loss of control, psychosis, mutation, or damage (abstract or real) to the Disparitas parahuman.  The misfire tends to run rampant, and typically constitutes a minor to moderate 'event', which draws attention from outside parties."
+      }
+    }
+  },
+  "the devil": {
+    "description": "**Upright**: Bondage, addiction, sexualism, materialism\n**Reversed**:  Detachment, breaking free, power reclaimed",
+    "life": {
+      "perk": {
+        "title": "Germen",
+        "content": "The character has an ally, though not a strong one.  This might be a sidekick or ally, but will accompany the character.  Pick one:  It's a powered ally with a very basic power, reduced effect perk and reduced effect flaw, a powered ally with a basic power complementary to the character's style and a full strength flaw, an individual close to the character is liable to trigger later, for a basic, related power and a perk, or it's an unpowered ally with complementary skills and a life perk.  Roll to determine whether perks or flaws relate to life or power.\n\nShould the primary character perish or be taken out of combat, the player may, at GM's discretion, resume play as their 'bud'."
+      },
+      "flaw": {
+        "title": "Nemesis",
+        "content": "At the GM's discretion, the character either has an opponent in the area with a vendetta, roughly as powerful as they are, the old enemy exists offscreen and works against the character, or the character themselves has an enemy that is stronger than them, but they have the initiative and must get revenge at some point.  Failing to deal with the nemesis will see the character surprise attacked and killed during the campaign's climax or just before the final session concludes, counting as a 'loss'.  On successfully removing the Nemesis from consideration, roll a dice.  There's a 50% chance of getting a life perk or life flaw if the enemy was equally as strong, and 66% chance of a perk vs. a 33% chance of flaw if the enemy was stronger."
+      }
+    },
+    "power": {
+      "perk": {
+        "title": "Profundum",
+        "content": "The character can maintain a deep, intimate connection with the shard; they want what it wants, and the pair can be truly frightening when working in concert.  They're readily adaptable and once they find their footing, can be some of the most dangerous individuals around.  They get one 'Depth token' to play (up to three) per case where any of the following are true: they're the top dog in the area or they slapped down the prior top dog in the last confrontation / they cause the most conflict in the area / they have been active in the last twelve hours.\n\nRoll for three perks.  Can allocate available tokens to perks.  Tokens grant 33% effectiveness, can be stacked for additive effectiveness, and get stronger as more tokens are held.  If one token is available to allocate, it grants 33%.  If two are available, they grant 66% each.  If three are available, they grant 100% each."
+      },
+      "flaw": {
+        "title": "Incubus",
+        "content": "The power feeds on conflict, and because of a weakness or an opening in the character, the shard has figured out a way to haunt the character - taking some control.  The first option is akin to a 'vampire' track - they need to feed or fight or do something horrible on a schedule or suffer.  The second option is the character can actually choose: for this option, keep track of the shard's control in terms of 'incubus tokens'.  The tokens can be spent to give the shard control over the character.  In combat, this might be only a round, while it might be an hour elsewhere, with the amount of time extending if the character tries to game the system (ie. self-bondage followed by surendering control).  Surrendering early in combat might lead to reckless action being undertaken, while late in combat, the shard might finish off an opponent, showing none of the mercy the character would have.  Outside of combat, the character might black out and 'wake up' surrounded by chaos.  They start with 1d3 tokens and have a 50% chance of getting a new token a day.  The shard might manifest alternate or additional minor powers to help it (and the Incubus-afflicted character), but typically only when it would badly complicate a situation."
+      }
+    }
+  },
+  "the tower": {
+    "description": "**Upright**: Disaster, upheaval, sudden change, revelation\n**Reversed**: Avoiding disaster, fear of change",
+    "life": {
+      "perk": {
+        "title": "Vindictae",
+        "content": "After suffering a loss, the character bounces back hard and with a vengeance.  Pick one - gain 3 rerolls to use in combat for the rematch, scrounge up $1k in temporary funds/assets to better fight back, the character gets 150% of lost rep back and causes rep loss if successful, gain additional soldiers (three points worth) for the rematch and keep them/the points if successful, or the character gets a morale boost when fighting back and retain the boost against that foe for a month if successful.  The morale boost is a +1 to rolls involving emotion or leadership, and can be consumed to add +2 to a roll.  The Revenge perk can apply to noncombat losses or situations, unless otherwise stated, and effects can be granted to the character's gang (such as giving them morale, one of the rerolls, or collective rep) if the character has any leadership skills (Street Smarts, Command, Presentation).\n\nThose interacting with the character may get the impression that they're not to be trifled with - that they're vicious, spiteful, or tenacious survivor types.  This is a mild drawback - knowing that anything that doesn't completely destroy the character may make them stronger, enemies may be more inclined to pull out the big guns."
+      },
+      "flaw": {
+        "title": "Conmissum",
+        "content": "The character has a secret that threatens to ruin them.  Should it come out, ripple effects will affect them in reputation, power, available assets, in terms of combat ability, or psychological well being.  This could include a weak point, either literal or psychological, such as a relatively easy to exploit phobia (water, fire, panicking at the mere mention of spiders), a trauma of their past could send them on a spiral of self destruction if brought to the fore, or a dark deed they once committed, of the sort that would turn even scummy villain friends into serious enemies.  Others who get close to the character may gradually pick up on clues, including enemies who associate with them with any frequency.  Negotiate with the GM in secret.\n\nThe character and GM may instead choose to roll four life flaws and pick two to affect the character, without explicitly telling other players,  to combat metagaming from those who would go out of their way to exploit the standard execution of the flaw."
+      }
+    },
+    "power": {
+      "perk": {
+        "title": "Vastare",
+        "content": "The group devises two powers to parallel the first, with something changed.  A master might produce similar but different minions, a blaster use a different blast type or produce different bullet types.  On use of a power, the parahuman rolls a d6, determining whether they use the first, second, third, first two, last two, or all three.  A passive power rolls at set intervals.  Control, accuracy, or efficiency are adversely affected, and each use of the power has a drawback: it causes collateral damage, it involves incredible recoil, staggers or stuns the user, is noisy enough to inform the region about where the parahuman is, the user can't hold back, control, accuracy or efficiency are -really- affected, or something similar.  User can suppress perk and use the #2 variant alone with a guts roll.\n\nConversely, the power is amped up in terms of power, chaos, and raw destruction."
+      },
+      "flaw": {
+        "title": "Laqueus",
+        "content": "The power has a terrible detail or aspect to it that the parahuman doesn't yet know.  It might be killing them slowly with every activation, uses of the power might have a side effect so time delayed the parahuman doesn't discover it for a while, the parahuman could have a psychological issue that the GM doesn't clarify for them until later (ie. they were kiling innocents all along), or something worse.  The group decides in secret, with the individual absent.  One possibility, should the group have difficulty coming up with something sufficient, would be to roll a few power flaws, with the GM picking one to kick in at half strength at a critical moment, and a second kicking in later at full strength."
+      }
+    }
+  },
+  "the star": {
+    "description": "**Upright**: Hope, spirituality, renewal, serenity\n**Reversed**: Lack of faith, despair, discouragement",
+    "life": {
+      "perk": {
+        "title": "Anima",
+        "content": "The character has a strong spirit.  They get their choice of +1 Dex or +1 Social.  The increased stat cannot be lowered to pay for another stat.\n\nThis perk requires some minor effort to maintain.  Roughly ten hours a week go into activities that help them maintain this benefit, often socializing, pursuing creative efforts, or something else that's relatively enriching.  Available time for other activities is reduced so long as this perk is so maintained, taking 125% as long."
+      },
+      "flaw": {
+        "title": "Minui",
+        "content": "The character has a weak spirit.  They lose their choice of 1 Dexterity or 1 Social.  The chosen stat cannot be raised, but it can be lowered further.\n\nAfter achieving a significant goal with respect to their backstory or character arc, the character can balance this out by adding one to another stat for three sessions or one month's time.  Cannot include Dex or Social, and cannot raise a stat above four."
+      }
+    },
+    "power": {
+      "perk": {
+        "title": "Umbra",
+        "content": "The character picked up a secondary power, leaning more toward cunning or trickery.  As such, it could be a stranger, trump, mover, or changer power.  It’s unrelated to the trigger event, but tied to the primary power, and isn’t a primary power in terms of raw oomph, instead serving as something complementary."
+      },
+      "flaw": {
+        "title": "Fatuus",
+        "content": "The character was supposed to get another power, an abstract one, but it didn’t take.  Something factored in, shard was broken, or was meant for another.  Breaker, some mover, stranger, or shaker power, possibly.  The group picks one: the character becomes insomniac, obsessive, prone to low-level hallucinations, or transitions gradually into an alien emotional state with skewed priorities.  When rolling a 1 for Dex/Social (pick one), or when stressed, the power sparks, kicking into life in uncontrolled or destructive ways.\n\nThe drawback can be lost and the power can be salvaged, but not easily.  After three serious life-or-death confrontations, the cape can start rolling after every confrontation.  Cumulative 1% chance per 3 regular confrontations, 2 confrontations where they were evenly matched, and 1-3% per each confrontation they were outmatched, depending.  If successful, they gain another low to medium strength power, related to their primary power, but maintain the detrimental aspects of this flaw.  The aforementioned changes must be seen and roleplayed for encounters to ‘count’."
+      }
+    }
+  },
+  "the moon": {
+    "description": "**Upright**: Illusion, fear, anxiety, insecurity, subconscious\n**Reversed**:  Release of fear, unhappiness, confusion",
+    "life": {
+      "perk": {
+        "title": "Psyche",
+        "content": "The character has a strong mind.  They get their choice of +1 Wits or +1 Knowledge.  The increased stat cannot be lowered to pay for another stat.\n\nThis perk requires some minor effort to maintain.  Roughly ten hours a week go into activities that help them maintain this benefit, often studying, researching, reading, or something else that's mentally beneficial.  Available time for other activities is reduced so long as this perk is so maintained, taking 125% as long."
+      },
+      "flaw": {
+        "title": "Insciens",
+        "content": "The character has a weak mind.  They lose their choice of 1 Wits or 1 Knowledge.  The stat cannot be raised, but it can be lowered further.\n\nAfter achieving a significant goal with respect to their backstory or character arc, the character can balance this out by adding one to another stat for three sessions or one month's time.  Cannot include Wits or Knowledge, and cannot raise a stat above four."
+      }
+    },
+    "power": {
+      "perk": {
+        "title": "Minerva",
+        "content": "The character picked up a secondary power, typically emphasizing control, craft, or knowledge.  As such, it could be a master, tinker, thinker, or breaker,  power.  It’s unrelated to the trigger event, but tied to the primary power, and isn’t a primary power in terms of raw oomph, instead serving as something complementary."
+      },
+      "flaw": {
+        "title": "Apocrypha",
+        "content": "The character was supposed to get another power, a mental one, but it didn’t take. Their mental state changed mid-trigger or the shard had something tacked on.  Thinker, Tinker, Master or something?  The group picks one: become crazed, paranoid, hallucinate, obsessive, incapable of looking after themselves, or psychological makeup gradually transitions into something alien.  When rolling a 1 for Wits/Know (pick one), or when stressed, the power sparks, kicking into life in uncontrolled or destructive ways.\n\nThe drawback can be lost and the power can be salvaged, but not easily.  After three serious life-or-death confrontations, the cape can start rolling after every confrontation.  Cumulative 1% chance per 3 regular confrontations, 2 confrontations where they were evenly matched, and 1-3% per each confrontation they were outmatched, depending.  If successful, they gain another low to medium strength power, related to their primary power, but maintain the detrimental aspects of this flaw.  The aforementioned changes must be seen and roleplayed for encounters to ‘count’."
+      }
+    }
+  },
+  "the sun": {
+    "description": "**Upright**: Fun, warmth, success, positivity, vitality\n**Reversed**: Temporary depression, lack of success",
+    "life": {
+      "perk": {
+        "title": "Soma",
+        "content": "The character has a strong body.  They get their choice of +1 Guts, +1 Brawn, or +1 Athletic.  The increased stat cannot be lowered to pay for another stat.\n\nThis perk requires some minor effort to maintain.  Roughly ten hours a week go into activities that help them maintain this benefit, often exercising, going to the gym, sparring, running, or something else that's relatively enriching.  Available time for other activities is reduced so long as this perk is so maintained, taking 125% as long."
+      },
+      "flaw": {
+        "title": "Infirma",
+        "content": "The character is weak in body.  They lose their choice of 1 Guts, 1 Brawn, or 1 Athletic.  The stat cannot be raised, but it can be lowered further.\n\nAfter achieving a significant goal with respect to their backstory or character arc, the character can balance this out by adding one to another stat for three sessions or one month's time.  Cannot include Guts or Brawn, or Athletics, and cannot raise a stat above four."
+      }
+    },
+    "power": {
+      "perk": {
+        "title": "Ferocia",
+        "content": "The character picked up a secondary power, typically emphasizing power, offense, and battle.  As such, it could be a brute, blaster, shaker, or striker power.  It’s unrelated to the trigger event, but tied to the primary power, and isn’t a primary power in terms of raw oomph, instead serving as something complementary."
+      },
+      "flaw": {
+        "title": "Reus",
+        "content": "The character was supposed to get a physical power, but it didn’t take.  Dead shard, sudden shift in physical condition, hard to say.  Brute, changer, striker, mover or blaster.  Probably?  The group picks one: they develop a violent temper, bottomless appetite, dangerously accelerated metabolism, internal physiology gradually changes to something alien, or they change physically, mutating.  When rolling a 1 for Guts/Brawn/Athletic (pick one), or when temper flares up, the power sparks, kicking into life in uncontrolled and unpredictable ways.\n\nThe drawback can be lost and the power can be salvaged, but not easily.  After three serious life-or-death confrontations, the cape can start rolling after every confrontation.  Cumulative 1% chance per 3 regular confrontations, 2 confrontations where they were evenly matched, and 1-3% per each confrontation they were outmatched, depending.  If successful, they gain another low to medium strength power, related to their primary power, but maintain the detrimental aspects of this flaw.  The aforementioned changes must be seen and roleplayed for encounters to ‘count’."
+      }
+    }
+  },
+  "judgement": {
+    "description": "**Upright**:  Judgement, rebirth, inner calling, absolution\n**Reversed**: Self doubt, refusal to look inward",
+    "life": {
+      "perk": {
+        "title": "Renovamen",
+        "content": "t was a terminal or impossible situation, but they get a second go - humans survive impossible things, sometimes.  Character asks for this effect at death or on a complete loss.  They have a personality and/or identity change, their assets, powers, and resources get replaced by something equivalent and related, and their stats may well change, as they reinvent themselves.  If advantages are lost or there are lasting repercussions or costs to their untimely end, such as scars or injury, then they roll for additional life advantage to compensate.If this reincarnation well and truly isn't possible by any stretch of the imagination, the player generates another character to pick up the mantle; they either get one less disadvantage, one more advantage, or they can roll three triggers and pick the one they want to go with."
+      },
+      "flaw": {
+        "title": "Mortem Volo",
+        "content": "The character is fueled by hatred, vengeance or loathing, and much of that loathing is directed at themselves.  The goal is death in battle, or taking down others with them, as many as is humanly or inhumanly possible.  The character gets a bonus to survival rolls (ie. when too wounded to keep going), a small boost to damage or combat ability, or they have more tools available (such as guns), but they can't run from a fight or back down, they can't/won't pull their punches, and going easy isn't an option, for themselves or their enemies.  Depending on the scenario, may have a non-combat focused version, with the same bent toward utter destruction and ruin, but in a different sense."
+      }
+    },
+    "power": {
+      "perk": {
+        "title": "Ascendo",
+        "content": "A second trigger isn't only possible, but likely.  If and when the character would die or be destroyed (that is, mentally), they have a chance to trigger and escape the situation.  The chance they have of this taking place and the general scale of the power boost corresponds with how close they are to the finish line (that is, when the campaign would wrap up.  Being 60% of the way to the end means a 60% chance of a 'trigger and survive' and a 60% power boost).  The caveat is that larger power boosts frequently have a steeper learning curve for the new power.  Many a cape has second triggered only to die almost immediately after."
+      },
+      "flaw": {
+        "title": "Fluxus/Refluxus.",
+        "content": "The character can't quite get a grasp on the power or develop new techniques, as the power specifics change regularly, typically at critical moments, forcing the character to adjust on the fly and account for surprises.  The GM is encouraged to keep the specifics of the power under wraps until play, representing the individual's lack of knowledge or ability to go in prepared."
+      }
+    }
+  },
+  "the world": {
+    "description": "**Upright**: Completion, accomplishment\n**Reversed**: Incomplete, lack of closure",
+    "life": {
+      "flaw": {
+        "title": "Ruin",
+        "content": "Something is very very wrong with this character, but they're not the one who suffers, not directly.  As a serial killer or someone who violated very basic precepts of humanity and common decency to the point where even the bad guys are disgusted with them, they either start out as public enemy number one or are actively working on become such.  However long the campaign runs, they have a secondary, meta-level objective of taking out one player or top-tier individual for every session (if one isn't killed in a given session, it should be made up for later, by the conclusion)."
+      }
+    }
+  }
+}

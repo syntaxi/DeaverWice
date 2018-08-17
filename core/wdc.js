@@ -13,19 +13,20 @@ class Wdc extends MessageHandler {
         this.bot = bot;
         this.prefix = "wd>";
 
-        this.registerCommand('wound', 'wound.js', true);
-        this.registerCommand('cut', this.getWoundFunc.bind(this, 'cut'), true);
-        this.registerCommand('bash', this.getWoundFunc.bind(this, 'bash'), true);
-        this.registerCommand('pierce', this.getWoundFunc.bind(this, 'pierce'), true);
-        this.registerCommand('burn', this.getWoundFunc.bind(this, 'burn'), true);
-        this.registerCommand('freeze', this.getWoundFunc.bind(this, 'freeze'), true);
-        this.registerCommand('shock', this.getWoundFunc.bind(this, 'shock'), true);
-        this.registerCommand(['rend'], this.getWoundFunc.bind(this, 'rend'), true);
-    }
+        this.registerCommand('wound', 'wound.js');
+        this.registerCommand('cut', this.prefixWith('wound.js', 'cut'));
+        this.registerCommand('bash', this.prefixWith('wound.js', 'bash'));
+        this.registerCommand('pierce', this.prefixWith('wound.js', 'pierce'));
+        this.registerCommand('burn', this.prefixWith('wound.js', 'burn'));
+        this.registerCommand('freeze', this.prefixWith('wound.js', 'freeze'));
+        this.registerCommand('shock', this.prefixWith('wound.js', 'shock'));
+        this.registerCommand('rend', this.prefixWith('wound.js', 'rend'));
 
-    getWoundFunc(key, msg, ...args) {
-        args.unshift(msg, key);
-        this.handlers['wound.js'].handle.apply(this.handlers['wound.js'], args);
+        this.registerCommand('detail', 'details.js');
+        this.registerCommand('power', this.prefixWith('details.js', 'power'));
+        this.registerCommand('life', this.prefixWith('details.js', 'life'));
+
+        this.registerCommand('info', 'info.js');
     }
 
     message(msg) {

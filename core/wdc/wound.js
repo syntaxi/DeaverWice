@@ -1,55 +1,10 @@
 "use strict";
 const MessageHandler = require('../../messageHandler.js');
 const WoundTable = require("../../data/woundTable.json");
+const {rollRandom} = require("../../helpers.js");
+const {locationLookup, severityLookup} = require('../../data/lookups');
 
-const locationLookup = {
-    "any": "any",
 
-    "head": "head",
-    "h": "head",
-
-    "torso": "torso",
-    "t": "torso",
-
-    "arms": "arms",
-    "arm": "arms",
-    "a": "arms",
-
-    "legs": "legs",
-    "leg": "legs",
-    "l": "legs"
-};
-
-const severityLookup = {
-    "lesser": "lesser",
-    "less": "lesser",
-    "l": "lesser",
-
-    "moderate": "moderate",
-    "m": "moderate",
-    "mod": "moderate",
-
-    "critical": "critical",
-    "crit": "critical",
-    "c": "critical"
-};
-
-/**
- * Picks a random entry from a given list.
- *
- * @param list The list to pick from.
- * @returns {*} The item from the list.
- */
-function rollRandom(list) {
-    switch (list.length) {
-        case 0:
-            return undefined;
-        case 1:
-            return list[0];
-        default:
-            return list[Math.floor(Math.random() * list.length)];
-    }
-}
 
 /**
  * Gets all the values from all the locations, except for 'any'

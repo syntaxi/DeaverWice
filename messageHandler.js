@@ -48,7 +48,11 @@ class MessageHandler {
      * @param value The output to send
      */
     static sendOutput(message, value) {
-        MessageHandler.doOutput(message.channel.send.bind(message.channel), value);
+        if (typeof value === 'string') {
+            MessageHandler.doOutput(message.channel.send.bind(message.channel), value);
+        } else {
+            message.channel.send(value);
+        }
     }
 
     /**
@@ -59,7 +63,11 @@ class MessageHandler {
      * @param value The output to send
      */
     static replyOutput(message, value) {
-        MessageHandler.doOutput(message.reply.bind(message), value);
+        if (typeof value === 'string') {
+            MessageHandler.doOutput(message.reply.bind(message.channel), value);
+        } else {
+            message.channel.send(value);
+        }
     }
 
     /**
@@ -125,6 +133,19 @@ class MessageHandler {
                 break;
             default:
                 throw new SyntaxError("Key type not object or string");
+        }
+    }
+
+    /**
+     * Adds values to the start of the argument list.
+     *
+     * @param file The name of the file to be called
+     * @param values The values to prepend
+     * @returns {Function} A function with the given values prepended
+     */
+    prefixWith(file, ...values) {
+        return (msg, ...args) => {
+            this.handlers[file].handle.apply(this.handlers[file], [msg].concat(values, args));
         }
     }
 

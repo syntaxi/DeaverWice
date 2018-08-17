@@ -1,0 +1,38 @@
+{
+  "locationLookup": {
+    "any": "any",
+    "head": "head",
+    "h": "head",
+    "torso": "torso",
+    "t": "torso",
+    "arms": "arms",
+    "arm": "arms",
+    "a": "arms",
+    "legs": "legs",
+    "leg": "legs",
+    "l": "legs"
+  },
+  "severityLookup": {
+    "lesser": "lesser",
+    "less": "lesser",
+    "l": "lesser",
+    "moderate": "moderate",
+    "m": "moderate",
+    "mod": "moderate",
+    "critical": "critical",
+    "crit": "critical",
+    "c": "critical"
+  },
+  "detailsTypes": {
+    "perk":"perk",
+    "p":"perk",
+    "flaw":"flaw",
+    "f":"flaw"
+  },
+  "detailsTargets": {
+    "life":"life",
+    "l":"life",
+    "power":"power",
+    "p":"power"
+  }
+}

@@ -89,7 +89,7 @@ class Wound extends MessageHandler {
         /* We use repeats if it exists, else we try location */
         repeats = repeats || location;
 
-        let num = Math.min(Number.parseInt(repeats));
+        let num = Math.min(Number.parseInt(repeats), 4);
         if (!isNaN(num)) {
             const outFunc = Wound.sendOutput.bind(this, msg);
             Wound.replyOutput(msg, "");

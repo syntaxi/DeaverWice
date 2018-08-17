@@ -1,0 +1,331 @@
+{
+  "cut": {
+    "lesser": {
+      "any": [
+        "**Bleed:** Applies _Bleed_ (any)",
+        "**Slashed:** Inflicts _Scar_ (any)",
+        "**Gnashed:** Counts as two minor wounds, one of these goes away on its own after a turn. (any)"
+      ],
+      "head": [
+        "**Blinded:** _Blinded_ by blood in eyes. (head)"
+      ],
+      "torso": [
+        "**Raked:** Counts as two minor wounds, one of these goes away on its own after a turn. (torso)"
+      ],
+      "arms": [
+        "**Hindered:** _Pain_, one arm. (arms)"
+      ],
+      "legs": [
+        "**Hobbled:** _Pain_, one leg. (legs)"
+      ]
+    },
+    "moderate": {
+      "any": [
+        "**Hacked:** If the struck part is already wounded, roll brawn again, aiming for a 12+, if successful, foe suffers an additional moderate wound (no effect). If parts affected are ambiguous, roll a d6 for each wound. (any)",
+        "**Butchered:** Counts as moderate plus lesser wound, inflicts _scarring_. (any)",
+        "**Slice:** Subject provokes an attack of opportunity from those nearby, and from assailant. (any)"
+      ],
+      "head": [
+        "**Dice:** Subject provokes an attack of opportunity from those nearby/from assailant. (head)"
+      ],
+      "torso": [
+        "**Tear:** Guts reduced by 1. Does not impact maximum wounds, does impact rolls. (torso)"
+      ],
+      "arms": [
+        "**Lacerated:** Limb _disabled_. _Disarmed_. (arms)"
+      ],
+      "legs": [
+        "**Hamstrung:** _Disabled_ leg. (legs)"
+      ]
+    },
+    "critical": {
+      "any": [],
+      "head": [
+        "**Decapitation:** Death. (head)"
+      ],
+      "torso": [
+        "**Bisection:** Counts as one critical wound. Divide the difference between the attack roll and the defence roll by 3, round up, and take that many typeless moderates. (torso)"
+      ],
+      "arms": [
+        "**Dismembered:** Loss of arm. (arms)"
+      ],
+      "legs": [
+        "**Dismembered:** Loss of leg. (legs)"
+      ]
+    }
+  },
+  "bash": {
+    "lesser": {
+      "any": [
+        "**Smashed:** Knocked to the ground. This lesser wound is temporary and goes away at the end of the target’s next turn (any)",
+        "**Bashed:** Knocked 10’ away and back, _stagger_ed. (any)",
+        "**Crushed:** Damage becomes two temporary minor wounds, can bypass one layer of armor with the first to deliver the second. The target heals one of the temporary wounds at the end of the next round and the round following it. (any)"
+      ],
+      "head": [
+        "**Dazed:** _Confused_ for one round. Duration extends to three rounds if already been confused in last 24 hours. (head)"
+      ],
+      "torso": [
+        "**Winded:** Halved movement speed next turn, rounded down. Non-physical movement (levitation and the like) is unaffected. (torso)"
+      ],
+      "arms": [
+        "**Disarmed:** _Disarmed_. (arms)"
+      ],
+      "legs": [
+        "**Tripped:** Knocked to the ground. This less wound is temporary and goes away at the end of the target’s next turn. (legs)"
+      ]
+    },
+    "moderate": {
+      "any": [
+        "**Demolished:** Suffer both type-specific consequences for the part (Arm would be Fracture Arm + Sent Flying). (any)",
+        "**Walloped:** Thrown 10’ back or to one side and knocked down, staggered next turn. If the individual cannot be thrown at least 5’, they instead suffer an added, temporary moderate bash instead (no associated effect, fades after one round). (any)"
+      ],
+      "head": [
+        "**Skull Crack:** _Confused_ for long duration, need to roll only DC6 Wits to get bearings. Roll vs. DC12 Guts at end of encounter to shrug off, on failure, wait 1 day before rolling again, then wait 2. (head)",
+        "**K.O.:** Target must make additional Guts check or have all remaining wound slots filled with lesser wounds. Lesser wounds disappear at end of next turn if cape remains conscious. (No added effect). (head)"
+      ],
+      "torso": [
+        "**Broken Rib:** _Pain_, torso. (torso)",
+        "**Internally Injured:** -1 to the two lowest of the following: Brawn, Athletics, or Guts. If equal, apply in that order. (torso)"
+      ],
+      "arms": [
+        "**Fracture Arm:** Arm _disabled_. Roll DC12 Guts post-combat to see if it’s broken. (arms)",
+        "**Sent Flying:** Thrown to one side and knocked down, staggered on the ensuing turn. (arms)"
+      ],
+      "legs": [
+        "**Fracture Leg:** Leg _disabled_. Roll DC12 Guts post-combat to see if it’s broken. (legs)",
+        "**Sent Flying:** Thrown to one side and knocked down, staggered on the ensuing turn. (legs)"
+      ]
+    },
+    "critical": {
+      "any": [],
+      "head": [
+        "**Brained:** Target’s head cracked open. Wits, Social & Know set to 0, can’t act of own volition, _Death Sentence_ status. (head)"
+      ],
+      "torso": [
+        "**Caved in:** Chest crushed or spine broken. Athletics, Brawn, Dex set to 0. Can think/act/communicate in limited way, but can’t move. _Death Sentence_ status. (torso)"
+      ],
+      "arms": [
+        "**Pulverized:** Limb is pulverized and pinned/mashed to ground. Can’t move without losing hope of recovering limb (arms)"
+      ],
+      "legs": [
+        "**Pulverized:** Limb is pulverized and pinned/mashed to ground. Can’t move without losing hope of recovering limb (legs)"
+      ]
+    }
+  },
+  "pierce": {
+    "lesser": {
+      "any": [
+        "**Pricked:** No special effect. Lesser wound fades after one round. (any)",
+        "**Pierced:** No special effect. (any)",
+        "**Stuck:** Attached to stabbing point. Can’t break free without being released/attacked dropping their weapon or passing a DC12 Brawn check. (any)"
+      ],
+      "head": [
+        "**Blinded:** _Blinded_. Lasts until a full round of attention is given. (head)"
+      ],
+      "torso": [
+        "**Gouge:** Counts as moderate wound, two moderate wounds if attack roll was 2 or more higher than the block/dodge. (No added effect). (torso)"
+      ],
+      "arms": [
+        "**Pinned:** Attached to stabbing point. Can’t break free without being released/weapon being dropped or passing a DC12 Brawn check. Loose objects must be pulled free with minor action. (arms)"
+      ],
+      "legs": [
+        "**:Pinned** Attached to stabbing point. Can’t break free without being released/weapon being dropped or passing a DC12 Brawn check. Loose objects must be pulled free with minor action. (legs)"
+      ]
+    },
+    "moderate": {
+      "any": [
+        "**Graze:** No special effect. Treat as minor wound. (any)",
+        "**Missed Vitals:** No other effect besides that of moderate wound. (any)",
+        "**Through and through:** Take an added moderate wound (no associated effect). (any)"
+      ],
+      "head": [
+        "**Hit Head:** 50% chance of a ‘headshot’ that reduces Guts by 3, is otherwise an ordinary moderate wound. Helmets (armor costume feature or partial armor: head costume feature) will block a ‘headshot’ once, but will not protect the head thereafter. Pierce resistance costume feature, having one’s total health and armor exceed 5, and having the large version of the Stand Tall perk cumulatively reduce chance of the ‘headshot’ by 25% each. (head)"
+      ],
+      "torso": [
+        "**Hit Vitals:** Active physical stats (Brawn, Athletics, Dex) drop by 2, Guts drops by 1. (torso)"
+      ],
+      "arms": [
+        "**Debilitated:** Limb disabled, _pain_. (arms)"
+      ],
+      "legs": [
+        "**Debilitated:** Limb disabled, _pain_. (legs)"
+      ]
+    },
+    "critical": {
+      "any": [
+        ""
+      ],
+      "head": [
+        "**Headshot:** Death, cannot be saved. (head)"
+      ],
+      "torso": [
+        "**Headshot:** Death sentence, all stats except Guts set to 0. (torso)"
+      ],
+      "arms": [
+        "**Limb Pierced:** Limb disabled, _pain_, _scars_. (arms)"
+      ],
+      "legs": [
+        "**Limb Pierced:** Limb disabled, _pain_, _scars_. (legs)"
+      ]
+    }
+  },
+  "burn": {
+    "lesser": {
+      "any": [
+        "**Smouldering:** Deals no damage if target is covered up. Minor wound. (any)",
+        "**Singed:** Deals no damage if target is covered up. Minor wound. (any)",
+        "**Blistered:** Additional minor wound if not covered up. (any)",
+        "**Blistered:** Wound _scars_. Additional minor wound if not covered up. (any)"
+      ],
+      "head": [],
+      "torso": [],
+      "arms": [],
+      "legs": []
+    },
+    "moderate": {
+      "any": [
+        "**Blackened:** Removes one quality from worn gear through costume damage. (any)",
+        "**Scalded:** Lesser wound if subject has the coverage costume quality. Otherwise, apply effects of minor wound & moderate rend. (any)",
+        "**Screaming:** Subject must make DC12 Guts+Willpower roll to do more than scream and flail. Suffer pain for 2 rounds. (any)",
+        "**Oh god it burns!:** Fire/chemical sets in and continues burning. Subject takes another moderate wound at end of every turn until quenched/washed away as a full-round action. Suffer pain, affecting all rolls, while burning. (any)"
+      ],
+      "head": [],
+      "torso": [],
+      "arms": [],
+      "legs": []
+    },
+    "critical": {
+      "any": [
+        "**Cremated:** Critical wound, then flip coins until you get a tails. Inflict a moderate burn effect for every coin flip. (any)"
+      ],
+      "head": [],
+      "torso": [],
+      "arms": [],
+      "legs": []
+    }
+  },
+  "freeze": {
+    "lesser": {
+      "any": [
+        "**Chilled:** Inflicts no wound if victim has the coverage costume quality. (any)",
+        "**Iced Over:** Roll on the moderate table for effect, but also gives the target 2 armor. (any)",
+        "**Frosted:** Target takes -3 to their next roll involving a physical stat. (any)",
+        "**Nipped:** No special effect. (any)"
+      ],
+      "head": [],
+      "torso": [],
+      "arms": [],
+      "legs": []
+    },
+    "moderate": {
+      "any": [
+        "**Frostbitten:** Limb disabled. _Pain_. (any)",
+        "**Frozen:** Counts as an extra lesser wound. (any)",
+        "**Freezer Burn:** Is lesser wound if subject has the coverage costume quality. Otherwise, apply effects of lesser freeze effect & lesser burn effect. (any)",
+        "**Hypothermia:** Subject must make a wits roll to act on their next turn. Does not prevent blocking and dodging. (any)",
+        "**Brain Freeze:** Target can only take partial actions on their next turn. (any)"
+      ],
+      "head": [],
+      "torso": [],
+      "arms": [],
+      "legs": []
+    },
+    "critical": {
+      "any": [
+        "**Whited Out:** Critical wound, then flip coins until you get a tails. Inflict a moderate freeze effect for every coin flip. (any)"
+      ],
+      "head": [
+        "**Permafrosted:** Head surrounded by ice. Wits, Social & Know set to 0, can’t act of own volition, _Death Sentence_ status. (head)"
+      ],
+      "torso": [
+        "**Encased:** Body entombed in ice. Ath, Brawn and Dex set to 0, can’t take any actions, _Death Sentence_ status. (torso)"
+      ],
+      "arms": [],
+      "legs": []
+    }
+  },
+  "shock": {
+    "lesser": {
+      "any": [
+        "**Disoriented:** -2 to Wits checks. If recently shocked, wounded is effectively blinded and deafened for one round. (any)",
+        "**Zapped:** _Confused_ for one round. Duration extends to three rounds if recently shocked. (any)",
+        "**Thrown:** Knocked away and back, _staggered_. Knocked down if recently shocked. (any)",
+        "**Jolted:** Suffer _pain_, affecting all physical (Brawn, Athletics, Dex) rolls, for next round. Two rounds if recently shocked. (any)"
+      ],
+      "head": [],
+      "torso": [],
+      "arms": [],
+      "legs": []
+    },
+    "moderate": {
+      "any": [
+        "**Blitzed:** Can only take partial actions. Taking a full round action to recuperate removes this condition. If recently shocked by another source, must also make a DC12 Guts check to recuperate. (any)",
+        "**Paralyzed:** Roll d6+[half your guts modifier]. Subtract result from 10. Spread remaining number evenly among Brawn, Athletics and Dex in -1 penalties, rolling a d3 to allocate remaining points. Recover two points at the end of every turn, as the victim chooses. (any)",
+        "**Scattered:** Subject is knocked down and disarmed. If recently shocked, roll 2d4 DC16 Dex checks, with each failure casting an item aside (items land within 10’, 5’ for heavier items), starting with held items, then belt, then backpack. (any)",
+        "**Devastated:** Nearby terrain and one piece of equipment are damaged (roll for location). Suffer a minor wound appropriate to the nature of the terrain, in addition to any other effects (falling objects, pinned, etc.). If recently shocked, get knocked down as well. (any)"
+      ],
+      "head": [],
+      "torso": [],
+      "arms": [],
+      "legs": []
+    },
+    "critical": {
+      "any": [
+        "**Disintegrated:** Critical wound, then flip coins until you get a tails. Inflict a moderate shock effect for every coin flip. (any)"
+      ],
+      "head": [],
+      "torso": [],
+      "arms": [],
+      "legs": []
+    }
+  },
+  "rend": {
+    "lesser": {
+      "any": [
+        "**Torn:** One costume feature removed due to damage, easily repairable. (any)",
+        "**Twisted:** Subject is weakened, Brawn penalized by 2. (any)",
+        "**Ruined:** Wound _scars_. (any)"
+      ],
+      "head": [
+        "**Defaced:** Wound _scars_. (head)"
+      ],
+      "torso": [
+        "**Savaged:** Subject is weakened, Brawn penalized by 2. (torso)"
+      ],
+      "arms": [
+        "**Sprained Arm:** Limb _disabled_. (arms)"
+      ],
+      "legs": [
+        "**Sprained Arm:** Limb _disabled_. (legs)"
+      ]
+    },
+    "moderate": {
+      "any": [
+        "**Destroyed:** Moderate wound, and two costume features are stripped away. (any)",
+        "**Mangled:** _Pain_. Wound _scars_. (any)",
+        "**Mutilated:** Long-term -1 to Brawn, Athletics, or Guts. Guts check after 2 weeks to see if this heals, requires 18+, but +2 to roll per week of expert medical care. 2nd chance after 1 month, but requires DC24. _Scars_, wound recovery takes twice as long. (any)"
+      ],
+      "head": [
+        "**Disfigured:**Long term -1 to Dex, Wits or Social, obvious _scars_. See Mutilated for healing lowered stats. (head)"
+      ],
+      "torso": [
+        "**Scourged:** _Pain_. Wound _scars_. (torso)"
+      ],
+      "arms": [
+        "**Scourged:** _Pain_. Wound _scars_. (arms)"
+      ],
+      "legs": [
+        "**Scourged:** _Pain_. Wound _scars_. (legs)"
+      ]
+    },
+    "critical": {
+      "any": [
+        "**Annihilated:** Roll 3d7 for stats, reduce each result by 2. Roll DC12 Guts vs. death for each stat reduced to 0. See Mutilated for healing these stats. (any)"
+      ],
+      "head": [],
+      "torso": [],
+      "arms": [],
+      "legs": []
+    }
+  }
+}

@@ -70,14 +70,16 @@ class MessageHandler {
      *
      * @param key The key(s) to link to
      * @param func The function, class or file to link to.
+     * @param repeatable If the command can be repeated by appending a count to the command. Default is false.
      */
-    registerCommand(key, func) {
+    registerCommand(key, func, repeatable) {
         this.commands = this.commands || {};
+        this.canMultiply = this.canMultiply || {};
         switch (typeof key) {
             case 'object':
                 for (let item in key) {
-                    if (typeof key[item] === "string") {
-                        this.registerCommand(key[item], func)
+                    if (key.hasOwnProperty(item) && typeof key[item] === "string") {
+                        this.registerCommand(key[item], func, repeatable)
                     }
                 }
                 break;
@@ -94,6 +96,9 @@ class MessageHandler {
                         break;
                     default:
                         throw new SyntaxError("func type not class, function or string");
+                }
+                if (repeatable) {
+                    this.canMultiply[key] = true;
                 }
                 break;
             default:
@@ -122,12 +127,27 @@ class MessageHandler {
      */
     handleCommand(msg, key, args) {
         key = key.toLowerCase();
+
+        /* We check if the message is marked as multipliable and a count is given */
+        let repetitions = 1;
+        if (key in this.canMultiply && args.length > 0) {
+            const num = Number.parseInt(args[args.length - 1]);
+            if (!isNaN(num)) {
+                repetitions = num;
+                args.pop();
+            }
+        }
+
         /* The first parameter of a handle is always the message */
         args.unshift(msg);
-        if (key in this.commands) {
-            this.commands[key].apply(this.commands[key], args);
-        } else if (key in this) {
-            this[key].apply(this, args);
+
+        /* Call the command, repeating if specified */
+        for (let i = 0; i < repetitions; i++) {
+            if (key in this.commands) {
+                this.commands[key].apply(this.commands[key], args);
+            } else if (key in this) {
+                this[key].apply(this, args);
+            }
         }
     }
 }

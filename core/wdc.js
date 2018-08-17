@@ -31,9 +31,11 @@ class Wdc extends MessageHandler {
     message(msg) {
         /* We don't reply to bots. */
         if (!msg.author.bot) {
-            let args = msg.toString().split(/ +/g);
-            if (args[0].toLowerCase() === this.prefix && args.length > 1) {
-                this.handleCommand(msg, args[1], args.slice(2));
+            if (msg.content.toLowerCase().startsWith(this.prefix)) {
+                const args = msg.content.slice(this.prefix.length).split(/ +/g);
+                if (args.length > 0) {
+                    this.handleCommand(msg, args[0], args.slice(1));
+                }
             }
         }
     }

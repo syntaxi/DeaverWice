@@ -2,7 +2,12 @@ const fs = require("fs");
 const path = require('path');
 
 class MessageHandler {
-    constructor(bot, path) {
+    /**
+     * Scans the file
+     * @param bot
+     * @param path
+     */
+    static scanForFiles(bot, path) {
         /* Re-assign console.log to add a tab at the start */
         let backupLog = console.log;
         console.log = function () {
@@ -11,7 +16,7 @@ class MessageHandler {
             backupLog.apply(console, par)
         };
 
-        this.handlers = {};
+        const handlers = {};
         if (fs.existsSync(path)) {
             console.log(`Scanning for files in ${path}`);
             let files = fs.readdirSync(path);
@@ -19,9 +24,7 @@ class MessageHandler {
                 try {
                     if (fs.lstatSync(path + files[i]).isFile()) {
                         console.log(`Loading '${files[i]}'`);
-                        /* Slice 3 off the end to remove the suffix '.js' */
-                        let handler = require(path + files[i]);
-                        this.handlers[files[i]] = new handler(bot);
+                        handlers[files[i]] = new (require(path + files[i]))(bot);
                     }
                 } catch (e) {
                     console.log(`Failed loading of ${files[i]} got:\n\t${e}\nSkipping`)
@@ -31,8 +34,10 @@ class MessageHandler {
         } else {
             console.log(`${path} is not a valid path, refusing to scan`);
         }
+
         /* Undo the log re-assignment */
         console.log = backupLog;
+        return handlers;
     }
 
     /**
@@ -46,10 +51,24 @@ class MessageHandler {
         MessageHandler.doOutput(message.channel.send.bind(message.channel), value);
     }
 
+    /**
+     * Replies to the message that triggered the command.
+     * Handles splitting it up if it's too long.
+     *
+     * @param message The message to use to send the output.
+     * @param value The output to send
+     */
     static replyOutput(message, value) {
         MessageHandler.doOutput(message.reply.bind(message), value);
     }
 
+    /**
+     * Output the content using the given output function.
+     * Handles splitting if the output is larger than message limit
+     *
+     * @param outFunc The function to use to send the output.
+     * @param value The output to send.
+     */
     static doOutput(outFunc, value) {
         const messageSize = 2000 - 5;
         const maxBacktrack = 50;

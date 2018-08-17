@@ -6,7 +6,7 @@ const MessageHandler = require("../messageHandler.js");
  */
 class Memes extends MessageHandler {
     constructor(bot) {
-        super(bot, __filename.slice(0, -3) + '/');
+        super();
         this.bot = bot;
         this.includes = {};
         this.equals = {};

@@ -71,8 +71,7 @@ function getAll(type, severity) {
 
 class Wound extends MessageHandler {
     constructor(bot) {
-        super(bot, __filename.slice(0, -3) + '/');
-        this.pruneHandlers();
+        super();
         this.bot = bot;
     }
 

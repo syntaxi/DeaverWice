@@ -11,8 +11,9 @@ class CommandHandler extends MessageHandler {
      * which will be constructed with `bot` as the sole parameter
      */
     constructor(bot) {
+        super();
         console.log("Loading 'commandHandler.js'");
-        super(bot, __dirname + "/core/");
+        this.handlers = CommandHandler.scanForFiles(bot, __dirname + "/core/");
         this.bot = bot;
         console.log();
 

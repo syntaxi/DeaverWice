@@ -83,9 +83,27 @@ class Wound extends MessageHandler {
      * @param msg The message being replied too
      * @param type The type of wound to roll
      * @param severity The severity of the wound
-     * @param location THe location of the wound. Optional
+     * @param location The location of the wound. Optional
+     * @param repeats How many times to repeat the command. Optional
      */
-    handle(msg, type, severity, location) {
+    handle(msg, type, severity, location, repeats) {
+        /* We use repeats if it exists, else we try location */
+        repeats = repeats || location;
+
+        let num = Math.min(Number.parseInt(repeats));
+        if (!isNaN(num)) {
+            const outFunc = Wound.sendOutput.bind(this, msg);
+            Wound.replyOutput(msg, "");
+            for (let i = 0; i < num; i++) {
+                Wound.rollWound(outFunc, type, severity, location);
+            }
+        } else {
+            const outFunc = Wound.replyOutput.bind(this, msg);
+            Wound.rollWound(outFunc, type, severity, location);
+        }
+    }
+
+    static rollWound(outFunc, type, severity, location) {
         if (type = Wound.getType(type)) {
             if (severity = Wound.getSeverity(severity)) {
 
@@ -95,13 +113,13 @@ class Wound extends MessageHandler {
                 } else {
                     options = options.concat(getAll(type, severity));
                 }
-                Wound.sendOutput(msg, rollRandom(options) + "");
+                outFunc(rollRandom(options) + "");
 
             } else {
-                Wound.sendOutput(msg, "Could not find severity level");
+                outFunc("Could not find severity level");
             }
         } else {
-            Wound.sendOutput(msg, "Could not find wound type");
+            outFunc("Could not find wound type");
         }
     }
 

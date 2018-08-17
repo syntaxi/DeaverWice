@@ -43,6 +43,14 @@ class MessageHandler {
      * @param value The output to send
      */
     static sendOutput(message, value) {
+        MessageHandler.doOutput(message.channel.send.bind(message.channel), value);
+    }
+
+    static replyOutput(message, value) {
+        MessageHandler.doOutput(message.reply.bind(message), value);
+    }
+
+    static doOutput(outFunc, value) {
         const messageSize = 2000 - 5;
         const maxBacktrack = 50;
         let i = 0;
@@ -51,10 +59,10 @@ class MessageHandler {
             while (value.charAt(i + size) !== " " && size > messageSize - maxBacktrack) {
                 size--;
             }
-            message.channel.send(value.substr(i, size) + "[...]");
+            outFunc(value.substr(i, size) + "[...]");
             i += size;
         }
-        message.channel.send(value.substring(i));
+        outFunc(value.substring(i));
     }
 
     /**
@@ -70,16 +78,14 @@ class MessageHandler {
      *
      * @param key The key(s) to link to
      * @param func The function, class or file to link to.
-     * @param repeatable If the command can be repeated by appending a count to the command. Default is false.
      */
-    registerCommand(key, func, repeatable) {
+    registerCommand(key, func) {
         this.commands = this.commands || {};
-        this.canMultiply = this.canMultiply || {};
         switch (typeof key) {
             case 'object':
                 for (let item in key) {
                     if (key.hasOwnProperty(item) && typeof key[item] === "string") {
-                        this.registerCommand(key[item], func, repeatable)
+                        this.registerCommand(key[item], func)
                     }
                 }
                 break;
@@ -96,9 +102,6 @@ class MessageHandler {
                         break;
                     default:
                         throw new SyntaxError("func type not class, function or string");
-                }
-                if (repeatable) {
-                    this.canMultiply[key] = true;
                 }
                 break;
             default:
@@ -126,28 +129,15 @@ class MessageHandler {
      * @param args The arguments of the command
      */
     handleCommand(msg, key, args) {
-        key = key.toLowerCase();
-
-        /* We check if the message is marked as multipliable and a count is given */
-        let repetitions = 1;
-        if (key in this.canMultiply && args.length > 0) {
-            const num = Number.parseInt(args[args.length - 1]);
-            if (!isNaN(num)) {
-                repetitions = Math.min(num, 5);
-                args.pop();
-            }
-        }
-
         /* The first parameter of a handle is always the message */
         args.unshift(msg);
+        key = key.toLowerCase();
 
         /* Call the command, repeating if specified */
-        for (let i = 0; i < repetitions; i++) {
-            if (key in this.commands) {
-                this.commands[key].apply(this.commands[key], args);
-            } else if (key in this) {
-                this[key].apply(this, args);
-            }
+        if (key in this.commands) {
+            this.commands[key].apply(this.commands[key], args);
+        } else if (key in this) {
+            this[key].apply(this, args);
         }
     }
 }

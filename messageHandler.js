@@ -133,7 +133,7 @@ class MessageHandler {
         if (key in this.canMultiply && args.length > 0) {
             const num = Number.parseInt(args[args.length - 1]);
             if (!isNaN(num)) {
-                repetitions = num;
+                repetitions = Math.min(num, 5);
                 args.pop();
             }
         }

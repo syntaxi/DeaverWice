@@ -22,10 +22,12 @@ const locationLookup = {
 
 const severityLookup = {
     "lesser": "lesser",
+    "less": "lesser",
     "l": "lesser",
 
     "moderate": "moderate",
     "m": "moderate",
+    "mod": "moderate",
 
     "critical": "critical",
     "crit": "critical",

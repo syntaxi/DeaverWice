@@ -25,10 +25,10 @@ class Info extends MessageHandler {
             const card = DetailsTable[key];
             let details = [];
             for (let target in card) {
-                if (card.hasOwnProperty(target) && target !== 'description') {
+                if (card.hasOwnProperty(target) && target !== 'description' && target !== 'image') {
                     for (let type in card[target]) {
                         if (card[target].hasOwnProperty(type)) {
-                            details.push(`\t● ${target} ${type}: ${titleCase(card[target][type].title)}`)
+                            details.push(`\t● ${target} ${type}: ${titleCase(key)}`)
                         }
                     }
                 }
@@ -36,6 +36,7 @@ class Info extends MessageHandler {
             details = details.length === 0 ? "This card has no details" : details.join("\n");
             Info.sendOutput(msg, new RichEmbed()
                 .setTitle(titleCase(key))
+                .setImage(card.image)
                 .setColor(0xFF0000)
                 .setDescription(card.description)
                 .addField("Details", details));

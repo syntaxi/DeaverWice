@@ -1,5 +1,6 @@
 {
   "ace of wands": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/1/11/Wands01.jpg",
     "description": "**Upright**: Inspiration, power, creation\n**Reversed**: Delays, lack of motivation, burdens.",
     "life": {
       "flaw": {
@@ -9,6 +10,7 @@
     }
   },
   "two of wands": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/0/0f/Wands02.jpg",
     "description": "**Upright**: Progress, decisions, discovery.\n**Reversed**: Fear of unknown, lack of planning.",
     "power": {
       "perk": {
@@ -18,6 +20,7 @@
     }
   },
   "three of wands": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/f/ff/Wands03.jpg",
     "description": "**Upright**: Enterprise, expansion, foresight.\n**Reversed**:  Delays, obstacles to long-term plans.",
     "life": {
       "perk": {
@@ -27,6 +30,7 @@
     }
   },
   "four of wands": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/a/a4/Wands04.jpg",
     "description": "**Upright**: Celebration, home, community.\n**Reversed**:  Breakdown in communication, transitions.",
     "life": {
       "perk": {
@@ -40,6 +44,7 @@
     }
   },
   "five of wands": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/9/9d/Wands05.jpg",
     "description": "**Upright**: Disagreement, competition, strife, tension and conflict.\n**Reversed**:  Conflict avoidance, diversity, unhappy compromise.",
     "life": {
       "perk": {
@@ -53,6 +58,7 @@
     }
   },
   "six of wands": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/3/3b/Wands06.jpg",
     "description": "**Upright**:  Public recognition, victory, self-confidence.\n**Reversed**:  Egotism, disrepute, lack of confidence, fall from grace.",
     "life": {
       "perk": {
@@ -62,9 +68,11 @@
     }
   },
   "seven of wands": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/e/e4/Wands07.jpg",
     "description": "**Upright**:  Challenge, competition.\n**Reversed**: Giving up, overwhelmed, overly protective."
   },
   "eight of wands": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/6/6b/Wands08.jpg",
     "description": "**Upright**:  Speed, action, air travel, movement, swift change.\n**Reversed**:  Delays, frustration, procrastination.",
     "life": {
       "perk": {
@@ -80,6 +88,7 @@
     }
   },
   "nine of wands": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/e/e7/Wands09.jpg",
     "description": "**Upright**: Courage, persistence, test of faith, resilience.\n**Reversed**:  On edge, defensive, hesitant, paranoia",
     "power": {
       "flaw": {
@@ -89,6 +98,7 @@
     }
   },
   "ten of wands": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/0/0b/Wands10.jpg",
     "description": "**Upright**: Burden, responsibility, hard work and stress.\n**Reversed**: taking on too much, avoiding responsibility.",
     "life": {
       "perk": {
@@ -98,6 +108,7 @@
     }
   },
   "page of wands": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/6/6a/Wands11.jpg",
     "description": "**Upright**: Enthusiasm, exploration, discovery, free spirit.\n**Reversed**:  Setbacks to new ideas, pessimism, lack of direction",
     "power": {
       "perk": {
@@ -111,6 +122,7 @@
     }
   },
   "knight of wands": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/1/16/Wands12.jpg",
     "description": "**Upright**: Energy, passion, lust, action, adventure, impulsiveness.\n**Reversed**: Haste, scattered energy, frustration",
     "life": {
       "perk": {
@@ -120,6 +132,7 @@
     }
   },
   "queen of wands": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/0/0d/Wands13.jpg",
     "description": "**Upright**: Exuberance, warmth, vibrancy, determination\n**Reversed**: Shrinking violet, aggressive, demanding",
     "life": {
       "perk": {
@@ -135,9 +148,11 @@
     }
   },
   "king of wands": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/c/ce/Wands14.jpg",
     "description": "**Upright**: Natural born leader, vision, entrepreneur, honor\n**Reversed**: Impulsiveness, high expectations"
   },
   "ace of pentacles": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/f/fd/Pents01.jpg",
     "description": "**Upright**: Manifestation, new financial opportunity\n**Reversed**:  Lost opportunity, lack of planning/foresight.",
     "life": {
       "perk": {
@@ -157,6 +172,7 @@
     }
   },
   "two of pentacles": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/9/9f/Pents02.jpg",
     "description": "**Upright**:  Balance, adaptability, time management.\n**Reversed**:  Disorganization, financial disarray.",
     "life": {
       "perk": {
@@ -180,6 +196,7 @@
     }
   },
   "three of pentacles": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/4/42/Pents03.jpg",
     "description": "**Upright**:  Teamwork, initial fulfillment, collaboration\n**Reversed**:  Lack of teamwork, disregard for skills.",
     "power": {
       "perk": {
@@ -193,6 +210,7 @@
     }
   },
   "four of pentacles": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/3/35/Pents04.jpg",
     "description": "**Upright**: Control, stability, security, possession.\n**Reversed**:  Greed, materialism, self-protection.",
     "life": {
       "perk": {
@@ -202,6 +220,7 @@
     }
   },
   "five of pentacles": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/9/96/Pents05.jpg",
     "description": "**Upright**:  Isolation, insecurity, worry, financial loss.\n**Reversed**:  Recovery, spiritual poverty.",
     "life": {
       "perk": {
@@ -211,6 +230,7 @@
     }
   },
   "six of pentacles": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/a/a6/Pents06.jpg",
     "description": "**Upright**: Generosity, charity, prosperity, sharing.\n**Reversed**:  Debt, selfishness, one-sided charity.",
     "life": {
       "perk": {
@@ -230,6 +250,7 @@
     }
   },
   "seven of pentacles": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/6/6a/Pents07.jpg",
     "description": "**Upright**:  Vision, perseverence, profit, reward.\n**Reversed**:  Lack of vision, limited success or reward",
     "life": {
       "perk": {
@@ -249,6 +270,7 @@
     }
   },
   "eight of pentacles": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/4/49/Pents08.jpg",
     "description": "**Upright**: Apprenticeship, education, quality.\n**Reversed**:  Perfectionism, lacking ambition or focus.",
     "life": {
       "perk": {
@@ -262,9 +284,11 @@
     }
   },
   "nine of pentacles": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/f/f0/Pents09.jpg",
     "description": "**Upright**:  Gratitude, luxury, self-sufficiency.\n**Reversed**:  Over-investment in work, financial setbacks."
   },
   "ten of pentacles": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/4/42/Pents10.jpg",
     "description": "**Upright**: Wealth, inheritance, family, establishment\n**Reversed**:  Financial failure, lonliness, loss.",
     "power": {
       "perk": {
@@ -278,6 +302,7 @@
     }
   },
   "page of pentacles": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/e/ec/Pents11.jpg",
     "description": "**Upright**: Manifestation, financial opportunity, new role\n**Reversed**:  Lack of progress, short-term focus.",
     "life": {
       "flaw": {
@@ -293,6 +318,7 @@
     }
   },
   "knight of pentacles": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/d/d5/Pents12.jpg",
     "description": "**Upright**:  Efficiency, routine, conservatism.\n**Reversed**:  Laziness, boredom, feeling 'stuck'.",
     "power": {
       "perk": {
@@ -306,9 +332,11 @@
     }
   },
   "queen of pentacles": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/8/88/Pents13.jpg",
     "description": "**Upright**: Practicality, motherly, down to earth.\n**Reversed**:  Imbalance in work & family commitments"
   },
   "king of pentacles": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/1/1c/Pents14.jpg",
     "description": "**Upright**: Security, power, control, discipline, abundance.\n**Reversed**: Authoritative, controlling, domineering.",
     "life": {
       "perk": {
@@ -328,6 +356,7 @@
     }
   },
   "ace of cups": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/3/36/Cups01.jpg",
     "description": "**Upright**:  Love, compassion, creativity, overwhelming emotion\n**Reversed**:  Blocked or repressed emotions",
     "life": {
       "perk": {
@@ -351,6 +380,7 @@
     }
   },
   "two of cups": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/f/f8/Cups02.jpg",
     "description": "**Upright**:Unified love, partnership, attraction, relationships\n**Reversed**: Break-up, imbalance in a relationship, lack of harmony",
     "life": {
       "perk": {
@@ -374,6 +404,7 @@
     }
   },
   "three of cups": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/7/7a/Cups03.jpg",
     "description": "**Upright**:Celebration, friendship, creativity, community\n**Reversed**: An affair, “three’s a crowd”, stifled creativity",
     "life": {
       "perk": {
@@ -397,6 +428,7 @@
     }
   },
   "four of cups": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/3/35/Cups04.jpg",
     "description": "**Upright**:Meditation, contemplation, apathy, re-evaluation\n**Reversed**: Boredom, missed opportunity, being aloof",
     "life": {
       "perk": {
@@ -420,6 +452,7 @@
     }
   },
   "five of cups": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/d/d7/Cups05.jpg",
     "description": "**Upright**:Loss, regret, disappointment, despair, bereavement\n**Reversed**: Moving on, acceptance, forgiveness",
     "life": {
       "perk": {
@@ -443,6 +476,7 @@
     }
   },
   "six of cups": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/1/17/Cups06.jpg",
     "description": "**Upright**:Reunion, nostalgia, childhood memories, innocence\n**Reversed**: Stuck in the past, naivety, unrealistic",
     "life": {
       "perk": {
@@ -466,6 +500,7 @@
     }
   },
   "seven of cups": {
+    "image": " https: //upload.wikimedia.org/wikipedia/en/a/ae/Cups07.jpg",
     "description": "**Upright**:Fantasy, illusion, wishful thinking, choices, imagination\n**Reversed**: Temptation, illusion, diversionary tactics",
     "life": {
       "perk": {
@@ -489,6 +524,7 @@
     }
   },
   "eight of cups": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/6/60/Cups08.jpg",
     "description": "**Upright**:Escapism, disappointment, abandonment, withdrawal\n**Reversed**: Hopelessness, aimless drifting, walking away",
     "life": {
       "perk": {
@@ -512,6 +548,7 @@
     }
   },
   "nine of cups": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/2/24/Cups09.jpg",
     "description": "**Upright**:  Wishes fulfilled, comfort, happiness.\n**Reversed**:  Greed, dissatisfaction, materialism.",
     "life": {
       "perk": {
@@ -535,6 +572,7 @@
     }
   },
   "ten of cups": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/8/84/Cups10.jpg",
     "description": "**Upright**:  Harmony, marriage, happiness, alignment\n**Reversed**:  Misalignment, broken home.",
     "life": {
       "perk": {
@@ -558,6 +596,7 @@
     }
   },
   "page of cups": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/a/ad/Cups11.jpg",
     "description": "**Upright**: A messenger, creative beginnings.\n**Reversed**: Emotional immaturity, creative block.",
     "life": {
       "perk": {
@@ -581,6 +620,7 @@
     }
   },
   "knight of cups": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/f/fa/Cups12.jpg",
     "description": "**Upright**: Romance, charm, knight in shining armor, imagination.\n**Reversed**: Unrealistic, jealousy, moodiness.",
     "life": {
       "perk": {
@@ -604,6 +644,7 @@
     }
   },
   "queen of cups": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/6/62/Cups13.jpg",
     "description": "**Upright**: Emotional security, calm, intuitive, compassionate.\n**Reversed**:  Emotional insecurity, co-dependency.",
     "life": {
       "perk": {
@@ -627,6 +668,7 @@
     }
   },
   "king of cups": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/0/04/Cups14.jpg",
     "description": "**Upright**: Emotional balance and control, generosity.\n**Reversed**: Emotional manipulation, volatility.",
     "life": {
       "perk": {
@@ -650,6 +692,7 @@
     }
   },
   "ace of swords": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/1/1a/Swords01.jpg",
     "description": "**Upright**: Raw power, victory, break-throughs, mental clarity.\n**Reversed**:  Confusion, chaos, lack of clarity.",
     "life": {
       "perk": {
@@ -669,6 +712,7 @@
     }
   },
   "two of swords": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/9/9e/Swords02.jpg",
     "description": "**Upright**: Indecision, choices, truce, stalemates, blocked emotion.\n**Reversed**: Indecision, confusion, information overload.",
     "life": {
       "perk": {
@@ -688,6 +732,7 @@
     }
   },
   "three of swords": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/0/02/Swords03.jpg",
     "description": "**Upright**: Painful separation, sorrow, grief.\n**Reversed**:  Releasing pain, forgiveness, optimism.",
     "power": {
       "flaw": {
@@ -697,6 +742,7 @@
     }
   },
   "four of swords": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/b/bf/Swords04.jpg",
     "description": "**Upright**: Contemplation, recuperation, passivity, relaxation.\n**Reversed**:  Restlessness, burn-out, lack of progress.",
     "life": {
       "perk": {
@@ -716,6 +762,7 @@
     }
   },
   "five of swords": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/2/23/Swords05.jpg",
     "description": "**Upright**: Conflict, tension, loss, defeat, victory at all costs.\n**Reversed**:  Open to change, past resentment.",
     "power": {
       "perk": {
@@ -729,9 +776,11 @@
     }
   },
   "six of swords": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/2/29/Swords06.jpg",
     "description": "**Upright**: Regretful but necessary transition, rite of passage.\n**Reversed**:  Cannot move on, carrying baggage"
   },
   "seven of swords": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/3/34/Swords07.jpg",
     "description": "**Upright**: Betrayal, deception, getting away with something, stealth.\n**Reversed**:  Mental challenges, breaking free.",
     "life": {
       "flaw": {
@@ -747,6 +796,7 @@
     }
   },
   "eight of swords": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/a/a7/Swords08.jpg",
     "description": "**Upright**:  Isolation, self-imposed restriction.\n**Reversed**: Open to new perspectives, release.",
     "life": {
       "flaw": {
@@ -756,6 +806,7 @@
     }
   },
   "nine of swords": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/2/2f/Swords09.jpg",
     "description": "**Upright**: Depression, nightmares, anxiety.\n**Reversed**: Hopelessness, depression, torment.",
     "life": {
       "flaw": {
@@ -775,6 +826,7 @@
     }
   },
   "ten of swords": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/d/d4/Swords10.jpg",
     "description": "**Upright**: Back-stabbed, defeat, crisis, betrayal, endings.\n**Reversed**: Recovery, regeneration, fear of ruin, inevitable end.",
     "life": {
       "perk": {
@@ -790,6 +842,7 @@
     }
   },
   "page of swords": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/4/4c/Swords11.jpg",
     "description": "**Upright**: Talkative, curious, mentally restless.\n**Reversed**: Bark without bite, haste making waste, undelivered promises.",
     "life": {
       "flaw": {
@@ -805,6 +858,7 @@
     }
   },
   "knight of swords": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/b/b0/Swords12.jpg",
     "description": "**Upright**:  Opinionated, hasty, action-oriented, communicative.\n**Reversed**:  Scattered thought, disregard for consequences.",
     "life": {
       "perk": {
@@ -818,6 +872,7 @@
     }
   },
   "queen of swords": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/d/d4/Swords13.jpg",
     "description": "**Upright**: Quick thinking, organized, perceptive, independent.\n**Reversed**:  Overly emotional, bitchy, cold-hearted.",
     "life": {
       "flaw": {
@@ -837,6 +892,7 @@
     }
   },
   "king of swords": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/3/33/Swords14.jpg",
     "description": "**Upright**: Clear thought, intellectual power, authority, truth.\n**Reversed**:  Manipulative, tyrannical, abusive.",
     "life": {
       "flaw": {
@@ -852,6 +908,7 @@
     }
   },
   "the fool": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/9/90/RWS_Tarot_00_Fool.jpg",
     "description": "**Upright**: Innocence, spontaneity, free spirit, potential.\n**Reversed**: Naivety, foolishness, risk-taking.",
     "life": {
       "perk": {
@@ -875,6 +932,7 @@
     }
   },
   "the magician": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/d/de/RWS_Tarot_01_Magician.jpg",
     "description": "**Upright**: Power, skill, concentration, action\n**Reversed**:  Manipulation, poor planning, latent talents",
     "life": {
       "perk": {
@@ -894,6 +952,7 @@
     }
   },
   "the high priestess": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/thumb/8/88/RWS_Tarot_02_High_Priestess.jpg/320px-RWS_Tarot_02_High_Priestess.jpg",
     "description": "**Upright**: Intuition, higher powers, mystery, subconscious\n**Reversed**:  Hidden agendas, need help to listen to inner voice",
     "power": {
       "perk": {
@@ -907,6 +966,7 @@
     }
   },
   "the empress": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/d/d2/RWS_Tarot_03_Empress.jpg",
     "description": "**Upright**: Fertility, femininity, beauty, nature\n**Reversed**: Creative block, dependence on others",
     "life": {
       "perk": {
@@ -926,6 +986,7 @@
     }
   },
   "the emperor": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/c/c3/RWS_Tarot_04_Emperor.jpg",
     "description": "**Upright**: Authority, father-figure, structure, foundation.\n**Reversed**: Domination, excessive control, rigidity, inflexibility",
     "life": {
       "flaw": {
@@ -935,6 +996,7 @@
     }
   },
   "the hierophant": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/8/8d/RWS_Tarot_05_Hierophant.jpg",
     "description": "**Upright**: Religion, group identification, tradition, beliefs\n**Reversed**: Restriction, challenging the status quo",
     "power": {
       "flaw": {
@@ -944,9 +1006,11 @@
     }
   },
   "the lovers": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/d/db/RWS_Tarot_06_Lovers.jpg",
     "description": "**Upright**: Union, love, relationships, values alignment, choices\n**Reversed**: Disharmony, imbalance, misalignment of values"
   },
   "the chariot": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/9/9b/RWS_Tarot_07_Chariot.jpg",
     "description": "**Upright**:  Control, willpower, victory, assertion, determination\n**Reversed**:  Lack of control and direction, aggression",
     "power": {
       "perk": {
@@ -956,6 +1020,7 @@
     }
   },
   "strength": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/f/f5/RWS_Tarot_08_Strength.jpg",
     "description": "**Upright**: Strength, courage, patience, control, compassion\n**Reversed**: Weakness, self-doubt, lack of discipline",
     "life": {
       "flaw": {
@@ -965,6 +1030,7 @@
     }
   },
   "the hermit": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/4/4d/RWS_Tarot_09_Hermit.jpg",
     "description": "**Upright**:  Soul searching, introspection, being alone, inner guidance\n**Reversed**:  Isolation, loneliness, withdrawal",
     "life": {
       "flaw": {
@@ -974,6 +1040,7 @@
     }
   },
   "wheel of fortune": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/3/3c/RWS_Tarot_10_Wheel_of_Fortune.jpg",
     "description": "**Upright**: Good luck, karma, life cycles, destiny, a turning point\n**Reversed**:  Bad luck, negative external forces, out of control",
     "life": {
       "perk": {
@@ -997,6 +1064,7 @@
     }
   },
   "justice": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/e/e0/RWS_Tarot_11_Justice.jpg",
     "description": "**Upright**: Justice, fairness, truth, cause-and-effect, law\n**Reversed**:  Unfairness, lack of accountability, dishonesty",
     "life": {
       "flaw": {
@@ -1016,6 +1084,7 @@
     }
   },
   "the hanged man": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/2/2b/RWS_Tarot_12_Hanged_Man.jpg",
     "description": "**Upright**: suspension, restriction, letting go, sacrifice\n**Reversed**: Martyrdom, indecision, delay",
     "life": {
       "perk": {
@@ -1035,6 +1104,7 @@
     }
   },
   "death": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/d/d7/RWS_Tarot_13_Death.jpg",
     "description": "**Upright**:  Endings, beginnings, change, transformation, transition\n**Reversed**:  Resistance to change, unable to move on.",
     "life": {
       "perk": {
@@ -1058,6 +1128,7 @@
     }
   },
   "temperance": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/f/f8/RWS_Tarot_14_Temperance.jpg",
     "description": "**Upright**: Balance, moderation, patience, purpose\n**Reversed**: Imbalance, excess, lack of long-term vision",
     "life": {
       "perk": {
@@ -1081,6 +1152,7 @@
     }
   },
   "the devil": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/5/55/RWS_Tarot_15_Devil.jpg",
     "description": "**Upright**: Bondage, addiction, sexualism, materialism\n**Reversed**:  Detachment, breaking free, power reclaimed",
     "life": {
       "perk": {
@@ -1104,6 +1176,7 @@
     }
   },
   "the tower": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/5/53/RWS_Tarot_16_Tower.jpg",
     "description": "**Upright**: Disaster, upheaval, sudden change, revelation\n**Reversed**: Avoiding disaster, fear of change",
     "life": {
       "perk": {
@@ -1127,6 +1200,7 @@
     }
   },
   "the star": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/d/db/RWS_Tarot_17_Star.jpg",
     "description": "**Upright**: Hope, spirituality, renewal, serenity\n**Reversed**: Lack of faith, despair, discouragement",
     "life": {
       "perk": {
@@ -1150,6 +1224,7 @@
     }
   },
   "the moon": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/7/7f/RWS_Tarot_18_Moon.jpg",
     "description": "**Upright**: Illusion, fear, anxiety, insecurity, subconscious\n**Reversed**:  Release of fear, unhappiness, confusion",
     "life": {
       "perk": {
@@ -1173,6 +1248,7 @@
     }
   },
   "the sun": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/1/17/RWS_Tarot_19_Sun.jpg",
     "description": "**Upright**: Fun, warmth, success, positivity, vitality\n**Reversed**: Temporary depression, lack of success",
     "life": {
       "perk": {
@@ -1196,6 +1272,7 @@
     }
   },
   "judgement": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/d/dd/RWS_Tarot_20_Judgement.jpg",
     "description": "**Upright**:  Judgement, rebirth, inner calling, absolution\n**Reversed**: Self doubt, refusal to look inward",
     "life": {
       "perk": {
@@ -1219,6 +1296,7 @@
     }
   },
   "the world": {
+    "image": "https://upload.wikimedia.org/wikipedia/en/f/ff/RWS_Tarot_21_World.jpg",
     "description": "**Upright**: Completion, accomplishment\n**Reversed**: Incomplete, lack of closure",
     "life": {
       "flaw": {

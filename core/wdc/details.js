@@ -1,5 +1,5 @@
 "use strict";
-const {rollRandom, powerPerks, powerFlaws, lifePerks, lifeFlaws} = require("../../helpers.js");
+const {rollRandom, invertedDetails} = require("../../helpers.js");
 const {detailsTypes, detailsTargets} = require('../../data/lookups.json');
 const MessageHandler = require('../../messageHandler.js');
 const DetailsTable = require("../../data/details.json");
@@ -25,18 +25,7 @@ class Details extends MessageHandler {
     }
 
     static rollDetail(msg, target, type) {
-        let roll;
-        if (target === 'power') {
-            roll = (type === 'flaw' && powerFlaws) || (type === 'perk' && powerPerks);
-        } else if (target === 'life') {
-            roll = (type === 'flaw' && lifeFlaws) || (type === 'perk' && lifePerks);
-        } else {
-            throw new SyntaxError("Target was not 'life' or 'power' but " + target)
-        }
-
-        /* Keep rolling until we get a valid option.
-         * We can do this because all four options have at least one entry
-         */
+        const roll = invertedDetails[target][type];
         const key = roll[rollRandom(Object.keys(roll))];
         const card = DetailsTable[key];
 

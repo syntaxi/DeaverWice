@@ -17,34 +17,33 @@ helpers.rollRandom = function (list) {
     }
 };
 
-helpers.titleCase = function(string) {
-    return string.toLowerCase().split(' ').map(function(word) {
+helpers.titleCase = function (string) {
+    return string.toLowerCase().split(' ').map(function (word) {
         return word.replace(word[0], word[0].toUpperCase());
     }).join(' ');
 }
 
-helpers.powerPerks = {};
-helpers.powerFlaws = {};
-helpers.lifePerks = {};
-helpers.lifeFlaws = {};
+helpers.invertedDetails = {
+    'life': {
+        'perk': {},
+        'flaw': {}
+    },
+    'power': {
+        'perk': {},
+        'flaw': {}
+    }
+};
+const types = {"perk": true, "flaw": true};
+const targets = {"life": true, "power": true};
 
 for (let key in DetailsTable) {
-    if (DetailsTable.hasOwnProperty(key)) {
-        const card = DetailsTable[key];
-        if ('power' in card) {
-            if ('flaw' in card['power']) {
-                helpers.powerFlaws[card['power']['flaw'].title.toLowerCase()] = key;
-            }
-            if ('perk' in card['power']) {
-                helpers.powerPerks[card['power']['perk'].title.toLowerCase()] = key;
-            }
-        }
-        if ('life' in card) {
-            if ('flaw' in card['life']) {
-                helpers.lifeFlaws[card['life']['flaw'].title.toLowerCase()] = key;
-            }
-            if ('perk' in card['life']) {
-                helpers.lifePerks[card['life']['perk'].title.toLowerCase()] = key;
+    const card = DetailsTable[key];
+    for (let target in targets) {
+        if (target in card) {
+            for (let type in types) {
+                if (card[target][type]) {
+                    helpers.invertedDetails[target][type][card[target][type].title.toLowerCase()] = key;
+                }
             }
         }
     }

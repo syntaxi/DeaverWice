@@ -1,10 +1,10 @@
 "use strict";
-const {titleCase,powerPerks, powerFlaws, lifePerks, lifeFlaws} = require("../../helpers.js");
+const {titleCase, invertedDetails} = require("../../helpers.js");
 const MessageHandler = require('../../messageHandler.js');
 const DetailsTable = require("../../data/details.json");
 const {typeLookup} = require("../../data/lookups.json");
 const AugmentsTable = require("../../data/augments.json");
-const {buildDetailEmbed}= require('./details.js');
+const {buildDetailEmbed} = require('./details.js');
 const {buildAugmentEmbed} = require('./augment.js');
 const {RichEmbed} = require("discord.js");
 
@@ -40,34 +40,20 @@ class Info extends MessageHandler {
                 .setDescription(card.description)
                 .addField("Details", details));
             return true;
-        } else if (key in powerPerks) {
-            Info.sendOutput(
-                msg,
-                buildDetailEmbed(
-                    DetailsTable[powerPerks[key]]['power']['perk'],
-                    powerPerks[key]));
-            return true;
-        } else if (key in powerFlaws) {
-            Info.sendOutput(
-                msg,
-                buildDetailEmbed(
-                    DetailsTable[powerFlaws[key]]['power']['flaw'],
-                    powerFlaws[key]));
-            return true;
-        } else if (key in lifePerks) {
-            Info.sendOutput(
-                msg,
-                buildDetailEmbed(
-                    DetailsTable[lifePerks[key]]['life']['perk'],
-                    lifePerks[key]));
-            return true;
-        } else if (key in lifeFlaws) {
-            Info.sendOutput(
-                msg,
-                buildDetailEmbed(
-                    DetailsTable[lifeFlaws[key]]['life']['flaw'],
-                    lifeFlaws[key]));
-            return true;
+        } else {
+            for (let target in invertedDetails) {
+                for (let type in invertedDetails[target]) {
+                    if (key in invertedDetails[target][type]) {
+                        const cardName = invertedDetails[target][type][key];
+                        Info.sendOutput(
+                            msg,
+                            buildDetailEmbed(
+                                DetailsTable[cardName][target][type],
+                                invertedDetails[target][type][key]));
+                        return true;
+                    }
+                }
+            }
         }
         return false;
     }

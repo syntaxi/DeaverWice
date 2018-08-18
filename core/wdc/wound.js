@@ -1,9 +1,8 @@
 "use strict";
 const MessageHandler = require('../../messageHandler.js');
-const WoundTable = require("../../data/woundTable.json");
+const WoundTable = require("../../data/wound.json");
 const {rollRandom} = require("../../helpers.js");
-const {locationLookup, severityLookup} = require('../../data/lookups');
-
+const {locationLookup, severityLookup} = require('../../data/lookups.json');
 
 
 /**

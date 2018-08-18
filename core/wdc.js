@@ -27,6 +27,9 @@ class Wdc extends MessageHandler {
         this.registerCommand('life', this.prefixWith('details.js', 'life'));
 
         this.registerCommand('info', 'info.js');
+
+        this.registerCommand('aug', 'augment.js');
+        this.registerCommand('augment', 'augment.js');
     }
 
     message(msg) {

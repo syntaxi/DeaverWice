@@ -2,22 +2,25 @@
 const {titleCase,powerPerks, powerFlaws, lifePerks, lifeFlaws} = require("../../helpers.js");
 const MessageHandler = require('../../messageHandler.js');
 const DetailsTable = require("../../data/details.json");
-const Details = require('./details.js');
+const {typeLookup} = require("../../data/lookups.json");
+const AugmentsTable = require("../../data/augments.json");
+const {buildDetailEmbed}= require('./details.js');
+const {buildAugmentEmbed} = require('./augment.js');
 const {RichEmbed} = require("discord.js");
 
 class Info extends MessageHandler {
     handle(msg, ...key) {
         key = key.join(' ').toLowerCase().trim();
-        if (this.tryPerks(msg, key)) {
+        if (Info.tryDetails(msg, key)) {
+
+        } else if (Info.tryAugments(msg, key)) {
 
         } else {
             Info.sendOutput(msg, "I'm sorry, but I don't have info on that.");
         }
     }
 
-    tryPerks(msg, key) {
-        let success = false;
-
+    static tryDetails(msg, key) {
         if (key in DetailsTable) {
             const card = DetailsTable[key];
             let details = [];
@@ -40,34 +43,42 @@ class Info extends MessageHandler {
         } else if (key in powerPerks) {
             Info.sendOutput(
                 msg,
-                Details.buildDetailEmbed(
+                buildDetailEmbed(
                     DetailsTable[powerPerks[key]]['power']['perk'],
                     powerPerks[key]));
             return true;
         } else if (key in powerFlaws) {
             Info.sendOutput(
                 msg,
-                Details.buildDetailEmbed(
+                buildDetailEmbed(
                     DetailsTable[powerFlaws[key]]['power']['flaw'],
                     powerFlaws[key]));
             return true;
         } else if (key in lifePerks) {
             Info.sendOutput(
                 msg,
-                Details.buildDetailEmbed(
+                buildDetailEmbed(
                     DetailsTable[lifePerks[key]]['life']['perk'],
                     lifePerks[key]));
             return true;
         } else if (key in lifeFlaws) {
             Info.sendOutput(
                 msg,
-                Details.buildDetailEmbed(
+                buildDetailEmbed(
                     DetailsTable[lifeFlaws[key]]['life']['flaw'],
                     lifeFlaws[key]));
             return true;
         }
+        return false;
+    }
 
-        return success;
+    static tryAugments(msg, key) {
+        for (let type in AugmentsTable) {
+            if (AugmentsTable.hasOwnProperty(type) && key in AugmentsTable[type]) {
+                Info.sendOutput(msg, buildAugmentEmbed(type, key));
+                return true;
+            }
+        }
     }
 
 }

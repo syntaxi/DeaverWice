@@ -24,15 +24,29 @@
     "c": "critical"
   },
   "detailsTypes": {
-    "perk":"perk",
-    "p":"perk",
-    "flaw":"flaw",
-    "f":"flaw"
+    "perk": "perk",
+    "p": "perk",
+    "flaw": "flaw",
+    "f": "flaw"
   },
   "detailsTargets": {
-    "life":"life",
-    "l":"life",
-    "power":"power",
-    "p":"power"
+    "life": "life",
+    "l": "life",
+    "power": "power",
+    "p": "power"
+  },
+  "typeLookup": {
+    "mover": true,
+    "shaker": true,
+    "brute": true,
+    "breaker": true,
+    "master": true,
+    "tinker": true,
+    "blaster": true,
+    "thinker": true,
+    "striker": true,
+    "changer": true,
+    "trump": true,
+    "stranger": true
   }
 }

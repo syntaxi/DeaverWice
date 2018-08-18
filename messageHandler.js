@@ -64,9 +64,9 @@ class MessageHandler {
      */
     static replyOutput(message, value) {
         if (typeof value === 'string') {
-            MessageHandler.doOutput(message.reply.bind(message.channel), value);
+            MessageHandler.doOutput(message.reply.bind(message), value);
         } else {
-            message.channel.send(value);
+            message.reply(value);
         }
     }
 

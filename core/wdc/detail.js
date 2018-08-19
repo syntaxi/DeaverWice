@@ -6,21 +6,21 @@ const DetailsTable = require("../../data/details.json");
 const {RichEmbed} = require("discord.js");
 
 
-class Details extends MessageHandler {
+class Detail extends MessageHandler {
     constructor(bot) {
         super();
         this.bot = bot;
     }
 
     handle(msg, target, type) {
-        if (target = Details.findTarget(target)) {
-            if (type = Details.findType(type)) {
-                Details.rollDetail(msg, target, type);
+        if (target = Detail.findTarget(target)) {
+            if (type = Detail.findType(type)) {
+                Detail.rollDetail(msg, target, type);
             } else {
-                Details.sendOutput(msg, "Incorrect type of detail. Needs to be 'flaw' or 'perk'");
+                Detail.sendOutput(msg, "Incorrect type of detail. Needs to be 'flaw' or 'perk'");
             }
         } else {
-            Details.sendOutput(msg, "ERR: Somehow details has been called with no detail");
+            Detail.sendOutput(msg, "ERR: Somehow details has been called with no detail");
         }
     }
 
@@ -29,7 +29,7 @@ class Details extends MessageHandler {
         const key = roll[rollRandom(Object.keys(roll))];
         const card = DetailsTable[key];
 
-        Details.sendOutput(msg, Details.buildDetailEmbed(card[target][type], key));
+        Detail.sendOutput(msg, Detail.buildDetailEmbed(card[target][type], key));
     }
 
     static buildDetailEmbed(card, cardName) {
@@ -52,4 +52,4 @@ class Details extends MessageHandler {
 
 }
 
-module.exports = Details;
+module.exports = Detail;

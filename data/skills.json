@@ -1,0 +1,130 @@
+{
+  "description": {
+    "": "You start play with one skill at 4, two skills at 3, 3 skills at 2, and 4 skills at 1. Then, you gain additional skill points equal to your knowledge pips.\n\nYou cannot spend more points in a skill than you have in the relevant stat. Additionally, you cannot have more than 50 skill pips total.\n\nYou may not apply the effects of more than one skill to a single roll, nor may you benefit from more pips of the skill than you have pips in the base stat. This applies most notably in the case of Aim-using javelins.",
+    "Potential": "The Potential skill is removed. If your character really qualifies for it, ask the GM and they may make a special dispensation, temporarily, until your character regains their memories or suchlike.",
+    "Power Use": "For some capes, no other skill makes sense for their power. In this case, at their GM’s specific direction, they may take points in the ‘Power Use’ skill. This gives +1 die to all power-related actions at level 3, and +2  dice at level 5. All other levels of the skill give nothing by default, although may have bonuses attached if necessary."
+  },
+  "melee": {
+    "description": "Melee Skills",
+    "brawl": {
+      "description": "Put aside technique, martial arts, weapons, footwork, and combat can be reduced to a simple idea: beat the other guy into submission before he does the same to you.  Brawl is the combat skill that focuses on the beating.  Emphasizing heavier weapons and the slinging of fists, Brawl is something touched on by anyone who’s made a habit of swinging their fists, be they a street thug or a teen who grew up trading blows with an abusive dad.  Applies only to Brawn-based weapons and when making attacks using the Brawn stat.",
+      "levels": [
+        "When making a Brawn-based melee attack, roll an additional die and take the highest die result.",
+        "Wild Swing: +1 to attack roll, only usable vs staggered characters. Doing so staggers the attacker. You always count as wearing default gauntlets for the purpose of unarmed strikes.",
+        "When making a Brawn-based melee attack, roll two additional die and take the highest die result.",
+        "Can elect to roll a d22 to make Brawn-based melee attacks, but roll one fewer dice on that attack and ignore any effects that would give you an extra die to hit.  Against foes with light armor, attack rolls of 24+ deal an extra moderate bash effect. Bonus for Wild Swing increased to +2.",
+        "Choose a brawl specialty."
+      ],
+      "specialties": {
+        "Slugger": "Increase the distance of all knockback effects by 1 square. Upon knocking an opponent back, can immediately shift towards them. Knockback effects force a DC 16 acrobatics check or knock the opponent down.",
+        "Bulldog": "Ignore the first stagger/KD received. Refreshes after hitting the opponent.",
+        "Knock Silly": "Struck foes are confused, DC 12 wits to correctly identify targets and directions.",
+        "Pugilist": "Wild swing can be used against an opponent that isn’t staggered, but if it misses, you’re knocked down."
+      },
+      "stat": "Brawn"
+    },
+    "blitz": {
+      "description": "Move fast, hit hard.  A combat specialty focused on charging, tackling, and fast, hard-hitting actions in a brawl, aiming to pick fights and put foes on the back foot.  A skill trained by some athletes and some law enforcement, as well as ambush attackers and dark-cowled vigilantes.  Limited in longer engagements, as effects largely restricted to opening of fight.\n\nIs restricted to melee.  Must travel at least 15’ immediately before attacking to apply the bonuses from this skill.",
+      "levels": [
+        "When making an attack roll as part of a charge, as an attack of opportunity on a foe exiting melee range, or when defending against an attack of opportunity, roll one extra die and keep the highest.",
+        "When a foe is struck with a Blitz attack, can carry them with the force of the attack, up to 5 squares. Keep the same relative position at the end of the knockback as the two capes had when the attack was made.",
+        "Increase the dice bonus in the 1-pip version of Blitz to 2 dice.",
+        "If the carry-through from the 2-pip bonus carries the enemy into a wall, you deal an extra lesser bash of damage.",
+        "Choose a blitz specialty."
+      ],
+      "specialties": {
+        "Dive Strike": "When used with flight, blitzing from above always counts as carrying the opponent into a wall for the purpose of the 4-pip extra damage, and increases this damage to a moderate.",
+        "Bullrush": "Charging opponents from more than 5 squares away gives you +1 to hit."
+      },
+      "stat": "Athletics or Brawn"
+    },
+    "critical": {
+      "description": "With practice, the character has learned how to deliver the hurt and land blows where they’ll do the most damage.  Points in this skill can represent experience in something like Krav Maga or experience in fighting with no holds barred.  Examples might include brutal gang members,  pit fighters, parahumans with exceptionally high brawn or dexterity, snipers, or might even be an abused child who knows they’ll never be able to beat their physically abusive father, who is twice their size, so they’ve become accustomed to thinking about fighting with attention to weak points and vulnerabilities.",
+      "levels": [
+        "When making a dexterity-based melee attack, roll one extra die and keep the highest.",
+        "When confirming a critical hit with the critical skill, roll the critical confirm at a modifier 3 higher than the initial attack.",
+        "When making a dexterity-based melee attack, roll two extra dice and keep the highest.",
+        "When attacking with the critical skill, you can threaten critical hits on a +19, but these do not automatically hit and do not get the +3 to confirm themselves.",
+        "Choose a critical specialty."
+      ],
+      "specialties": {
+        "Efficient Killer": "Your critical hits that benefit from the 2-pip bonus automatically confirm.",
+        "To the Pain!": "Critical hits automatically confirm, and deal double wound effects instead of increased damage.",
+        "Go for the Legs": "Critical hits knock the target down.",
+        "Bloodbath": "When you confirm a critical hit, roll to confirm again. If you do, increase the damage of the critical hit by however much it increased by the first time."
+      },
+      "stat": "Dexterity"
+    },
+    "finesse": {
+      "description": "Careful handling of the right weapon can allow for a flurry of melee hits, each hit aimed at delivering maximum damage.  Knife-fighters, sword-wielders and the like will often utilize in finesse.  Applies only to weapons with the Dexterity option, only when making attacks with Dex as the primary stat.",
+      "levels": [
+        "Roll an additional die when rolling to attack in melee with a qualifying Dex weapon, use highest result.",
+        "When using a one-handed weapon to strike out at a foe who is staggered, confused, blinded, blitzed, or screaming, can make an additional attack at cost of not being able to apply the Finesse skill to attacks that round. If already multiattacking (not dual wielding), can apply finesse bonuses to your attacks as normal. Refreshed if foe K.O.d or at the end of the encounter.",
+        "Roll an additional die when rolling to attack in melee with a qualifying Dex weapon, use highest result.",
+        "When dual wielding or multiattacking, gain an added ½ attack a round with Dexterity based melee weapons.  Carries over from round to round. When not multiattacking, can add +1 to hit if you weren’t hit last round.",
+        "Choose a finesse specialty."
+      ],
+      "specialties": {
+        "Bloodthirsty": "Your strikes inflict bleed.",
+        "Flurry": "When you threaten a critical hit, you can take an attack of opportunity instead of rolling to confirm.",
+        "Assassin": "Attacks made out of stealth threaten critical hits on a 19+(they do not automatically hit unless you roll a natural 20)."
+      },
+      "stat": "Dexterity"
+    },
+    "martial arts": {
+      "description": "Various martial arts are preferred by those who like to fight bare handed. Martial arts is unique in that it is not one skill, but a collection of styles that grant different effects depending on which path you choose to take.",
+      "levels": [
+        "When fighting unarmed in melee combat, roll one extra die and keep the highest.",
+        "Choose a martial art. When you threaten a critical hit on a melee attack, instead of rolling to confirm, you may choose to apply the martial art’s benefit.\n● Judo:  Attempt to grapple your opponent.\n● Karate:  Your attack knocks your opponent down and deals 1 moderate bash.\n● Boxing:  Take an attack of opportunity at -2 to hit.",
+        "When fighting unarmed in melee combat, roll two extra dice and keep the highest.",
+        "When fighting unarmed, you have +1 to hit. You can sacrifice this bonus to use your martial art’s chosen defense at +1 this round instead:\n● Judo:  Bonus to blocking\n● Karate:  Bonus to parries\n● Boxing:  Bonus to dodging.",
+        "Take the martial arts specialty of your chosen martial art."
+      ],
+      "specialties": {
+        "Iron Grip": "Treated as the executioner specialty for strongarm. If you already possess the executioner specialty, you attack grappled targets at +2. Tied to Judo.",
+        "Flow Like Water": "Replaces the 4-pip bonus. When you successfully parry an attack, you have +1 to hit next turn. When you successfully hit an attack, gain +1 to parry the next round. These bonuses never stack. Start with both bonuses active round 1.  Tied to Karate.",
+        "Float Like A Butterfly": "Remove the penalty to hit attacks of opportunity off of critical threats. Regular attacks of opportunity are made at +2 to hit. Tied to Boxing."
+      },
+      "stat": "Brawn/Dexterity"
+    },
+    "strongarm": {
+      "description": "To a character with the strongarm skill, they’ve learned to approach the playing field with a sense of things being a tug of war and measure of raw power.  If they’re standing and their enemy is sitting on their ass, they have to be doing something right.  To these ends, they emphasize grabbing, throwing, pushing, and otherwise physically bullying their opposition.  The Strongarm skill is the province of bouncers, many athletes, wrestlers of all sorts, and heavy laborers\n\nStrongarm is also the skill that represents one’s ability to use powers that move foes around.",
+      "levels": [
+        "When rolling to grapple, hold, push, pull, or throw people, roll an added die and keep the highest result.",
+        "When initiating a grapple, roll strongarm at a +1 bonus.",
+        "When rolling to grapple, hold, push, pull, or throw people, roll two added die and keep the highest result.",
+        "When you threaten a critical hit, you can instead attempt to grapple the opponent. If you have the 2-pip judo bonus for martial arts, you can reroll this grapple attempt. ",
+        "Choose a strongarm specialty."
+      ],
+      "specialties": {
+        "Executioner": "Attacking the grapple victim does not forfeit stages of control.",
+        "Kidnapper": "Can move without forfeiting stages of control.",
+        "Human Nunchuck": "The single greatest specialty in the game. When a foe is successfully grappled, can use them as a melee weapon. Attacks this way are made at a -4 penalty, +1 for every stage of control on the target, to a max of +0. Use the grappled target as a two handed brawn-based melee weapon. If a foe is struck, the damage from the attack is inflicted to both the foe and the grappled target."
+      },
+      "stat": "Brawn"
+    }
+  },
+  "ranged": {
+    "skill name": {
+      "description": "skill description",
+      "levels": [
+        "one pip info",
+        "two pip info",
+        "three pip info",
+        "four pip info",
+        "five pip info"
+      ],
+      "specialties": {
+        "name1": "description1",
+        "name2": "description2",
+        "name3": "description3"
+      }
+    }
+  },
+  "defence": {
+  },
+  "social": {
+  },
+  "misc": {
+  }
+}

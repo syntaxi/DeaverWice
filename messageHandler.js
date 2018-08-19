@@ -1,5 +1,5 @@
 const fs = require("fs");
-const path = require('path');
+const {splitByLength} = require('./helpers.js');
 
 class MessageHandler {
     /**
@@ -78,20 +78,12 @@ class MessageHandler {
      * @param value The output to send.
      */
     static doOutput(outFunc, value) {
-        const messageSize = 2000 - 5;
-        const maxBacktrack = 50;
-        let i = 0;
-        while (i + messageSize <= value.length) {
-            let size = messageSize;
-            while (value.charAt(i + size) !== " " && size > messageSize - maxBacktrack) {
-                size--;
-            }
-            outFunc(value.substr(i, size) + "[...]");
-            i += size;
+        const lines = splitByLength(value, 2000 - 5, 50);
+        for (let j = 0; j < lines.length - 1; j++) {
+            outFunc(lines[j] + "[...]");
         }
-        outFunc(value.substring(i));
+        outFunc(lines[lines.length - 1]);
     }
-
     /**
      * Register a command to a given key.
      *

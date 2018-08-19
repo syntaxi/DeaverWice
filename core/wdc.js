@@ -22,14 +22,17 @@ class Wdc extends MessageHandler {
         this.registerCommand('shock', this.prefixWith('wound.js', 'shock'));
         this.registerCommand('rend', this.prefixWith('wound.js', 'rend'));
 
-        this.registerCommand('detail', 'details.js');
-        this.registerCommand('power', this.prefixWith('details.js', 'power'));
-        this.registerCommand('life', this.prefixWith('details.js', 'life'));
+        this.registerCommand('detail', 'detail.js');
+        this.registerCommand('power', this.prefixWith('detail.js', 'power'));
+        this.registerCommand('life', this.prefixWith('detail.js', 'life'));
 
         this.registerCommand('info', 'info.js');
 
         this.registerCommand('aug', 'augment.js');
         this.registerCommand('augment', 'augment.js');
+
+        this.registerCommand('skill', 'skill.js');
+        this.registerCommand('skills', 'skill.js');
     }
 
     message(msg) {

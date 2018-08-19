@@ -2,10 +2,10 @@
 const {titleCase, invertedDetails} = require("../../helpers.js");
 const MessageHandler = require('../../messageHandler.js');
 const DetailsTable = require("../../data/details.json");
-const {typeLookup} = require("../../data/lookups.json");
 const AugmentsTable = require("../../data/augments.json");
-const {buildDetailEmbed} = require('./details.js');
+const {buildDetailEmbed} = require('./detail.js');
 const {buildAugmentEmbed} = require('./augment.js');
+const Skill = require('./skill.js');
 const {RichEmbed} = require("discord.js");
 
 class Info extends MessageHandler {
@@ -14,6 +14,8 @@ class Info extends MessageHandler {
         if (Info.tryDetails(msg, key)) {
 
         } else if (Info.tryAugments(msg, key)) {
+
+        } else if (Info.trySkills(msg, key)) {
 
         } else {
             Info.sendOutput(msg, "I'm sorry, but I don't have info on that.");
@@ -66,6 +68,14 @@ class Info extends MessageHandler {
                 return true;
             }
         }
+    }
+
+    static trySkills(msg, key) {
+        if (key === 'skill' || key === 'skills') {
+            Skill.handleListing(msg);
+            return true
+        }
+        return Skill.handleName(msg, key) || Skill.handleType(msg, key);
     }
 
 }

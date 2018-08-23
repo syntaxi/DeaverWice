@@ -25,6 +25,12 @@ class Wdc extends MessageHandler {
         this.registerCommand('detail', 'detail.js');
         this.registerCommand('power', this.prefixWith('detail.js', 'power'));
         this.registerCommand('life', this.prefixWith('detail.js', 'life'));
+        this.registerCommand('perk', (msg, ...args) => {
+            this.handlers['detail.js'].handle.apply(this.handlers['detail.js'], [msg].concat(args[0], ['perk'], args.slice(1)));
+        });
+        this.registerCommand('flaw', (msg, ...args) => {
+            this.handlers['detail.js'].handle.apply(this.handlers['detail.js'], [msg].concat(args[0], ['flaw'], args.slice(1)));
+        });
 
         this.registerCommand('info', 'info.js');
 

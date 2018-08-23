@@ -62,6 +62,7 @@ class Memes extends MessageHandler {
             " made you a photo, I'll send it in a letter. Even more of my photos You can look in the photo" +
             " album on the web site, I'm there permanently in the network and here I am very rare. My" +
             " id6767889. I'll be waiting for you. Kissing you tenderly. Your Sonya.");
+        this.registerIncludes("ride me!!", "https://www.youtube.com/watch?v=DC97xIiPikw");
     }
 
     /**

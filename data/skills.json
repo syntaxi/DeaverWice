@@ -105,26 +105,383 @@
     }
   },
   "ranged": {
-    "skill name": {
-      "description": "skill description",
+    "aim": {
+      "description": "A steady hand and keen hand-eye coordination are essential for those who would pick off their enemies with ranged attacks.  Refining the ability to place the attacks where they need to allows more reliable hits and makes the hits that are delivered more potent.  Not for use with weapons or powers that spit out a large number of shots, favored by snipers and archers.\nOnly the added die and bonuses from one ranged skill can be applied at a time when making an attack",
       "levels": [
-        "one pip info",
-        "two pip info",
-        "three pip info",
-        "four pip info",
-        "five pip info"
+        "When making a ranged attack when not in melee with an enemy or staggered, gain +1 dice and keep the highest. If a partial action was spent this turn taking aim, increase the bonus to +2 dice.",
+        "Taking a standard action to aim next shot allows you to add half your wits (rounding down) to your next attack’s hit roll, and pierce 1 layer of armor with the next shot.",
+        "1-pip bonus increases to +2 dice (+3 when an aim action is spent).",
+        "Ignore penalties to hit from partial cover if you spend a partial action on aiming.",
+        "Choose an aim specialty"
       ],
       "specialties": {
-        "name1": "description1",
-        "name2": "description2",
-        "name3": "description3"
-      }
+        "Brutal Aim": "Your shots have a 50% chance to stagger enemies on hit.",
+        "Multi-Aim": "You can split your aimed shots among multiple targets if you make multiple attacks. When attacking, gain +1 to hit the next shot for each shot before it you hit this turn.",
+        "Patience": "You can delay your ranged attack per Tactics skill with no penalty."
+      },
+      "stat": "Dexterity"
+    },
+    "barrage": {
+      "description": "The second of the ranged combat skills, Barrage is focused around delivering more shots in a given span of time.  At the outset, the character can make decisions about whether to shoot more inaccurately or focus on honing their aim when firing a great deal.  Later on, the gap between these two options closes.\nBarrage skills and specialties only work with ranged attacks/powers and attacks/powers that are at least semiautomatic in function (can fire ½ Dex # of attacks/round), and are always capped at the gun/power’s maximum.\nOnly the added die and bonuses from one ranged skill can be applied at a time when making an attack.",
+      "levels": [
+        "When making a ranged attack that fires multiple shots in a round, if you haven’t moved that round, roll one extra die and keep the highest.",
+        "Suppressing Fire: Missing a shot by 3 or less gives the target -1 to hit on attacks they make next round. Does not stack.",
+        "1-pip bonus increased to 2 dice.",
+        "Barrage bonus dice apply even if you have already moved this round.",
+        "Choose a barrage specialty"
+      ],
+      "specialties": {
+        "Spray and Pray": "Suppressing fire penalty to hit triggers on missing by 6 or less. Missing by 1 or less hits instead, and deals half damage.",
+        "Splitfire": "Can shoot multiple targets with the same barrage at no penalty. Shots can ‘cleave’, hitting any two adjacent enemies (they both roll dodge against the same attack)."
+      },
+      "stat": "Dexterity"
+    },
+    "bullseye": {
+      "description": "Aim for center mass, breathe deep… exhale as you pull the trigger.  This cape may use ranged attacks, but they sure aren’t afraid of getting up close and personal.  Used by the military, by hitmen, by vigilantes and others who may get into close-quarters scraps frequently.",
+      "levels": [
+        "When making ranged attacks against targets within 5 squares, roll an extra die and keep the highest. Ranged attacks made in melee do not provoke attacks of opportunity when using the bullseye skill.",
+        "When making a ranged attack with the bonuses from bullseye, can reduce damage by 1 lesser to make the attack pierce 1 layer of armor and inflict pain for one round.",
+        "When making ranged attacks against targets within 5 squares, roll two extra dice and keep the highest. When making a ranged attack against a target within 10 squares or half your weapon’s range increment, whichever is more, roll one extra die and keep the highest. ",
+        "When shooting a target in melee range, can choose to reroll all wound rolls, but must accept the second result",
+        "Choose a bullseye specialty."
+      ],
+      "specialties": {
+        "Point Blank": "Choose 2 more specialties, but can only apply the bonuses from the skill in half the stated ranges above, rounding up.",
+        "Hot Lead": "Critical hits against a previously-wounded target have +4 to confirm.",
+        "Full Metal Jacket": "Double the armor piercing from the 2-pip option",
+        "Mow Down": "When an opponent fails consciousness against one of your shots, you get an attack of opportunity.",
+        "Kneecapping": "Pain from 2-pip option lasts until the end of the fight."
+      },
+      "misc": {
+        "Potshot Conditions": "● **Brawn**: A melee hit against the gunfight user or a shot from within 2 squares of the gunfight user.\n  ● **Athletics**: A partial action spent on non-shifting movement, or a shift that moves more than 5 squares.\n  ● **Dexterity**: Taking an action that utilizes a non-weapon item (ie. throwing a flashbang), target makes a skill roll for any non-combat skill that isn’t acrobatics or reflexes.\n  ● **Wits**: Emerging from smoke/sight hazard or from an area such that that line of sight was obstructed.\n  ● **Social**: Character and teammates have target flanked from at least two cardinal directions (ie. character to their front, character’s ally behind, character’s ally to left). Trigger at the end of the flanking ally’s turn. Both flankers must be in melee of the desired target.\n  ● **Knowledge**: Character fires as part of delayed action, tactics, or foe trips up on trap/hazard character is aware of.\n  ● **Guts**: Foe attacks the gunfighter from cover."
+      },
+      "stat": "Dexterity"
+    },
+    "gunfight": {
+      "description": "Gunfighting is the province of those who know the battlefield and their weapons well.  Having been through hazardous situations, they can maintain their cool and keep on shooting.  Police officers in the most dangerous areas, military, child soldiers, and even gun aficionados with some experience in paintball or airsoft might show skill in gunfighting, but even more than other ranged skills, gunfighting is a skill that is learned with experience.",
+      "levels": [
+        "When making a ranged attack, roll one extra die and keep the highest.",
+        "Instead of making a ranged attack normally, a gunfight user can delay their attack, choose one of the conditions on the table below, and then wait for an opening to strike. If and when that condition is fulfilled in the next round, they can make a ‘potshot’ attack of opportunity against the target that fulfilled it at +1 to hit. If the condition is never fulfilled, the shot is wasted.",
+        "When making a ranged attack, roll two extra dice and keep the highest. ",
+        "When setting up a potshot, the gunfighter can choose to have the 2-pip bonus be +1 dice instead of +1 to hit, or select 2 conditions that will trigger the potshot.",
+        "Choose a gunfight specialty."
+      ],
+      "specialties": {
+        "Fan the Hammer": "On hit with potshot, can ready another potshot at the cost of standard action next turn. The same action cannot trigger a potshot twice.",
+        "Fire Blind": "Once/fight, negate all penalties from cover and blindness to hit a target."
+      },
+      "stat": "Dexterity"
     }
   },
   "defence": {
+    "evade": {
+      "description": "Duck, leap for cover, recognize danger and move the hell out of the way.  Evading is an important thing for anyone who goes into a confrontation and doesn’t expect to be able to deflect bullets.  Favored by lightly armored capes who prioritize mobility and flexibility in their fighting style.",
+      "levels": [
+        "When dodging an attack, roll one extra die and keep the highest.",
+        "Gain two free dodge rerolls per fight. Remove one of these rerolls if you wear medium armor, and two if you wear heavy armor.",
+        "When making a dodge roll against an attack, roll an additional two dice and keep the highest result.",
+        "Duck and Roll: When you successfully dodge an attack, you can shift 1 square in any direction. This does not interrupt multiattacks",
+        "Gain an evade specialty."
+      ],
+      "specialties": {
+        "Slip Through": "Moving out of melee and standing up in melee do not provoke attacks of opportunity.",
+        "Elusive": "Can instead move the cape’s normal shift distance on a successful duck and roll, up to 5 squares. This can interrupt multiattacks.",
+        "Fend Off": "Roll both dodge and block or parry vs. an attack, -2 to each.",
+        "Artful Dodge": "Regardless of die results, always dodge vs. attack roll of 12 or less."
+      },
+      "stat": "Athletics"
+    },
+    "parry": {
+      "description": "Strike attacks out of the air or redirect them with deft movements. A defense for those on the offensive. Parrying uses whichever stat you use to attack in melee. \n\nUsing the parry skill requires the user to use a weapon capable of doing so",
+      "levels": [
+        "When parrying an attack, roll one extra die and keep the highest.",
+        "If you have a bonus to hit from your power, you can add it to your parry skill as well, up to a +1 bonus. This only works against other melee attacks.",
+        "When parrying an attack, roll two extra dice and keep the highest.",
+        "You automatically confirm critical parries.",
+        "Choose a parry specialty."
+      ],
+      "specialties": {
+        "Cut Down": "The 2-pip bonus also applies to ranged attacks.",
+        "Iron Wall": "If you crit in melee on your turn, you gain +1 to parry for the rest of the round."
+      },
+      "stat": "Brawn/Dexterity/Other"
+    },
+    "withstand": {
+      "description": "Block, brace and withstand incoming attacks. Ideal for brutes and those with otherwise high Brawn and Guts, as well as those who wear heavy armor. \n\nCan block striker attacks, unless the brute wears minimal covering and lacks a weapon with which to deflect strikes.",
+      "levels": [
+        "When blocking an attack, roll one extra die and keep the highest.",
+        "When you roll 1 less than the amount needed to block an attack, treat the attack’s damage as though it was resisted.",
+        "When blocking an attack, roll two extra dice and keep the highest.",
+        "You can’t be knocked down by a wound effect unless two or more effects that would knock you down are rolled for the one attack. The same thing applies to staggers, bleeds, and pain. (This does not affect powers).",
+        "Choose a withstand specialty"
+      ],
+      "specialties": {
+        "Power Through": "The first time you roll consciousness in a fight, roll it at +5.",
+        "Steel Jaw": "2-pip bonus applies when blocking by 2 or less.",
+        "Human Tank": "Once per fight, you can double the effectiveness of your armor for a full round."
+      },
+      "stat": "Brawn/Guts"
+    }
   },
   "social": {
+    "charm": {
+      "description": "Some people can look good in rags, or make even crabby old ladies blush. A blending of attractiveness, being able to read emotions, and being able to sell one’s own emotions. Charm works with both small audiences and larger ones, occasionally seeing slight overlap with Deception. Skill used by lobbyists, romancers, CEOs, and even the like of priests. Anyone who wants to sway hearts and make key impressions.",
+      "levels": [
+        "When making a social roll that involves calibrating initial impressions, attractiveness, seduction, or attempts to sell one’s emotions (including acting, emotional appeals), roll an extra die and keep the highest result.",
+        "When negotiating for something that is minor and/or low risk, can ‘take 14’ to treat the dice result as a 14. When bargaining over a price with NPCs, a successful charm roll can raise or lower the price by up to 15%.",
+        "When making a social roll that involves calibrating initial impressions, attractiveness, seduction, or attempts to sell one’s emotions (including acting, emotional appeals), roll an extra die and keep the highest result.",
+        "When making a first impression (generally the first charm roll made in the first encounter with a target), roll three extra dice and keep the highest result.",
+        "Choose a charm specialty"
+      ],
+      "specialties": {
+        "Sex Appeal": "When charming characters attracted to you, roll at +1.",
+        "Lasting Impression": "If a social-based costume feature (icon, etc.) would be destroyed by something such as Blackened, it is not destroyed up to twice per fight."
+      },
+      "stat": "Social"
+    },
+    "command": {
+      "description": "You’ve got people under your command, and it’s time to get shit done. With an emphasis on organizing a group in the midst of a battlefield, Command has some secondary benefits as a general team and group management skill. Command benefits are primarily aimed at those who are already subordinate and cooperative, and helps to direct them and bring out the best in them. Secondary benefits come in recruitment and helping instill cooperation.\n\nFavored by many leaders, particularly captains of squads and organizations. More passive leaders who don’t face a great deal of confrontation, such as politicians, may favor Presentation. Maximum number of minions is [Social pips].\n\nPlayers cannot count as minions for this skill, exceptions authorised on a per-character basis, but generally only to master-controlled minions.",
+      "levels": [
+        "Roll 1🎲+1, before any other modifiers",
+        "Roll 2🎲+1, before any other modifiers",
+        "Roll 2🎲+2, before any other modifiers",
+        "Roll 3🎲+2, before any other modifiers",
+        "Choose a single specialty"
+      ],
+      "specialties": {
+        "Direction": "Minions may use the commander’s skills, if the commander does not attack this turn.",
+        "Pinnacle": "Minions gain an extra 2 stat points by default, distributed to two different skills of the commander’s choice.",
+        "Target": "Minions gain +1 to hit, when attacking the same target as their leader."
+      },
+      "stat": "Social"
+    },
+    "deception": {
+      "description": "Everyone lies, and some people make the lies a part of their identity. Careful use of body language and word choice, being able to believe one’s own words, management of stress levels and tailoring one’s tales to their audience are all covered by this skill. Favored not only by liars, criminals, conmen, and various slimy ‘legitimate’ professions, but by actors and by lawyers. Those who have been living a lie for a very long time might have a few points in the skill.",
+      "levels": [
+        "When lying, cheating, or attempting to deceive someone, roll an extra die and take the highest.",
+        "The bonuses from deception also apply when crafting disguises. Make two deception rolls, and take the highest. This roll is the roll for your disguise, and is rolled against by an opponent’s scrutinize. Can feint, rolling against the target’s scrutinize skill, as part of an attack. On a success, the attack roll is made at +3. On a failure, the attack roll is made at -1. Every successive feint during a fight is made at a -3 penalty, stacking.",
+        "When lying, cheating, disguising yourself, or attempting to deceive someone, roll two extra dice and take the highest.",
+        "When you have time to prepare and rehearse a specific lie ahead of time, can roll at an extra die when retelling it. Must state the specific lie prepped in a public channel beforehand, and can only prepare one lie at a time",
+        "Choose a deception specialty"
+      ],
+      "specialties": {
+        "Immersive Storytelling": "+1 to deception rolls for each successful lie told. Must be lies about different topics, stacks up to three times, resets at the end of a scene.",
+        "Slippery Liar": "+1 to decept. rolls to deflect blame or make another look bad.",
+        "Disguise Artist": "When crafting disguises, roll at a +2 bonus.",
+        "Forger": "Skill now applies to written/typed word, forgeries.  +1 to rolls involved.",
+        "Mysterious": "The character can take a single session quest to try to erase traces of their past, files, etc, giving a permanent  -1🎲 for enemy background checks."
+      },
+      "stat": "Social"
+    },
+    "scrutinise": {
+      "description": "What’s with him? Look at his clothes, the way he stands. The quirk of his mouth. Why is he so tense? There’s something going on. This is the scrutinize skill at work. Analysis of people, what they’re saying and doing, the clues on their person and their body language. Scrutinize is a defensive skill of sorts in the social field, key for those who would want to spot any deception or who need to know people well to do their job. Investigators, detectives, cops, psychologists and (good) human resources workers might have more points in scrutinize.",
+      "levels": [
+        "When rolling to analyze people, detect lies, or uncover disguises, roll one extra die and take the highest. When attempting to discern a lie, roll scrutinize vs deception. On a success, the character either looks sincere or insincere, depending on whether they are lying or not. On a failure, they always look sincere. This does not make your character automatically believe or disbelieve.",
+        "When opponents attempt to feint you, their deception roll decays by 5 each attempt instead of three.\n\nIf successful in scrutinizing, can roll the stat not already used or can attempt guess for another detail, gathering more detail if successful.  If three tidbits of knowledge are obtained, can ‘spend’ all three while interacting to inflict morale penalty, double foe’s stat penalty, or prevent use of a named skill.  Non-morale penalties last a number of rounds equal to ranks in this skill.  Misinformation or incorrect information causes backfire.  Failing attempt to extend scrutiny imposes 1-hour cooldown for further extended scrutiny attempts.\n**In Short**: Second/third scrutiny attempts.  Use knowledge to counter opponent.",
+        "When making rolls to read attitudes, discern lies, uncover disguises and concealed items or scrutinize a person, two extra dice and take the highest result.",
+        "At the start of a fight, you can roll scrutinize against a single chosen target. If you beat DC 12, you can learn one of the following things about the target: a single costume quality, their skill level with any weapon/power they have, or gain +1 to dodge against the first attack they make (does not stack). ",
+        "Choose a scrutinize specialty"
+      ],
+      "specialties": {
+        "Truth Detector": "When rolling to discern lies, roll at a +2 bonus",
+        "Fool Me Once": "You can only be feinted once by any given target in a fight",
+        "Glance Over": "Make automatic scrutinize check at conversation start. Once during the encounter, you can sub this roll out for any other scrutinize roll in the conversation, replacing the rolled value with the one you rolled at the start."
+      },
+      "stat": "Wits/Social"
+    },
+    "threaten": {
+      "description": "Scare, coerce or threaten others. Threaten lets you leave a negative impression on those afraid of you.",
+      "levels": [
+        "When rolling to scare, coerce or threaten others, roll an extra die and keep the highest.",
+        "When rolling threaten against unpowered targets while openly demonstrating your power or status as a cape, roll at +2.",
+        "When rolling to scare, coerce or threaten others, roll two extra dice and keep the highest.",
+        "When K.O.ing an opponent in combat, may make a single threaten roll vs the willpower or scrutinize skills of all other enemies in combat. On a failure, targets are at -1 to hit the threatener on their next turn.",
+        "Choose a threaten specialty"
+      ],
+      "specialties": {
+        "Imposing Presence": "You can use the highest of your brawn or social modifiers to threaten a target.",
+        "Inspire Terror": "Unpowered targets must reroll successful rolls against your threaten attempts."
+      },
+      "stat": "Social"
+    }
   },
   "misc": {
+    "acrobatics": {
+      "description": "Hurdling, jumping, climbing, it’s a question of navigating the environment and getting from A to B when there are too many things in the way, or when there isn’t enough footing between the two points.  At the highest level, parallels could be drawn between acrobatics and parkour or acrobatics and gymnastics.  Either way, it is skilled whole-body movement and use of the environment.\nMentions of falls include cases where an individual is thrown.",
+      "levels": [
+        "When navigating the environment by way of jumping, climbing, hurdling or falling, roll an added die and take the highest.",
+        "Fall rolls are treated as if the fall was three squares shorter.",
+        "When navigating the environment by way of jumping, climbing, hurdling or falling, roll two added die and take the highest.",
+        "When you jump, add ½ of your acrobatics pips to your jump height, rounding up.",
+        "Choose an acrobatics specialty."
+      ],
+      "specialties": {
+        "Wallrunner": "You can move at your ground running speed along any horizontal surface, unless it specifically lacks any handholds.",
+        "Steady Feet": "You can roll DC 12 acrobatics to resist any attempt to stagger you.",
+        "Fall Guy": "When falling, fall damage is treated as though you fell half the distance."
+      },
+      "stat": "Athletics"
+    },
+    "awareness": {
+      "description": "To be perfunctory, Awareness is trained senses.  Looking and listening and being able to track one’s enemies and allies in the midst of a confrontation are essential.  At the lowest level, it’s the ability to see something in shadows or make out a bit of whispered conversation.  At the highest level it is the ability to notice the cues and changes in air pressure to know that something’s wrong.",
+      "levels": [
+        "When testing one’s perception with a Wits roll, roll an added die and take the highest.",
+        "When attempting to spot a foe who attempts to enter stealth in combat, you can roll twice and take the highest result.",
+        "When testing one’s perception with a Wits roll, roll two added die and take the highest.",
+        "The penalty for being caught flat footed in combat is halved, to -2. Any stealth rolls below 15 + your total pips in awareness automatically fail around you.",
+        "Choose an awareness specialty."
+      ],
+      "specialties": {
+        "Tracker": "You can track targets. Have them roll stealth at a +5 modifier when you examine any location they were in in the last week. If they fail, you can tell the direction they were going and what path they took through the area. You automatically fail this roll if the area has a dozen or more people passing through it every day, such as an airport or crowded street.",
+        "Steely Eyed": "Reduce the DC of all blindness effects by 3."
+      },
+      "stat": "Wits"
+    },
+    "crafting": {
+      "description": "The ability to make things, in short.  Crafting is a more comprehensive skill, and as such, those who invest in crafting get two points to allocate in the skill, across paths, skill points, and a specialty, should they choose to have one.\n\nPaths are the things the character knows how to make.  There is some overlap between paths, and a character making something that falls into this overlap will get a +1 to the end roll for crafting.  A character without a path can still try to make things, but they use only Knowledge to craft.  A character with a path adds the bonus from the skill noted for that path (minimum +1), which may be required for some higher-end creations.  Paths also offer small bonuses and such.  A Tinker is always considered to have the ‘path’ for their tinkerings.\n\nSkill points are the general ability to craft.  Focus, the ability to conceptualize the finished product, steady hands and the like are represented here.\n\nSpecialties are, as normal, a particular direction the crafter has taken in pursuing the skill.  Only one skill point may be allocated to a specialty unless powers or perks say otherwise.\n\nCrafting can be a Job skill, with 2 points (multiplied by two as described above, and divided between paths, skill, and specialty as desired) allocated at character creation, +1/-1 depending on the quality of the asset purchased.  Very frequently a ‘trade’ style background.\n\nIf a character wishes to make money selling their crafted goods, they can do so at the following rates of net profit:\n**1 pip**: $20 a week\n**2 pips**: $50 a week\n**3 pips**: $100 a week\n**4 pips**: $200 a week\n**5 pips**: $400 a week",
+      "levels": [
+        "When crafting, or making a knowledge roll in a field related to your crafting specialty, roll an added die and keep the highest.",
+        "Can rush job (take half the time), get a 25% refund on spent resources at job’s conclusion (with cost remaining the same), or get a bonus to the end result equal to ranks in the skill.  Doing so means taking one of the following negatives: take twice as long, it costs 50% more, or -2 to roll.",
+        "When crafting, or making a knowledge roll in a field related to your crafting specialty, roll two added die and keep the highest.",
+        "When using the 2-pip skill bonus to get a bonus to the roll (job not rushed or cutting corners to preserve resources), can throw in a second item for free with a DC 4 lower or less than the DC of the main item.",
+        "Take a crafting specialty"
+      ],
+      "specialties": {
+        "Mastercraft": "If you have two crafting paths at 5 and take the mastercraft specialty in both, you gain an additional +4 to crafting rolls in some area of overlap.",
+        "Fast Worker": "125% craft speed.  Extra % carries over for bonus time slots.",
+        "Artisan": "Pick a second path. You get crafting 4 in that path, but you take 2x as long to build for them, knowledge rolls as normal."
+      },
+      "misc": {
+        "Generalist Paths": "Generalist paths cover a wide range of things, enabling simple constructions and general repair of...\n  ● **Weapons** - Simple ranged and melee weapons.  _Dex_.\n  ● **Costumes** - Cloth and armor components of costumes.  _Dex_.\n  ● **Buildings** - Simple shelter, building repair, reinforcement.  _Know (effective 2x Know)_.\n  ● **Computers** - Creating things with a microchip.  _Know (Effective 2x Know)_\n  ● **Pharmacist** - Creating medicines and drugs.  _Know (Effective 2x Know)_\n  ● **Art** - Various media, painting, sculpting, music.  _Social._",
+        "Creation Paths": "Creation paths dwell on one particular material and dimension of the above.  They can create basic materials and create items formed of that material as well.\n  ● **Smithing** - Smelt metals (from ore or melting down), metal items.  _Brawn_.\n  ● **Carpenter** - Shape and form constructions or items of wood.  _Wits_.\n  ● **Mason**  - Shape stone, form constructions of stone.  _Brawn_.\n  ● **Weave** - Create cloth, craft stuff out of cloth.  _Dex_.\n  ● **Electric** - Stuff with wires, wire buildings, fabricate simple tech from scrap. _Know._\n  ● **Machinist** - Stuff with moving parts, fabricate such from scrap.  _Dex_.\n  ● **Survivalist** - Simple traps, meals, medicine, gathering mats from nature.  _Wits_.\n\nOverlap between two paths is possible, but only Generalist x Creation.  Characters can invent their own crafting skills, or narrow down the existing ones (ie. from Weapons to Bowyer, from Machinist to Auto Mechanic), gaining a +1 to rolls but limiting options.",
+        "Crafting System": "Crafting items requires skill rolls, relevant to what tier the item is. Some items, such as higher-tier costumes, also have power costs associated with them, which may be waived on a success.\n\nQuantities are assumed to be 1 per craft action, unless stated otherwise. Time is likewise assumed to be 1 day worth of work. Critical successes do not allow the creation of higher-tier items than would be possible normally. Costs of these items are listed in the equipment section. Crafting an item requires half of its market price in materials.",
+        "Weapons, Items and Shields": "**DC12**\n●  Hammer\n●  Sledgehammer\n●  Baton\n●  Molotov cocktail\n●  Acid grenade\n**DC14**\n●  Brass knuckles (Pair)\n●  Buckler\n●  Kite shield\n**DC16**\n●  Knife\n●  Machete\n●  Sword\n●  Spear\n●  Greataxe\n●  Halberd\n●  Scythe\n●  Throwing knife (6 crafted)\n●  Javelin (2 crafted)\n**DC18**\n●  Greatsword\n●  Compound bow\n●  Crossbow\n**DC20**\n●  Grenades (Excluding foam grenade)",
+        "Costumes (Takes 2 IRL days to make each)": "●  **DC3**: Tier 1\n●  **DC15**: Tier 2\n●  **DC21**: Tier 3\n●  **DC24**: Tier 4\n●  **DC30**: Tier 5"
+      },
+      "stat": "Knowledge"
+    },
+    "driving": {
+      "description": "Drive, pilot, captain and operate vehicles. Driving is a rarely used skill, but some powers may necessitate or encourage use of vehicles.\n\nPiloting a vehicle untrained requires a roll. A person untrained in driving may be a child, or never have obtained a license. Make the roll once at the start of the drive. No matter how skilled you are, if you wish to perform a stunt or gain ground on someone, a driving roll is always required.\n\nFailing a Driving roll doesn’t mean you crash, so much as your driving that round is far more unsteady and uncontrolled than desirable. A critical failure would entail a crash, or the engine failing to turn over at lower speeds. Driving rolls must be made every round whilst operating a vehicle outside your capabilities.",
+      "levels": [
+        "When piloting a vehicle, roll 1 extra die and keep the highest. You can pilot simple vehicles such as cars and motorcycles without a roll.",
+        "You can use more complex vehicles such as trucks and jet skis without a roll.",
+        "When piloting a vehicle, roll 2 extra dice and keep the highest ",
+        "You can pilot even advanced vehicles such as helicopters, tanks, and airplanes without a roll.",
+        "Take a driving specialty"
+      ],
+      "specialties": {
+        "Ramming Speed": "Negate the penalty for using a vehicle to attack.",
+        "All Terrain": "You ignore penalties for taking your vehicle into rough terrain, although you still have to obey the laws of physics (no driving through a lake or flying a boat)"
+      },
+      "stat": "Wits"
+    },
+    "medical": {
+      "description": "Treat, aid, and nurse. Medical allows you to cure and mollify serious injuries and effects, with a successful check.",
+      "levels": [
+        "Capable of attempting basic medical actions. When attempting these actions, roll 1 additional die and take the highest.",
+        "Can move people under death sentence without killing them. +1 to all medical rolls and medical knowledge rolls.",
+        "When attempting medical actions, roll two additional dice and keep the highest..  Additionally, may make a DC 16 medical check as a full round action to suppress two chosen wound effects on target. Wound effects return in 3 rounds unless this action is repeated 3 times for those wound effects.",
+        "In a pinch, can make medical checks without any sort of medkit, but take a -3 penalty to all checks made in this way. When suppressing wound effects, can increase DC by 2 to suppress the wounds themselves, not just the effects. This can only be done to up to the patient's guts worth of wounds.",
+        "Choose a medical specialty."
+      ],
+      "specialties": {
+        "Triage": "3-pip bonus can negate 3 wounds instead of 2",
+        "Battle Medic": "By spending a partial action, all bleeds and death sentences on targets within reach are delayed by 3 rounds."
+      },
+      "misc": {
+        "Medical Actions": "Except where otherwise noted, all medical actions require at least a stocked first aid kit. All first aid is considered a full-round action, and leaves you flat-footed that round.\n\n●  **DC12**: Set a broken bone. You cannot set your own broken arms, as medical care requires both hands to perform.\n●  **DC16**: Suppress Death Sentence this round. 6 successes will cure death sentence, with critical successes counting as 2 successes for this purposes, not necessarily in a row. Without any points in Medical, a success only reduces the damage to a lesser.\n●  **DC18**: Suppress normal stat point loss, restoring 3 points of your choice. Excludes long-term and permanent stat loss"
+      },
+      "stat": "Knowledge"
+    },
+    "reflexes": {
+      "description": "Add bonus to rolls made to catch, time things, and other reactions, as well as initiative rolls in combat. Roll to dodge with a number of effects, including teleporting, and attack with a scarce few attacks focusing on precise timing.",
+      "levels": [
+        "When rolling to test your cape’s reflexes, roll an additional die and take the highest. This does not apply to initiative rolls.",
+        "When rolling initiative, add your total pips in reflexes as a modifier.",
+        "When rolling to test your cape’s reflexes, roll two additional dice and take the highest.",
+        "You can always act during surprise rounds. However, you automatically act at the end of initiative. If multiple people have this bonus, roll initiative normally to break the tie.",
+        "Choose a reflexes specialization"
+      ],
+      "specialties": {
+        "Twitchy": "Can act at normal initiative, even during surprise rounds. Additionally, you are never considered flat-footed.",
+        "Instinctual": "When using reflexes for an attack roll, that attack is made at a +1 bonus."
+      },
+      "stat": "Wits"
+    },
+    "sneak": {
+      "description": "Remain quiet and undetected whilst sneaking around, and take actions whilst stealthed without being seen. Career burglars will invest into this skill.",
+      "levels": [
+        "When rolling to remain quiet and undetected while hiding, roll one extra die and take the highest.",
+        "When voluntarily exiting stealth or cover (not when spotted), can take a partial action before enemies get a chance to react.",
+        "When rolling to remain quiet and undetected while hiding, roll two extra dice and take the highest.",
+        "Increase enemy flat-footed penalties to dodge your attacks by 2.",
+        "Choose a sneak specialization."
+      ],
+      "specialties": {
+        "Light Step": "You leave no traces behind when you pass through an area, unless you interact with it in a blatant way (shattering a display case, leaving all the doors open)",
+        "Camo Master": "When wearing appropriately colored gear, can attempt to sneak in areas that would normally be considered ‘plain sight’ at a -2 penalty."
+      },
+      "stat": "dexterity"
+    },
+    "street smarts": {
+      "description": "The skill pertaining to knowledge of urban life, urban navigation, crime, criminals, gangs, drugs, guns, street level officers, and rules/dynamics.",
+      "levels": [
+        "When making rolls pertaining to urban life, urban navigation, crime, criminals, gangs,  drugs, guns, street level officers, and rules/dynamics, roll one extra die and keep the highest.",
+        "In addition to the standard knowledge gained from a check about a given [see first point bonus for list], can assess quality and type after some limited interaction (ie. conversation with gang member revealing personality & skill level, taste/smell drug to estimate quality/cut).  A normal check, conversely, would only identify the ‘class’ of the thug or general type and current street name of drug. Additionally, the character can work for one session to pick up a mid-level street informant who can assist. This informant generally requires payment for their services.",
+        "When making rolls pertaining to urban life, urban navigation, crime, criminals, gangs,  drugs, guns, street level officers, and rules/dynamics, roll two extra dice and keep the highest",
+        "Gain the ability to naturally attract underlings/allies from the streets and/or gangs.  These underlings are generally loyal, easy to please, and sympathetic to (if not necessarily possessed of) one’s reputation slant, often taking the form of informants for positively aligned characters and useless mooks for criminals, approaching a few days after points are invested until a number equal to [social stat] have shown up.  If the character works to amass followers, urban/gang followers are effectively ‘unlocked’, joining without fuss or challenge.",
+        "Choose a street smarts specialization"
+      ],
+      "specialties": {
+        "Mob Mentality": "Triple the number of goons that will naturally be attracted to the player.",
+        "Ears to the Ground": "The character can, with another session’s work on top of the 2-pip bonus, amass a network of informants. The character will naturally be informed of all notable dealings that happen in public areas."
+      },
+      "stat": "Knowledge"
+    },
+    "tactics": {
+      "description": "Survey the battlefield, reason enemy action, prepare actions and interpose for enemy attacks on your allies.",
+      "levels": [
+        "When making rolls regarding surveying the battlefield and reasoning enemy action (including rolling to anticipate enemy counterattacks), making prepared actions, or interposing, roll an additional die and keep the highest.",
+        "The character can perform prepared actions.",
+        "When making rolls regarding surveying the battlefield and reasoning enemy action (including rolling to anticipate enemy counterattacks), making prepared actions, or interposing, roll two additional dice and keep the highest.",
+        "At the start of a fight, before anyone else moves, can move self up to 10’ in any direction.",
+        "Choose a tactics specialty"
+      ],
+      "specialties": {
+        "Springloaded": "When taking a prepared action, can choose to use any flat modifier/dice bonuses of the associated skill, rather than tactics.",
+        "Maneuver": "May take a single movement action in the same turn as preparing an action, and may take a single movement action to interpose an attack."
+      },
+      "stat": "Wits"
+    },
+    "thievery": {
+      "description": "Become capable of sleight of hand, lockpicking, pickpocketing, shoplifting, breaking and entering, looting, and other nefarious deeds. Thievery rolls are made whenever subtlety is needed, in any task other than sneaking around.",
+      "levels": [
+        "When making rolls  for sleight of hand, lockpicking, pickpocketing, shoplifting, breaking and entering, looting, and other manual actions for nefarious deeds, roll one extra die and keep the highest.",
+        "The character can snatch and grab, collecting an unattended item as part of a movement action.  They can’t do this if they’ve used their hands for something else this turn. Experience and know-how provides some ability to assess and collect higher quality goods on the fly; the character earns +5% in illicit earnings per skill point in Thievery, +5/-5% per point of knowledge modifier (4 knowledge = +5%)",
+        "When making rolls  for sleight of hand, lockpicking, pickpocketing, shoplifting, breaking and entering, looting, and other manual actions for nefarious deeds, roll two extra dice and keep the highest.",
+        "The character has a passive +4 bonus against all scrutinize and investigation rolls targeting their actions (not necessarily what they say).",
+        "Choose a thievery specialty."
+      ],
+      "specialties": {
+        "Sticky Fingers": "Can attempt to steal an item from a character in combat. Roll opposed thievery vs their attack skill for any weapons, and strongarm for everything else. This is a standard action normally, but becomes free if the target is paralyzed, screaming, blitzed, or staggered.",
+        "Cat Burglar": "If the character is free, can passively bring in (2d6 * 100) dollars per week, stealing from safe targets. The cape their targets so as to leave no evidence connecting them to these crimes."
+      },
+      "stat": "dexterity"
+    },
+    "willpower": {
+      "description": "Keep on keeping on. Somewhere along the way, the character learned to plumb those depths deep inside them, dredge out that last gasp of air, that last iota of energy, or push through despite rain, sleet, heat, or chaos storms of warped space. Those techniques they’ve picked up, where they push themselves to the limit, they can make that push just a little bit more often. Masters include athletes, marathon runners, firefighters, workers on fishing boats, and even those disabled who struggle to do even normal tasks.\n\nWits is used as the base stat when the effect is mental, and Guts when the effect is physical. The maximum skill rank is limited only by the highest skill.\n\nMerged with Endure.",
+      "levels": [
+        "When rolling against an effect that tests the character’s mental or physical tenacity, stamina, or ability to power through pain, roll an additional die and take the highest.",
+        "Once per fight, can ignore the penalties from pain on a consciousness roll.",
+        "When rolling against an effect that tests the character’s mental or physical tenacity, stamina, or ability to power through pain, roll two additional dice and take the highest.",
+        "Once per fight, can delay the effects of a wound effect for up to 3 rounds. In addition, the 2-pip bonus can now be used up to three times per fight.",
+        "Choose a willpower specialty"
+      ],
+      "specialties": {
+        "Second Wind": "When taking an extra turn through the effects of a perk such as berzerker or butcher, can take an additional turn. If neither perk is possessed, can reroll a consciousness roll once per fight, but at a -2 penalty from the initial roll.",
+        "Tolerance": "The character always ignores the penalty from the pain effect."
+      },
+      "stat": "Will/Guts"
+    }
   }
 }

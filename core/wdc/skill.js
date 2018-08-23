@@ -89,6 +89,11 @@ class Skill extends MessageHandler {
             specials.push(` ●  **${special}** -  ${skill.specialties[special]}`)
         }
         embed.addField("Specialties", specials.join("\n"));
+        if ("misc" in skill) {
+            for (let key in skill.misc) {
+                embed.addField(titleCase(key), skill.misc[key])
+            }
+        }
 
         return embed;
 

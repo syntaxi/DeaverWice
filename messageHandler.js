@@ -2,12 +2,17 @@ const fs = require("fs");
 const {splitByLength} = require('./helpers.js');
 
 class MessageHandler {
+    getInstance() {
+        if (!this.instance) {
+            this.instance = this.constructor();
+        }
+    }
     /**
      * Scans the file
      * @param bot
      * @param path
      */
-    static scanForFiles(bot, path) {
+    static scanForFiles(path) {
         /* Re-assign console.log to add a tab at the start */
         let backupLog = console.log;
         console.log = function () {
@@ -24,7 +29,7 @@ class MessageHandler {
                 try {
                     if (fs.lstatSync(path + files[i]).isFile()) {
                         console.log(`Loading '${files[i]}'`);
-                        handlers[files[i]] = new (require(path + files[i]))(bot);
+                        handlers[files[i]] = new (require(path + files[i]))();
                     }
                 } catch (e) {
                     console.log(`Failed loading of ${files[i]} got:\n\t${e}\nSkipping`)

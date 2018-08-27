@@ -4,6 +4,7 @@ const {detailsTypes, detailsTargets} = require('../../data/lookups.json');
 const MessageHandler = require('../../messageHandler.js');
 const DetailsTable = require("../../data/details.json");
 const {RichEmbed} = require("discord.js");
+const Info = require("./info.js");
 
 
 class Detail extends MessageHandler {
@@ -12,15 +13,22 @@ class Detail extends MessageHandler {
         this.bot = bot;
     }
 
-    handle(msg, target, type) {
+    handle(msg, target, type, ...search) {
+        search = search.join(" ").toLowerCase();
         if (target = Detail.findTarget(target)) {
             if (type = Detail.findType(type)) {
-                Detail.rollDetail(msg, target, type);
+                if (search.length > 0) {
+                    if (!Info.tryDetails()) {
+                        Detail.sendOutput(msg, `Unable to find ${target} ${type}, ${search}`);
+                    }
+                } else {
+                    Detail.rollDetail(msg, target, type);
+                }
             } else {
-                Detail.sendOutput(msg, "Incorrect type of detail. Needs to be 'flaw' or 'perk'");
+                Detail.sendOutput(msg, "Incorrect type of detail.");
             }
         } else {
-            Detail.sendOutput(msg, "ERR: Somehow details has been called with no detail");
+            Detail.sendOutput(msg, "Incorrect type of detail.");
         }
     }
 

@@ -14,8 +14,8 @@ class Memes extends MessageHandler {
         this.registerEquals("friskyfoxx", "Don't you mean... Mother?");
         this.registerEquals("wd>help", "No.");
         this.registerEquals("what is my avatar", (msg) => Memes.sendOutput(msg, msg.author.avatarURL));
-        this.registerEquals("wd>gender", Memes.chooseGender);
-        this.registerEquals("wd>sex", Memes.chooseSex);
+        this.registerEquals(/wd>\sgender/i, Memes.chooseGender);
+        this.registerEquals(/wd>\ssex/i, Memes.chooseSex);
         this.registerEquals("nice", "join");
         this.registerEquals("Look at them,", "they come to this place when they know they are not pure. Tenno use the keys, but they are mere trespassers." +
             " Only I, Vor, know the true power of the Void. I was cut in half, destroyed, but through it's Janus Key, the Void called to me." +
@@ -27,7 +27,7 @@ class Memes extends MessageHandler {
             " But I, Vor, will cleanse this place of their impurity.");
 
         this.registerIncludes("to pay respects", "F");
-        this.registerIncludes("^([iI]'?m ).{1,15}$", Memes.dadJoke);
+        this.registerIncludes(/^(i'?m\s).{1,15}$/i, Memes.dadJoke);
         this.registerIncludes("captain vor", "Look at them, they come to this place when they know they are not pure. Tenno use the keys, but they are mere trespassers." +
             " Only I, Vor, know the true power of the Void. I was cut in half, destroyed, but through it's Janus Key, the Void called to me." +
             " It brought me here and here I was reborn. We cannot blame these creatures, they are being led by a false prophet, an impostor who knows not the secrets of the Void." +
@@ -75,6 +75,9 @@ class Memes extends MessageHandler {
      * @param output The output to use.
      */
     registerIncludes(key, output) {
+        if (typeof key === "object") {
+            key = key.toString()
+        }
         key = key.toLowerCase();
         if (typeof output === "function") {
             this.includes[key] = output;
@@ -94,6 +97,9 @@ class Memes extends MessageHandler {
      * @param output The output to send.
      */
     registerEquals(key, output) {
+        if (typeof key === "object") {
+            key = key.toString()
+        }
         key = key.toLowerCase();
         if (typeof output === "function") {
             this.equals[key] = output;
@@ -115,7 +121,8 @@ class Memes extends MessageHandler {
     message(msg) {
         if (!msg.author.bot) {
             for (let key in this.equals) {
-                if (msg.content.toLowerCase() === key) {
+                const matches = msg.content.toLowerCase().match(key);
+                if (matches && matches.length === 1 && matches[0] === msg.content.toLowerCase()) {
                     this.equals[key](msg);
                 }
             }

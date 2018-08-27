@@ -6,11 +6,11 @@ const MessageHandler = require('../messageHandler.js');
  * Calls on other files to implement complex commands.
  */
 class Wdc extends MessageHandler {
-    constructor(bot) {
+
+    constructor() {
         super();
         /* Scan for child files */
-        this.handlers = Wdc.scanForFiles(bot, __filename.slice(0, -3) + '/');
-        this.bot = bot;
+        this.handlers = Wdc.scanForFiles(__filename.slice(0, -3) + '/');
         this.prefix = "wd>";
 
         this.registerCommand('wound', 'wound.js');

@@ -11,13 +11,15 @@ class Memes extends MessageHandler {
         this.includes = {};
         this.equals = {};
 
+
+        this.registerEquals("fuck this gay earth", "https://www.youtube.com/watch?v=xF0cGt5-69k");
         this.registerEquals("friskyfoxx", "Don't you mean... Mother?");
         this.registerEquals("wd>help", "No.");
         this.registerEquals("what is my avatar", (msg) => Memes.sendOutput(msg, msg.author.avatarURL));
         this.registerEquals(/wd>\sgender/i, Memes.chooseGender);
         this.registerEquals(/wd>\ssex/i, Memes.chooseSex);
         this.registerEquals("nice", "join");
-        this.registerEquals("Look at them,", "they come to this place when they know they are not pure. Tenno use the keys, but they are mere trespassers." +
+        this.registerEquals("look at them,", "they come to this place when they know they are not pure. Tenno use the keys, but they are mere trespassers." +
             " Only I, Vor, know the true power of the Void. I was cut in half, destroyed, but through it's Janus Key, the Void called to me." +
             " It brought me here and here I was reborn. We cannot blame these creatures, they are being led by a false prophet, an impostor who knows not the secrets of the Void." +
             " Behold the Tenno, come to scavenge and desecrate this sacred realm. My brothers, did I not tell of this day? Did I not prophesize this moment?" +

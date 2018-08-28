@@ -1,13 +1,12 @@
 "use strict";
-const MessageHandler = require("../messageHandler.js");
+const MessageReceiver = require("../framework/messageReceiver.js");
 
 /**
  * Contains memes and other joke commands
  */
-class Memes extends MessageHandler {
-    constructor(bot) {
+class Memes extends MessageReceiver {
+    constructor() {
         super();
-        this.bot = bot;
         this.includes = {};
         this.equals = {};
 
@@ -16,8 +15,8 @@ class Memes extends MessageHandler {
         this.registerEquals("friskyfoxx", "Don't you mean... Mother?");
         this.registerEquals("wd>help", "No.");
         this.registerEquals("what is my avatar", (msg) => Memes.sendOutput(msg, msg.author.avatarURL));
-        this.registerEquals(/wd>\sgender/i, Memes.chooseGender);
-        this.registerEquals(/wd>\ssex/i, Memes.chooseSex);
+        this.registerEquals(/wd>\sgender/, Memes.chooseGender);
+        this.registerEquals(/wd>\ssex/, Memes.chooseSex);
         this.registerEquals("nice", "join");
         this.registerEquals("look at them,", "they come to this place when they know they are not pure. Tenno use the keys, but they are mere trespassers." +
             " Only I, Vor, know the true power of the Void. I was cut in half, destroyed, but through it's Janus Key, the Void called to me." +
@@ -27,9 +26,9 @@ class Memes extends MessageHandler {
             " Let it be known, if the Tenno want true salvation, they will lay down their arms, and wait for the baptism of my Janus key. It is time." +
             " I will teach these trespassers the redemptive power of my Janus key. They will learn it's simple truth. The Tenno are lost, and they will resist." +
             " But I, Vor, will cleanse this place of their impurity.");
+        this.registerEquals(/^(i'?m\s).{1,15}$/, Memes.dadJoke);
 
         this.registerIncludes("to pay respects", "F");
-        this.registerIncludes(/^(i'?m\s).{1,15}$/i, Memes.dadJoke);
         this.registerIncludes("captain vor", "Look at them, they come to this place when they know they are not pure. Tenno use the keys, but they are mere trespassers." +
             " Only I, Vor, know the true power of the Void. I was cut in half, destroyed, but through it's Janus Key, the Void called to me." +
             " It brought me here and here I was reborn. We cannot blame these creatures, they are being led by a false prophet, an impostor who knows not the secrets of the Void." +
@@ -38,7 +37,7 @@ class Memes extends MessageHandler {
             " Let it be known, if the Tenno want true salvation, they will lay down their arms, and wait for the baptism of my Janus key. It is time." +
             " I will teach these trespassers the redemptive power of my Janus key. They will learn it's simple truth. The Tenno are lost, and they will resist." +
             " But I, Vor, will cleanse this place of their impurity.");
-        this.registerIncludes("did you really believe it would be this easy", "https://youtu.be/wOygJJ7Zudk?t=20s")
+        this.registerIncludes("did you really believe", "https://youtu.be/wOygJJ7Zudk?t=20s")
         this.registerIncludes("unhook", "JAR OF LIPS\nJAR OF LIPS\nJAR OF LIPS");
         this.registerIncludes("sonya", "ello cute boy! My name is Sonya I'm a very beautiful" +
             " girl, most recently I was left alone. Five months ago a guy threw me, and I did" +
@@ -64,7 +63,7 @@ class Memes extends MessageHandler {
             " made you a photo, I'll send it in a letter. Even more of my photos You can look in the photo" +
             " album on the web site, I'm there permanently in the network and here I am very rare. My" +
             " id6767889. I'll be waiting for you. Kissing you tenderly. Your Sonya.");
-        this.registerIncludes("ride me!!", "https://www.youtube.com/watch?v=DC97xIiPikw");
+        this.registerIncludes("ride me", "https://www.youtube.com/watch?v=DC97xIiPikw");
     }
 
     /**
@@ -77,10 +76,11 @@ class Memes extends MessageHandler {
      * @param output The output to use.
      */
     registerIncludes(key, output) {
-        if (typeof key === "object") {
-            key = key.toString()
+        if (typeof key === "string") {
+            key = key.toLowerCase();
+        } else if (key instanceof RegExp) {
+            key = key.source;
         }
-        key = key.toLowerCase();
         if (typeof output === "function") {
             this.includes[key] = output;
         } else {
@@ -99,10 +99,11 @@ class Memes extends MessageHandler {
      * @param output The output to send.
      */
     registerEquals(key, output) {
-        if (typeof key === "object") {
-            key = key.toString()
+        if (typeof key === "string") {
+            key = key.toLowerCase();
+        } else if (key instanceof RegExp) {
+            key = key.source;
         }
-        key = key.toLowerCase();
         if (typeof output === "function") {
             this.equals[key] = output;
         } else {
@@ -124,7 +125,7 @@ class Memes extends MessageHandler {
         if (!msg.author.bot) {
             for (let key in this.equals) {
                 const matches = msg.content.toLowerCase().match(key);
-                if (matches && matches.length === 1 && matches[0] === msg.content.toLowerCase()) {
+                if (matches && matches[0] === msg.content.toLowerCase()) {
                     this.equals[key](msg);
                 }
             }
@@ -165,7 +166,7 @@ class Memes extends MessageHandler {
     }
 
     static dadJoke(msg) {
-        const size = msg.toString().toLowerCase().match("^([iI]'?m ).*")[1].length;
+        const size = msg.content.toLowerCase().match(/^(i'?m\s)./i)[1].length;
         Memes.sendOutput(msg, `Hi ${msg.toString().substr(size)}, I'm Dad!`);
     }
 }

@@ -1,41 +1,15 @@
 "use strict";
 
-const MessageHandler = require("../messageHandler.js");
+const MessageReceiver = require("../framework/messageReceiver.js");
+const {wonkyCase} = require("../helpers.js");
 const {Permissions} = require("discord.js");
 
-class Admin extends MessageHandler {
+class Admin extends MessageReceiver {
     constructor() {
         super();
         this.prefix = "wd>";
         this.registerCommand("kick", this.kick);
         this.registerCommand("ban", this.ban);
-    }
-
-    static wonkyCase(text) {
-        if (typeof text === "string") {
-            text = text.split(/\s/);
-        }
-        let out = "";
-        for (let j = 0; j < text.length; j++) {
-            let shouldCapital = false;
-            for (let i = 0; i < text[j].length; i++) {
-                const char = text[j].charAt(i);
-                if (!char.match(/\s/)) {
-                    /* If it's not whitespace, then think about flipping it */
-                    if (shouldCapital) {
-                        out += char.toUpperCase();
-                    } else {
-                        out += char.toLowerCase();
-                    }
-                    shouldCapital = !shouldCapital
-                } else {
-                    /* If it is whitespace, just flip it.*/
-                    out += char;
-                }
-            }
-            out += " ";
-        }
-        return out;
     }
 
     kick(msg, ...reason) {

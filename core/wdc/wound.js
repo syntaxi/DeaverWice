@@ -1,5 +1,5 @@
 "use strict";
-const MessageHandler = require('../../messageHandler.js');
+const BasicScript = require('../../framework/basicScript.js');
 const WoundTable = require("../../data/wound.json");
 const {rollRandom} = require("../../helpers.js");
 const {locationLookup, severityLookup} = require('../../data/lookups.json');
@@ -23,11 +23,7 @@ function getAll(type, severity) {
     return options
 }
 
-class Wound extends MessageHandler {
-    constructor(bot) {
-        super();
-        this.bot = bot;
-    }
+class Wound extends BasicScript {
 
     /**
      * Selects a random element from the correct wound table.

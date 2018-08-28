@@ -1,48 +1,13 @@
-const fs = require("fs");
-const {splitByLength} = require('./helpers.js');
+"use strict";
+const {splitByLength} = require('../helpers.js');
+const {getInstance} = require('./instanceManager.js');
 
-class MessageHandler {
-    getInstance() {
-        if (!this.instance) {
-            this.instance = this.constructor();
-        }
-    }
+class BasicScript {
     /**
-     * Scans the file
-     * @param bot
-     * @param path
+     * Empty method. Should be overridden by child classes
      */
-    static scanForFiles(path) {
-        /* Re-assign console.log to add a tab at the start */
-        let backupLog = console.log;
-        console.log = function () {
-            const par = Array.prototype.slice.call(arguments);
-            par.unshift('\t');
-            backupLog.apply(console, par)
-        };
+    onBegin() {
 
-        const handlers = {};
-        if (fs.existsSync(path)) {
-            console.log(`Scanning for files in ${path}`);
-            let files = fs.readdirSync(path);
-            for (let i = 0; i < files.length; i++) {
-                try {
-                    if (fs.lstatSync(path + files[i]).isFile()) {
-                        console.log(`Loading '${files[i]}'`);
-                        handlers[files[i]] = new (require(path + files[i]))();
-                    }
-                } catch (e) {
-                    console.log(`Failed loading of ${files[i]} got:\n\t${e}\nSkipping`)
-                }
-            }
-            console.log(`Done scanning in ${path}`)
-        } else {
-            console.log(`${path} is not a valid path, refusing to scan`);
-        }
-
-        /* Undo the log re-assignment */
-        console.log = backupLog;
-        return handlers;
     }
 
     /**
@@ -54,7 +19,7 @@ class MessageHandler {
      */
     static sendOutput(message, value) {
         if (typeof value === 'string') {
-            MessageHandler.doOutput(message.channel.send.bind(message.channel), value);
+            BasicScript.doOutput(message.channel.send.bind(message.channel), value);
         } else {
             message.channel.send(value);
         }
@@ -69,11 +34,12 @@ class MessageHandler {
      */
     static replyOutput(message, value) {
         if (typeof value === 'string') {
-            MessageHandler.doOutput(message.reply.bind(message), value);
+            BasicScript.doOutput(message.reply.bind(message), value);
         } else {
             message.reply(value);
         }
     }
+
 
     /**
      * Output the content using the given output function.
@@ -89,6 +55,7 @@ class MessageHandler {
         }
         outFunc(lines[lines.length - 1]);
     }
+
     /**
      * Register a command to a given key.
      *
@@ -122,10 +89,10 @@ class MessageHandler {
                         this.commands[key] = func.handle.bind(func);
                         break;
                     case 'string':
-                        this.commands[key] = this.handlers[func].handle.bind(this.handlers[func]);
+                        this.commands[key] = getInstance(func).handle.bind(getInstance(func));
                         break;
                     default:
-                        throw new SyntaxError("func type not class, function or string");
+                        throw new SyntaxError(`Was not able to register key '${key}'.`);
                 }
                 break;
             default:
@@ -137,24 +104,13 @@ class MessageHandler {
      * Adds values to the start of the argument list.
      *
      * @param file The name of the file to be called
+     * @param pos The position to place the arguments
      * @param values The values to prepend
      * @returns {Function} A function with the given values prepended
      */
-    prefixWith(file, ...values) {
+    static insertArgs(file, pos, ...values) {
         return (msg, ...args) => {
-            this.handlers[file].handle.apply(this.handlers[file], [msg].concat(values, args));
-        }
-    }
-
-    /**
-     * Removes all handlers which don't have a `handle` method.
-     */
-    pruneHandlers() {
-        for (let key in this.handlers) {
-            if (!this.handlers[key].handle) {
-                delete this.handlers[key];
-                console.log(`Handler, '${key}.js', missing 'handle' function. Discarding.`)
-            }
+            getInstance(file).handle.apply(getInstance(file), [msg].concat(args.slice(0, pos), values, args.slice(pos)));
         }
     }
 
@@ -170,7 +126,7 @@ class MessageHandler {
         args.unshift(msg);
         key = key.toLowerCase();
 
-        /* Call the command, repeating if specified */
+        /* Call the command */
         if (key in this.commands) {
             this.commands[key].apply(this.commands[key], args);
         } else if (key in this) {
@@ -179,4 +135,4 @@ class MessageHandler {
     }
 }
 
-module.exports = MessageHandler;
+module.exports = BasicScript;

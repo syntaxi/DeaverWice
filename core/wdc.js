@@ -1,36 +1,30 @@
 "use strict";
-const MessageHandler = require('../messageHandler.js');
+const MessageReceiver = require('../framework/messageReceiver.js');
 
 /**
  * Roleplay relate commands.
  * Calls on other files to implement complex commands.
  */
-class Wdc extends MessageHandler {
-
+class Wdc extends MessageReceiver {
     constructor() {
         super();
         /* Scan for child files */
-        this.handlers = Wdc.scanForFiles(__filename.slice(0, -3) + '/');
         this.prefix = "wd>";
 
         this.registerCommand('wound', 'wound.js');
-        this.registerCommand('cut', this.prefixWith('wound.js', 'cut'));
-        this.registerCommand('bash', this.prefixWith('wound.js', 'bash'));
-        this.registerCommand('pierce', this.prefixWith('wound.js', 'pierce'));
-        this.registerCommand('burn', this.prefixWith('wound.js', 'burn'));
-        this.registerCommand('freeze', this.prefixWith('wound.js', 'freeze'));
-        this.registerCommand('shock', this.prefixWith('wound.js', 'shock'));
-        this.registerCommand('rend', this.prefixWith('wound.js', 'rend'));
+        this.registerCommand('cut', Wdc.insertArgs('wound.js', 0, 'cut'));
+        this.registerCommand('bash', Wdc.insertArgs('wound.js', 0, 'bash'));
+        this.registerCommand('pierce', Wdc.insertArgs('wound.js', 0, 'pierce'));
+        this.registerCommand('burn', Wdc.insertArgs('wound.js', 0, 'burn'));
+        this.registerCommand('freeze', Wdc.insertArgs('wound.js', 0, 'freeze'));
+        this.registerCommand('shock', Wdc.insertArgs('wound.js', 0, 'shock'));
+        this.registerCommand('rend', Wdc.insertArgs('wound.js', 0, 'rend'));
 
         this.registerCommand('detail', 'detail.js');
-        this.registerCommand('power', this.prefixWith('detail.js', 'power'));
-        this.registerCommand('life', this.prefixWith('detail.js', 'life'));
-        this.registerCommand('perk', (msg, ...args) => {
-            this.handlers['detail.js'].handle.apply(this.handlers['detail.js'], [msg].concat(args[0], ['perk'], args.slice(1)));
-        });
-        this.registerCommand('flaw', (msg, ...args) => {
-            this.handlers['detail.js'].handle.apply(this.handlers['detail.js'], [msg].concat(args[0], ['flaw'], args.slice(1)));
-        });
+        this.registerCommand('power', Wdc.insertArgs('detail.js', 0, 'power'));
+        this.registerCommand('life', Wdc.insertArgs('detail.js', 0, 'life'));
+        this.registerCommand('perk', Wdc.insertArgs('detail.js', 1, 'perk'));
+        this.registerCommand('flaw', Wdc.insertArgs('detail.js', 1, 'flaw'));
 
         this.registerCommand('info', 'info.js');
 

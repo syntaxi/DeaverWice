@@ -1,24 +1,20 @@
 "use strict";
-const {rollRandom, invertedDetails} = require("../../helpers.js");
 const {detailsTypes, detailsTargets} = require('../../data/lookups.json');
-const MessageHandler = require('../../messageHandler.js');
 const DetailsTable = require("../../data/details.json");
+
+const {rollRandom, invertedDetails} = require("../../helpers.js");
+const BasicScript = require('../../framework/basicScript.js');
 const {RichEmbed} = require("discord.js");
-const Info = require("./info.js");
+const {getInstance} = require('../../framework/instanceManager.js');
 
 
-class Detail extends MessageHandler {
-    constructor(bot) {
-        super();
-        this.bot = bot;
-    }
-
+class Detail extends BasicScript {
     handle(msg, target, type, ...search) {
         search = search.join(" ").toLowerCase();
         if (target = Detail.findTarget(target)) {
             if (type = Detail.findType(type)) {
                 if (search.length > 0) {
-                    if (!Info.tryDetails()) {
+                    if (!getInstance("info.js").tryDetails()) {
                         Detail.sendOutput(msg, `Unable to find ${target} ${type}, ${search}`);
                     }
                 } else {

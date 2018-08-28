@@ -1,11 +1,12 @@
 "use strict";
-const {rollRandom, titleCase} = require("../../helpers.js");
-const MessageHandler = require('../../messageHandler.js');
-const {typeLookup} = require('../../data/lookups.json');
 const AugmentsTable = require('../../data/augments.json');
-const {RichEmbed} = require("discord.js");
+const {typeLookup} = require('../../data/lookups.json');
 
-class Augment extends MessageHandler {
+const BasicScript = require('../../framework/basicScript');
+const {RichEmbed} = require("discord.js");
+const {rollRandom, titleCase} = require("../../helpers.js");
+
+class Augment extends BasicScript {
     handle(msg, type) {
         if (type = Augment.getType(type)) {
             const key = rollRandom(Object.keys(AugmentsTable[type]));
@@ -20,7 +21,6 @@ class Augment extends MessageHandler {
     }
 
     static buildAugmentEmbed(type, key) {
-
         return new RichEmbed()
             .setTitle(titleCase(key))
             .setColor(0xFF0000)

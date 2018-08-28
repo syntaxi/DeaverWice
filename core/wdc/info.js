@@ -1,14 +1,21 @@
 "use strict";
-const {titleCase, invertedDetails} = require("../../helpers.js");
-const MessageHandler = require('../../messageHandler.js');
+const BasicScript = require('../../framework/basicScript.js');
 const DetailsTable = require("../../data/details.json");
 const AugmentsTable = require("../../data/augments.json");
-const {buildDetailEmbed} = require('./detail.js');
-const {buildAugmentEmbed} = require('./augment.js');
-const Skill = require('./skill.js');
-const {RichEmbed} = require("discord.js");
 
-class Info extends MessageHandler {
+const {RichEmbed} = require('discord.js');
+const {titleCase, invertedDetails} = require("../../helpers.js");
+const {getInstance, getClass} = require('../../framework/instanceManager.js');
+
+let buildAugmentEmbed, buildDetailEmbed, Skill;
+
+
+class Info extends BasicScript {
+    onBegin() {
+        Skill = getInstance('skill.js');
+        buildAugmentEmbed = getClass('augment.js').buildAugmentEmbed;
+        buildDetailEmbed = getClass('detail.js').buildDetailEmbed;
+    }
     handle(msg, ...key) {
         key = key.join(' ').toLowerCase().trim();
         if (Info.tryDetails(msg, key)) {
@@ -24,6 +31,7 @@ class Info extends MessageHandler {
 
     static tryDetails(msg, key) {
         if (key in DetailsTable) {
+            getInstance("detail.js");
             const card = DetailsTable[key];
             let details = [];
             for (let target in card) {

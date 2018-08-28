@@ -1,14 +1,16 @@
 "use strict";
-const {titleCase, splitByLength} = require("../../helpers.js");
-const MessageHandler = require('../../messageHandler.js');
+const BasicScript = require('../../framework/basicScript.js');
 const SkillsTable = require("../../data/skills.json");
+
+const {titleCase, splitByLength} = require("../../helpers.js");
 const {RichEmbed} = require("discord.js");
 
-class Skill extends MessageHandler {
+class Skill extends BasicScript {
 
     handle(msg, ...args) {
         const name = args.join(" ").toLowerCase();
-        if (name.length === 0) {
+        /* Matches either nothing or `list/lists/all` caps insensitive */
+        if (name.length === 0 || /(^lists?$)|(^all$)/i.test(name)) {
             Skill.handleListing(msg);
         } else if (!Skill.handleType(msg, name)
             && !Skill.handleName(msg, name)) {
@@ -25,13 +27,18 @@ class Skill extends MessageHandler {
                 embed.addField(key, SkillsTable.description[key]);
             }
         }
-        const types = [];
-        for (let key in SkillsTable) {
-            if (key !== "description") {
-                types.push(titleCase(key))
+        for (let type in SkillsTable) {
+            if (type !== "description") {
+                let contents = [];
+                for (let skill in SkillsTable[type]) {
+                    contents.push(`  ● ${titleCase(skill)}`);
+                }
+                embed.addField(`${titleCase(type)}`, contents.join("\n"), true);
             }
         }
-        embed.addField("Types: ", types.join("\n"));
+        /* Field only exists to correctly align the columns. Uses zero width spaces */
+        embed.addField("​","​",true);
+
         Skill.replyOutput(msg, embed);
         return true;
     }

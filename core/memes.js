@@ -57,6 +57,16 @@ class Meme extends MessageReceiver {
      * @param output The output to send.
      */
     registerEquals(key, output) {
+        if (key instanceof RegExp) {
+            key = key.source;
+        }
+        if (key[0] !== "^") {
+            key = "^" + key;
+        }
+        if (key[key.length-1] !== "$") {
+            key += "$";
+        }
+
         this.registerMeme(this.equals, key, output);
     }
 
@@ -71,6 +81,7 @@ class Meme extends MessageReceiver {
      * @param output The output to send.
      */
     registerMeme(type, key, output) {
+        /* Only capitals in regex are ones representing actual capitals */
         if (typeof key === "string") {
             key = key.toLowerCase();
         } else if (key instanceof RegExp) {
@@ -121,8 +132,7 @@ class Meme extends MessageReceiver {
             }
             /* Try and match it to an equals case */
             for (let key in this.equals) {
-                const matches = msg.content.toLowerCase().match(key);
-                if (matches && matches[0] === msg.content.toLowerCase()) {
+                if (msg.content.toLowerCase().match(key)) {
                     this.equals[key](msg);
                 }
             }

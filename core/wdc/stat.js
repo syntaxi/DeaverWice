@@ -12,7 +12,7 @@ class Stat extends BasicScript {
         if (!type || /^all$|^lists?$/.test(type)) {
             output = Stat.buildStatInfoEmbed();
             // case where wd> superstat <type> is called
-        } else if (type === "superstat" && superType && (superType = Stat.getSuperType(superType) || ("super" + Stat.getType(superType)))
+        } else if (/super(stats?)?/.test(type) && superType && (superType = Stat.getSuperType(superType) || ("super" + Stat.getType(superType)))
             // case where wd> stat <superstat> is called
             || (superType = Stat.getSuperType(type))) {
             output = Stat.buildSuperstatEmbed(superType)

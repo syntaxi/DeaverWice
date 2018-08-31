@@ -6,19 +6,34 @@ const {titleCase, splitByLength} = require("../../helpers.js");
 const {RichEmbed} = require("discord.js");
 
 class Skill extends BasicScript {
-
+    /**
+     * Called when an associated key is triggered.
+     *
+     * @param msg The message that did the trigger
+     * @param args The space separated arguments given to the command
+     */
     handle(msg, ...args) {
         const name = args.join(" ").toLowerCase();
+        let output = "Unknown type or name " + name;
+
         /* Matches either nothing or `list/lists/all` caps insensitive */
         if (name.length === 0 || /(^lists?$)|(^all$)/i.test(name)) {
-            Skill.handleListing(msg);
-        } else if (!Skill.handleType(msg, name)
-            && !Skill.handleName(msg, name)) {
-            Skill.sendOutput(msg, "Unknown type or name " + name);
+            output = Skill.buildListingEmbed();
+        } else if (Skill.isType(name)) {
+            output = Skill.buildTypeEmbed(name);
+        } else if (Skill.isSkill(name)) {
+            output = Skill.buildNameEmbed(name);
         }
+        Skill.sendOutput(msg, output);
+
     }
 
-    static handleListing(msg) {
+    /**
+     * Creates an embed containing information for the skills category.
+     *
+     * @returns {RichEmbed} The embed containing all the required info.
+     */
+    static buildListingEmbed() {
         const embed = new RichEmbed()
             .setTitle("Skills")
             .setDescription(SkillsTable.description[""]);
@@ -27,29 +42,29 @@ class Skill extends BasicScript {
                 embed.addField(key, SkillsTable.description[key]);
             }
         }
-        for (let type in SkillsTable) {
-            if (type !== "description") {
-                let contents = [];
-                for (let skill in SkillsTable[type]) {
-                    contents.push(`  ● ${titleCase(skill)}`);
-                }
-                embed.addField(`${titleCase(type)}`, contents.join("\n"), true);
+        for (let type in SkillsTable.categories) {
+            let contents = [];
+            for (let i = 0; i < SkillsTable.categories[type].list.length; i++) {
+                contents.push(`  ● ${titleCase(SkillsTable.categories[type].list[i])}`);
             }
+            embed.addField(titleCase(type), contents.join("\n"), true);
         }
         /* Field only exists to correctly align the columns. Uses zero width spaces */
-        embed.addField("​","​",true);
-
-        Skill.replyOutput(msg, embed);
-        return true;
+        embed.addField("​", "​", true);
+        return embed;
     }
 
-    static handleType(msg, type) {
-        if (!Skill.isType(type)) {
-            return false;
-        }
+    /**
+     * Creates an embed to display information about a skill category
+     *
+     * @param type The category to display
+     * @returns {RichEmbed} The embed containing all the category info.
+     */
+    static buildTypeEmbed(type) {
         const embed = new RichEmbed()
             .setTitle(titleCase(type) + " Skills")
             .setDescription(SkillsTable[type].description);
+
         const skills = [];
         for (let key in SkillsTable[type]) {
             if (key !== "description") {
@@ -57,26 +72,21 @@ class Skill extends BasicScript {
             }
         }
         embed.addField("Skills: ", skills.join("\n"));
-        Skill.replyOutput(msg, embed);
-        return true;
+        return embed;
     }
 
-    static handleName(msg, name) {
-        for (let type in SkillsTable) {
-            if (name in SkillsTable[type]) {
-                const embed = Skill.buildNameEmbed(type, name);
-                Skill.replyOutput(msg, embed);
-                return true;
-            }
-        }
-        return false;
-    }
-
-    static buildNameEmbed(type, name) {
-        const skill = SkillsTable[type][name];
+    /**
+     * Builds an embed containing information on a skill.
+     *
+     * @param name The skill to build the embed for
+     * @returns {RichEmbed} The embed created.
+     */
+    static buildNameEmbed(name) {
+        const skill = SkillsTable.list[name];
         const embed = new RichEmbed()
             .setTitle(titleCase(name) + ` (${skill.stat})`)
-            .setDescription(skill.description + `\n_(${titleCase(type)} skill)_`);
+            .setDescription(skill.description + `\n_(${titleCase(skill.category)} skill)_`);
+
         const levels = [];
         for (let i = 0; i < skill.levels.length; i++) {
             const lines = splitByLength(skill.levels[i], 49, 10);
@@ -86,16 +96,19 @@ class Skill extends BasicScript {
                 + lines.join("\n" + " ".repeat(6))
                 + "```");
         }
+
         embed.addField("Levels", levels[0]);
         for (let i = 1; i < levels.length; i++) {
             /* Title is a zero width space */
             embed.addField("​", levels[i]);
         }
+
         const specials = [];
         for (let special in skill.specialties) {
             specials.push(` ●  **${special}** -  ${skill.specialties[special]}`)
         }
         embed.addField("Specialties", specials.join("\n"));
+
         if ("misc" in skill) {
             for (let key in skill.misc) {
                 embed.addField(titleCase(key), skill.misc[key])
@@ -106,11 +119,25 @@ class Skill extends BasicScript {
 
     }
 
+    /**
+     * Checks if the given key is a valid category
+     *
+     * @param key The key to check
+     * @returns {boolean} True, if it is a category. False otherwise
+     */
     static isType(key) {
-        return key in SkillsTable;
+        return key in SkillsTable.categories;
     }
 
-
+    /**
+     * Checks if the given key is a skill name
+     *
+     * @param key The key to check
+     * @returns {boolean} True if the key is a skill name. False otherwise.
+     */
+    static isSkill(key) {
+        return key in SkillsTable.list;
+    }
 }
 
 module.exports = Skill;

@@ -1,70 +1,38 @@
 "use strict";
 const MessageReceiver = require("../framework/messageReceiver.js");
+const MemeTable = require("../data/memes.json");
+const {replaceJson} = require("../framework/jsonSaver.js");
+const {getClass} = require("../framework/instanceManager.js");
 
 /**
  * Contains memes and other joke commands
  */
-class Memes extends MessageReceiver {
+class Meme extends MessageReceiver {
     constructor() {
         super();
         this.includes = {};
         this.equals = {};
+        this.prefix = "wd>";
 
+        /* Load from json */
+        for (let key in MemeTable.equals) {
+            this.registerEquals(key, MemeTable.equals[key]);
+        }
+        for (let key in MemeTable.includes) {
+            this.registerIncludes(key, MemeTable.includes[key]);
+        }
 
-        this.registerEquals("fuck this gay earth", "https://www.youtube.com/watch?v=xF0cGt5-69k");
-        this.registerEquals("friskyfoxx", "Don't you mean... Mother?");
-        this.registerEquals("wd>help", "No.");
-        this.registerEquals("what is my avatar", (msg) => Memes.sendOutput(msg, msg.author.avatarURL));
-        this.registerEquals(/wd>\sgender/, Memes.chooseGender);
-        this.registerEquals(/wd>\ssex/, Memes.chooseSex);
-        this.registerEquals("nice", "join");
-        this.registerEquals("look at them,", "they come to this place when they know they are not pure. Tenno use the keys, but they are mere trespassers." +
-            " Only I, Vor, know the true power of the Void. I was cut in half, destroyed, but through it's Janus Key, the Void called to me." +
-            " It brought me here and here I was reborn. We cannot blame these creatures, they are being led by a false prophet, an impostor who knows not the secrets of the Void." +
-            " Behold the Tenno, come to scavenge and desecrate this sacred realm. My brothers, did I not tell of this day? Did I not prophesize this moment?" +
-            " Now, I will stop them. Now I am changed, reborn through the energy of the Janus Key. Forever bound to the Void." +
-            " Let it be known, if the Tenno want true salvation, they will lay down their arms, and wait for the baptism of my Janus key. It is time." +
-            " I will teach these trespassers the redemptive power of my Janus key. They will learn it's simple truth. The Tenno are lost, and they will resist." +
-            " But I, Vor, will cleanse this place of their impurity.");
-        this.registerEquals(/^(i'?m\s).{1,15}$/, Memes.dadJoke);
+        /* We can't load functions from JSON */
+        this.registerEquals("what is my avatar", (msg) => Meme.sendOutput(msg, msg.author.avatarURL));
+        this.registerEquals(/>?wd>?\s*gender/, Meme.chooseGender);
+        this.registerEquals(/>?wd>?\s*sex/, Meme.chooseSex);
+        this.registerEquals(/^(i'?m\s).{1,15}$/, Meme.dadJoke);
 
-        this.registerIncludes("to pay respects", "F");
-        this.registerIncludes("captain vor", "Look at them, they come to this place when they know they are not pure. Tenno use the keys, but they are mere trespassers." +
-            " Only I, Vor, know the true power of the Void. I was cut in half, destroyed, but through it's Janus Key, the Void called to me." +
-            " It brought me here and here I was reborn. We cannot blame these creatures, they are being led by a false prophet, an impostor who knows not the secrets of the Void." +
-            " Behold the Tenno, come to scavenge and desecrate this sacred realm. My brothers, did I not tell of this day? Did I not prophesize this moment?" +
-            " Now, I will stop them. Now I am changed, reborn through the energy of the Janus Key. Forever bound to the Void." +
-            " Let it be known, if the Tenno want true salvation, they will lay down their arms, and wait for the baptism of my Janus key. It is time." +
-            " I will teach these trespassers the redemptive power of my Janus key. They will learn it's simple truth. The Tenno are lost, and they will resist." +
-            " But I, Vor, will cleanse this place of their impurity.");
-        this.registerIncludes("did you really believe", "https://youtu.be/wOygJJ7Zudk?t=20s")
-        this.registerIncludes("unhook", "JAR OF LIPS\nJAR OF LIPS\nJAR OF LIPS");
-        this.registerIncludes("sonya", "ello cute boy! My name is Sonya I'm a very beautiful" +
-            " girl, most recently I was left alone. Five months ago a guy threw me, and I did" +
-            " not have a man all this time. I'm young and young girl I need constant sex. Friends" +
-            " and girlfriends I have very little, and friends they can not be called. From my" +
-            " environment, I do not want anyone to have any sexual relations. Therefore I am" +
-            " writing this letter to you. I want to find a lover, I hope that it will be you. I" +
-            " saw your photos, and I really liked you. I hope you find some time for me? My strength" +
-            " is not how I want sex, I even bought myself a rubber penis. But this is not the same," +
-            " I want a real, big, hot male dick! I am writing you a letter and are excited! My" +
-            " panties are already very wet, I get up from the table and lie down on the bed and start" +
-            " playing with my fingers between my legs. Under the pillow is my rubber friend, I take it" +
-            " in my hands and touch them to my swollen the nipples go down lower and lower ... I remove" +
-            " through the damp strip of panties, and begin to massage the swollen excitation of the" +
-            " clitoris. My juices flow already onto the sheet, I can not stand anymore, I'm excited to" +
-            " the limit. I spread my legs wider, and slowly introduce penis in your pussy. I began to" +
-            " hurt for a second, but the sweet sensations and fantasies in This head was immediately" +
-            " drowned out of my head. I want you. I represent you in my fantasies, I imagine that" +
-            " you're fucking me like a bitch, groaning with pleasure and moving faster. Oh yeah, my body" +
-            " is pierced by millions sweet needles and starting to wriggle under you and you do not let" +
-            " go and continue hard fuck me. I blew the whole sheet)) That's how hard it is to live" +
-            " without sex. I really hope that you will answer me and we will soon meet in my house. I" +
-            " made you a photo, I'll send it in a letter. Even more of my photos You can look in the photo" +
-            " album on the web site, I'm there permanently in the network and here I am very rare. My" +
-            " id6767889. I'll be waiting for you. Kissing you tenderly. Your Sonya.");
-        this.registerIncludes("ride me", "https://www.youtube.com/watch?v=DC97xIiPikw");
+        this.registerCommand("listmemes", this.listmeme.bind(this));
+        this.registerCommand("removememes", this.removememe.bind(this));
+        this.registerCommand("addmemems", this.addmeme.bind(this));
     }
+
 
     /**
      * Register and output to be sent if the message contains the key.
@@ -76,22 +44,13 @@ class Memes extends MessageReceiver {
      * @param output The output to use.
      */
     registerIncludes(key, output) {
-        if (typeof key === "string") {
-            key = key.toLowerCase();
-        } else if (key instanceof RegExp) {
-            key = key.source;
-        }
-        if (typeof output === "function") {
-            this.includes[key] = output;
-        } else {
-            this.includes[key] = Memes.switchedSend.bind(this, output);
-        }
+        this.registerMeme(this.includes, key, output);
     }
 
 
     /**
      * Register an output to be sent if the message equals the key.
-     * If the output is a function, that is called. Otherwise it is send to the channel.
+     * If the output is a function, that is called. Otherwise it is sent to the channel.
      *
      * The key and the message will both be converted to lower case.
      *
@@ -99,20 +58,46 @@ class Memes extends MessageReceiver {
      * @param output The output to send.
      */
     registerEquals(key, output) {
+        this.registerMeme(this.equals, key, output);
+    }
+
+    /**
+     * Adds a meme to a given type.
+     * If the output is a function, that is called. Otherwise it is sent to the channel.
+     *
+     * The key and the message will both be converted to lower case.
+     *
+     * @param type The type object to add it to.
+     * @param key The key to register with
+     * @param output The output to send.
+     */
+    registerMeme(type, key, output) {
         if (typeof key === "string") {
             key = key.toLowerCase();
         } else if (key instanceof RegExp) {
             key = key.source;
         }
         if (typeof output === "function") {
-            this.equals[key] = output;
+            type[key] = output;
         } else {
-            this.equals[key] = Memes.switchedSend.bind(this, output);
+            type[key] = Meme.switchedSend.bind(this, output);
+            if (output.length > 20) {
+                type[key].output = output.substr(0, 20)
+                    .replace("\n", "\\n") // Handle newlines
+                    .replace("`", "``"); // Handle `
+            } else {
+                type[key].output = output;
+            }
         }
     }
 
+    /**
+     * Alternate form of send, which handles message being the second element
+     * @param output The output to send.
+     * @param msg The message to use to send it.
+     */
     static switchedSend(output, msg) {
-        Memes.sendOutput(msg, output)
+        Meme.sendOutput(msg, output)
     }
 
     /**
@@ -123,12 +108,22 @@ class Memes extends MessageReceiver {
      */
     message(msg) {
         if (!msg.author.bot) {
+            /* First try and handle the prefix case */
+            if (msg.content.toLowerCase().startsWith(this.prefix)) {
+                const args = msg.content.slice(this.prefix.length).trim().split(/\s+/g);
+                if (args.length > 0) {
+                    this.handleCommand(msg, args[0], args.slice(1));
+                    return;
+                }
+            }
+            /* Try and match it to an equals case */
             for (let key in this.equals) {
                 const matches = msg.content.toLowerCase().match(key);
                 if (matches && matches[0] === msg.content.toLowerCase()) {
                     this.equals[key](msg);
                 }
             }
+            /* Try and match it to an includes case */
             for (let key in this.includes) {
                 if (msg.content.toLowerCase().match(key)) {
                     this.includes[key](msg);
@@ -145,7 +140,7 @@ class Memes extends MessageReceiver {
     static chooseGender(msg) {
         let options = ["Male", "Female", "Trap"];
         let choice = Math.floor(Math.random() * options.length);
-        Memes.sendOutput(msg, options[choice])
+        Meme.sendOutput(msg, options[choice])
     }
 
     /**
@@ -157,19 +152,136 @@ class Memes extends MessageReceiver {
         if (Math.random() < 0.3) {
             let options = ["Straight", "Gay", "Bi", "A", "*Clang! Clang!* you are Pansexual!", "Demi", "Poly", "Furry", "THE BIG GAY", "Homieflexual"];
             let choice = Math.floor(Math.random() * options.length);
-            Memes.sendOutput(msg, options[choice]);
+            Meme.sendOutput(msg, options[choice]);
         } else {
             let options = ["Straight", "Trisexual"];
             let choice = Math.floor(Math.random() * options.length);
-            Memes.sendOutput(msg, options[choice]);
+            Meme.sendOutput(msg, options[choice]);
         }
     }
 
+    /**
+     * Implements the classic dad joke format on a message:
+     * Person: "I'm <x>"
+     * Bot: "Hi <x>, I'm Dad!"
+     * @param msg
+     */
     static dadJoke(msg) {
         const size = msg.content.toLowerCase().match(/^(i'?m\s)./i)[1].length;
-        Memes.sendOutput(msg, `Hi ${msg.toString().substr(size)}, I'm Dad!`);
+        Meme.sendOutput(msg, `Hi ${msg.toString().substr(size)}, I'm Dad!`);
+    }
+
+    /**
+     * Adds a new meme
+     *
+     * @param msg The message that triggered it
+     * @param type The type of meme to add
+     * @param key The key that will trigger the meme. Regex is allowed.
+     * @param value The value to output when the trigger is heard.
+     */
+    addmeme(msg, type, key, ...value) {
+        if (!getClass("admin.js").verifyBotAdmin(msg.author, msg)) {
+            return
+        }
+        if (value.length === 0) {
+            Meme.sendOutput(msg, "Missing key, type and/or value");
+            return
+        }
+        value = value.join(" ");
+        /* Hacky, abuses switch case mechanics */
+        switch (true) {
+            case /^i(ncludes?)?$/i.test(type):
+                this.registerIncludes(key, value);
+                MemeTable.includes[key] = value;
+                Meme.sendOutput(msg, `I will now respond with "${value} when it includes ${key}`);
+                break;
+            case /^e(quals?)?$/i.test(type):
+                this.registerEquals(key, value);
+                MemeTable.equals[key] = value;
+                Meme.sendOutput(msg, `I will now respond with "${value} when I hear ${key} exactly`);
+                break;
+            default:
+                Meme.sendOutput(msg, "Unknown register type " + type);
+                return;
+        }
+        replaceJson("/data/memes.json", MemeTable);
+    }
+
+    /**
+     * Removes a specific meme
+     *
+     * @param msg The message that triggered it
+     * @param type The type of meme to remove
+     * @param key The key of the meme to remove
+     */
+    removememe(msg, type, key) {
+        if (!getClass("admin.js").verifyBotAdmin(msg.author, msg)) {
+            return
+        }
+        if (!type || !key) {
+            Meme.sendOutput(msg, "Missing key and/or value");
+            return
+        }
+        /* If we are removing an includes */
+        if (/^i(ncludes?)?$/i.test(type) && key in this.includes) {
+            delete this.includes[key];
+            delete MemeTable.includes[key];
+            Meme.sendOutput(msg, `I will no longer listen for messages containing ${key}`);
+        } else if (/^e(quals?|xactly)?$/i.test(type) && key in this.equals) {
+            delete this.equals[key];
+            delete MemeTable.equals[key];
+            Meme.sendOutput(msg, `I will no longer listen for ${key} exactly`);
+        } else {
+            Meme.sendOutput(msg, "Wrong value type or could not find key.");
+            return;
+        }
+        replaceJson("/data/memes.json", MemeTable);
+    }
+
+    /**
+     * Lists all the memes of a given type
+     *
+     * @param msg The message that triggered it
+     * @param type The type of memes to list. Defaults to all
+     */
+    listmeme(msg, type) {
+        if (!getClass("admin.js").verifyBotAdmin(msg.author, msg)) {
+            return
+        }
+        let output = "";
+        if (!type || /^(i(ncludes?)?|c(ontains?)?)$/i.test(type)) {
+            output = (output && (output + "\n")) || "";
+            output += "Includes:\n" + Meme.collateMemes(this.includes);
+        }
+        if (!type || /^e(quals?|xactly)?$/i.test(type)) {
+            output = (output && (output + "\n")) || "";
+            output += "Equals:\n" + Meme.collateMemes(this.equals);
+        }
+        Meme.sendOutput(msg, output || "Wrong meme type. Try running with none to see all");
+    }
+
+    /**
+     * Collects all the meme commands from the given object
+     * Handles newline and grave cases
+     *
+     * @param type The object to get them from
+     * @returns {string} A printable string of all the cases.
+     */
+    static collateMemes(type) {
+        const lines = [];
+        for (let key in type) {
+            const func = type[key];
+            lines.push(`  • \`"${
+                key.replace("\n", "\\n")
+                    .replace("`", "``")
+                }"\` - \`"${
+                func.name === "bound switchedSend" ?
+                    func.output :
+                    (func.name || '<Unknown Anonymous Function>')
+                }\`"`);
+        }
+        return lines.join("\n");
     }
 }
 
-module.exports = Memes;
-
+module.exports = Meme;

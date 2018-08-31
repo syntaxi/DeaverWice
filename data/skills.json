@@ -4,9 +4,65 @@
     "Potential": "The Potential skill is removed. If your character really qualifies for it, ask the GM and they may make a special dispensation, temporarily, until your character regains their memories or suchlike.",
     "Power Use": "For some capes, no other skill makes sense for their power. In this case, at their GM’s specific direction, they may take points in the ‘Power Use’ skill. This gives +1 die to all power-related actions at level 3, and +2  dice at level 5. All other levels of the skill give nothing by default, although may have bonuses attached if necessary."
   },
-  "melee": {
-    "description": "Melee Skills",
+  "categories": {
+    "melee": {
+      "description": "Melee Skills",
+      "list": [
+        "brawl",
+        "blitz",
+        "critical",
+        "finesse",
+        "martial arts",
+        "strongarm"
+      ]
+    },
+    "ranged": {
+      "description": "",
+      "list": [
+        "aim",
+        "barrage",
+        "bullseye",
+        "gunfight"
+      ]
+    },
+    "defence": {
+      "description": "",
+      "list": [
+        "evade",
+        "parry",
+        "withstand"
+      ]
+    },
+    "social": {
+      "description": "",
+      "list": [
+        "charm",
+        "command",
+        "deception",
+        "scrutinise",
+        "threaten"
+      ]
+    },
+    "misc": {
+      "description": "",
+      "list": [
+        "acrobatics",
+        "awareness",
+        "crafting",
+        "driving",
+        "medical",
+        "reflexes",
+        "sneak",
+        "street smarts",
+        "tactics",
+        "thievery",
+        "willpower"
+      ]
+    }
+  },
+  "list": {
     "brawl": {
+      "category": "Melee",
       "description": "Put aside technique, martial arts, weapons, footwork, and combat can be reduced to a simple idea: beat the other guy into submission before he does the same to you.  Brawl is the combat skill that focuses on the beating.  Emphasizing heavier weapons and the slinging of fists, Brawl is something touched on by anyone who’s made a habit of swinging their fists, be they a street thug or a teen who grew up trading blows with an abusive dad.  Applies only to Brawn-based weapons and when making attacks using the Brawn stat.",
       "levels": [
         "When making a Brawn-based melee attack, roll an additional die and take the highest die result.",
@@ -24,6 +80,7 @@
       "stat": "Brawn"
     },
     "blitz": {
+      "category": "Melee",
       "description": "Move fast, hit hard.  A combat specialty focused on charging, tackling, and fast, hard-hitting actions in a brawl, aiming to pick fights and put foes on the back foot.  A skill trained by some athletes and some law enforcement, as well as ambush attackers and dark-cowled vigilantes.  Limited in longer engagements, as effects largely restricted to opening of fight.\n\nIs restricted to melee.  Must travel at least 15’ immediately before attacking to apply the bonuses from this skill.",
       "levels": [
         "When making an attack roll as part of a charge, as an attack of opportunity on a foe exiting melee range, or when defending against an attack of opportunity, roll one extra die and keep the highest.",
@@ -39,6 +96,7 @@
       "stat": "Athletics or Brawn"
     },
     "critical": {
+      "category": "Melee",
       "description": "With practice, the character has learned how to deliver the hurt and land blows where they’ll do the most damage.  Points in this skill can represent experience in something like Krav Maga or experience in fighting with no holds barred.  Examples might include brutal gang members,  pit fighters, parahumans with exceptionally high brawn or dexterity, snipers, or might even be an abused child who knows they’ll never be able to beat their physically abusive father, who is twice their size, so they’ve become accustomed to thinking about fighting with attention to weak points and vulnerabilities.",
       "levels": [
         "When making a dexterity-based melee attack, roll one extra die and keep the highest.",
@@ -56,6 +114,7 @@
       "stat": "Dexterity"
     },
     "finesse": {
+      "category": "Melee",
       "description": "Careful handling of the right weapon can allow for a flurry of melee hits, each hit aimed at delivering maximum damage.  Knife-fighters, sword-wielders and the like will often utilize in finesse.  Applies only to weapons with the Dexterity option, only when making attacks with Dex as the primary stat.",
       "levels": [
         "Roll an additional die when rolling to attack in melee with a qualifying Dex weapon, use highest result.",
@@ -72,6 +131,7 @@
       "stat": "Dexterity"
     },
     "martial arts": {
+      "category": "Melee",
       "description": "Various martial arts are preferred by those who like to fight bare handed. Martial arts is unique in that it is not one skill, but a collection of styles that grant different effects depending on which path you choose to take.",
       "levels": [
         "When fighting unarmed in melee combat, roll one extra die and keep the highest.",
@@ -88,6 +148,7 @@
       "stat": "Brawn/Dexterity"
     },
     "strongarm": {
+      "category": "Melee",
       "description": "To a character with the strongarm skill, they’ve learned to approach the playing field with a sense of things being a tug of war and measure of raw power.  If they’re standing and their enemy is sitting on their ass, they have to be doing something right.  To these ends, they emphasize grabbing, throwing, pushing, and otherwise physically bullying their opposition.  The Strongarm skill is the province of bouncers, many athletes, wrestlers of all sorts, and heavy laborers\n\nStrongarm is also the skill that represents one’s ability to use powers that move foes around.",
       "levels": [
         "When rolling to grapple, hold, push, pull, or throw people, roll an added die and keep the highest result.",
@@ -102,10 +163,9 @@
         "Human Nunchuck": "The single greatest specialty in the game. When a foe is successfully grappled, can use them as a melee weapon. Attacks this way are made at a -4 penalty, +1 for every stage of control on the target, to a max of +0. Use the grappled target as a two handed brawn-based melee weapon. If a foe is struck, the damage from the attack is inflicted to both the foe and the grappled target."
       },
       "stat": "Brawn"
-    }
-  },
-  "ranged": {
+    },
     "aim": {
+      "category": "Ranged",
       "description": "A steady hand and keen hand-eye coordination are essential for those who would pick off their enemies with ranged attacks.  Refining the ability to place the attacks where they need to allows more reliable hits and makes the hits that are delivered more potent.  Not for use with weapons or powers that spit out a large number of shots, favored by snipers and archers.\nOnly the added die and bonuses from one ranged skill can be applied at a time when making an attack",
       "levels": [
         "When making a ranged attack when not in melee with an enemy or staggered, gain +1 dice and keep the highest. If a partial action was spent this turn taking aim, increase the bonus to +2 dice.",
@@ -122,6 +182,7 @@
       "stat": "Dexterity"
     },
     "barrage": {
+      "category": "Ranged",
       "description": "The second of the ranged combat skills, Barrage is focused around delivering more shots in a given span of time.  At the outset, the character can make decisions about whether to shoot more inaccurately or focus on honing their aim when firing a great deal.  Later on, the gap between these two options closes.\nBarrage skills and specialties only work with ranged attacks/powers and attacks/powers that are at least semiautomatic in function (can fire ½ Dex # of attacks/round), and are always capped at the gun/power’s maximum.\nOnly the added die and bonuses from one ranged skill can be applied at a time when making an attack.",
       "levels": [
         "When making a ranged attack that fires multiple shots in a round, if you haven’t moved that round, roll one extra die and keep the highest.",
@@ -137,6 +198,7 @@
       "stat": "Dexterity"
     },
     "bullseye": {
+      "category": "Ranged",
       "description": "Aim for center mass, breathe deep… exhale as you pull the trigger.  This cape may use ranged attacks, but they sure aren’t afraid of getting up close and personal.  Used by the military, by hitmen, by vigilantes and others who may get into close-quarters scraps frequently.",
       "levels": [
         "When making ranged attacks against targets within 5 squares, roll an extra die and keep the highest. Ranged attacks made in melee do not provoke attacks of opportunity when using the bullseye skill.",
@@ -158,6 +220,7 @@
       "stat": "Dexterity"
     },
     "gunfight": {
+      "category": "Ranged",
       "description": "Gunfighting is the province of those who know the battlefield and their weapons well.  Having been through hazardous situations, they can maintain their cool and keep on shooting.  Police officers in the most dangerous areas, military, child soldiers, and even gun aficionados with some experience in paintball or airsoft might show skill in gunfighting, but even more than other ranged skills, gunfighting is a skill that is learned with experience.",
       "levels": [
         "When making a ranged attack, roll one extra die and keep the highest.",
@@ -171,10 +234,9 @@
         "Fire Blind": "Once/fight, negate all penalties from cover and blindness to hit a target."
       },
       "stat": "Dexterity"
-    }
-  },
-  "defence": {
+    },
     "evade": {
+      "category": "Defence",
       "description": "Duck, leap for cover, recognize danger and move the hell out of the way.  Evading is an important thing for anyone who goes into a confrontation and doesn’t expect to be able to deflect bullets.  Favored by lightly armored capes who prioritize mobility and flexibility in their fighting style.",
       "levels": [
         "When dodging an attack, roll one extra die and keep the highest.",
@@ -192,6 +254,7 @@
       "stat": "Athletics"
     },
     "parry": {
+      "category": "Defence",
       "description": "Strike attacks out of the air or redirect them with deft movements. A defense for those on the offensive. Parrying uses whichever stat you use to attack in melee. \n\nUsing the parry skill requires the user to use a weapon capable of doing so",
       "levels": [
         "When parrying an attack, roll one extra die and keep the highest.",
@@ -207,6 +270,7 @@
       "stat": "Brawn/Dexterity/Other"
     },
     "withstand": {
+      "category": "Defence",
       "description": "Block, brace and withstand incoming attacks. Ideal for brutes and those with otherwise high Brawn and Guts, as well as those who wear heavy armor. \n\nCan block striker attacks, unless the brute wears minimal covering and lacks a weapon with which to deflect strikes.",
       "levels": [
         "When blocking an attack, roll one extra die and keep the highest.",
@@ -221,10 +285,9 @@
         "Human Tank": "Once per fight, you can double the effectiveness of your armor for a full round."
       },
       "stat": "Brawn/Guts"
-    }
-  },
-  "social": {
+    },
     "charm": {
+      "category": "Social",
       "description": "Some people can look good in rags, or make even crabby old ladies blush. A blending of attractiveness, being able to read emotions, and being able to sell one’s own emotions. Charm works with both small audiences and larger ones, occasionally seeing slight overlap with Deception. Skill used by lobbyists, romancers, CEOs, and even the like of priests. Anyone who wants to sway hearts and make key impressions.",
       "levels": [
         "When making a social roll that involves calibrating initial impressions, attractiveness, seduction, or attempts to sell one’s emotions (including acting, emotional appeals), roll an extra die and keep the highest result.",
@@ -240,6 +303,7 @@
       "stat": "Social"
     },
     "command": {
+      "category": "Social",
       "description": "You’ve got people under your command, and it’s time to get shit done. With an emphasis on organizing a group in the midst of a battlefield, Command has some secondary benefits as a general team and group management skill. Command benefits are primarily aimed at those who are already subordinate and cooperative, and helps to direct them and bring out the best in them. Secondary benefits come in recruitment and helping instill cooperation.\n\nFavored by many leaders, particularly captains of squads and organizations. More passive leaders who don’t face a great deal of confrontation, such as politicians, may favor Presentation. Maximum number of minions is [Social pips].\n\nPlayers cannot count as minions for this skill, exceptions authorised on a per-character basis, but generally only to master-controlled minions.",
       "levels": [
         "Roll 1🎲+1, before any other modifiers",
@@ -256,6 +320,7 @@
       "stat": "Social"
     },
     "deception": {
+      "category": "Social",
       "description": "Everyone lies, and some people make the lies a part of their identity. Careful use of body language and word choice, being able to believe one’s own words, management of stress levels and tailoring one’s tales to their audience are all covered by this skill. Favored not only by liars, criminals, conmen, and various slimy ‘legitimate’ professions, but by actors and by lawyers. Those who have been living a lie for a very long time might have a few points in the skill.",
       "levels": [
         "When lying, cheating, or attempting to deceive someone, roll an extra die and take the highest.",
@@ -274,6 +339,7 @@
       "stat": "Social"
     },
     "scrutinise": {
+      "category": "Social",
       "description": "What’s with him? Look at his clothes, the way he stands. The quirk of his mouth. Why is he so tense? There’s something going on. This is the scrutinize skill at work. Analysis of people, what they’re saying and doing, the clues on their person and their body language. Scrutinize is a defensive skill of sorts in the social field, key for those who would want to spot any deception or who need to know people well to do their job. Investigators, detectives, cops, psychologists and (good) human resources workers might have more points in scrutinize.",
       "levels": [
         "When rolling to analyze people, detect lies, or uncover disguises, roll one extra die and take the highest. When attempting to discern a lie, roll scrutinize vs deception. On a success, the character either looks sincere or insincere, depending on whether they are lying or not. On a failure, they always look sincere. This does not make your character automatically believe or disbelieve.",
@@ -290,6 +356,7 @@
       "stat": "Wits/Social"
     },
     "threaten": {
+      "category": "Social",
       "description": "Scare, coerce or threaten others. Threaten lets you leave a negative impression on those afraid of you.",
       "levels": [
         "When rolling to scare, coerce or threaten others, roll an extra die and keep the highest.",
@@ -303,10 +370,9 @@
         "Inspire Terror": "Unpowered targets must reroll successful rolls against your threaten attempts."
       },
       "stat": "Social"
-    }
-  },
-  "misc": {
+    },
     "acrobatics": {
+      "category": "Misc",
       "description": "Hurdling, jumping, climbing, it’s a question of navigating the environment and getting from A to B when there are too many things in the way, or when there isn’t enough footing between the two points.  At the highest level, parallels could be drawn between acrobatics and parkour or acrobatics and gymnastics.  Either way, it is skilled whole-body movement and use of the environment.\nMentions of falls include cases where an individual is thrown.",
       "levels": [
         "When navigating the environment by way of jumping, climbing, hurdling or falling, roll an added die and take the highest.",
@@ -323,6 +389,7 @@
       "stat": "Athletics"
     },
     "awareness": {
+      "category": "Misc",
       "description": "To be perfunctory, Awareness is trained senses.  Looking and listening and being able to track one’s enemies and allies in the midst of a confrontation are essential.  At the lowest level, it’s the ability to see something in shadows or make out a bit of whispered conversation.  At the highest level it is the ability to notice the cues and changes in air pressure to know that something’s wrong.",
       "levels": [
         "When testing one’s perception with a Wits roll, roll an added die and take the highest.",
@@ -338,6 +405,7 @@
       "stat": "Wits"
     },
     "crafting": {
+      "category": "Misc",
       "description": "The ability to make things, in short.  Crafting is a more comprehensive skill, and as such, those who invest in crafting get two points to allocate in the skill, across paths, skill points, and a specialty, should they choose to have one.\n\nPaths are the things the character knows how to make.  There is some overlap between paths, and a character making something that falls into this overlap will get a +1 to the end roll for crafting.  A character without a path can still try to make things, but they use only Knowledge to craft.  A character with a path adds the bonus from the skill noted for that path (minimum +1), which may be required for some higher-end creations.  Paths also offer small bonuses and such.  A Tinker is always considered to have the ‘path’ for their tinkerings.\n\nSkill points are the general ability to craft.  Focus, the ability to conceptualize the finished product, steady hands and the like are represented here.\n\nSpecialties are, as normal, a particular direction the crafter has taken in pursuing the skill.  Only one skill point may be allocated to a specialty unless powers or perks say otherwise.\n\nCrafting can be a Job skill, with 2 points (multiplied by two as described above, and divided between paths, skill, and specialty as desired) allocated at character creation, +1/-1 depending on the quality of the asset purchased.  Very frequently a ‘trade’ style background.\n\nIf a character wishes to make money selling their crafted goods, they can do so at the following rates of net profit:\n**1 pip**: $20 a week\n**2 pips**: $50 a week\n**3 pips**: $100 a week\n**4 pips**: $200 a week\n**5 pips**: $400 a week",
       "levels": [
         "When crafting, or making a knowledge roll in a field related to your crafting specialty, roll an added die and keep the highest.",
@@ -361,6 +429,7 @@
       "stat": "Knowledge"
     },
     "driving": {
+      "category": "Misc",
       "description": "Drive, pilot, captain and operate vehicles. Driving is a rarely used skill, but some powers may necessitate or encourage use of vehicles.\n\nPiloting a vehicle untrained requires a roll. A person untrained in driving may be a child, or never have obtained a license. Make the roll once at the start of the drive. No matter how skilled you are, if you wish to perform a stunt or gain ground on someone, a driving roll is always required.\n\nFailing a Driving roll doesn’t mean you crash, so much as your driving that round is far more unsteady and uncontrolled than desirable. A critical failure would entail a crash, or the engine failing to turn over at lower speeds. Driving rolls must be made every round whilst operating a vehicle outside your capabilities.",
       "levels": [
         "When piloting a vehicle, roll 1 extra die and keep the highest. You can pilot simple vehicles such as cars and motorcycles without a roll.",
@@ -376,6 +445,7 @@
       "stat": "Wits"
     },
     "medical": {
+      "category": "Misc",
       "description": "Treat, aid, and nurse. Medical allows you to cure and mollify serious injuries and effects, with a successful check.",
       "levels": [
         "Capable of attempting basic medical actions. When attempting these actions, roll 1 additional die and take the highest.",
@@ -394,6 +464,7 @@
       "stat": "Knowledge"
     },
     "reflexes": {
+      "category": "Misc",
       "description": "Add bonus to rolls made to catch, time things, and other reactions, as well as initiative rolls in combat. Roll to dodge with a number of effects, including teleporting, and attack with a scarce few attacks focusing on precise timing.",
       "levels": [
         "When rolling to test your cape’s reflexes, roll an additional die and take the highest. This does not apply to initiative rolls.",
@@ -409,6 +480,7 @@
       "stat": "Wits"
     },
     "sneak": {
+      "category": "Misc",
       "description": "Remain quiet and undetected whilst sneaking around, and take actions whilst stealthed without being seen. Career burglars will invest into this skill.",
       "levels": [
         "When rolling to remain quiet and undetected while hiding, roll one extra die and take the highest.",
@@ -424,6 +496,7 @@
       "stat": "dexterity"
     },
     "street smarts": {
+      "category": "Misc",
       "description": "The skill pertaining to knowledge of urban life, urban navigation, crime, criminals, gangs, drugs, guns, street level officers, and rules/dynamics.",
       "levels": [
         "When making rolls pertaining to urban life, urban navigation, crime, criminals, gangs,  drugs, guns, street level officers, and rules/dynamics, roll one extra die and keep the highest.",
@@ -439,6 +512,7 @@
       "stat": "Knowledge"
     },
     "tactics": {
+      "category": "Misc",
       "description": "Survey the battlefield, reason enemy action, prepare actions and interpose for enemy attacks on your allies.",
       "levels": [
         "When making rolls regarding surveying the battlefield and reasoning enemy action (including rolling to anticipate enemy counterattacks), making prepared actions, or interposing, roll an additional die and keep the highest.",
@@ -454,6 +528,7 @@
       "stat": "Wits"
     },
     "thievery": {
+      "category": "Misc",
       "description": "Become capable of sleight of hand, lockpicking, pickpocketing, shoplifting, breaking and entering, looting, and other nefarious deeds. Thievery rolls are made whenever subtlety is needed, in any task other than sneaking around.",
       "levels": [
         "When making rolls  for sleight of hand, lockpicking, pickpocketing, shoplifting, breaking and entering, looting, and other manual actions for nefarious deeds, roll one extra die and keep the highest.",
@@ -469,6 +544,7 @@
       "stat": "dexterity"
     },
     "willpower": {
+      "category": "Misc",
       "description": "Keep on keeping on. Somewhere along the way, the character learned to plumb those depths deep inside them, dredge out that last gasp of air, that last iota of energy, or push through despite rain, sleet, heat, or chaos storms of warped space. Those techniques they’ve picked up, where they push themselves to the limit, they can make that push just a little bit more often. Masters include athletes, marathon runners, firefighters, workers on fishing boats, and even those disabled who struggle to do even normal tasks.\n\nWits is used as the base stat when the effect is mental, and Guts when the effect is physical. The maximum skill rank is limited only by the highest skill.\n\nMerged with Endure.",
       "levels": [
         "When rolling against an effect that tests the character’s mental or physical tenacity, stamina, or ability to power through pain, roll an additional die and take the highest.",

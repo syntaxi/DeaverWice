@@ -48,7 +48,7 @@ helpers.wonkyCase = function(text) {
         out += " ";
     }
     return out;
-}
+};
 
 helpers.splitByLength = function (value, maxSize = 2000, maxBack = 20) {
     const output = [];

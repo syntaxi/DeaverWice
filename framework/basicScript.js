@@ -51,7 +51,7 @@ class BasicScript {
     static doOutput(outFunc, value) {
         const lines = splitByLength(value, 2000 - 5, 50);
         for (let j = 0; j < lines.length - 1; j++) {
-            outFunc(lines[j] + "[...]");
+            outFunc(lines[j] + "[…]");
         }
         outFunc(lines[lines.length - 1]);
     }
@@ -127,7 +127,7 @@ class BasicScript {
         key = key.toLowerCase();
 
         /* Call the command */
-        if (key in this.commands) {
+        if (this.commands && key in this.commands) {
             this.commands[key].apply(this.commands[key], args);
         } else if (key in this) {
             this[key].apply(this, args);

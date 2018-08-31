@@ -48,5 +48,26 @@
     "changer": true,
     "trump": true,
     "stranger": true
+  },
+  "statLookup": {
+    "brawn": "brawn",
+    "b": "brawn",
+    "athletics": "athletics",
+    "aths": "athletics",
+    "a": "athletics",
+    "dexterity": "dexterity",
+    "dex": "dexterity",
+    "d": "dexterity",
+    "wits": "wits",
+    "wit": "wits",
+    "w": "wits",
+    "social": "social",
+    "s": "social",
+    "knowledge": "knowledge",
+    "know": "knowledge",
+    "k": "knowledge",
+    "guts": "guts",
+    "gut": "guts",
+    "g": "guts"
   }
 }

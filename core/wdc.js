@@ -33,6 +33,12 @@ class Wdc extends MessageReceiver {
 
         this.registerCommand('skill', 'skill.js');
         this.registerCommand('skills', 'skill.js');
+
+        this.registerCommand('stat', 'stat.js');
+        this.registerCommand('stats', 'stat.js');
+        this.registerCommand('super', Wdc.insertArgs('stat.js', 0, 'superstat'));
+        this.registerCommand('superstat', Wdc.insertArgs('stat.js', 0, 'superstat'));
+        this.registerCommand('superstats', Wdc.insertArgs('stat.js', 0, 'superstat'));
     }
 
     message(msg) {

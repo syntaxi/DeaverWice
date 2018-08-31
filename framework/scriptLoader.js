@@ -18,7 +18,7 @@ class ScriptLoader {
             try {
                 InstanceManager.getInstance(key).onBegin();
             } catch (e) {
-                console.log(`Failed to 'onBegin' ${key}. Got "${e}"`);
+                console.log(`Failed to 'onBegin' ${key}. Got "${e}"\nStackTrace:\n${e.stack}`);
             }
         }
         console.log("Finished onBegin")
@@ -48,7 +48,9 @@ class ScriptLoader {
                 } catch (e) {
                     print("✗", false, true);
                     print(`• Failed loading of ${files[i]} got:`);
-                    print(`• "${e}"`);
+                    print("");
+                    print(`${e.stack}`, false, true);
+                    print("");
                     print(`• Skipping`);
                 }
             }

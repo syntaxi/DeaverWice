@@ -3,16 +3,7 @@ const Discord = require("discord.js");
 const InstanceManager = require("./framework/instanceManager.js");
 const ScriptLoader = require("./framework/scriptLoader.js");
 const MessageReceiver = require("./framework/messageReceiver.js");
-const eventList = ["channelCreate", "channelDelete", "channelPinsUpdate", "channelUpdate",
-    "clientUserGuildSettingsUpdate", "clientUserSettingsUpdate", "debug", "disconnect",
-    "emojiCreate", "emojiDelete", "emojiUpdate", "error", "guildBanAdd", "guildBanRemove",
-    "guildCreate", "guildDelete", "guildMemberAdd", "guildMemberAvailable",
-    "guildMemberRemove", "guildMembersChunk", "guildMemberSpeaking", "guildMemberUpdate",
-    "guildUnavailable", "guildUpdate", "message", "messageDelete", "messageDeleteBulk",
-    "messageReactionAdd", "messageReactionRemove", "messageReactionRemoveAll",
-    "messageUpdate", "presenceUpdate", "rateLimit", "ready", "reconnecting", "resume",
-    "roleCreate", "roleDelete", "roleUpdate", "typingStart", "typingStop", "userNoteUpdate",
-    "userUpdate", "voiceStateUpdate", "warn"];
+const eventList = require("./data/eventList.json");
 
 const bot = new Discord.Client();
 ScriptLoader.loadScripts(__dirname + "/core/");

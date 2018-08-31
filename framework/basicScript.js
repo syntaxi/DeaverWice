@@ -1,13 +1,23 @@
 "use strict";
 const {splitByLength} = require('../helpers.js');
 const {getInstance} = require('./instanceManager.js');
+const eventList = require("../data/eventList.json");
 
 class BasicScript {
+    constructor() {
+        /* Load up instance methods */
+        this.commands = {};
+        const names = Object.getOwnPropertyNames(Object.getPrototypeOf(this))
+            .filter(x => !eventList.includes(x));
+        for (let i = 0; i < names.length; i++) {
+            this.commands[names[i]] = this[names[i]];
+        }
+    }
+
     /**
      * Empty method. Should be overridden by child classes
      */
     onBegin() {
-
     }
 
     /**
@@ -71,7 +81,7 @@ class BasicScript {
      * @param func The function, class or file to link to.
      */
     registerCommand(key, func) {
-        this.commands = this.commands || {};
+        key = key instanceof RegExp ? key.source : key;
         switch (typeof key) {
             case 'object':
                 for (let item in key) {
@@ -126,11 +136,11 @@ class BasicScript {
         args.unshift(msg);
         key = key.toLowerCase();
 
-        /* Call the command */
-        if (this.commands && key in this.commands) {
-            this.commands[key].apply(this.commands[key], args);
-        } else if (key in this) {
-            this[key].apply(this, args);
+        /* Check in commands. This includes instance methods on the class */
+        for (let value in this.commands) {
+            if (key.match(value)) {
+                this.commands[value].apply(this.commands[value], args);
+            }
         }
     }
 }

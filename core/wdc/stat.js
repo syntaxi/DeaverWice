@@ -11,11 +11,14 @@ class Stat extends BasicScript {
         let output = "Unknown stat/superstat type " + (superType || type);
         if (!type || /^all$|^lists?$/.test(type)) {
             output = Stat.buildStatInfoEmbed();
+
             // case where wd> superstat <type> is called
-        } else if (/super(stats?)?/.test(type) && superType && (superType = Stat.getSuperType(superType) || ("super" + Stat.getType(superType)))
+        } else if (/s(uper(stats?)?)?/.test(type) && superType && (superType = Stat.getSuperType(superType) || ("super" + Stat.getType(superType)))
             // case where wd> stat <superstat> is called
             || (superType = Stat.getSuperType(type))) {
             output = Stat.buildSuperstatEmbed(superType)
+
+            // Case where wd> stat <type> is called
         } else if (type = Stat.getType(type)) {
             output = Stat.buildStatEmbed(type);
         }
@@ -40,8 +43,8 @@ class Stat extends BasicScript {
      * @returns {*} The proper name of the stat or undefined
      */
     static getSuperType(type) {
-        if (type && /^super.+/.test(type)) {
-            type = type.toLowerCase().slice(5);
+        if (type && /^s(uper)?/i.test(type)) {
+            type = type.toLowerCase().replace(/^s(uper)?/, "");
             return type in statLookup ? "super" + statLookup[type] : undefined;
         } else {
             return undefined;

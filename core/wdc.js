@@ -8,8 +8,6 @@ const MessageReceiver = require('../framework/messageReceiver.js');
 class Wdc extends MessageReceiver {
     constructor() {
         super();
-        /* Scan for child files */
-        this.prefix = "wd>";
 
         this.registerCommand('wound', 'wound.js');
         this.registerCommand('cut', Wdc.insertArgs('wound.js', 0, 'cut'));
@@ -21,6 +19,7 @@ class Wdc extends MessageReceiver {
         this.registerCommand('rend', Wdc.insertArgs('wound.js', 0, 'rend'));
 
         this.registerCommand('detail', 'detail.js');
+        this.registerCommand('details', 'detail.js');
         this.registerCommand('power', Wdc.insertArgs('detail.js', 0, 'power'));
         this.registerCommand('life', Wdc.insertArgs('detail.js', 0, 'life'));
         this.registerCommand('perk', Wdc.insertArgs('detail.js', 1, 'perk'));
@@ -39,18 +38,6 @@ class Wdc extends MessageReceiver {
         this.registerCommand('super', Wdc.insertArgs('stat.js', 0, 'superstat'));
         this.registerCommand('superstat', Wdc.insertArgs('stat.js', 0, 'superstat'));
         this.registerCommand('superstats', Wdc.insertArgs('stat.js', 0, 'superstat'));
-    }
-
-    message(msg) {
-        /* We don't reply to bots. */
-        if (!msg.author.bot) {
-            if (msg.content.toLowerCase().startsWith(this.prefix)) {
-                const args = msg.content.slice(this.prefix.length).trim().split(/ +/g);
-                if (args.length > 0) {
-                    this.handleCommand(msg, args[0], args.slice(1));
-                }
-            }
-        }
     }
 }
 

@@ -9,7 +9,6 @@ const {replaceJson} = require("../framework/jsonSaver.js");
 class Admin extends MessageReceiver {
     constructor() {
         super();
-        this.prefix = "wd>";
     }
 
     kick(msg, ...reason) {
@@ -98,18 +97,6 @@ class Admin extends MessageReceiver {
             return false;
         }
         return true;
-    }
-
-    message(msg) {
-        /* We don't reply to bots. */
-        if (!msg.author.bot) {
-            if (msg.content.toLowerCase().startsWith(this.prefix)) {
-                const args = msg.content.slice(this.prefix.length).trim().split(/ +/g);
-                if (args.length > 0) {
-                    this.handleCommand(msg, args[0], args.slice(1));
-                }
-            }
-        }
     }
 }
 

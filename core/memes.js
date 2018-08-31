@@ -12,7 +12,6 @@ class Meme extends MessageReceiver {
         super();
         this.includes = {};
         this.equals = {};
-        this.prefix = "wd>";
 
         /* Load from json */
         for (let key in MemeTable.equals) {
@@ -109,8 +108,12 @@ class Meme extends MessageReceiver {
     message(msg) {
         if (!msg.author.bot) {
             /* First try and handle the prefix case */
-            if (msg.content.toLowerCase().startsWith(this.prefix)) {
-                const args = msg.content.slice(this.prefix.length).trim().split(/\s+/g);
+            if (this.prefix.test(msg.content.toLowerCase())) {
+                const args = msg.content
+                    .toLowerCase()
+                    .replace(this.prefix, "")
+                    .trim()
+                    .split(/\s+/g);
                 if (args.length > 0) {
                     this.handleCommand(msg, args[0], args.slice(1));
                     return;

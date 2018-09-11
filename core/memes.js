@@ -63,7 +63,7 @@ class Meme extends MessageReceiver {
         if (key[0] !== "^") {
             key = "^" + key;
         }
-        if (key[key.length-1] !== "$") {
+        if (key[key.length - 1] !== "$") {
             key += "$";
         }
 
@@ -194,6 +194,7 @@ class Meme extends MessageReceiver {
      */
     addmeme(msg, type, key, ...value) {
         if (!getClass("admin.js").verifyBotAdmin(msg.author, msg)) {
+            Meme.sendOutput(msg, "You lack the required permissions >.>");
             return
         }
         if (value.length === 0) {
@@ -229,6 +230,7 @@ class Meme extends MessageReceiver {
      */
     removememe(msg, type, key) {
         if (!getClass("admin.js").verifyBotAdmin(msg.author, msg)) {
+            Meme.sendOutput(msg, "You lack the required permissions >.>");
             return
         }
         if (!type || !key) {
@@ -259,6 +261,7 @@ class Meme extends MessageReceiver {
      */
     listmeme(msg, type) {
         if (!getClass("admin.js").verifyBotAdmin(msg.author, msg)) {
+            Meme.sendOutput(msg, "You lack the required permissions >.>");
             return
         }
         let output = "";
@@ -290,7 +293,7 @@ class Meme extends MessageReceiver {
                 }"\` - \`"${
                 func.name === "bound switchedSend" ?
                     func.output :
-                    (func.name || '<Unknown Anonymous Function>')
+                    (`<Function ${func.name}` || '<Unknown Anonymous Function>')
                 }\`"`);
         }
         return lines.join("\n");

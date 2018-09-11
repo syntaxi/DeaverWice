@@ -139,7 +139,8 @@ class BasicScript {
         /* Check in commands. This includes instance methods on the class */
         for (let value in this.commands) {
             if (key.match(value)) {
-                this.commands[value].apply(this.commands[value], args);
+                this.commands[value].apply(this, args);
+                return /* We only want to call one handler */
             }
         }
     }

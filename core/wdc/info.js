@@ -1,11 +1,5 @@
 "use strict";
 const BasicScript = require('../../framework/basicScript.js');
-const AugmentsTable = require("../../data/augments.json");
-
-const {getClass} = require('../../framework/instanceManager.js');
-
-let buildAugmentEmbed, buildDetailEmbed, Skill, Stat;
-
 
 class Info extends BasicScript {
     constructor() {
@@ -13,13 +7,13 @@ class Info extends BasicScript {
         this.infoFunctions = [];
     }
 
-    onBegin() {
-        Skill = getClass('skill.js');
-        Stat = getClass('stat.js');
-        buildAugmentEmbed = getClass('augment.js').buildAugmentEmbed;
-        buildDetailEmbed = getClass('detail.js').buildDetailEmbed;
-    }
-
+    /**
+     * Register a new info function.
+     * All info functions are called until one of them returns an embed.
+     * If no functions returned an embed, a default message is shown.
+     *
+     * @param func The function to add
+     */
     registerInfoFunction(func) {
         this.infoFunctions.push(func)
     }
@@ -27,9 +21,10 @@ class Info extends BasicScript {
     handle(msg, ...key) {
         key = key.join(' ').toLowerCase().trim();
         let result = false;
-        for (let i = 0; i < this.infoFunctions; i++) {
-            if (result = this.infoFunctions(key)) {
-                Info.sendOutput(result);
+        for (let i = 0; i < this.infoFunctions.length; i++) {
+            if (result = this.infoFunctions[i](key)) {
+                Info.sendOutput(msg, result);
+                return
             }
         }
         Info.sendOutput(msg, "I'm sorry, but I don't have info on that.");

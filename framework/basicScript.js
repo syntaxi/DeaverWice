@@ -17,6 +17,7 @@ class BasicScript {
 
     /**
      * Empty method. Should be overridden by child classes
+     * This is called after all classes are loaded, but before the event handlers are registered
      */
     onBegin() {
     }
@@ -26,7 +27,7 @@ class BasicScript {
      * @param func The function to register
      */
     static registerInfoFunction(func) {
-        getInstance('info.js')['registerInfoFunction'](func);
+        getInstance('info.js').registerInfoFunction(func);
     }
 
     /**

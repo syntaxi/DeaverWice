@@ -16,14 +16,34 @@ class Augment extends BasicScript {
         }
     }
 
+    /**
+     * Register the info function
+     */
     onBegin() {
         Augment.registerInfoFunction(Augment.augmentInfo);
     }
 
-    static getType(type) {
-        return type && type.toLowerCase() in typeLookup ? type.toLowerCase() : undefined
+    /**
+     * Attempts to handle a request to display an augment of the given type.
+     *
+     * @param key The augment to look for
+     * @returns {RichEmbed} A rich embed if the augment could be found
+     */
+    static augmentInfo(key) {
+        for (let type in AugmentsTable) {
+            if (key in AugmentsTable[type]) {
+                return Augment.buildAugmentEmbed(type, key);
+            }
+        }
     }
 
+    /**
+     * Builds a rich embed for the given augment
+     *
+     * @param type The type of augment
+     * @param key The name of the augment
+     * @returns {RichEmbed} The newly created embed
+     */
     static buildAugmentEmbed(type, key) {
         return new RichEmbed()
             .setTitle(titleCase(key))
@@ -31,13 +51,14 @@ class Augment extends BasicScript {
             .setDescription(AugmentsTable[type][key].effect + `\n\n_(${titleCase(type)})_`);
     }
 
-
-    static augmentInfo(msg, key) {
-        for (let type in AugmentsTable) {
-            if (key in AugmentsTable[type]) {
-                return Augment.buildAugmentEmbed(type, key);
-            }
-        }
+    /**
+     * Tries to convert the given name info a valid power type
+     *
+     * @param type The name to try and convert
+     * @returns {*} The proper name if it could be converted, undefined otherwise
+     */
+    static getType(type) {
+        return type && type.toLowerCase() in typeLookup ? type.toLowerCase() : undefined
     }
 }
 

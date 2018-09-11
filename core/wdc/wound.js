@@ -23,18 +23,21 @@ class Wound extends BasicScript {
 
         let num = Math.min(Number.parseInt(repeats), 4);
         if (!isNaN(num)) {
-            const outFunc = Wound.sendOutput.bind(this, msg);
-            Wound.replyOutput(msg, "");
             for (let i = 0; i < num; i++) {
-                Wound.rollWound(outFunc, type, severity, location);
+                Wound.sendOutput(Wound.rollWound(type, severity, location));
             }
         } else {
-            const outFunc = Wound.replyOutput.bind(this, msg);
-            Wound.rollWound(outFunc, type, severity, location);
+            Wound.replyOutput(Wound.rollWound(type, severity, location));
         }
     }
 
-    static rollWound(outFunc, type, severity, location) {
+    /**
+     * Selects a random wound of the given type, severity and location
+     * @param type The type of the wound
+     * @param severity The severity of the wound
+     * @param location An optional location for the wound
+     */
+    static rollWound(type, severity, location) {
         if (type = Wound.getType(type)) {
             if (severity = Wound.getSeverity(severity)) {
 
@@ -44,13 +47,13 @@ class Wound extends BasicScript {
                 } else {
                     options = options.concat(Wound.getAll(type, severity));
                 }
-                outFunc(rollRandom(options) + "");
+                return rollRandom(options) + "";
 
             } else {
-                outFunc("Could not find severity level");
+                return "Could not find severity level";
             }
         } else {
-            outFunc("Could not find wound type");
+            return "Could not find wound type";
         }
     }
 
@@ -83,7 +86,6 @@ class Wound extends BasicScript {
         }
         return options
     }
-
 
 
 }

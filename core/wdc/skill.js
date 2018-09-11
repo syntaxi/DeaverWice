@@ -19,6 +19,16 @@ class Skill extends BasicScript {
 
     }
 
+    onBegin() {
+        Skill.registerInfoFunction(Skill.skillInfo);
+    }
+
+    /**
+     * Handles a request to display information about a specific skill.
+     *
+     * @param name The name of the skill to search for.
+     * @returns {RichEmbed} Returns a rich embed for the skill, if it could be found. Undefined otherwise.
+     */
     static skillInfo(name) {
         /* Matches either nothing or `list/lists/all` caps insensitive */
         if (name.length === 0 || /^(lists?|all)$/i.test(name)) {
@@ -28,10 +38,6 @@ class Skill extends BasicScript {
         } else if (Skill.isSkill(name)) {
             return Skill.buildNameEmbed(name);
         }
-    }
-
-    onBegin() {
-        Skill.registerInfoFunction(Skill.skillInfo);
     }
 
     /**

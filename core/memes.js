@@ -3,6 +3,7 @@ const MessageReceiver = require("../framework/messageReceiver.js");
 const MemeTable = require("../data/memes.json");
 const {replaceJson} = require("../framework/jsonSaver.js");
 const {getClass} = require("../framework/instanceManager.js");
+const {wrapWithEndings} = require('../helpers.js');
 
 /**
  * Contains memes and other joke commands
@@ -57,16 +58,6 @@ class Meme extends MessageReceiver {
      * @param output The output to send.
      */
     registerEquals(key, output) {
-        if (key instanceof RegExp) {
-            key = key.source;
-        }
-        if (key[0] !== "^") {
-            key = "^" + key;
-        }
-        if (key[key.length - 1] !== "$") {
-            key += "$";
-        }
-
         this.registerMeme(this.equals, key, output);
     }
 
@@ -82,11 +73,7 @@ class Meme extends MessageReceiver {
      */
     registerMeme(type, key, output) {
         /* Only capitals in regex are ones representing actual capitals */
-        if (typeof key === "string") {
-            key = key.toLowerCase();
-        } else if (key instanceof RegExp) {
-            key = key.source;
-        }
+        key = wrapWithEndings(key).toLowerCase();
         if (typeof output === "function") {
             type[key] = output;
         } else {

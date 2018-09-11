@@ -1,5 +1,5 @@
 "use strict";
-const {splitByLength} = require('../helpers.js');
+const {splitByLength, wrapWithEndings} = require('../helpers.js');
 const {getInstance} = require('./instanceManager.js');
 const eventList = require("../data/eventList.json");
 
@@ -10,7 +10,8 @@ class BasicScript {
         const names = Object.getOwnPropertyNames(Object.getPrototypeOf(this))
             .filter(x => !eventList.includes(x));
         for (let i = 0; i < names.length; i++) {
-            this.commands[names[i]] = this[names[i]];
+            /* We add a $ and a ^ to make the name regex */
+            this.commands[wrapWithEndings(names[i])] = this[names[i]];
         }
     }
 
@@ -59,7 +60,7 @@ class BasicScript {
      * @param value The output to send.
      */
     static doOutput(outFunc, value) {
-        const lines = splitByLength(value, 2000 - 5, 50);
+        const lines = splitByLength(value, 2000 - 3, 50);
         for (let j = 0; j < lines.length - 1; j++) {
             outFunc(lines[j] + "[…]");
         }
@@ -81,7 +82,7 @@ class BasicScript {
      * @param func The function, class or file to link to.
      */
     registerCommand(key, func) {
-        key = key instanceof RegExp ? key.source : key;
+        key = wrapWithEndings(key);
         switch (typeof key) {
             case 'object':
                 for (let item in key) {
@@ -140,7 +141,6 @@ class BasicScript {
         for (let value in this.commands) {
             if (key.match(value)) {
                 this.commands[value].apply(this, args);
-                return /* We only want to call one handler */
             }
         }
     }

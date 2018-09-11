@@ -23,7 +23,20 @@ helpers.titleCase = function (string) {
     }).join(' ');
 };
 
-helpers.wonkyCase = function(text) {
+helpers.wrapWithEndings = function (key) {
+    if (key instanceof RegExp) {
+        key = key.source;
+    }
+    if (key[0] !== "^") {
+        key = "^" + key;
+    }
+    if (key[key.length - 1] !== "$") {
+        key += "$";
+    }
+    return key
+};
+
+helpers.wonkyCase = function (text) {
     if (typeof text === "string") {
         text = text.split(/\s/);
     }
@@ -56,7 +69,7 @@ helpers.splitByLength = function (value, maxSize = 2000, maxBack = 20) {
     while (i + maxSize <= value.length) {
         let size = maxSize;
         /* Find some whitespace to split at */
-    while (!/\s/.test(value.charAt(i + size)) && size >= maxSize - maxBack) {
+        while (!/\s/.test(value.charAt(i + size)) && size >= maxSize - maxBack) {
             size--;
         }
         /* If we couldn't find a whitespace, split at the limit */

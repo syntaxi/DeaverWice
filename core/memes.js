@@ -58,7 +58,7 @@ class Meme extends MessageReceiver {
      * @param output The output to send.
      */
     registerEquals(key, output) {
-        this.registerMeme(this.equals, key, output);
+        this.registerMeme(this.equals, wrapWithEndings(key), output);
     }
 
     /**
@@ -73,7 +73,7 @@ class Meme extends MessageReceiver {
      */
     registerMeme(type, key, output) {
         /* Only capitals in regex are ones representing actual capitals */
-        key = wrapWithEndings(key).toLowerCase();
+        key = key.toLowerCase();
         if (typeof output === "function") {
             type[key] = output;
         } else {
@@ -106,14 +106,13 @@ class Meme extends MessageReceiver {
     message(msg) {
         if (!msg.author.bot) {
             /* First try and handle the prefix case */
-            if (this.prefix.test(msg.content.toLowerCase())) {
+            if (this.prefix.test(msg.content)) {
                 const args = msg.content
-                    .toLowerCase()
                     .replace(this.prefix, "")
                     .trim()
                     .split(/\s+/g);
                 if (args.length > 0) {
-                    this.handleCommand(msg, args[0], args.slice(1));
+                    this.handleCommand(msg, args[0].toLowerCase(), args.slice(1));
                     return;
                 }
             }

@@ -22,6 +22,14 @@ class BasicScript {
     }
 
     /**
+     * Short handler for registering an info func, so that the deriving class doesn't need to.
+     * @param func The function to register
+     */
+    static registerInfoFunction(func) {
+        getInstance('info.js')['registerInfoFunction'](func);
+    }
+
+    /**
      * Sends some output to the channel a given message came from.
      * Handles splitting it up if it's too long.
      *

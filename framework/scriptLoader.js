@@ -39,7 +39,8 @@ class ScriptLoader {
                     const fileStats = fs.lstatSync(path + files[i]);
                     if (fileStats.isFile()) {
                         print(`Loading "${files[i]}" `, true);
-                        InstanceManager.registerClass(files[i], new (require(path + files[i]))());
+                        const clazz = require(path + files[i]);
+                        InstanceManager.registerClass(files[i], new clazz());
                         print("✓", false, true);
                     } else if (fileStats.isDirectory()) {
                         print(`Found directory ${files[i]}`);

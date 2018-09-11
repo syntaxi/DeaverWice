@@ -16,6 +16,10 @@ class Augment extends BasicScript {
         }
     }
 
+    onBegin() {
+        Augment.registerInfoFunction(Augment.augmentInfo);
+    }
+
     static getType(type) {
         return type && type.toLowerCase() in typeLookup ? type.toLowerCase() : undefined
     }
@@ -25,6 +29,15 @@ class Augment extends BasicScript {
             .setTitle(titleCase(key))
             .setColor(0xFF0000)
             .setDescription(AugmentsTable[type][key].effect + `\n\n_(${titleCase(type)})_`);
+    }
+
+
+    static augmentInfo(msg, key) {
+        for (let type in AugmentsTable) {
+            if (key in AugmentsTable[type]) {
+                return Augment.buildAugmentEmbed(type, key);
+            }
+        }
     }
 }
 

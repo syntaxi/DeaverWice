@@ -5,24 +5,6 @@ const {rollRandom} = require("../../helpers.js");
 const {locationLookup, severityLookup} = require('../../data/lookups.json');
 
 
-/**
- * Gets all the values from all the locations, except for 'any'
- *
- * @param type The type of wound to get from.
- * @param severity The severity level to get from.
- * @returns {Array}
- */
-function getAll(type, severity) {
-    let options = [];
-    const table = WoundTable[type][severity];
-    for (let location in table) {
-        if (location !== 'any' && table.hasOwnProperty(location)) {
-            options = options.concat(table[location]);
-        }
-    }
-    return options
-}
-
 class Wound extends BasicScript {
 
     /**
@@ -60,7 +42,7 @@ class Wound extends BasicScript {
                 if (location = Wound.getLocation(location)) {
                     options = options.concat(WoundTable[type][severity][location]);
                 } else {
-                    options = options.concat(getAll(type, severity));
+                    options = options.concat(Wound.getAll(type, severity));
                 }
                 outFunc(rollRandom(options) + "");
 
@@ -83,6 +65,27 @@ class Wound extends BasicScript {
     static getType(type) {
         return type.toLowerCase() in WoundTable ? type.toLowerCase() : undefined;
     }
+
+    /**
+     * Gets all the values from all the locations, except for 'any'
+     *
+     * @param type The type of wound to get from.
+     * @param severity The severity level to get from.
+     * @returns {Array}
+     */
+    static getAll(type, severity) {
+        let options = [];
+        const table = WoundTable[type][severity];
+        for (let location in table) {
+            if (location !== 'any' && table.hasOwnProperty(location)) {
+                options = options.concat(table[location]);
+            }
+        }
+        return options
+    }
+
+
+
 }
 
 module.exports = Wound;

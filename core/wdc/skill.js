@@ -14,18 +14,24 @@ class Skill extends BasicScript {
      */
     handle(msg, ...args) {
         const name = args.join(" ").toLowerCase();
-        let output = "Unknown type or name " + name;
-
-        /* Matches either nothing or `list/lists/all` caps insensitive */
-        if (name.length === 0 || /(^lists?$)|(^all$)/i.test(name)) {
-            output = Skill.buildListingEmbed();
-        } else if (Skill.isType(name)) {
-            output = Skill.buildTypeEmbed(name);
-        } else if (Skill.isSkill(name)) {
-            output = Skill.buildNameEmbed(name);
-        }
+        let output = Skill.skillInfo(name) | "Unknown type or name " + name;
         Skill.sendOutput(msg, output);
 
+    }
+
+    static skillInfo(name) {
+        /* Matches either nothing or `list/lists/all` caps insensitive */
+        if (name.length === 0 || /^(lists?|all)$/i.test(name)) {
+            return Skill.buildListingEmbed();
+        } else if (Skill.isType(name)) {
+            return Skill.buildTypeEmbed(name);
+        } else if (Skill.isSkill(name)) {
+            return Skill.buildNameEmbed(name);
+        }
+    }
+
+    onBegin() {
+        Skill.registerInfoFunction(Skill.skillInfo);
     }
 
     /**

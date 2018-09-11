@@ -13,9 +13,11 @@ class Stat extends BasicScript {
             output = Stat.buildStatInfoEmbed();
 
             // case where wd> superstat <type> is called
-        } else if (/s(uper(stats?)?)?/.test(type) && superType && (superType = Stat.getSuperType(superType) || ("super" + Stat.getType(superType)))
+        } else if (/s(uper(stats?)?)?/.test(type) && superType
+            && (superType = Stat.getSuperType(superType) || ("super" + Stat.getType(superType)))
             // case where wd> stat <superstat> is called
             || (superType = Stat.getSuperType(type))) {
+
             output = Stat.buildSuperstatEmbed(superType)
 
             // Case where wd> stat <type> is called
@@ -23,6 +25,29 @@ class Stat extends BasicScript {
             output = Stat.buildStatEmbed(type);
         }
         Stat.replyOutput(msg, output);
+    }
+
+    /**
+     * Register the info function
+     */
+    onBegin() {
+        Stat.registerInfoFunction(Stat.statInfo)
+    }
+
+    /**
+     * Attempts to produce a Rich Embed, given the stat info
+     * @param key The triggering key
+     * @returns {RichEmbed} The rich embed, if one was made
+     */
+    static statInfo(key) {
+        let type;
+        if (type = Stat.getSuperType(key)) {
+            return Stat.buildSuperstatEmbed(type);
+        } else if (type = Stat.getType(key)) {
+            return Stat.buildStatEmbed(type);
+        } else if (/^(supers?)?stats?$/.test(key)) {
+            return Stat.buildStatInfoEmbed();
+        }
     }
 
     /**

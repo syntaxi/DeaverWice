@@ -224,6 +224,7 @@ class Meme extends MessageReceiver {
             Meme.sendOutput(msg, "Missing key and/or value");
             return
         }
+        key = wrapWithEndings(key);
         /* If we are removing an includes */
         if (/^i(ncludes?)?$/i.test(type) && key in this.includes) {
             delete this.includes[key];
@@ -253,11 +254,11 @@ class Meme extends MessageReceiver {
         }
         let output = "";
         if (!type || /^(i(ncludes?)?|c(ontains?)?)$/i.test(type)) {
-            output = (output && (output + "\n")) || "";
+            output = (output ? output + "\n" : "");
             output += "Includes:\n" + Meme.collateMemes(this.includes);
         }
         if (!type || /^e(quals?|xactly)?$/i.test(type)) {
-            output = (output && (output + "\n")) || "";
+            output = output ? output + "\n" : "";
             output += "Equals:\n" + Meme.collateMemes(this.equals);
         }
         Meme.sendOutput(msg, output || "Wrong meme type. Try running with none to see all");

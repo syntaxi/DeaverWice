@@ -24,10 +24,11 @@ class Meme extends MessageReceiver {
 
         /* We can't load functions from JSON */
         this.registerEquals("what is my avatar", (msg) => Meme.sendOutput(msg, msg.author.avatarURL));
-        this.registerEquals(/>?wd>?\s*gender/, Meme.chooseGender);
-        this.registerEquals(/>?wd>?\s*sex/, Meme.chooseSex);
         this.registerEquals(/^(i'?m\s).{1,15}$/, Meme.dadJoke);
 
+        this.registerCommand("gender", Meme.chooseGender);
+        this.registerCommand("sex", Meme.chooseSex);
+        
         this.registerCommand("listmemes", this.listmeme.bind(this));
         this.registerCommand("removememes", this.removememe.bind(this));
         this.registerCommand("addmemems", this.addmeme.bind(this));

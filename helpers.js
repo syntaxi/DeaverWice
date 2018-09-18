@@ -92,7 +92,7 @@ helpers.invertedDetails = {
     'power': {
         'perk': {},
         'flaw': {}
-    }
+    } 
 };
 const types = {"perk": true, "flaw": true};
 const targets = {"life": true, "power": true};

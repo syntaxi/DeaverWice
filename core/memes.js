@@ -26,6 +26,8 @@ class Meme extends MessageReceiver {
         this.registerEquals("what is my avatar", (msg) => Meme.sendOutput(msg, msg.author.avatarURL));
         this.registerEquals(/^(i'?m\s).{1,15}$/, Meme.dadJoke);
 
+
+        /* Things prefixed with `wd>` */
         this.registerCommand("gender", Meme.chooseGender);
         this.registerCommand("sex", Meme.chooseSex);
         

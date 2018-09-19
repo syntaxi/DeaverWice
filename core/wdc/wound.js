@@ -24,10 +24,10 @@ class Wound extends BasicScript {
         let num = Math.min(Number.parseInt(repeats), 4);
         if (!isNaN(num)) {
             for (let i = 0; i < num; i++) {
-                Wound.sendOutput(Wound.rollWound(type, severity, location));
+                Wound.sendOutput(msg, Wound.rollWound(type, severity, location));
             }
         } else {
-            Wound.replyOutput(Wound.rollWound(type, severity, location));
+            Wound.replyOutput(msg, Wound.rollWound(type, severity, location));
         }
     }
 

@@ -2,6 +2,7 @@
   "name": "DeaverWice",
   "version": "0.0.1",
   "dependencies": {
-    "discord.js": "latest"
+    "discord.js": "latest",
+    "googleapis": "27"
   }
 }

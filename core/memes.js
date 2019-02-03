@@ -1,9 +1,24 @@
 "use strict";
 const MessageReceiver = require("../framework/messageReceiver.js");
+const SheetsRequester = require("../framework/sheetsRequester");
 const MemeTable = require("../data/memes.json");
 const {replaceJson} = require("../framework/jsonSaver.js");
 const {getClass} = require("../framework/instanceManager.js");
 const {wrapWithEndings} = require('../helpers.js');
+
+function processMemeEntry(row) {
+    if (row.length < 2 || !(row[0] && row[1])) {
+        console.log("Unable to process row");
+        return null;
+    }
+    return {
+        key: row[0],
+        response: row[1],
+        isEquals: !!row[2],
+        isRegex: !!row[3],
+        isFunction: !!row[4]
+    }
+}
 
 /**
  * Contains memes and other joke commands
@@ -11,29 +26,47 @@ const {wrapWithEndings} = require('../helpers.js');
 class Meme extends MessageReceiver {
     constructor() {
         super();
-        this.includes = {};
-        this.equals = {};
-
-        /* Load from json */
-        for (let key in MemeTable.equals) {
-            this.registerEquals(key, MemeTable.equals[key]);
-        }
-        for (let key in MemeTable.includes) {
-            this.registerIncludes(key, MemeTable.includes[key]);
-        }
-
-        /* We can't load functions from JSON */
-        this.registerEquals("what is my avatar", (msg) => Meme.sendOutput(msg, msg.author.avatarURL));
-        this.registerEquals(/^(i'?m\s).{1,15}$/, Meme.dadJoke);
-
+        this.memes = {};
+        this.loadAllFromSheets();
 
         /* Things prefixed with `wd>` */
-        this.registerCommand("gender", Meme.chooseGender);
-        this.registerCommand("sex", Meme.chooseSex);
-        
+        this.registerCommand("gender", this.chooseGender);
+        this.registerCommand("sex", this.chooseSex);
+
         this.registerCommand("listmemes", this.listmeme.bind(this));
         this.registerCommand("removememes", this.removememe.bind(this));
         this.registerCommand("addmemems", this.addmeme.bind(this));
+
+        this.registerCommand("reloadmemes", msg => {
+            Meme.sendOutput(msg, "Reloading memes daddy UwU");
+            this.loadAllFromSheets();
+        });
+    }
+
+    loadAllFromSheets() {
+        SheetsRequester.getValues("memes").then(data => {
+            for (let i = 0; i < data.length; i++) {
+                let row = processMemeEntry(data[i]);
+                if (row) {
+                    if (row.isFunction) {
+                        let func = this[row.response];
+                        if (func && typeof func === "function") {
+                            row.response = func.bind(this);
+                        } else {
+                            console.log("No function " + row.response);
+                            continue;
+                        }
+                    }
+                    if (!row.isRegex) {
+                        row.key = row.key.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+                    }
+                    if (row.isEquals) {
+                        row.key = wrapWithEndings(row.key);
+                    }
+                    this.registerMeme(row.key, row.response);
+                }
+            }
+        });
     }
 
 
@@ -47,9 +80,8 @@ class Meme extends MessageReceiver {
      * @param output The output to use.
      */
     registerIncludes(key, output) {
-        this.registerMeme(this.includes, key, output);
+        this.registerMeme(key, output);
     }
-
 
     /**
      * Register an output to be sent if the message equals the key.
@@ -61,7 +93,7 @@ class Meme extends MessageReceiver {
      * @param output The output to send.
      */
     registerEquals(key, output) {
-        this.registerMeme(this.equals, wrapWithEndings(key), output);
+        this.registerMeme(wrapWithEndings(key), output);
     }
 
     /**
@@ -70,23 +102,20 @@ class Meme extends MessageReceiver {
      *
      * The key and the message will both be converted to lower case.
      *
-     * @param type The type object to add it to.
      * @param key The key to register with
      * @param output The output to send.
      */
-    registerMeme(type, key, output) {
-        /* Only capitals in regex are ones representing actual capitals */
-        key = key.toLowerCase();
+    registerMeme(key, output) {
         if (typeof output === "function") {
-            type[key] = output;
+            this.memes[key] = output;
         } else {
-            type[key] = Meme.switchedSend.bind(this, output);
+            this.memes[key] = Meme.switchedSend.bind(this, output);
             if (output.length > 20) {
-                type[key].output = output.substr(0, 20)
+                this.memes[key].output = output.substr(0, 20)
                     .replace("\n", "\\n") // Handle newlines
                     .replace("`", "``"); // Handle `
             } else {
-                type[key].output = output;
+                this.memes[key].output = output;
             }
         }
     }
@@ -119,19 +148,17 @@ class Meme extends MessageReceiver {
                     return;
                 }
             }
-            /* Try and match it to an equals case */
-            for (let key in this.equals) {
+            /* Try and match it to an meme */
+            for (let key in this.memes) {
                 if (msg.content.toLowerCase().match(key)) {
-                    this.equals[key](msg);
-                }
-            }
-            /* Try and match it to an includes case */
-            for (let key in this.includes) {
-                if (msg.content.toLowerCase().match(key)) {
-                    this.includes[key](msg);
+                    this.memes[key](msg);
                 }
             }
         }
+    }
+
+    getAvatar(msg) {
+        Meme.sendOutput(msg, msg.author.avatarURL);
     }
 
     /**
@@ -139,7 +166,7 @@ class Meme extends MessageReceiver {
      *
      * @param msg
      */
-    static chooseGender(msg) {
+    chooseGender(msg) {
         let options = ["Male", "Female", "Trap"];
         let choice = Math.floor(Math.random() * options.length);
         Meme.sendOutput(msg, options[choice])
@@ -150,7 +177,7 @@ class Meme extends MessageReceiver {
      *
      * @param msg The message received.
      */
-    static chooseSex(msg) {
+    chooseSex(msg) {
         if (Math.random() < 0.3) {
             let options = ["Straight", "Gay", "Bi", "A", "*Clang! Clang!* you are Pansexual!", "Demi", "Poly", "Furry", "THE BIG GAY", "Homieflexual"];
             let choice = Math.floor(Math.random() * options.length);
@@ -168,7 +195,7 @@ class Meme extends MessageReceiver {
      * Bot: "Hi <x>, I'm Dad!"
      * @param msg
      */
-    static dadJoke(msg) {
+    dadJoke(msg) {
         const size = msg.content.toLowerCase().match(/^(i'?m\s)./i)[1].length;
         Meme.sendOutput(msg, `Hi ${msg.toString().substr(size)}, I'm Dad!`);
     }

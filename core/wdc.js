@@ -1,5 +1,6 @@
 "use strict";
 const MessageReceiver = require('../framework/messageReceiver.js');
+const InstanceManager = require('../framework/instanceManager.js');
 
 /**
  * Roleplay relate commands.
@@ -27,6 +28,7 @@ class Wdc extends MessageReceiver {
         this.registerCommand(/^info$/, 'info.js');
 
         this.registerCommand(/^aug(ment)?$/, 'augment.js');
+        this.registerCommand("reloadaug(ment)?s?", InstanceManager.getInstance("augment.js").loadAllFromSheets.bind(InstanceManager.getInstance("augment.js")));
 
         this.registerCommand(/^skills?$/, 'skill.js');
 

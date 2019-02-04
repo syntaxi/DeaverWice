@@ -12,7 +12,6 @@ class Augment extends BasicScript {
     constructor() {
         super();
         this.loadAllFromSheets();
-        this.registerCommand("reloadAugs", this.loadAllFromSheets.bind(this))
     }
 
     loadAllFromSheets(msg) {

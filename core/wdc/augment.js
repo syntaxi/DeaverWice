@@ -1,12 +1,34 @@
 "use strict";
-const AugmentsTable = require('../../data/augments.json');
+const AugmentsTable = {};
 const {typeLookup} = require('../../data/lookups.json');
 
 const BasicScript = require('../../framework/basicScript');
+const SheetsRequester = require("../../framework/sheetsRequester");
 const {RichEmbed} = require("discord.js");
 const {rollRandom, titleCase} = require("../../helpers.js");
 
 class Augment extends BasicScript {
+
+    constructor() {
+        super();
+        this.loadAllFromSheets();
+        this.registerCommand("reloadAugs", this.loadAllFromSheets.bind(this))
+    }
+
+    loadAllFromSheets(msg) {
+        if (msg) {
+            Augment.sendOutput(msg, "Reloading Augments.");
+        }
+        for (let type in typeLookup) {
+            SheetsRequester.getValues("aug" + type).then(data => {
+                AugmentsTable[type] = {};
+                for (let i = 0; i < data.length; i++) {
+                    AugmentsTable[type][data[i][0]] = {effect: data[i][1]};
+                }
+            });
+        }
+    }
+
     handle(msg, type) {
         if (type = Augment.getType(type)) {
             const key = rollRandom(Object.keys(AugmentsTable[type]));

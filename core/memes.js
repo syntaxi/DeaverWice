@@ -33,6 +33,7 @@ class Meme extends MessageReceiver {
     }
 
     loadAllFromSheets(msg) {
+        this.memes = {};
         if (msg) {
             Meme.sendOutput(msg, "Reloading memes daddy UwU");
         }
@@ -124,26 +125,28 @@ class Meme extends MessageReceiver {
     /**
      * Called when a message equal to `wd>gender` is received
      *
-     * @param msg
      */
     chooseGender(msg) {
-        let options = ["Male", "Female", "Trap"];
-        let choice = Math.floor(Math.random() * options.length);
-        Meme.sendOutput(msg, options[choice])
+        let choice = Math.random();
+        if (choice < .45) {
+            Meme.sendOutput(msg, "Male")
+        } else if (choice < .9) {
+            Meme.sendOutput(msg, "Female")
+        } else {
+            Meme.sendOutput(msg, "Trap")
+        }
     }
 
     /**
      * Called when a message equal to `wd>sex` is received
      *
-     * @param msg The message received.
      */
     chooseSex(msg) {
-        if (Math.random() < 0.3) {
-            let options = ["Straight", "Gay", "Bi", "A", "*Clang! Clang!* you are Pansexual!", "Demi", "Poly", "Furry", "THE BIG GAY", "Homieflexual"];
-            let choice = Math.floor(Math.random() * options.length);
-            Meme.sendOutput(msg, options[choice]);
+        let choice = Math.random();
+        if (choice < .6) {
+            Meme.sendOutput(msg, "Straight");
         } else {
-            let options = ["Straight", "Trisexual"];
+            let options = ["Trisexual", "Gay", "Bi", "A", "*Clang! Clang!* you are Pansexual!", "Demi", "Poly", "Furry", "THE BIG GAY", "Homieflexual"];
             let choice = Math.floor(Math.random() * options.length);
             Meme.sendOutput(msg, options[choice]);
         }
@@ -153,7 +156,6 @@ class Meme extends MessageReceiver {
      * Implements the classic dad joke format on a message:
      * Person: "I'm <x>"
      * Bot: "Hi <x>, I'm Dad!"
-     * @param msg
      */
     dadJoke(msg) {
         const size = msg.content.toLowerCase().match(/^(i'?m\s)./i)[1].length;

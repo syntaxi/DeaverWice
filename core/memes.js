@@ -63,6 +63,10 @@ class Meme extends MessageReceiver {
         });
     }
 
+    deleteMessage(msg) {
+        msg.delete();
+    }
+
 
     /**
      * Adds a meme to a given type.

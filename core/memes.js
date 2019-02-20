@@ -64,7 +64,7 @@ class Meme extends MessageReceiver {
     }
 
     deleteMessage(msg) {
-        msg.delete();
+        setTimeout(() => msg.delete(), 100);
     }
 
 

@@ -54,7 +54,7 @@ helpers.wonkyCase = function (text) {
                 }
                 shouldCapital = !shouldCapital
             } else {
-                /* If it is whitespace, just flip it.*/
+                /* If it is whitespace, just add it.*/
                 out += char;
             }
         }

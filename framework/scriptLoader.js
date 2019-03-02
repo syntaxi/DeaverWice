@@ -1,18 +1,42 @@
 "use strict";
 const fs = require("fs");
-const InstanceManager = require('./instanceManager.js');
+const InstanceManager = require("./instanceManager.js");
 
-function print(message, noLine, noTab) {
-    if (noTab) {
+function print(message, format) {
+    format = format === undefined ? -2 : format;
+    if (Math.abs(format) === 1) {
         message = message.trim();
     }
-    process.stdout.write(message + (noLine ? "" : "\n"));
+    process.stdout.write(message + (format >= 0 ? "" : "\n"));
 }
+
+/* Positive means no line */
+/* 1 means no tab */
+const PrintFormats = {
+    NO_LINE: 2,
+    NO_TAB: -1,
+    NO_LINE_OR_TAB: 1
+};
 
 class ScriptLoader {
 
+    /**
+     * Loads and begins scripts in the directory
+     *
+     * @param path The path to load in
+     */
     static loadScripts(path) {
         ScriptLoader.scanForFiles(path);
+        console.log("");
+        ScriptLoader.beginScripts();
+        console.log("");
+    }
+
+    /**
+     * Calls onBegin on all scripts and waits for them all to finish
+     *
+     */
+    static beginScripts() {
         console.log("Calling 'onBegin' on scripts");
         for (let key in InstanceManager.getAll()) {
             try {
@@ -24,11 +48,18 @@ class ScriptLoader {
         console.log("Finished onBegin")
     }
 
+    /**
+     * Internal
+     *
+     * Recursively tries to load up scripts from within the core directory
+     * This constructs and stores the instances.
+     * @param path The path to search down
+     */
     static scanForFiles(path) {
         /* Re-assign console.log to add a tab at the start */
         let backupLog = print;
-        print = function (message, noLine, noTab) {
-            backupLog.call(null, '\t' + message, noLine, noTab);
+        print = function (message, format) {
+            backupLog.call(null, '\t' + message, format);
         };
 
         if (fs.existsSync(path)) {
@@ -38,19 +69,19 @@ class ScriptLoader {
                 try {
                     const fileStats = fs.lstatSync(path + files[i]);
                     if (fileStats.isFile()) {
-                        print(`Loading "${files[i]}" `, true);
+                        print(`Loading "${files[i]}" `, PrintFormats.NO_LINE);
                         const clazz = require(path + files[i]);
                         InstanceManager.registerClass(files[i], new clazz());
-                        print("✓", false, true);
+                        print("✓", PrintFormats.NO_TAB);
                     } else if (fileStats.isDirectory()) {
                         print(`Found directory ${files[i]}`);
                         ScriptLoader.scanForFiles(`${path}${files[i]}/`);
                     }
                 } catch (e) {
-                    print("✗", false, true);
+                    print("✗", PrintFormats.NO_TAB);
                     print(`• Failed loading of ${files[i]} got:`);
                     print("");
-                    print(`${e.stack}`, false, true);
+                    print(`${e.stack}`, PrintFormats.NO_TAB);
                     print("");
                     print(`• Skipping`);
                 }

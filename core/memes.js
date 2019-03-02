@@ -25,12 +25,12 @@ class Meme extends MessageReceiver {
         super();
         this.memes = {};
         this.loadAllFromSheets();
-
         /* Things prefixed with `wd>` */
         this.registerCommand("gender", this.chooseGender);
         this.registerCommand("sex", this.chooseSex);
         this.registerCommand("reloadmemes", this.loadAllFromSheets.bind(this));
     }
+
 
     loadAllFromSheets(msg) {
         this.memes = {};
@@ -61,6 +61,12 @@ class Meme extends MessageReceiver {
                 }
             }
         });
+    }
+
+    removeMeme(key) {
+        if (key in this.memes) {
+            delete this.memes[key];
+        }
     }
 
     deleteMessage(msg) {
@@ -103,16 +109,8 @@ class Meme extends MessageReceiver {
     message(msg) {
         if (!msg.author.bot) {
             /* First try and handle the prefix case */
-            if (this.prefix.test(msg.content)) {
-                const args = msg.content
-                    .replace(this.prefix, "")
-                    .trim()
-                    .split(/\s+/g);
-                if (args.length > 0) {
-                    this.handleCommand(msg, args[0].toLowerCase(), args.slice(1));
-                    return;
-                }
-            }
+            super.message(msg);
+
             /* Try and match it to an meme */
             for (let key in this.memes) {
                 if (msg.content.toLowerCase().match(key)) {

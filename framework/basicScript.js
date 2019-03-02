@@ -7,12 +7,6 @@ class BasicScript {
     constructor() {
         /* Load up instance methods */
         this.commands = {};
-        const names = Object.getOwnPropertyNames(Object.getPrototypeOf(this))
-            .filter(x => !eventList.includes(x));
-        for (let i = 0; i < names.length; i++) {
-            /* We add a $ and a ^ to make the name regex */
-            this.commands[wrapWithEndings(names[i])] = this[names[i]];
-        }
     }
 
     /**
@@ -20,14 +14,6 @@ class BasicScript {
      * This is called after all classes are loaded, but before the event handlers are registered
      */
     onBegin() {
-    }
-
-    /**
-     * Short handler for registering an info func, so that the deriving class doesn't need to.
-     * @param func The function to register
-     */
-    static registerInfoFunction(func) {
-        getInstance('info.js').registerInfoFunction(func);
     }
 
     /**
@@ -79,21 +65,24 @@ class BasicScript {
     /**
      * Register a command to a given key.
      *
-     * The key can be either a single string or an array of strings.
-     * In the latter case, the function will be registered with all the keys
+     * The key can be:
+     *      a string, which will be treated as a regex (case insensitive)
+     *      a list, where each entry will be treated as a string key
      *
      * The func can be either be:
      *      a function, which will be directly linked to the key
+     *      null, which will make it try and use a method of the same name on the instance
+     *      a string, which will make it try and use a method of the same name on the instance. This must not terminate in `.js`
+     *
      *      a class instance, which will have it's `handle` method linked
-     *      a string, which denotes the sub file to get the class from. This must include the '.js'
+     *      a string (ending in `.js`), which denotes the sub file to get the class from. This must include the '.js'
      *
      * @param key The key(s) to link to
      * @param func The function, class or file to link to.
      */
     registerCommand(key, func) {
-        key = wrapWithEndings(key);
         switch (typeof key) {
-            case 'object':
+            case 'object': //- If we have passed in multiple keys -\\
                 for (let item in key) {
                     if (key.hasOwnProperty(item) && typeof key[item] === "string") {
                         this.registerCommand(key[item], func)
@@ -101,22 +90,90 @@ class BasicScript {
                 }
                 break;
             case 'string':
+                if (!func) { //- If the key is null, try and match it to a function based on the key -\\
+                    func = key;
+                }
+                key = wrapWithEndings(key);
                 switch (typeof func) {
-                    case 'function':
-                        this.commands[key] = func;
-                        break;
-                    case 'object':
-                        this.commands[key] = func.handle.bind(func);
+                    case 'function': //- If it's a function, use that -\\
+                        this.commands[key] = func.bind(this);
                         break;
                     case 'string':
-                        this.commands[key] = getInstance(func).handle.bind(getInstance(func));
+                        if (!func.endsWith(".js")) { //- Use a function of the same name -\\
+                            if (func in this) {
+                                this.commands[key] = this[func].bind(this);
+                            } else {
+                                throw new Error(`Function '${func}' not found in class '${this.constructor.name}'`);
+                            }
+                            break;
+                        } else { //- If it's a `.js` file use that instance -\\
+                            func = getInstance(func);
+                        }
+                    //fallthrough if it's a js file
+                    case 'object': //- If it's an object, pass over to the `handle` function on it -\\
+                        if ('handle' in func) {
+                            this.commands[key] = func.handle.bind(func);
+                        } else {
+                            throw new Error(`'handle' method not found in '${func}'`);
+                        }
                         break;
                     default:
-                        throw new SyntaxError(`Was not able to register key '${key}'.`);
+                        throw new Error(`Function '${typeof func}' is not a valid type`);
                 }
                 break;
             default:
-                throw new SyntaxError("Key type not object or string");
+                throw new Error("Key type not object or string");
+        }
+    }
+
+    /**
+     * Register the class to receive a discord.js event
+     *
+     * The key can be:
+     *      a string, which will be treated as a regex (case insensitive)
+     *      a list, where each entry will be treated as a string key
+     *
+     * The func can be either be:
+     *      a function, which will be directly linked to the key
+     *      null, which will make it try and use a method of the same name on the instance
+     *      a string, which will make it try and use a method of the same name on the instance.
+     *
+     * @param key The key(s) to link to
+     * @param func The function to link to
+     */
+    registerEvent(key, func) {
+        switch (typeof key) {
+            case 'object': //- If we have passed in multiple keys -\\
+                for (let item in key) {
+                    if (key.hasOwnProperty(item) && typeof key[item] === "string") {
+                        this.registerCommand(key[item], func)
+                    }
+                }
+                break;
+            case 'string':
+                if (!eventList.includes(key)) {
+                    throw new Error(`${key} is not a valid event type`)
+                }
+                if (!func) { //- If the key is null, try and match it to a function based on the key -\\
+                    func = key;
+                }
+                switch (typeof func) {
+                    case 'function': //- If it's a function, use that -\\
+                        bot.on(key, func.bind(this));
+                        break;
+                    case 'string': //- If it's a string, try and find a matching function -\\
+                        if (func in this) {
+                            bot.on(key, this[func].bind(this));
+                        } else {
+                            throw new Error(`Function '${func}' not found in class '${this.constructor.name}'`);
+                        }
+                        break;
+                    default:
+                        throw new Error(`Function '${typeof func}' is not a valid type`);
+                }
+                break;
+            default:
+                throw new Error("Key type not object or string");
         }
     }
 
@@ -154,5 +211,7 @@ class BasicScript {
         }
     }
 }
+
+BasicScript.bot = null;
 
 module.exports = BasicScript;

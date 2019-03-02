@@ -7,7 +7,10 @@ InstanceManager.registerClass = function (key, value) {
 };
 
 InstanceManager.getInstance = function (key) {
-    return key in InstanceManager.instances ? InstanceManager.instances[key] : undefined;
+    if (key in InstanceManager.instances) {
+        return InstanceManager.instances[key];
+    }
+    throw new Error(`Unable to locate instance with key '${key}'`)
 };
 
 InstanceManager.getClass = function(key) {

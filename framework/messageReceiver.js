@@ -5,11 +5,13 @@ class MessageReceiver extends BasicScript {
     constructor() {
         super();
         this.prefix = /^\s*(>?wd>?)/i;
+        this.registerEvent("message");
     }
 
     /**
      * Default handler for the message event.
      * Simply splits it and calls handle command
+     *
      * @param msg The triggering message
      */
     message(msg) {

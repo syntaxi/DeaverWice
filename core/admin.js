@@ -29,6 +29,7 @@ class Admin extends MessageReceiver {
         }
     }
 
+
     /**
      *  Checks if a given user in a guild can use the admin commands of the bot.
      *

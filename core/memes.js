@@ -24,11 +24,15 @@ class Meme extends MessageReceiver {
     constructor() {
         super();
         this.memes = {};
-        this.loadAllFromSheets();
         /* Things prefixed with `wd>` */
         this.registerCommand("gender", this.chooseGender);
         this.registerCommand("sex", this.chooseSex);
         this.registerCommand("reloadmemes", this.loadAllFromSheets.bind(this));
+    }
+
+    onBegin() {
+        super.onBegin();
+        return this.loadAllFromSheets();
     }
 
 
@@ -37,30 +41,34 @@ class Meme extends MessageReceiver {
         if (msg) {
             Meme.sendOutput(msg, "Reloading memes daddy UwU");
         }
-        SheetsRequester.getValues("memes").then(data => {
-            for (let i = 0; i < data.length; i++) {
-                let row = processMemeEntry(data[i]);
-                if (row) {
-                    if (row.isFunction) {
-                        let func = this[row.response];
-                        if (func && typeof func === "function") {
-                            row.response = func.bind(this);
-                        } else {
-                            console.log("No function " + row.response);
-                            continue;
+        return SheetsRequester.getValues("memes")
+            .then(data => {
+                for (let i = 0; i < data.length; i++) {
+                    let row = processMemeEntry(data[i]);
+                    if (row) {
+                        if (row.isFunction) {
+                            let func = this[row.response];
+                            if (func && typeof func === "function") {
+                                row.response = func.bind(this);
+                            } else {
+                                console.log("No function " + row.response);
+                                continue;
+                            }
                         }
+                        if (!row.isRegex) {
+                            row.key = row.key.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+                            row.key = row.key.replace(/\\\\n/g, '\n');
+                        }
+                        if (row.isEquals) {
+                            row.key = wrapWithEndings(row.key);
+                        }
+                        this.registerMeme(row.key, row.response);
                     }
-                    if (!row.isRegex) {
-                        row.key = row.key.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
-                        row.key = row.key.replace(/\\\\n/g, '\n');
-                    }
-                    if (row.isEquals) {
-                        row.key = wrapWithEndings(row.key);
-                    }
-                    this.registerMeme(row.key, row.response);
                 }
-            }
-        });
+            })
+            .catch(() => {
+                console.log("caught in memes")
+            });
     }
 
     removeMeme(key) {

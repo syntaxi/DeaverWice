@@ -2,6 +2,13 @@
 const fs = require("fs");
 const InstanceManager = require("./instanceManager.js");
 
+/**
+ * Specialised print function
+ * This allows control for printing without a newline or any surrounding whitespace.
+ *
+ * @param message The message to print
+ * @param format The formatting method to use
+ */
 function print(message, format) {
     format = format === undefined ? -2 : format;
     if (Math.abs(format) === 1) {
@@ -15,7 +22,8 @@ function print(message, format) {
 const PrintFormats = {
     NO_LINE: 2,
     NO_TAB: -1,
-    NO_LINE_OR_TAB: 1
+    NO_LINE_OR_TAB: 1,
+    NORMAL: -2
 };
 
 class ScriptLoader {
@@ -28,31 +36,40 @@ class ScriptLoader {
     static loadScripts(path) {
         ScriptLoader.scanForFiles(path);
         console.log("");
-        ScriptLoader.beginScripts();
-        console.log("");
+        return ScriptLoader.beginScripts().then(() => console.log("onBegin Finished\n"));
     }
 
     /**
-     * Calls onBegin on all scripts and waits for them all to finish
+     * Calls onBegin on all scripts and waits for them all to finish.
      *
+     * Uses promises to allow for async & delayed operations in the onBegin
      */
     static beginScripts() {
-        console.log("Calling 'onBegin' on scripts");
+        console.log(`Calling 'onBegin' on scripts. [${Object.keys(InstanceManager.getAll())}]`);
+        let promises = [];
         for (let key in InstanceManager.getAll()) {
             try {
-                InstanceManager.getInstance(key).onBegin();
+                let promise = InstanceManager.getInstance(key).onBegin();
+                if (promise != null) {
+                    promise.catch(reason =>
+                        console.log(`Failed to 'onBegin' ${key}. Got "${reason}"\nStackTrace:\n****\n${reason.stack}\n****`)
+                    );
+                    promise.then(() =>
+                        console.log(`Completed beginning script ${key}`)
+                    );
+                }
+                promises.push(promise);
             } catch (e) {
-                console.log(`Failed to 'onBegin' ${key}. Got "${e}"\nStackTrace:\n${e.stack}`);
+                console.error("Unable to complete 'onBegin' for ")
             }
         }
-        console.log("Finished onBegin")
+        return Promise.all(promises);
     }
 
     /**
-     * Internal
-     *
      * Recursively tries to load up scripts from within the core directory
      * This constructs and stores the instances.
+     *
      * @param path The path to search down
      */
     static scanForFiles(path) {

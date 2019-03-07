@@ -49,18 +49,16 @@ class ScriptLoader {
         let promises = [];
         for (let key in InstanceManager.getAll()) {
             try {
-                let promise = InstanceManager.getInstance(key).onBegin();
-                if (promise != null) {
-                    promise.catch(reason =>
-                        console.log(`Failed to 'onBegin' ${key}. Got "${reason}"\nStackTrace:\n****\n${reason.stack}\n****`)
+                let promise = Promise.resolve(InstanceManager.getInstance(key).onBegin())
+                    .then(
+                        () =>
+                            console.log(`Completed beginning script ${key}`),
+                        reason =>
+                            console.log(`Failed to 'onBegin' ${key}. Got "${reason}"\nStackTrace:\n****\n${reason.stack}\n****`)
                     );
-                    promise.then(() =>
-                        console.log(`Completed beginning script ${key}`)
-                    );
-                }
                 promises.push(promise);
-            } catch (e) {
-                console.error("Unable to complete 'onBegin' for ")
+            } catch (reason) {
+                console.log(`Unable to complete 'onBegin' for ${key}. Got "${reason}"\nStackTrace:\n****\n${reason.stack}\n****`)
             }
         }
         return Promise.all(promises);

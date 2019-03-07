@@ -3,19 +3,25 @@ const MessageReceiver = require("../framework/messageReceiver.js");
 const SheetsRequester = require("../framework/sheetsRequester");
 const {wrapWithEndings} = require('../helpers.js');
 
-function processMemeEntry(row) {
-    if (row.length < 2 || !(row[0] && row[1])) {
-        console.log("Unable to process row");
-        return null;
-    }
-    return {
-        key: row[0],
-        response: row[1],
-        isEquals: !!row[2],
-        isRegex: !!row[3],
-        isFunction: !!row[4]
-    }
-}
+/**
+ * @typedef {{
+ *      key:String,
+ *      response:String,
+ *      isEquals:Boolean,
+ *      isRegex:Boolean,
+ *      isFunction:Boolean
+ * }} MemeType
+ */
+const memeDefinition = {
+    verify: data => data.key && data.response,
+    mapping: [
+        {key: "key", map: data => data},
+        {key: "response", map: data => data},
+        {key: "isEquals", map: data => !!data},
+        {key: "isRegex", map: data => !!data},
+        {key: "isFunction", map: data => !!data}
+    ]
+};
 
 /**
  * Contains memes and other joke commands
@@ -43,31 +49,27 @@ class Meme extends MessageReceiver {
         }
         return SheetsRequester.getValues("memes")
             .then(data => {
+                data = SheetsRequester.processData(memeDefinition, data);
                 for (let i = 0; i < data.length; i++) {
-                    let row = processMemeEntry(data[i]);
-                    if (row) {
-                        if (row.isFunction) {
-                            let func = this[row.response];
-                            if (func && typeof func === "function") {
-                                row.response = func.bind(this);
-                            } else {
-                                console.log("No function " + row.response);
-                                continue;
-                            }
+                    let row = data[i];
+                    if (row.isFunction) {
+                        if (row.response in this) {
+                            row.response = this[row.response].bind(this);
+                        } else {
+                            console.log("No function " + row.response);
+                            continue;
                         }
-                        if (!row.isRegex) {
-                            row.key = row.key.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
-                            row.key = row.key.replace(/\\\\n/g, '\n');
-                        }
-                        if (row.isEquals) {
-                            row.key = wrapWithEndings(row.key);
-                        }
-                        this.registerMeme(row.key, row.response);
                     }
+                    if (!row.isRegex) {
+                        row.key = row.key.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+                        row.key = row.key.replace(/\\\\n/g, '\n');
+                    }
+                    if (row.isEquals) {
+                        row.key = wrapWithEndings(row.key);
+                    }
+                    this.registerMeme(row.key, row.response);
                 }
-            })
-            .catch(() => {
-                console.log("caught in memes")
+
             });
     }
 

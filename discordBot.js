@@ -1,11 +1,15 @@
 "use strict";
 const Discord = require("discord.js");
 const ScriptLoader = require("./framework/scriptLoader.js");
+global.Promise = require("bluebird");
+Promise.config({
+    longStackTraces: true
+});
 
 global.bot = new Discord.Client();
 
 /* Prints that the bot was reloaded */
-function printLoaded(bot) {
+function printLoaded() {
     console.log("Loading finished & Bot ready");
 
     let guild = bot.guilds.find((guild, id) => id === "451318478062747669");

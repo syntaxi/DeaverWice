@@ -7,30 +7,21 @@ try {
     console.log("Failed to load sheets library")
 }
 
+const doRequest = Promise.promisify(sheets.spreadsheets.values.get);
+
 class SheetsRequester {
-    static doRequest(options) {
-        return new Promise((resolve, reject) => {
-            sheets.spreadsheets.values.get(options, (err, data) => {
-                if (err) {
-                    reject(err);
-                } else {
-                    resolve(data);
-                }
-            });
-        });
-    }
 
     static getRange(tag) {
-        return SheetsRequester.doRequest({
+        return doRequest({
             spreadsheetId: "1IvVeBEV2H7oBNUWccak1wAsRbXOz77QVEJWvlQ2ACmg",
             auth: "AIzaSyBM0Rchrw_y-sFDbR9KgDrMRuhRkQ4x_5w",
-            range: "index!A:D"
+            range: "index!A2:B"
         })
             .then(result => {
                 let data = result.data.values;
                 for (let i = 0; i < data.length; i++) {
                     if (data[i][0].toLowerCase() === tag.toLowerCase()) {
-                        return [`${data[i][1]}!${data[i][2]}`, parseInt(data[i][3])];
+                        return data[i][1];
                     }
                 }
                 throw new Error(`Unable to locate range for tag '${tag}'`);
@@ -40,13 +31,36 @@ class SheetsRequester {
     static getValues(tag) {
         return this.getRange(tag)
             .then(result => {
-                return this.doRequest({
+                return doRequest({
                     spreadsheetId: "1IvVeBEV2H7oBNUWccak1wAsRbXOz77QVEJWvlQ2ACmg",
                     auth: "AIzaSyBM0Rchrw_y-sFDbR9KgDrMRuhRkQ4x_5w",
-                    range: result[0]
+                    range: result
                 })
                     .then(result => result.data.values.slice(result[1]));
             });
+    }
+
+    /**
+     *
+     * @param definition
+     * @param data
+     * @returns {Array}
+     */
+    static processData(definition, data) {
+        let result = [];
+        let map = definition.mapping;
+
+        for (let i = 0; i < data.length; i++) {
+            let row = {};
+            for (let j = 0; j < map.length; j++) {
+                row[map[j].key] = map[j].map(data[i][j])
+            }
+            if (definition.verify(row)) {
+                result.push(row);
+            }
+
+        }
+        return result;
     }
 }
 

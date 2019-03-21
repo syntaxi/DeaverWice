@@ -9,7 +9,7 @@ const DetailsTable = require("./data/details.json");
 helpers.rollRandom = function (list) {
     switch (list.length) {
         case 0:
-            return undefined;
+            return;
         case 1:
             return list[0];
         default:

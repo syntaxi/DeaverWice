@@ -15,6 +15,11 @@ class Admin extends MessageReceiver {
         this.registerCommand("stop(cuck|deny)", "stopDeny");
         this.registerCommand("(silence|mute)", "silence");
         this.registerCommand("stop(silence|mute)", "stopDeny");
+        this.registerEvent("roleCreate");
+    }
+
+    roleCreate(...args) {
+        console.log(args);
     }
 
     onBegin() {

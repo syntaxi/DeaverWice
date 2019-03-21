@@ -13,16 +13,16 @@ function printLoaded() {
     console.log("Loading finished & Bot ready");
 
     let guild = bot.guilds.find((guild, id) => id === "451318478062747669");
-    let channel = guild.channels.find((guild, id) => id === "463972973712244737");
-    // channel.send("Bot Loaded");
+    let channel = guild.channels.find((guild, id) => id === "451318752378880000");
+    channel.send("Bot Loaded");
 }
 
 bot.on('ready', printLoaded);
 
 
 ScriptLoader.loadScripts(__dirname + "/core/")
-    .then(() => {
+    .then(
+        () =>
             bot.login(process.env.BOT_TOKEN)
-                .catch(reason => console.log("Failed to load bot:\n" + reason));
-        }
-    );
+                .catch(reason => console.log("Failed to load bot:\n" + reason))
+);

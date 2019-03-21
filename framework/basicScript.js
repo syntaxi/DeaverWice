@@ -191,6 +191,12 @@ class BasicScript {
         }
     }
 
+    prependArgs(func, ...values) {
+        return function (msg, ...args) {
+            func.apply(this, [msg].concat(values, args))
+        }
+    }
+
     /**
      * Handle choosing the correct child to send this command to.
      *

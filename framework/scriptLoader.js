@@ -36,7 +36,8 @@ class ScriptLoader {
     static loadScripts(path) {
         ScriptLoader.scanForFiles(path);
         console.log("");
-        return ScriptLoader.beginScripts().then(() => console.log("onBegin Finished\n"));
+        return ScriptLoader.beginScripts()
+            .then(() => console.log("onBegin Finished\n"));
     }
 
     /**
@@ -53,8 +54,11 @@ class ScriptLoader {
                     .then(
                         () =>
                             console.log(`Completed beginning script ${key}`),
-                        reason =>
-                            console.log(`Failed to 'onBegin' ${key}. Got "${reason}"\nStackTrace:\n****\n${reason.stack}\n****`)
+
+                        reason => {
+                            console.log(`Failed to 'onBegin' ${key}. Got "${reason}"\nStackTrace:\n****\n${reason.stack}\n****`);
+                            InstanceManager.removeInstance(key)
+                        }
                     );
                 promises.push(promise);
             } catch (reason) {

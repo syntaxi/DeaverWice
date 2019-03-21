@@ -2,26 +2,35 @@
 const MessageReceiver = require("../framework/messageReceiver.js");
 const SheetsRequester = require("../framework/sheetsRequester");
 const {wrapWithEndings} = require('../helpers.js');
+const {RowEntry} = require('../framework/sheetEntries.js');
 
 /**
+ * The definition of how a meme is stored
+ *
  * @typedef {{
- *      key:String,
- *      response:String,
- *      isEquals:Boolean,
- *      isRegex:Boolean,
- *      isFunction:Boolean
+ *      key: String,
+ *      response: String,
+ *      isEquals: Boolean,
+ *      isRegex: Boolean,
+ *      isFunction: Boolean
  * }} MemeType
  */
-const memeDefinition = {
-    verify: data => data.key && data.response,
-    mapping: [
-        {key: "key", map: data => data},
-        {key: "response", map: data => data},
-        {key: "isEquals", map: data => !!data},
-        {key: "isRegex", map: data => !!data},
-        {key: "isFunction", map: data => !!data}
-    ]
-};
+class MemeEntry extends RowEntry {
+    /**
+     * @param data {MemeType}
+     */
+    static verifyRow(data) {
+        return data.key && data.response
+    }
+
+    static newRow(obj, data) {
+        obj.key = data[0].toString();
+        obj.response = data[1].toString();
+        obj.isEquals = !!data[2];
+        obj.isRegex = !!data[3];
+        obj.isFunction = !!data[4];
+    }
+}
 
 /**
  * Contains memes and other joke commands
@@ -47,9 +56,8 @@ class Meme extends MessageReceiver {
         if (msg) {
             Meme.sendOutput(msg, "Reloading memes daddy UwU");
         }
-        return SheetsRequester.getValues("memes")
+        return SheetsRequester.getObjectTag(MemeEntry, "memes")
             .then(data => {
-                data = SheetsRequester.processData(memeDefinition, data);
                 for (let i = 0; i < data.length; i++) {
                     let row = data[i];
                     if (row.isFunction) {

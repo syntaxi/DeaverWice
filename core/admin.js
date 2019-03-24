@@ -4,8 +4,7 @@ const MessageReceiver = require("../framework/messageReceiver.js");
 const {getInstance} = require("../framework/instanceManager.js");
 
 const defaultRole = "abba";
-// const superAdmins = ["99372840192589824"];
-const superAdmins = [];
+const superAdmins = ["99372840192589824"];
 
 class Admin extends MessageReceiver {
     constructor() {

@@ -17,12 +17,7 @@ function printLoaded() {
     channel.send("Bot Loaded");
 }
 
-bot.on('ready', printLoaded);
-
-
-ScriptLoader.loadScripts(__dirname + "/core/")
-    .then(
-        () =>
-            bot.login(process.env.BOT_TOKEN)
-                .catch(reason => console.log("Failed to load bot:\n" + reason))
-);
+bot.login(process.env.BOT_TOKEN)
+    .then(() => ScriptLoader.loadScripts(__dirname + "/core/"))
+    .then(printLoaded)
+    .catch(reason => console.log("Failed to load bot:\n" + reason));

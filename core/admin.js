@@ -4,62 +4,18 @@ const MessageReceiver = require("../framework/messageReceiver.js");
 const {getInstance} = require("../framework/instanceManager.js");
 
 const defaultRole = "abba";
+// const superAdmins = ["99372840192589824"];
+const superAdmins = [];
 
 class Admin extends MessageReceiver {
     constructor() {
         super();
-        this.botRoles = {};
         this.registerCommand("kick");
         this.registerCommand("ban");
         this.registerCommand("(cuck|deny)", "deny");
         this.registerCommand("stop(cuck|deny)", "stopDeny");
         this.registerCommand("(silence|mute)", "silence");
         this.registerCommand("stop(silence|mute)", "stopDeny");
-        this.registerEvent("roleCreate");
-    }
-
-    roleCreate(...args) {
-        console.log(args);
-    }
-
-    onBegin() {
-        for (let guildId in bot.guilds) {
-            this.botRoles[guildId] = [];
-            for (let roleId in bot.guilds[guildId].roles.values()) {
-                let role = bot.guilds[guildId].roles[roleId];
-                if (role.name.toLowerCase() === defaultRole) {
-                    this.botRoles[guildId].push(role.id);
-                }
-            }
-        }
-    }
-
-
-    /**
-     *  Checks if a given user in a guild can use the admin commands of the bot.
-     *
-     *  This is based firstly off if they have the default role,
-     *  and secondly if they have administrator permissions.
-     *
-     *  This is specifically the administrator role option, rather than just having ban/kick perms
-     *
-     *
-     * @param guild The guild the message was sent in
-     * @param author The user to check the permissions for
-     * @returns {boolean} True if the user is allowed to use the admin commands, false otherwise
-     */
-    hasAdminAbilities(guild, author) {
-        let user = guild.fetchMember(author);
-        if (guild.id in this.botRoles) {
-            for (let roleId in user.roles) {
-                if (roleId in this.botRoles[guild.id]
-                    || user.role[roleId].hasPermission("ADMINISTRATOR")) {
-                    return true;
-                }
-            }
-        }
-        /* Gives me super-admin perms */
-        return author.id === "99372840192589824";
     }
 
     /**
@@ -74,7 +30,6 @@ class Admin extends MessageReceiver {
         }
     }
 
-
     /**
      * Delete a message in a server if it matches the id
      *
@@ -86,6 +41,7 @@ class Admin extends MessageReceiver {
             msg.delete();
         }
     }
+
 
     /**
      * Delete a message if it was sent by a specific user
@@ -125,28 +81,6 @@ class Admin extends MessageReceiver {
 
     }
 
-    deny(msg) {
-        /* Check if this command was used in a server */
-        if (!msg.guild) {
-            Admin.replyOutput(msg, "This command must be used in an guild");
-            return
-        }
-
-        /* Check if the user has perms */
-        if (!this.hasAdminAbilities(msg.guild, msg.author)) {
-            Admin.replyOutput(msg, "No. Bad.\nStop.");
-            return;
-        }
-
-        /* Check if there is anyone mentioned */
-        const user = msg.mentions.members.first();
-        if (user) {
-            getInstance("memes.js").registerMeme(".*", this.doDenyUser.bind(this, user.id));
-        } else {
-            Admin.sendOutput(msg, "Who do you want me to deny? _you?_")
-        }
-    }
-
     stopDeny(msg) {
         /* Check if this command was used in a server */
         if (!msg.guild) {
@@ -163,39 +97,33 @@ class Admin extends MessageReceiver {
         getInstance("memes.js").removeMeme(".*");
     }
 
+    deny(msg) {
+        let member = this.verifyMessage(msg, "deny");
+        if (member) {
+            getInstance("memes.js").registerMeme(".*", this.doDenyUser.bind(this, member.id));
+            Admin.replyOutput(`${member.tag} has been forcibly silenced. :3`)
+        }
+    }
+
     kick(msg, reason) {
-        /* Check if this command was used in a server */
-        if (!msg.guild) {
-            Admin.replyOutput(msg, "This command must be used in an guild");
-            return
-        }
-
-        /* Check if the user has perms */
-        if (!this.hasAdminAbilities(msg.guild, msg.author)) {
-            Admin.replyOutput(msg, "You can't kick people...");
-            Admin.sendOutput(msg, "did you really believe\n𝐢𝐭 𝐰𝐨𝐮𝐥𝐝 𝐛𝐞\n🅃🄷🄸🅂\n🅴🅰🆂🆈");
-            return;
-        }
-
-        reason = `${msg.author.username}: ${reason}`.trim();
-
-        /* Check if there is anyone to kick */
-        const user = msg.mentions.members.first();
-        if (user) {
-            const member = msg.guild.member(user);
-            if (member) {
-                member.kick(reason)
-                    .then(() => Admin.replyOutput(msg, `That boi got booted! YW bbygurl ${user.tag}`))
-                    .catch(() => Admin.replyOutput(msg, "Uhhhh, Nope.\nsoz."));
-            } else {
-                Admin.replyOutput(msg, "... You can't kick someone that's not in the server..\nTbh I don't know how you did that")
-            }
-        } else {
-            Admin.sendOutput(msg, "...\n..\nYou know you need to tell me who to kick right.")
+        let member = this.verifyMessage(msg, "kick");
+        if (member) {
+            member.kick(reason)
+                .then(() => Admin.replyOutput(msg, `That boi got booted! YW bbygurl ${member.tag}`))
+                .catch(() => Admin.replyOutput(msg, "... Sorry, I did my best."));
         }
     }
 
     ban(msg, reason) {
+        let member = this.verifyMessage(msg, "ban");
+        if (member) {
+            member.ban({reason: reason})
+                .then(() => Admin.replyOutput(msg, `oh dey gone hehehe. soz ${member.tag}`))
+                .catch(() => Admin.replyOutput(msg, "I seem to be experiencing some difficulties with that..."));
+        }
+    }
+
+    verifyMessage(msg, command) {
         if (!msg.guild) {
             Admin.replyOutput(msg, "This command must be used in an guild");
             return
@@ -203,27 +131,49 @@ class Admin extends MessageReceiver {
 
         /* Check if the user has perms */
         if (!this.hasAdminAbilities(msg.guild, msg.author)) {
-            Admin.replyOutput(msg, "You can't ban people...");
-            Admin.sendOutput(msg, "did you really believe\n𝐢𝐭 𝐰𝐨𝐮𝐥𝐝 𝐛𝐞\n🅃🄷🄸🅂\n🅴🅰🆂🆈");
+            Admin.sendOutput(msg, `I'm sorry ${msg.author}, I'm afraid I can't do that.`);
             return;
         }
-
-        reason = `${msg.author.username}: ${reason}`.trim();
-
-        /* Check if there is anyone to kick */
-        const user = msg.mentions.members.first();
+        let user = msg.mentions.members.first();
         if (user) {
             const member = msg.guild.member(user);
-            if (member) {
-                member.ban({reason: reason})
-                    .then(() => Admin.replyOutput(msg, `oh dey gone hehehe. soz ${member.tag}`))
-                    .catch(() => Admin.replyOutput(msg, "Uhhhh, Nope.\nsoz."));
-            } else {
-                Admin.replyOutput(msg, "... You can't ban someone that's not in the server..\nTbh I don't know how you did that")
+            if (!member) {
+                Admin.replyOutput(msg, `... You can't ${command} someone that's not in the server..\nTbh I don't know how you did that`)
             }
         } else {
-            Admin.sendOutput(msg, "...\n..\nYou know you need to tell me who to ban right.")
+            Admin.replyOutput(msg, `darling. You do need to tell me who to ${command}`)
         }
+        /* Check if there is anyone to kick */
+        return msg.mentions.members.first();
+    }
+
+    /**
+     *  Checks if a given user in a guild can use the admin commands of the bot.
+     *
+     *  This is based firstly off if they have the default role,
+     *  and secondly if they are a super admin
+     *
+     *
+     * @param guild The guild the message was sent in
+     * @param author The user to check the permissions for
+     * @returns {boolean} True if the user is allowed to use the admin commands, false otherwise
+     */
+    hasAdminAbilities(guild, author) {
+        /* Check super-admin perms */
+        if (superAdmins.includes(author.id)) {
+            return true;
+        }
+
+        let user = guild.member(author);
+
+        /* User is actually defined, because we set it in the promise
+         * And wait for the promise to resolve */
+        for (let role in user.roles.values()) {
+            if (role.name.toLowerCase() === defaultRole) {
+                return true;
+            }
+        }
+        return false;
     }
 }
 

@@ -135,7 +135,7 @@ class Admin extends MessageReceiver {
 
         /* User is actually defined, because we set it in the promise
          * And wait for the promise to resolve */
-        for (let role of user.roles.values()) {
+        for (let role in user.roles.values()) {
             if (role.name.toLowerCase() === defaultRole) {
                 return true;
             }

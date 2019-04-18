@@ -48,7 +48,7 @@ class Misc extends MessageReceiver {
 
     loadAllFromSheets(msg) {
         if (msg) {
-            Misc.sendOutput("Reloading util functions :D");
+            Misc.sendOutput(msg, "Reloading util functions :D");
         }
         return SheetsRequester.getObjectTag(UtilEntry, "utils")
             .then(data => {

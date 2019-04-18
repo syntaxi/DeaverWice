@@ -45,7 +45,7 @@ class Admin extends MessageReceiver {
         let member = this.findUser(msg, "deny");
         if (allowed && member) {
             getInstance("memes.js").registerMeme(".*", this.doDenyUser.bind(this, member.id));
-            Admin.replyOutput(msg, `${member.tag} has been forcibly silenced. :3`)
+            Admin.replyOutput(msg, `${member.nickname} has been forcibly silenced. :3`)
         }
     }
 
@@ -54,7 +54,7 @@ class Admin extends MessageReceiver {
         let member = this.findUser(msg, "kick");
         if (allowed && member) {
             member.kick(reason)
-                .then(() => Admin.replyOutput(msg, `That boi got booted! YW bbygurl ${member.tag}`))
+                .then(() => Admin.replyOutput(msg, `That boi got booted! YW bbygurl ${member.nickname}`))
                 .catch(() => Admin.replyOutput(msg, "... Sorry, I did my best, but I still wasn't able to"));
         }
     }
@@ -64,7 +64,7 @@ class Admin extends MessageReceiver {
         let member = this.findUser(msg, "ban");
         if (allowed && member) {
             member.ban({reason: reason})
-                .then(() => Admin.replyOutput(msg, `oh dey gone hehehe. soz ${member.tag}`))
+                .then(() => Admin.replyOutput(msg, `oh dey gone hehehe. soz ${member.nickname}`))
                 .catch(() => Admin.replyOutput(msg, "I seem to be experiencing some difficulties with that..."));
         }
     }

@@ -57,7 +57,7 @@ class Misc extends MessageReceiver {
                     try {
                         /* This very bad. Need to not use this and investigate safe-eval options*/
                         row.response = new Function('msg', '...args', row.response); //EVAL IS EVIL
-                    } catch {
+                    } catch (e) {
                         console.log(`Error in eval-ing for ${row.key}. Skipping`);
                         continue;
                     }

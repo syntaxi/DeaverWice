@@ -39,9 +39,6 @@ class Meme extends MessageReceiver {
     constructor() {
         super();
         this.memes = {};
-        /* Things prefixed with `wd>` */
-        this.registerCommand("gender", this.chooseGender);
-        this.registerCommand("sex", this.chooseSex);
         this.registerCommand("reloadmemes", this.loadAllFromSheets.bind(this));
     }
 
@@ -135,40 +132,6 @@ class Meme extends MessageReceiver {
                     this.memes[key](msg);
                 }
             }
-        }
-    }
-
-    getAvatar(msg) {
-        Meme.sendOutput(msg, msg.author.avatarURL);
-    }
-
-    /**
-     * Called when a message equal to `wd>gender` is received
-     *
-     */
-    chooseGender(msg) {
-        let choice = Math.random();
-        if (choice < .45) {
-            Meme.sendOutput(msg, "Male")
-        } else if (choice < .9) {
-            Meme.sendOutput(msg, "Female")
-        } else {
-            Meme.sendOutput(msg, "Trap")
-        }
-    }
-
-    /**
-     * Called when a message equal to `wd>sex` is received
-     *
-     */
-    chooseSex(msg) {
-        let choice = Math.random();
-        if (choice < .6) {
-            Meme.sendOutput(msg, "Straight");
-        } else {
-            let options = ["Trisexual", "Gay", "Bi", "A", "*Clang! Clang!* you are Pansexual!", "Demi", "Poly", "Furry", "THE BIG GAY", "Homieflexual"];
-            let choice = Math.floor(Math.random() * options.length);
-            Meme.sendOutput(msg, options[choice]);
         }
     }
 

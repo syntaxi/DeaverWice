@@ -79,8 +79,9 @@ class BasicScript {
      *
      * @param key The key(s) to link to
      * @param func The function, class or file to link to.
+     * @param thisArg Optional argument to bind the function to
      */
-    registerCommand(key, func) {
+    registerCommand(key, func, thisArg=this) {
         switch (typeof key) {
             case 'object': //- If we have passed in multiple keys -\\
                 for (let item in key) {
@@ -96,12 +97,12 @@ class BasicScript {
                 key = wrapWithEndings(key);
                 switch (typeof func) {
                     case 'function': //- If it's a function, use that -\\
-                        this.commands[key] = func.bind(this);
+                        this.commands[key] = func.bind(thisArg);
                         break;
                     case 'string':
                         if (!func.endsWith(".js")) { //- Use a function of the same name -\\
                             if (func in this) {
-                                this.commands[key] = this[func].bind(this);
+                                this.commands[key] = this[func].bind(thisArg);
                             } else {
                                 throw new Error(`Function '${func}' not found in class '${this.constructor.name}'`);
                             }
@@ -211,8 +212,8 @@ class BasicScript {
 
         /* Check in commands. This includes instance methods on the class */
         for (let value in this.commands) {
-            if (key.match(value)) {
-                this.commands[value].apply(this, args);
+            if (this.commands.hasOwnProperty(value) && key.match(value)) {
+                this.commands[value].apply(null, args);
             }
         }
     }

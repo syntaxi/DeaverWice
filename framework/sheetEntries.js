@@ -83,7 +83,12 @@ class RowEntry extends Entry {
     static newEntry(obj, data) {
         for (let i = 0; i < data.length; i++) {
             obj.push({});
-            this.newRow(obj[i], data[i]);
+            try {
+                this.newRow(obj[i], data[i]);
+            } catch (e) {
+                console.log(`Row using ${this.constructor.name} and "${data[i]}" data errored. Skipping.`);
+                obj.pop()
+            }
         }
         return obj
     }

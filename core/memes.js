@@ -139,10 +139,14 @@ class Meme extends MessageReceiver {
      * Implements the classic dad joke format on a message:
      * Person: "I'm <x>"
      * Bot: "Hi <x>, I'm Dad!"
+     *
+     * Only happens every 1/5 times
      */
     dadJoke(msg) {
-        const size = msg.content.toLowerCase().match(/^(i'?m\s)./i)[1].length;
-        Meme.sendOutput(msg, `Hi ${msg.toString().substr(size)}, I'm Dad!`);
+        if (Math.random() < 0.2) {
+            const size = msg.content.toLowerCase().match(/^(i'?m\s)./i)[1].length;
+            Meme.sendOutput(msg, `Hi ${msg.toString().substr(size)}, I'm Dad!`);
+        }
     }
 }
 

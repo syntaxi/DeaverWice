@@ -17,7 +17,20 @@ function printLoaded() {
     channel.send("Bot Loaded");
 }
 
-bot.login(process.env.BOT_TOKEN)
-    .then(() => ScriptLoader.loadScripts(__dirname + "/core/"))
-    .then(printLoaded)
-    .catch(reason => console.log("Failed to load bot:\n" + reason));
+
+function tryLogin(maxAttempts, attemptNum = 0) {
+    bot.login(process.env.BOT_TOKEN)
+        .then(() => ScriptLoader.loadScripts(__dirname + "/core/"))
+        .then(printLoaded)
+        .catch(reason => {
+            if (attemptNum < maxAttempts) {
+                console.log(`Failed to load bot on attempt${attemptNum}:\n → ${reason}\nRetrying`);
+                tryLogin(maxAttempts, attemptNum + 1);
+            } else {
+                console.log(`Failed to load bot (attempt ${attemptNum}):\n → ${reason}\nStopping`);
+            }
+        });
+}
+
+tryLogin(5);
+

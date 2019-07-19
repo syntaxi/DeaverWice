@@ -5,5 +5,21 @@
     "discord.js": "latest",
     "googleapis": "27",
     "bluebird": "latest"
-  }
+  },
+  "description": "test",
+  "main": "discordBot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jellysnake/deaverwice.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jellysnake/deaverwice/issues"
+  },
+  "homepage": "https://github.com/jellysnake/deaverwice#readme"
 }

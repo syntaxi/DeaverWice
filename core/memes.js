@@ -141,11 +141,13 @@ class Meme extends MessageReceiver {
      * Bot: "Hi <x>, I'm Dad!"
      *
      * Only happens every 1/5 times
+     *
+     * We want to also always reply to a specific person (and say daddy instead)
      */
     dadJoke(msg) {
-        if (Math.random() < 0.2) {
+        if (Math.random() < 0.2 || msg.author.id === "287287897336446976") {
             const size = msg.content.toLowerCase().match(/^(i'?m\s)./i)[1].length;
-            Meme.sendOutput(msg, `Hi ${msg.toString().substr(size)}, I'm Dad!`);
+            Meme.sendOutput(msg, `Hi ${msg.toString().substr(size)}, I'm Dad${msg.author.id === "287287897336446976" ? "dy" : ""}!`);
         }
     }
 }

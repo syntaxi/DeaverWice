@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "dependencies": {
     "discord.js": "latest",
-    "googleapis": "27",
+    "googleapis": "39",
     "bluebird": "latest"
   },
   "description": "test",
